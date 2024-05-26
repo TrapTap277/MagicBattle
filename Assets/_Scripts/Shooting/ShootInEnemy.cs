@@ -1,9 +1,14 @@
-﻿using UnityEngine;
+﻿using System;
+using _Scripts.Staff;
+using Unity.VisualScripting;
+using UnityEngine;
 
 namespace _Scripts.Shooting
 {
     public class ShootInEnemy : IShoot
     {
+        public static event Action<Gem> OnChangedGemOnStaff;
+        
         private MagicAttackStorage _attackStorage;
         private Animator _animator;
 
@@ -20,11 +25,17 @@ namespace _Scripts.Shooting
             if (_attackStorage.GetFirstType() == AttacksType.Blue)
             {
                 Debug.Log("Attack in Enemy");
+                
+                OnChangedGemOnStaff?.Invoke(Gem.Blue); 
+                
                 //Create Spell
             }
 
             else
-            {
+            {          
+                OnChangedGemOnStaff?.Invoke(Gem.Red);  
+                
+                
                 //Передать посох
             }
 
