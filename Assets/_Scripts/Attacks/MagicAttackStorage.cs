@@ -11,6 +11,7 @@ namespace _Scripts
         public readonly List<AttacksType> Typies = new List<AttacksType>();
         public readonly List<AttacksType> UsedAttacks = new List<AttacksType>();
 
+        public int AttackCount { get; private set; }
         public int RedAttack { get; private set; }
         public int BlueAttack { get; private set; }
         
@@ -26,6 +27,7 @@ namespace _Scripts
         {
             RedAttack = 0;
             BlueAttack = 0;
+            AttackCount = 0;
             Typies.Clear();
             UsedAttacks.Clear();
             
@@ -47,6 +49,7 @@ namespace _Scripts
                     RedAttack++;
                 }
 
+                AttackCount++;
                 Typies.Add(type);
             }
             
@@ -58,6 +61,7 @@ namespace _Scripts
             AttacksType type = Typies[0];
             UsedAttacks.Add(type);
             Typies.RemoveAt(0);
+            AttackCount--;
             return type;
         }
 }

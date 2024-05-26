@@ -33,7 +33,7 @@ namespace _Scripts
             Sequence fade = DOTween.Sequence();
             fade.Append(_attackPanel.GetComponent<CanvasGroup>().DOFade(1, 2));
 
-            for (int i = 0; i < sum; i++)
+            for (int i = 0; i < _attackStorage.AttackCount; i++)
             {
                 GameObject newBarrier = Instantiate(_attack, _attackPanel.transform);
                 _attacks.Add(newBarrier.GetComponent<Image>());
