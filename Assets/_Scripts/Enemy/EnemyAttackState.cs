@@ -8,8 +8,6 @@ namespace _Scripts.Enemy
     {
         public override async void Enter(EnemyStateMachine enemyStateMachine)
         {
-            IShoot shoot;
-            
             enemyStateMachine.MoveTransition.TransitionToEnemy();
             
             await Task.Delay(5000);
@@ -23,16 +21,14 @@ namespace _Scripts.Enemy
             
             if (randomNumber < percentToAttack)
             {
-                shoot = new ShootInPlayer(enemyStateMachine.StaffAnimator, enemyStateMachine.Storage);
+                enemyStateMachine.ShootButtons.ShootInYou(true);
             }
 
             else
-            {
-                shoot = new ShootInEnemy(enemyStateMachine.StaffAnimator, enemyStateMachine.Storage);
+            {     
+                enemyStateMachine.ShootButtons.ShootInEnemy(true);
             }
 
-            shoot.Shoot();
-            
             await Task.Delay(2000);
             
             enemyStateMachine.SwitchState(enemyStateMachine.IdleState);

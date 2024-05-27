@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a27b7c11-43cf-491c-becf-76115ceca5b7" name="Default Changelist" comment="Added HP">
+      <change beforePath="$PROJECT_DIR$/Assets/_Scenes/MagicScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scenes/MagicScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Enemy/EnemyAttackState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Enemy/EnemyAttackState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Enemy/EnemyStateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Enemy/EnemyStateMachine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Health/PlayerHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Health/PlayerHealth.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Shooting/ShootButtons.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Shooting/ShootButtons.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Shooting/ShootInEnemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Shooting/ShootInEnemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Shooting/ShootInPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Shooting/ShootInPlayer.cs" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Health/EnemyHealth.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/DC753A10-6128-4F8E-971E-E88EE4826EEE/88/922d4bb3/Void.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Unity/MagicBattle/MagicBattle/Assets/_Scripts/Health/EnemyHealth.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.9.1/Runtime/VisualScripting.Flow/Framework/Math/Sum.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Shooting/First.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Shooting/Test.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Shooting/Shooting.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Shooting/Shoot.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Shooting/IShoot.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/BarrierStorage.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/MagicAttackStorage.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/MagicAttackGenerator.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Staff/Staff.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/CurrentAttackMove/AttackMove.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/AttackMoveStateMachine/AttackMove.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/AttackMoveStateMachine/BaseAttackMove.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/AttackMoveStateMachine/PlayerMove.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Enemy/EnemyUseItemState.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Enemy/EnemyBaseState.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Attacks/MagicAttackStorage.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Attacks/MagicAttackUI.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Enemy/EnemyIdleState.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/AttackMoveStateMachine/StateMachine.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/AttackMoveStateMachine/EnemyMove.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/AttackMoveStateMachine/MoveTransition.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Health/EnemyHealth.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Health/PlayerHealth.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Enemy/EnemyStateMachine.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Shooting/ShootButtons.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Shooting/ShootInPlayer.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Enemy/EnemyAttackState.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Shooting/ShootInEnemy.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="2gznGv6rWyN4sTqGujOLI1yvuN2" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34994584" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.30010834" />
+    <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="ReSpellerSettingsId" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="selectedOptions">
+        <set />
+      </option>
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="selectedOptions">
+        <set />
+      </option>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a27b7c11-43cf-491c-becf-76115ceca5b7" name="Default Changelist" comment="" />
+      <created>1716709184239</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1716709184239</updated>
+      <workItem from="1716709221253" duration="20983000" />
+      <workItem from="1716816883270" duration="6688000" />
+    </task>
+    <task id="LOCAL-00001" summary="Attack With Buttons">
+      <created>1716712058302</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1716712058302</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Added MagicAttackStorage.cs">
+      <created>1716726141586</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1716726141586</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Added AttackUI">
+      <created>1716731385592</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1716731385592</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Added Gem Changing">
+      <created>1716732840165</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1716732840165</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Added StateMachine for Attack">
+      <created>1716741709179</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1716741709179</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Added Transition Between attacks">
+      <created>1716819847889</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1716819847889</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Added HP">
+      <created>1716823169231</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1716823169231</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="Attack With Buttons" />
+    <MESSAGE value="Added MagicAttackStorage.cs" />
+    <MESSAGE value="Added AttackUI" />
+    <MESSAGE value="Added Gem Changing" />
+    <MESSAGE value="Added StateMachine for Attack" />
+    <MESSAGE value="Added Transition Between attacks" />
+    <MESSAGE value="Added HP" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added HP" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1716822120262">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1716822120262" />
+    <state width="1877" height="375" key="GridCell.Tab.0.bottom" timestamp="1716748867744">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1716748867744" />
+    <state width="1877" height="375" key="GridCell.Tab.0.center" timestamp="1716748867744">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1716748867744" />
+    <state width="1877" height="375" key="GridCell.Tab.0.left" timestamp="1716748867744">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1716748867744" />
+    <state width="1877" height="375" key="GridCell.Tab.0.right" timestamp="1716748867744">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1716748867744" />
+    <state width="1877" height="375" key="GridCell.Tab.1.bottom" timestamp="1716748867745">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1716748867745" />
+    <state width="1877" height="375" key="GridCell.Tab.1.center" timestamp="1716748867744">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1716748867744" />
+    <state width="1877" height="375" key="GridCell.Tab.1.left" timestamp="1716748867744">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1716748867744" />
+    <state width="1877" height="375" key="GridCell.Tab.1.right" timestamp="1716748867744">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1716748867744" />
+    <state width="1877" height="375" key="GridCell.Tab.2.bottom" timestamp="1716748867745">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1716748867745" />
+    <state width="1877" height="375" key="GridCell.Tab.2.center" timestamp="1716748867745">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1716748867745" />
+    <state width="1877" height="375" key="GridCell.Tab.2.left" timestamp="1716748867745">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1716748867745" />
+    <state width="1877" height="375" key="GridCell.Tab.2.right" timestamp="1716748867745">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1716748867745" />
+    <state width="1877" height="375" key="GridCell.Tab.3.bottom" timestamp="1716748867746">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.3.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1716748867746" />
+    <state width="1877" height="375" key="GridCell.Tab.3.center" timestamp="1716748867745">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.3.center/0.0.1920.1040@0.0.1920.1040" timestamp="1716748867745" />
+    <state width="1877" height="375" key="GridCell.Tab.3.left" timestamp="1716748867745">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.3.left/0.0.1920.1040@0.0.1920.1040" timestamp="1716748867745" />
+    <state width="1877" height="375" key="GridCell.Tab.3.right" timestamp="1716748867746">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.3.right/0.0.1920.1040@0.0.1920.1040" timestamp="1716748867746" />
+    <state x="670" y="197" key="RiderGenerateDialog" timestamp="1716824597107">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="670" y="197" key="RiderGenerateDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1716824597107" />
+    <state x="461" y="165" key="SettingsEditor" timestamp="1716714690513">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1716714690513" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1716823173626">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1716823173626" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1716741247203">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1716741247203" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1716741336217">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1716741336217" />
+  </component>
+</project>

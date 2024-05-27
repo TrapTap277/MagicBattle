@@ -14,24 +14,20 @@ namespace _Scripts.Shooting
 
         private void Awake()
         {
-            _buttonToShootInEnemy.onClick.AddListener(ShootInEnemy);
-            _buttonToShootInYou.onClick.AddListener(ShootInYou);
+            _buttonToShootInEnemy.onClick.AddListener(() => ShootInEnemy());
+            _buttonToShootInYou.onClick.AddListener(() => ShootInYou());
         }
 
-        private void ShootInEnemy()
+        public void ShootInEnemy(bool isEnemy = false)
         {
-            IShoot enemy = new ShootInEnemy(_animator, _storage);
+            IShoot enemy = new ShootInEnemy(_animator, _storage, _stateMachine, isEnemy);
             enemy.Shoot();
-            
-            _stateMachine.EnterInAttackState();
         }
 
-        private void ShootInYou()
+        public void ShootInYou(bool isEnemy = false)
         {
-            IShoot player = new ShootInPlayer(_animator, _storage);
+            IShoot player = new ShootInPlayer(_animator, _storage, _stateMachine, isEnemy);
             player.Shoot();
-            
-            _stateMachine.EnterInAttackState();
         }
     }
 }

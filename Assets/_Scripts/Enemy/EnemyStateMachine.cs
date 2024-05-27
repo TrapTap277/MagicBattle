@@ -1,5 +1,6 @@
 ﻿using System;
 using _Scripts.AttackMoveStateMachine;
+using _Scripts.Shooting;
 using UnityEngine;
 
 namespace _Scripts.Enemy
@@ -19,8 +20,8 @@ namespace _Scripts.Enemy
         #endregion
 
         public MoveTransition MoveTransition;
+        public ShootButtons ShootButtons;
         public MagicAttackStorage Storage;
-        public Animator StaffAnimator;
         
         private void Start()
         {

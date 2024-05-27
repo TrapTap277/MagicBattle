@@ -1,4 +1,5 @@
 ﻿using System;
+using _Scripts.Enemy;
 using _Scripts.Staff;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -12,11 +13,16 @@ namespace _Scripts.Shooting
         
         private MagicAttackStorage _attackStorage;
         private Animator _animator;
+        private EnemyStateMachine _stateMachine;
 
-        public ShootInEnemy(Animator animator, MagicAttackStorage attackStorage)
+        private bool _isEnemy;
+        
+        public ShootInEnemy(Animator animator, MagicAttackStorage attackStorage, EnemyStateMachine stateMachine, bool isEnemy)
         {
-            _animator = animator;
             _attackStorage = attackStorage;
+            _animator = animator;
+            _stateMachine = stateMachine;
+            _isEnemy = isEnemy;
         }
 
         public void Shoot()
@@ -30,13 +36,16 @@ namespace _Scripts.Shooting
                 OnChangedGemOnStaff?.Invoke(Gem.Blue); 
                 OnTookDamage?.Invoke(20);
                 //Create Spell
+                
+                if(!_isEnemy)
+                    _stateMachine.EnterInAttackState();
             }
 
             else
             {          
                 OnChangedGemOnStaff?.Invoke(Gem.Red);  
                 
-                
+                _stateMachine.EnterInAttackState();
                 //Передать посох
             }
 

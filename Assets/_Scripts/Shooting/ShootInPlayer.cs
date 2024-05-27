@@ -1,4 +1,5 @@
 ﻿using System;
+using _Scripts.Enemy;
 using _Scripts.Staff;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -12,13 +13,18 @@ namespace _Scripts.Shooting
         
         private MagicAttackStorage _attackStorage;
         private Animator _animator;
+        private EnemyStateMachine _stateMachine;
+
+        private bool _isEnemy;
         
-        public ShootInPlayer(Animator animator, MagicAttackStorage attackStorage)
+        public ShootInPlayer(Animator animator, MagicAttackStorage attackStorage, EnemyStateMachine stateMachine, bool isEnemy)
         {
-            _animator = animator;
             _attackStorage = attackStorage;
+            _animator = animator;
+            _stateMachine = stateMachine;
+            _isEnemy = isEnemy;
         }
-        
+
         public void Shoot()
         {
             _animator.CrossFade("Metalstaff01FastSpin", 2);
@@ -30,6 +36,9 @@ namespace _Scripts.Shooting
                 
                 OnChangedGemOnStaff?.Invoke(Gem.Blue);
                 OnTookDamage?.Invoke(20);
+                
+                if(!_isEnemy)
+                    _stateMachine.EnterInAttackState();
             }
 
             else
