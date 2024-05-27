@@ -1,4 +1,5 @@
 ﻿using System;
+using _Scripts.AttackMoveStateMachine;
 using UnityEngine;
 
 namespace _Scripts.Enemy
@@ -17,13 +18,19 @@ namespace _Scripts.Enemy
 
         #endregion
 
+        public MoveTransition MoveTransition;
         public MagicAttackStorage Storage;
         public Animator StaffAnimator;
-
+        
         private void Start()
         {
             _enemyCurrentState = IdleState;
             _enemyCurrentState.Enter(this);
+        }
+
+        public void EnterInAttackState()
+        {
+            SwitchState(AttackState);
         }
 
         public void SwitchState(EnemyBaseState state)
