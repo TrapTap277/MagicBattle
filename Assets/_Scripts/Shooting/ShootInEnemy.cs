@@ -8,6 +8,7 @@ namespace _Scripts.Shooting
     public class ShootInEnemy : IShoot
     {
         public static event Action<Gem> OnChangedGemOnStaff;
+        public static event Action<float> OnTookDamage;
         
         private MagicAttackStorage _attackStorage;
         private Animator _animator;
@@ -27,7 +28,7 @@ namespace _Scripts.Shooting
                 Debug.Log("Attack in Enemy");
                 
                 OnChangedGemOnStaff?.Invoke(Gem.Blue); 
-                
+                OnTookDamage?.Invoke(20);
                 //Create Spell
             }
 

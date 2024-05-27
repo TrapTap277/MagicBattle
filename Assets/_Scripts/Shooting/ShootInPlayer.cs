@@ -1,12 +1,14 @@
 ﻿using System;
 using _Scripts.Staff;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace _Scripts.Shooting
 {
     public class ShootInPlayer : IShoot
     {       
-        public static event Action<Gem> OnChangedGemOnStaff; 
+        public static event Action<Gem> OnChangedGemOnStaff;
+        public static event Action<float> OnTookDamage;
         
         private MagicAttackStorage _attackStorage;
         private Animator _animator;
@@ -27,6 +29,7 @@ namespace _Scripts.Shooting
                 //Create Spell
                 
                 OnChangedGemOnStaff?.Invoke(Gem.Blue);
+                OnTookDamage?.Invoke(20);
             }
 
             else
