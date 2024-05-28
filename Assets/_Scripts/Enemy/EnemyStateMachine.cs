@@ -29,11 +29,6 @@ namespace _Scripts.Enemy
             _enemyCurrentState.Enter(this);
         }
 
-        public void EnterInAttackState()
-        {
-            SwitchState(AttackState);
-        }
-
         public void SwitchState(EnemyBaseState state)
         {
             _enemyCurrentState.Exit(this);

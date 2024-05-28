@@ -38,14 +38,14 @@ namespace _Scripts.Shooting
                 //Create Spell
                 
                 if(!_isEnemy)
-                    _stateMachine.EnterInAttackState();
+                    _stateMachine.SwitchState(_stateMachine.AttackState);
             }
 
             else
             {          
                 OnChangedGemOnStaff?.Invoke(Gem.Red);  
                 
-                _stateMachine.EnterInAttackState();
+                _stateMachine.SwitchState(_stateMachine.AttackState);
                 //Передать посох
             }
 

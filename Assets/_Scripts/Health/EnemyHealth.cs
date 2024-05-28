@@ -1,5 +1,5 @@
 using System;
-using System.Collections;
+using _Scripts.Health;
 using _Scripts.Shooting;
 using TMPro;
 using UnityEngine;
@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class EnemyHealth : MonoBehaviour
 {
+    public static event Action OnEnemyDied;
+    
     public float _health { get; private set; }
     private float _lerpTimer;
     [SerializeField] private float _maxHealth = 100;
@@ -17,6 +19,8 @@ public class EnemyHealth : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI _healthInPercents;
 
+    private DieCounter _dieCounter = new DieCounter();
+    
     void Start()
     {
         _health = _maxHealth;
@@ -69,6 +73,13 @@ public class EnemyHealth : MonoBehaviour
     {
         _health -= damage;
         _lerpTimer = 0;
+
+        if (_health <= 0)
+        {
+            _dieCounter.AddEnemyDies();
+            
+            OnEnemyDied?.Invoke();
+        }
     }
 
     public void RestoreHealth(float healthAmount)

@@ -20,11 +20,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a27b7c11-43cf-491c-becf-76115ceca5b7" name="Default Changelist" comment="Added HP">
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Die.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Die/DieCounter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Die/DieCounter.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Die/EnemyDeath.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Die/EnemyDeath.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Die/PlayerDeath.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Die/PlayerDeath.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.MagicBattle/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MagicBattle/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.MagicBattle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MagicBattle/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Scenes/MagicScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scenes/MagicScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/AttackMoveStateMachine/MoveTransition.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/AttackMoveStateMachine/MoveTransition.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Attacks/MagicAttackGenerator.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Attacks/MagicAttackGenerator.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Attacks/MagicAttackStorage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Attacks/MagicAttackStorage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Attacks/MagicAttackUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Attacks/MagicAttackUI.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Enemy/EnemyAttackState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Enemy/EnemyAttackState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Enemy/EnemyStateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Enemy/EnemyStateMachine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Health/EnemyHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Health/EnemyHealth.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Health/PlayerHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Health/PlayerHealth.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Shooting/ShootButtons.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Shooting/ShootButtons.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Shooting/ShootInEnemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Shooting/ShootInEnemy.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Shooting/ShootInPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Shooting/ShootInPlayer.cs" afterDir="false" />
     </list>
@@ -39,7 +53,6 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Health/EnemyHealth.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/DC753A10-6128-4F8E-971E-E88EE4826EEE/88/922d4bb3/Void.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Unity/MagicBattle/MagicBattle/Assets/_Scripts/Health/EnemyHealth.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.9.1/Runtime/VisualScripting.Flow/Framework/Math/Sum.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -60,19 +73,24 @@
         <option value="$PROJECT_DIR$/Assets/_Scripts/AttackMoveStateMachine/PlayerMove.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Enemy/EnemyUseItemState.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Enemy/EnemyBaseState.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Attacks/MagicAttackStorage.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Attacks/MagicAttackUI.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Enemy/EnemyIdleState.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/AttackMoveStateMachine/StateMachine.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/AttackMoveStateMachine/EnemyMove.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/AttackMoveStateMachine/MoveTransition.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Health/EnemyHealth.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Health/PlayerHealth.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Enemy/EnemyStateMachine.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Shooting/ShootButtons.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Shooting/ShootInPlayer.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/AttackMoveStateMachine/MoveTransition.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Attacks/MagicAttackGenerator.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Attacks/MagicAttackUI.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Enemy/EnemyAttackState.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Shooting/ShootInEnemy.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Shooting/ShootInPlayer.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Enemy/EnemyStateMachine.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Attacks/MagicAttackStorage.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Health/DieCounter.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Health/EnemyHealth.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Health/PlayerHealth.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Die/DieCounter.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Die/PlayerDeath.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Die/EnemyDeath.cs" />
       </list>
     </option>
   </component>
@@ -129,7 +147,8 @@
       <option name="presentableId" value="Default" />
       <updated>1716709184239</updated>
       <workItem from="1716709221253" duration="20983000" />
-      <workItem from="1716816883270" duration="6688000" />
+      <workItem from="1716816883270" duration="11005000" />
+      <workItem from="1716914579721" duration="227000" />
     </task>
     <task id="LOCAL-00001" summary="Attack With Buttons">
       <created>1716712058302</created>
@@ -297,9 +316,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1716741247203" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1716741336217">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1716914673424">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1716741336217" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1716914673424" />
   </component>
 </project>

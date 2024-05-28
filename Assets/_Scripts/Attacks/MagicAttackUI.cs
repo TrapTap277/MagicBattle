@@ -21,7 +21,7 @@ namespace _Scripts
             {
                 for (int i = 0; i < _attacks.Count; i++)
                 {
-                    Destroy(_attacks[i]);
+                    Destroy(_attacks[i].gameObject);
                 }
                 _attacks.Clear();
             }

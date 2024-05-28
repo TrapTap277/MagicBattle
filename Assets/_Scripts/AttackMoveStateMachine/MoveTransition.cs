@@ -17,6 +17,7 @@ namespace _Scripts.AttackMoveStateMachine
 
             move.Append(Staff.DOMove(EndStaffPosition.position, 2f));
             move.Join(AttackButtons.DOFade(0, 2));
+            AttackButtons.blocksRaycasts = false;
         }
         
         public void TransitionToPlayer()
@@ -25,6 +26,7 @@ namespace _Scripts.AttackMoveStateMachine
 
             move.Append(Staff.DOMove(StartStaffPosition.position, 2f));
             move.Append(AttackButtons.DOFade(1, 2));
+            AttackButtons.blocksRaycasts = true;
         }
     }
 }

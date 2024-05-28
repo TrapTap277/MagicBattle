@@ -12,7 +12,7 @@ namespace _Scripts.Enemy
             
             await Task.Delay(5000);
 
-            float percentToAttack = (float)enemyStateMachine.Storage.RedAttack / 
+            float percentToAttack = (float)enemyStateMachine.Storage.BlueAttack / 
                                     enemyStateMachine.Storage.AttackCount * 100;
             int randomNumber = UnityEngine.Random.Range(0, 100);
 

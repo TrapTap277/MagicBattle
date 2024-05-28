@@ -10,9 +10,13 @@
             <e p="MoveTransition.cs" t="Include" />
           </e>
           <e p="Attacks" t="Include">
-            <e p="MagicAttackGenerator.cs" t="Include" />
             <e p="MagicAttackStorage.cs" t="Include" />
             <e p="MagicAttackUI.cs" t="Include" />
+          </e>
+          <e p="Die" t="Include">
+            <e p="DieCounter.cs" t="Include" />
+            <e p="EnemyDeath.cs" t="Include" />
+            <e p="PlayerDeath.cs" t="Include" />
           </e>
           <e p="Enemy" t="Include">
             <e p="EnemyAttackState.cs" t="Include" />

@@ -38,7 +38,7 @@ namespace _Scripts.Shooting
                 OnTookDamage?.Invoke(20);
                 
                 if(!_isEnemy)
-                    _stateMachine.EnterInAttackState();
+                    _stateMachine.SwitchState(_stateMachine.AttackState);
             }
 
             else
