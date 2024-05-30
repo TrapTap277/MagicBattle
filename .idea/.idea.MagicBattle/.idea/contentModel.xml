@@ -27,6 +27,7 @@
           </e>
           <e p="Health" t="Include">
             <e p="EnemyHealth.cs" t="Include" />
+            <e p="GiveLive.cs" t="Include" />
             <e p="PlayerHealth.cs" t="Include" />
           </e>
           <e p="Shooting" t="Include">

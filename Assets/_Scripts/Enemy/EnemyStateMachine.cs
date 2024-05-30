@@ -1,5 +1,4 @@
-﻿using System;
-using _Scripts.AttackMoveStateMachine;
+﻿using _Scripts.AttackMoveStateMachine;
 using _Scripts.Shooting;
 using UnityEngine;
 
@@ -23,7 +22,7 @@ namespace _Scripts.Enemy
         public ShootButtons ShootButtons;
         public MagicAttackStorage Storage;
         
-        private void Start()
+        private void Awake()
         {
             _enemyCurrentState = IdleState;
             _enemyCurrentState.Enter(this);
