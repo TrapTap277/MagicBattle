@@ -10,12 +10,16 @@ namespace _Scripts.Die
         [SerializeField] private EnemyStateMachine _stateMachine;
         [SerializeField] private GiveLive _giveLive;
 
+        [SerializeField] private CanvasGroup _roundsCounter;
         
         public void Death()
         {
+            DieUI dieUI = new DieUI(_roundsCounter);
+            
             _attackStorage.GenerateMagicAttacks();
             _stateMachine.SwitchState(_stateMachine.IdleState);
             _giveLive.RestoreHealth(200);
+            dieUI.GiveWinRoundToPlayer();
         }
 
         private void OnEnable()

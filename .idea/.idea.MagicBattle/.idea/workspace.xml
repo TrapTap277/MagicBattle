@@ -19,17 +19,23 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a27b7c11-43cf-491c-becf-76115ceca5b7" name="Default Changelist" comment="Added DieCounters">
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Health/GiveLive.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Health/GiveLive.cs.meta" afterDir="false" />
+    <list default="true" id="a27b7c11-43cf-491c-becf-76115ceca5b7" name="Default Changelist" comment="Bug fix">
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Die/DieUI.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Die/DieUI.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MagicBattle/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MagicBattle/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MagicBattle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MagicBattle/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StaffMaterials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StaffMaterials/AttackUI.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StaffMaterials/AttackUI.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StaffMaterials/Blue.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StaffMaterials/Blue.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StaffMaterials/Grey.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StaffMaterials/Grey.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StaffMaterials/Red.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StaffMaterials/Red.mat.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Scenes/MagicScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scenes/MagicScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Attacks/MagicAttackStorage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Attacks/MagicAttackStorage.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Die/EnemyDeath.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Die/EnemyDeath.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Die/PlayerDeath.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Die/PlayerDeath.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Enemy/EnemyAttackState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Enemy/EnemyAttackState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Enemy/EnemyStateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Enemy/EnemyStateMachine.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,12 +82,13 @@
         <option value="$PROJECT_DIR$/Assets/_Scripts/Die/DieCounter.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Health/RestoreHealth.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Health/GiveLive.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Die/PlayerDeath.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Die/EnemyDeath.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Enemy/EnemyStateMachine.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Attacks/MagicAttackStorage.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Attacks/MagicAttackUI.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Enemy/EnemyAttackState.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Die/EnemyDeath.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Die/PlayerDeath.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Die/DieUI.cs" />
       </list>
     </option>
   </component>
@@ -140,7 +147,7 @@
       <workItem from="1716709221253" duration="20983000" />
       <workItem from="1716816883270" duration="11005000" />
       <workItem from="1716914579721" duration="3426000" />
-      <workItem from="1717055940385" duration="6126000" />
+      <workItem from="1717055940385" duration="7539000" />
     </task>
     <task id="LOCAL-00001" summary="Attack With Buttons">
       <created>1716712058302</created>
@@ -198,7 +205,14 @@
       <option name="project" value="LOCAL" />
       <updated>1716914827935</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Bug fix">
+      <created>1717072762111</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1717072762111</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -229,7 +243,8 @@
     <MESSAGE value="Added Transition Between attacks" />
     <MESSAGE value="Added HP" />
     <MESSAGE value="Added DieCounters" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added DieCounters" />
+    <MESSAGE value="Bug fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bug fix" />
   </component>
   <component name="WindowStateProjectService">
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1716822120262">
@@ -308,10 +323,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1716714690513" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1716914834309">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1717072764980">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1716914834309" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1717072764980" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1716741247203">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

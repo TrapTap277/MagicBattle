@@ -15,6 +15,7 @@
           </e>
           <e p="Die" t="Include">
             <e p="DieCounter.cs" t="Include" />
+            <e p="DieUI.cs" t="Include" />
             <e p="EnemyDeath.cs" t="Include" />
             <e p="PlayerDeath.cs" t="Include" />
           </e>
