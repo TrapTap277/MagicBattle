@@ -14,7 +14,6 @@
               <e p="Scripts" t="Include">
                 <e p="FirstPersonLook.cs" t="Include" />
                 <e p="FirstPersonMovement.cs" t="Include" />
-                <e p="WeaponCrate.cs" t="Include" />
               </e>
             </e>
           </e>
@@ -72,6 +71,10 @@
           <e p="Attacks" t="Include">
             <e p="MagicAttackStorage.cs" t="Include" />
             <e p="MagicAttackUI.cs" t="Include" />
+          </e>
+          <e p="BoxWithItems" t="Include">
+            <e p="BoxWithItems.cs" t="Include" />
+            <e p="CreateBox.cs" t="Include" />
           </e>
           <e p="Die" t="Include">
             <e p="DieCounter.cs" t="Include" />
