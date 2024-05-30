@@ -19,23 +19,647 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a27b7c11-43cf-491c-becf-76115ceca5b7" name="Default Changelist" comment="Bug fix">
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Die/DieUI.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Die/DieUI.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MagicBattle/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MagicBattle/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MagicBattle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MagicBattle/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StaffMaterials.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StaffMaterials/AttackUI.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StaffMaterials/AttackUI.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StaffMaterials/Blue.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StaffMaterials/Blue.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StaffMaterials/Grey.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StaffMaterials/Grey.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StaffMaterials/Red.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StaffMaterials/Red.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scenes/MagicScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scenes/MagicScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Die/EnemyDeath.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Die/EnemyDeath.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Die/PlayerDeath.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Die/PlayerDeath.cs" afterDir="false" />
+    <list default="true" id="a27b7c11-43cf-491c-becf-76115ceca5b7" name="Default Changelist" comment="Added Rounds">
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/AdventureForge.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/AdventureForge/AnimationCtrl/Metalstaff01.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/AdventureForge/AnimationCtrl/Metalstaff01/Metalstaff01AnimCtrl.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/AdventureForge/AnimationCtrl/Metalstaff01/Metalstaff01AnimCtrl.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/AdventureForge/FantasyStaffReadme.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/AdventureForge/FantasyStaffReadme.txt.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/AdventureForge/Geometry.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/AdventureForge/Geometry/Metalstaff01/Materials.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/AdventureForge/Geometry/Metalstaff01/Materials/512/MetalstaffCasing512MA.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/AdventureForge/Geometry/Metalstaff01/Materials/512/MetalstaffCasing512MA.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/AdventureForge/Geometry/Metalstaff01/Materials/512/MetalstaffInnerGem512MA.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/AdventureForge/Geometry/Metalstaff01/Materials/512/MetalstaffInnerGem512MA.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/AdventureForge/Geometry/Metalstaff01/Materials/512/MetalstaffRing512MA.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/AdventureForge/Geometry/Metalstaff01/Materials/512/MetalstaffRod512MA.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/AdventureForge/Geometry/Metalstaff01/Materials/512/MetalstaffRod512MA.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/AdventureForge/Geometry/Metalstaff01/Materials/Metalstaff01CasingMA.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/AdventureForge/Geometry/Metalstaff01/Materials/Metalstaff01CasingMA.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/AdventureForge/Geometry/Metalstaff01/Materials/Metalstaff01InnerGemMA.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/AdventureForge/Geometry/Metalstaff01/Materials/Metalstaff01Ring.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/AdventureForge/Geometry/Metalstaff01/Materials/Metalstaff01Ring.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/AdventureForge/Geometry/Metalstaff01/Materials/Metalstaff01RodMA.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/AdventureForge/Geometry/Metalstaff01/Materials/Metalstaff01RodMA.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/AdventureForge/Geometry/Metalstaff01/Metalstaff01.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/AdventureForge/Geometry/Metalstaff01/Metalstaff01.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/AdventureForge/Geometry/Metalstaff01/Metalstaff01.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/AdventureForge/Geometry/Metalstaff01/Metalstaff01.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/AdventureForge/PreFab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/AdventureForge/PreFab/Metalstaff01.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/AdventureForge/PreFab/Metalstaff01/512.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/AdventureForge/PreFab/Metalstaff01/512/Metalstaff01.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/AdventureForge/PreFab/Metalstaff01/512/Metalstaff01.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/AdventureForge/Texture.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/AdventureForge/Texture/Metalstaff01.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/AdventureForge/Texture/Metalstaff01/512.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/AdventureForge/Texture/Metalstaff01/512/Metalstaff01 Casing.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/AdventureForge/Texture/Metalstaff01/512/Metalstaff01 Casing/Metalstaff01CasingMA_AO.tif.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/AdventureForge/Texture/Metalstaff01/512/Metalstaff01 Casing/Metalstaff01CasingMA_AlbedoTransparency.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/AdventureForge/Texture/Metalstaff01/512/Metalstaff01 Casing/Metalstaff01CasingMA_AlbedoTransparency.tif.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/AdventureForge/Texture/Metalstaff01/512/Metalstaff01 Casing/Metalstaff01CasingMA_Emission.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/AdventureForge/Texture/Metalstaff01/512/Metalstaff01 Casing/Metalstaff01CasingMA_Emission.tif.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/AdventureForge/Texture/Metalstaff01/512/Metalstaff01 Casing/Metalstaff01CasingMA_MetallicSmoothness.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/AdventureForge/Texture/Metalstaff01/512/Metalstaff01 Casing/Metalstaff01CasingMA_MetallicSmoothness.tif.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/AdventureForge/Texture/Metalstaff01/512/Metalstaff01 Casing/Metalstaff01CasingMA_MetallicSmoothness2.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/AdventureForge/Texture/Metalstaff01/512/Metalstaff01 Casing/Metalstaff01CasingMA_MetallicSmoothness2.tif.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/AdventureForge/Texture/Metalstaff01/512/Metalstaff01 Casing/Metalstaff01CasingMA_Normal.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/AdventureForge/Texture/Metalstaff01/512/Metalstaff01 Casing/Metalstaff01CasingMA_Normal.tif.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/AdventureForge/Texture/Metalstaff01/512/Metalstaff01 Rings.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/AdventureForge/Texture/Metalstaff01/512/Metalstaff01 Rings/Metalstaff01Ring_AO.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/AdventureForge/Texture/Metalstaff01/512/Metalstaff01 Rings/Metalstaff01Ring_AO.tif.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/AdventureForge/Texture/Metalstaff01/512/Metalstaff01 Rings/Metalstaff01Ring_AlbedoTransparency.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/AdventureForge/Texture/Metalstaff01/512/Metalstaff01 Rings/Metalstaff01Ring_AlbedoTransparency.tif.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/AdventureForge/Texture/Metalstaff01/512/Metalstaff01 Rings/Metalstaff01Ring_MetallicSmoothness.tif.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/AdventureForge/Texture/Metalstaff01/512/Metalstaff01 Rings/Metalstaff01Ring_Normal.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/AdventureForge/Texture/Metalstaff01/512/Metalstaff01 Rings/Metalstaff01Ring_Normal.tif.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/AdventureForge/Texture/Metalstaff01/512/Metalstaff01 Rod/Metalstaff01RodMA_AO.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/AdventureForge/Texture/Metalstaff01/512/Metalstaff01 Rod/Metalstaff01RodMA_AlbedoTransparency.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/AdventureForge/Texture/Metalstaff01/512/Metalstaff01 Rod/Metalstaff01RodMA_MetallicSmoothness.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/AdventureForge/Texture/Metalstaff01/512/Metalstaff01 Rod/Metalstaff01RodMA_MetallicSmoothness.tif.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/AdventureForge/Texture/Metalstaff01/512/Metalstaff01 Rod/Metalstaff01RodMA_MetallicSmoothness2.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/AdventureForge/Texture/Metalstaff01/512/Metalstaff01 Rod/Metalstaff01RodMA_MetallicSmoothness2.tif.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/AdventureForge/Texture/Metalstaff01/512/Metalstaff01 Rod/Metalstaff01RodMA_Normal.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/AdventureForge/Texture/Metalstaff01/512/Metalstaff01 Rod/Metalstaff01RodMA_Normal.tif.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TextMesh Pro/Documentation/TextMesh Pro User Guide 2016.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TextMesh Pro/Documentation/TextMesh Pro User Guide 2016.pdf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TextMesh Pro/Fonts.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TextMesh Pro/Fonts/LiberationSans - OFL.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TextMesh Pro/Fonts/LiberationSans - OFL.txt.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TextMesh Pro/Fonts/LiberationSans.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TextMesh Pro/Fonts/LiberationSans.ttf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TextMesh Pro/Resources.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TextMesh Pro/Resources/Fonts &amp; Materials.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Drop Shadow.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Drop Shadow.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Outline.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Outline.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TextMesh Pro/Resources/LineBreaking Following Characters.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TextMesh Pro/Resources/LineBreaking Leading Characters.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TextMesh Pro/Resources/Sprite Assets.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TextMesh Pro/Resources/Sprite Assets/EmojiOne.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TextMesh Pro/Resources/Sprite Assets/EmojiOne.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TextMesh Pro/Resources/Style Sheets.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TextMesh Pro/Resources/Style Sheets/Default Style Sheet.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TextMesh Pro/Resources/Style Sheets/Default Style Sheet.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TextMesh Pro/Resources/TMP Settings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TextMesh Pro/Resources/TMP Settings.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TextMesh Pro/Shaders.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TextMesh Pro/Shaders/TMP_Bitmap-Custom-Atlas.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TextMesh Pro/Shaders/TMP_Bitmap-Custom-Atlas.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TextMesh Pro/Shaders/TMP_Bitmap-Mobile.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TextMesh Pro/Shaders/TMP_Bitmap-Mobile.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TextMesh Pro/Shaders/TMP_SDF Overlay.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TextMesh Pro/Shaders/TMP_SDF Overlay.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Masking.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile SSD.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile SSD.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TextMesh Pro/Shaders/TMP_SDF-Surface-Mobile.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TextMesh Pro/Shaders/TMP_SDF-Surface-Mobile.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TextMesh Pro/Shaders/TMP_SDF-Surface.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TextMesh Pro/Shaders/TMP_SDF-Surface.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TextMesh Pro/Shaders/TMP_SDF.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TextMesh Pro/Shaders/TMP_Sprite.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TextMesh Pro/Shaders/TMP_Sprite.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TextMesh Pro/Shaders/TMPro.cginc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TextMesh Pro/Shaders/TMPro_Mobile.cginc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TextMesh Pro/Shaders/TMPro_Mobile.cginc.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TextMesh Pro/Shaders/TMPro_Properties.cginc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TextMesh Pro/Shaders/TMPro_Properties.cginc.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TextMesh Pro/Shaders/TMPro_Surface.cginc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TextMesh Pro/Shaders/TMPro_Surface.cginc.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TextMesh Pro/Sprites/EmojiOne Attribution.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TextMesh Pro/Sprites/EmojiOne Attribution.txt.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TextMesh Pro/Sprites/EmojiOne.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TextMesh Pro/Sprites/EmojiOne.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TextMesh Pro/Sprites/EmojiOne.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Common Files.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Common Files/Scripts.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Common Files/Scripts/TF_FW_WindController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Common Files/Scripts/TF_FW_WindController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Common Files/Shaders.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Common Files/Shaders/FWGrass.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Common Files/Shaders/FWRocks.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Common Files/Shaders/FWRocks.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Common Files/Shaders/FWTreeBark.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Common Files/Shaders/FWTreeBark.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Common Files/Textures.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Common Files/Textures/T_fw_Particle_Dust.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Common Files/Textures/T_fw_Particle_Flame.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Common Files/Textures/T_fw_Smoke_01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Common Files/Textures/T_fw_Wind_Map_Direction.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Common Files/Textures/T_fw_Wind_Map_Direction.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Common Files/Textures/T_fw_Wind_Map_Strength.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Common Files/Textures/T_fw_Wind_Map_Strength.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Common Files/TriForge Wind Controller.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Materials.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Materials/M_fwOF_ForestPlants_01.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Materials/M_fwOF_Grass_01.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Materials/M_fwOF_Grass_01.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Materials/M_fwOF_Leaf_Branches_01.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Materials/M_fwOF_Leaf_Branches_01.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Materials/M_fwOF_Leaf_Branches_01B.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Materials/M_fwOF_Leaf_Branches_01B.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Materials/M_fwOF_Rocks_01.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Materials/M_fwOF_Rocks_01.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Materials/M_fwOF_SaplingBark_01.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Materials/M_fwOF_SaplingBark_01.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Materials/M_fwOF_SkyBox_01.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Materials/M_fwOF_Stones_01.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Materials/M_fwOF_Stones_01.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Materials/M_fwOF_TreeBillboard_01.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Materials/M_fwOF_TreeBillboard_01.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Materials/M_fwOF_TreeLOD_01.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Materials/M_fwOF_TreeLOD_01.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Materials/M_fwOF_Tree_Med_2A.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Materials/M_fwOF_Tree_Med_2B.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Meshes.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Meshes/MSH_fwOF_ForestPlant_B_02.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Meshes/MSH_fwOF_ForestPlant_B_02.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Meshes/MSH_fwOF_Grass_M_1.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Meshes/MSH_fwOF_Grass_M_1.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Meshes/MSH_fwOF_Rock_01.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Meshes/MSH_fwOF_Stone_01.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Meshes/MSH_fwOF_Stone_01.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Meshes/MSH_fwOF_TreeSapling_02B.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Meshes/MSH_fwOF_TreeSapling_02B.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Meshes/MSH_fwOF_Tree_Med_02.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Prefabs/New Lighting Settings.lighting" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Prefabs/New Lighting Settings.lighting.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Prefabs/P_fwOF_ForestPlant_B_02.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Prefabs/P_fwOF_ForestPlant_B_02.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Prefabs/P_fwOF_Grass_M_1.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Prefabs/P_fwOF_Grass_M_1.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Prefabs/P_fwOF_Rock_01.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Prefabs/P_fwOF_Rock_01.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Prefabs/P_fwOF_Stone_01.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Prefabs/P_fwOF_Stone_01.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Prefabs/P_fwOF_TreeSapling_02B.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Prefabs/P_fwOF_Tree_M_2.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Prefabs/P_fwOF_Tree_M_2.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Scenes.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Scenes/Built-in Renderer.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Scenes/Built-in Renderer/Demo Scene Files.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Scenes/Built-in Renderer/Demo Scene Files/Materials.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Scenes/Built-in Renderer/Demo Scene Files/Materials/Old Forest Overview.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Scenes/Built-in Renderer/Demo Scene Files/fwOF_FreeDemo_OldForest.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Scenes/Built-in Renderer/Demo Scene Files/fwOF_FreeDemo_OldForest/Background.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Scenes/Built-in Renderer/Demo Scene Files/fwOF_FreeDemo_OldForest/Background.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Scenes/Built-in Renderer/Demo Scene Files/fwOF_FreeDemo_OldForest/LightingData.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Scenes/Built-in Renderer/Demo Scene Files/fwOF_FreeDemo_OldForest/LightingData.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Scenes/Built-in Renderer/Demo Scene Files/fwOF_FreeDemo_OldForest/New Material.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Scenes/Built-in Renderer/Demo Scene Files/fwOF_FreeDemo_OldForest/New Material.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Scenes/Built-in Renderer/Demo Scene Files/fwOF_FreeDemo_OldForest/New Terrain 1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Scenes/Built-in Renderer/Demo Scene Files/fwOF_FreeDemo_OldForest/New Terrain 1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Scenes/Built-in Renderer/Demo Scene Files/fwOF_FreeDemo_OldForest/Old Forest Overview.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Scenes/Built-in Renderer/Demo Scene Files/fwOF_FreeDemo_OldForest/Old Forest Overview.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Scenes/Built-in Renderer/Demo Scene Files/fwOF_FreeDemo_OldForest/ReflectionProbe-0.exr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Scenes/Built-in Renderer/Demo Scene Files/fwOF_FreeDemo_OldForest/ReflectionProbe-1.exr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Scenes/Built-in Renderer/fwOF_FreeDemo_Assets.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Scenes/Built-in Renderer/fwOF_FreeDemo_Assets.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/T_fwOF_ForestPlants_01_BC.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/T_fwOF_ForestPlants_01_MAOS.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/T_fwOF_ForestPlants_01_MAOS.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/T_fwOF_ForestPlants_01_N.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/T_fwOF_Grass_BC.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/T_fwOF_Grass_MAOS.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/T_fwOF_Grass_MAOS.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/T_fwOF_Rocks_01_BC.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/T_fwOF_Rocks_01_BC.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/T_fwOF_Rocks_01_MAOS.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/T_fwOF_Rocks_01_MAOS.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/T_fwOF_Rocks_01_N.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/T_fwOF_Sky_01.HDR" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/T_fwOF_Sky_01.HDR.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/T_fwOF_Stones_01_BC.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/T_fwOF_Stones_01_N.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/T_fwOF_Stones_01_N.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Terrain/TL_fwOF_Grass_01 1.terrainlayer" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Terrain/TL_fwOF_Grass_01 1.terrainlayer.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Terrain/TL_fwOF_RockSurf_02.terrainlayer" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Terrain/TL_fwOF_RockSurf_02.terrainlayer.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Terrain/TL_fwOF_Soil_01.terrainlayer" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Terrain/TL_fwOF_Soil_01.terrainlayer.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Terrain/TL_fwOF_TerrainMoss_01.terrainlayer" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Terrain/TL_fwOF_TerrainMoss_01.terrainlayer.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Terrain/T_fwOF_GrassTerrain_01_BC.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Terrain/T_fwOF_GrassTerrain_01_BC.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Terrain/T_fwOF_GrassTerrain_01_Mask.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Terrain/T_fwOF_GrassTerrain_01_Mask.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Terrain/T_fwOF_GrassTerrain_01_N.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Terrain/T_fwOF_GrassTerrain_01_N.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Terrain/T_fwOF_Moss_02_BC.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Terrain/T_fwOF_Moss_02_BC.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Terrain/T_fwOF_Moss_02_Mask.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Terrain/T_fwOF_Moss_02_Mask.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Terrain/T_fwOF_Moss_02_N.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Terrain/T_fwOF_Moss_02_N.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Terrain/T_fwOF_RockSurf_02_BC.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Terrain/T_fwOF_RockSurf_02_BC.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Terrain/T_fwOF_RockSurf_02_Mask.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Terrain/T_fwOF_RockSurf_02_N.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Terrain/T_fwOF_RockSurf_02_N.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Terrain/T_fwOF_Soil_01_BC.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Terrain/T_fwOF_Soil_01_BC.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Terrain/T_fwOF_Soil_01_Mask.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Terrain/T_fwOF_Soil_01_N.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Terrain/T_fwOF_Soil_01_N.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Trees/T_fwOF_Leaf_Branch_BC.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Trees/T_fwOF_Leaf_Branch_BC.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Trees/T_fwOF_Leaf_Branch_N.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Trees/T_fwOF_Leaf_Branch_N.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Trees/T_fwOF_SaplingBark_01_BC.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Trees/T_fwOF_SaplingBark_01_BC.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Trees/T_fwOF_SaplingBark_01_MAOS.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Trees/T_fwOF_SaplingBark_01_N.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Trees/T_fwOF_TreeBillboard_BC.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Trees/T_fwOF_TreeBillboard_BC.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Trees/T_fwOF_TreeBillboard_N.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Trees/T_fwOF_TreeBillboard_N.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Trees/T_fwOF_TreeLOD_01_BC.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Trees/T_fwOF_TreeLOD_01_MAOS.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Trees/T_fwOF_TreeLOD_01_N.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Trees/T_fwOF_Tree_Med_02_BC_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Trees/T_fwOF_Tree_Med_02_BC_1.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Trees/T_fwOF_Tree_Med_02_BC_2.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Trees/T_fwOF_Tree_Med_02_MAOS_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Trees/T_fwOF_Tree_Med_02_MAOS_1.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Trees/T_fwOF_Tree_Med_02_MAOS_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Trees/T_fwOF_Tree_Med_02_MAOS_2.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Trees/T_fwOF_Tree_Med_02_N_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Trees/T_fwOF_Tree_Med_02_N_1.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Trees/T_fwOF_Tree_Med_02_N_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Trees/T_fwOF_Tree_Med_02_N_2.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/fwOF_PostProcessing_01.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/fwOF_PostProcessing_01.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/ReadMe.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/ReadMe.txt.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/_BiRP Content - Fantasy Worlds - Old Forest DEMO.unitypackage.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/_URP Content - Fantasy Worlds - Old Forest DEMO.unitypackage.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/AnimationCtrl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/AnimationCtrl/Metalstaff01.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/AnimationCtrl/Metalstaff01/Metalstaff01AnimCtrl.controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/AnimationCtrl/Metalstaff01/Metalstaff01AnimCtrl.controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/FantasyStaffReadme.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/FantasyStaffReadme.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/Geometry.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/Geometry/Metalstaff01.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/Geometry/Metalstaff01/Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/Geometry/Metalstaff01/Materials/512.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/Geometry/Metalstaff01/Materials/512/MetalstaffCasing512MA.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/Geometry/Metalstaff01/Materials/512/MetalstaffCasing512MA.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/Geometry/Metalstaff01/Materials/512/MetalstaffInnerGem512MA.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/Geometry/Metalstaff01/Materials/512/MetalstaffInnerGem512MA.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/Geometry/Metalstaff01/Materials/512/MetalstaffRing512MA.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/Geometry/Metalstaff01/Materials/512/MetalstaffRing512MA.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/Geometry/Metalstaff01/Materials/512/MetalstaffRod512MA.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/Geometry/Metalstaff01/Materials/512/MetalstaffRod512MA.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/Geometry/Metalstaff01/Materials/Metalstaff01CasingMA.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/Geometry/Metalstaff01/Materials/Metalstaff01CasingMA.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/Geometry/Metalstaff01/Materials/Metalstaff01InnerGemMA.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/Geometry/Metalstaff01/Materials/Metalstaff01InnerGemMA.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/Geometry/Metalstaff01/Materials/Metalstaff01Ring.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/Geometry/Metalstaff01/Materials/Metalstaff01Ring.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/Geometry/Metalstaff01/Materials/Metalstaff01RodMA.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/Geometry/Metalstaff01/Materials/Metalstaff01RodMA.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/Geometry/Metalstaff01/Metalstaff01.controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/Geometry/Metalstaff01/Metalstaff01.controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/Geometry/Metalstaff01/Metalstaff01.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/Geometry/Metalstaff01/Metalstaff01.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/PreFab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/PreFab/Metalstaff01.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/PreFab/Metalstaff01/512.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/PreFab/Metalstaff01/512/Metalstaff01.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/PreFab/Metalstaff01/512/Metalstaff01.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/Texture.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/Texture/Metalstaff01.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/Texture/Metalstaff01/512.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/Texture/Metalstaff01/512/Metalstaff01 Casing.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/Texture/Metalstaff01/512/Metalstaff01 Casing/Metalstaff01CasingMA_AO.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/Texture/Metalstaff01/512/Metalstaff01 Casing/Metalstaff01CasingMA_AO.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/Texture/Metalstaff01/512/Metalstaff01 Casing/Metalstaff01CasingMA_AlbedoTransparency.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/Texture/Metalstaff01/512/Metalstaff01 Casing/Metalstaff01CasingMA_AlbedoTransparency.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/Texture/Metalstaff01/512/Metalstaff01 Casing/Metalstaff01CasingMA_Emission.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/Texture/Metalstaff01/512/Metalstaff01 Casing/Metalstaff01CasingMA_Emission.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/Texture/Metalstaff01/512/Metalstaff01 Casing/Metalstaff01CasingMA_MetallicSmoothness.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/Texture/Metalstaff01/512/Metalstaff01 Casing/Metalstaff01CasingMA_MetallicSmoothness.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/Texture/Metalstaff01/512/Metalstaff01 Casing/Metalstaff01CasingMA_MetallicSmoothness2.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/Texture/Metalstaff01/512/Metalstaff01 Casing/Metalstaff01CasingMA_MetallicSmoothness2.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/Texture/Metalstaff01/512/Metalstaff01 Casing/Metalstaff01CasingMA_Normal.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/Texture/Metalstaff01/512/Metalstaff01 Casing/Metalstaff01CasingMA_Normal.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/Texture/Metalstaff01/512/Metalstaff01 Rings.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/Texture/Metalstaff01/512/Metalstaff01 Rings/Metalstaff01Ring_AO.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/Texture/Metalstaff01/512/Metalstaff01 Rings/Metalstaff01Ring_AO.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/Texture/Metalstaff01/512/Metalstaff01 Rings/Metalstaff01Ring_AlbedoTransparency.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/Texture/Metalstaff01/512/Metalstaff01 Rings/Metalstaff01Ring_AlbedoTransparency.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/Texture/Metalstaff01/512/Metalstaff01 Rings/Metalstaff01Ring_MetallicSmoothness.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/Texture/Metalstaff01/512/Metalstaff01 Rings/Metalstaff01Ring_MetallicSmoothness.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/Texture/Metalstaff01/512/Metalstaff01 Rings/Metalstaff01Ring_Normal.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/Texture/Metalstaff01/512/Metalstaff01 Rings/Metalstaff01Ring_Normal.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/Texture/Metalstaff01/512/Metalstaff01 Rod.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/Texture/Metalstaff01/512/Metalstaff01 Rod/Metalstaff01RodMA_AO.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/Texture/Metalstaff01/512/Metalstaff01 Rod/Metalstaff01RodMA_AO.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/Texture/Metalstaff01/512/Metalstaff01 Rod/Metalstaff01RodMA_AlbedoTransparency.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/Texture/Metalstaff01/512/Metalstaff01 Rod/Metalstaff01RodMA_AlbedoTransparency.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/Texture/Metalstaff01/512/Metalstaff01 Rod/Metalstaff01RodMA_MetallicSmoothness.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/Texture/Metalstaff01/512/Metalstaff01 Rod/Metalstaff01RodMA_MetallicSmoothness.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/Texture/Metalstaff01/512/Metalstaff01 Rod/Metalstaff01RodMA_MetallicSmoothness2.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/Texture/Metalstaff01/512/Metalstaff01 Rod/Metalstaff01RodMA_MetallicSmoothness2.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/Texture/Metalstaff01/512/Metalstaff01 Rod/Metalstaff01RodMA_Normal.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/AdventureForge/Texture/Metalstaff01/512/Metalstaff01 Rod/Metalstaff01RodMA_Normal.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Documentation.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Documentation/TextMesh Pro User Guide 2016.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Documentation/TextMesh Pro User Guide 2016.pdf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Fonts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Fonts/LiberationSans - OFL.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Fonts/LiberationSans - OFL.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Fonts/LiberationSans.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Fonts/LiberationSans.ttf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Resources.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Resources/Fonts &amp; Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Drop Shadow.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Drop Shadow.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Outline.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Outline.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Resources/LineBreaking Following Characters.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Resources/LineBreaking Following Characters.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Resources/LineBreaking Leading Characters.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Resources/LineBreaking Leading Characters.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Resources/Sprite Assets.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Resources/Sprite Assets/EmojiOne.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Resources/Sprite Assets/EmojiOne.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Resources/Style Sheets.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Resources/Style Sheets/Default Style Sheet.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Resources/Style Sheets/Default Style Sheet.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Resources/TMP Settings.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Resources/TMP Settings.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Shaders.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Shaders/TMP_Bitmap-Custom-Atlas.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Shaders/TMP_Bitmap-Custom-Atlas.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Shaders/TMP_Bitmap-Mobile.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Shaders/TMP_Bitmap-Mobile.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Shaders/TMP_SDF Overlay.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Shaders/TMP_SDF Overlay.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Shaders/TMP_SDF SSD.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Shaders/TMP_SDF SSD.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Masking.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Masking.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile SSD.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile SSD.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Shaders/TMP_SDF-Surface-Mobile.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Shaders/TMP_SDF-Surface-Mobile.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Shaders/TMP_SDF-Surface.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Shaders/TMP_SDF-Surface.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Shaders/TMP_SDF.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Shaders/TMP_SDF.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Shaders/TMP_Sprite.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Shaders/TMP_Sprite.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Shaders/TMPro.cginc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Shaders/TMPro.cginc.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Shaders/TMPro_Mobile.cginc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Shaders/TMPro_Mobile.cginc.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Shaders/TMPro_Properties.cginc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Shaders/TMPro_Properties.cginc.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Shaders/TMPro_Surface.cginc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Shaders/TMPro_Surface.cginc.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Sprites.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Sprites/EmojiOne Attribution.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Sprites/EmojiOne Attribution.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Sprites/EmojiOne.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Sprites/EmojiOne.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Sprites/EmojiOne.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TextMesh Pro/Sprites/EmojiOne.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Common Files.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Common Files/Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Common Files/Scripts/TF_FW_WindController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Common Files/Scripts/TF_FW_WindController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Common Files/Shaders.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Common Files/Shaders/FWGrass.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Common Files/Shaders/FWGrass.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Common Files/Shaders/FWRocks.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Common Files/Shaders/FWRocks.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Common Files/Shaders/FWTreeBark.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Common Files/Shaders/FWTreeBark.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Common Files/Shaders/FWTreeLeaf.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Common Files/Shaders/FWTreeLeaf.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Common Files/Textures.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Common Files/Textures/T_fw_Particle_Dust.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Common Files/Textures/T_fw_Particle_Dust.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Common Files/Textures/T_fw_Particle_Flame.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Common Files/Textures/T_fw_Particle_Flame.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Common Files/Textures/T_fw_Smoke_01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Common Files/Textures/T_fw_Smoke_01.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Common Files/Textures/T_fw_Wind_Map_Direction.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Common Files/Textures/T_fw_Wind_Map_Direction.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Common Files/Textures/T_fw_Wind_Map_Strength.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Common Files/Textures/T_fw_Wind_Map_Strength.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Common Files/TriForge Wind Controller.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Common Files/TriForge Wind Controller.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Materials/M_fwOF_ForestPlants_01.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Materials/M_fwOF_ForestPlants_01.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Materials/M_fwOF_Grass_01.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Materials/M_fwOF_Grass_01.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Materials/M_fwOF_Leaf_Branches_01.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Materials/M_fwOF_Leaf_Branches_01.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Materials/M_fwOF_Leaf_Branches_01B.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Materials/M_fwOF_Leaf_Branches_01B.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Materials/M_fwOF_Rocks_01.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Materials/M_fwOF_Rocks_01.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Materials/M_fwOF_SaplingBark_01.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Materials/M_fwOF_SaplingBark_01.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Materials/M_fwOF_SkyBox_01.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Materials/M_fwOF_SkyBox_01.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Materials/M_fwOF_Stones_01.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Materials/M_fwOF_Stones_01.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Materials/M_fwOF_TreeBillboard_01.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Materials/M_fwOF_TreeBillboard_01.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Materials/M_fwOF_TreeLOD_01.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Materials/M_fwOF_TreeLOD_01.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Materials/M_fwOF_Tree_Med_2A.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Materials/M_fwOF_Tree_Med_2A.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Materials/M_fwOF_Tree_Med_2B.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Materials/M_fwOF_Tree_Med_2B.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Meshes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Meshes/MSH_fwOF_ForestPlant_B_02.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Meshes/MSH_fwOF_ForestPlant_B_02.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Meshes/MSH_fwOF_Grass_M_1.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Meshes/MSH_fwOF_Grass_M_1.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Meshes/MSH_fwOF_Rock_01.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Meshes/MSH_fwOF_Rock_01.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Meshes/MSH_fwOF_Stone_01.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Meshes/MSH_fwOF_Stone_01.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Meshes/MSH_fwOF_TreeSapling_02B.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Meshes/MSH_fwOF_TreeSapling_02B.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Meshes/MSH_fwOF_Tree_Med_02.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Meshes/MSH_fwOF_Tree_Med_02.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Prefabs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Prefabs/New Lighting Settings.lighting" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Prefabs/New Lighting Settings.lighting.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Prefabs/P_fwOF_ForestPlant_B_02.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Prefabs/P_fwOF_ForestPlant_B_02.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Prefabs/P_fwOF_Grass_M_1.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Prefabs/P_fwOF_Grass_M_1.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Prefabs/P_fwOF_Rock_01.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Prefabs/P_fwOF_Rock_01.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Prefabs/P_fwOF_Stone_01.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Prefabs/P_fwOF_Stone_01.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Prefabs/P_fwOF_TreeSapling_02B.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Prefabs/P_fwOF_TreeSapling_02B.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Prefabs/P_fwOF_Tree_M_2.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Prefabs/P_fwOF_Tree_M_2.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Scenes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Scenes/Built-in Renderer.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Scenes/Built-in Renderer/Demo Scene Files.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Scenes/Built-in Renderer/Demo Scene Files/Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Scenes/Built-in Renderer/Demo Scene Files/Materials/Old Forest Overview.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Scenes/Built-in Renderer/Demo Scene Files/Materials/Old Forest Overview.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Scenes/Built-in Renderer/Demo Scene Files/fwOF_FreeDemo_OldForest.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Scenes/Built-in Renderer/Demo Scene Files/fwOF_FreeDemo_OldForest/Background.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Scenes/Built-in Renderer/Demo Scene Files/fwOF_FreeDemo_OldForest/Background.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Scenes/Built-in Renderer/Demo Scene Files/fwOF_FreeDemo_OldForest/LightingData.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Scenes/Built-in Renderer/Demo Scene Files/fwOF_FreeDemo_OldForest/LightingData.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Scenes/Built-in Renderer/Demo Scene Files/fwOF_FreeDemo_OldForest/New Material.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Scenes/Built-in Renderer/Demo Scene Files/fwOF_FreeDemo_OldForest/New Material.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Scenes/Built-in Renderer/Demo Scene Files/fwOF_FreeDemo_OldForest/New Terrain 1.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Scenes/Built-in Renderer/Demo Scene Files/fwOF_FreeDemo_OldForest/New Terrain 1.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Scenes/Built-in Renderer/Demo Scene Files/fwOF_FreeDemo_OldForest/Old Forest Overview.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Scenes/Built-in Renderer/Demo Scene Files/fwOF_FreeDemo_OldForest/Old Forest Overview.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Scenes/Built-in Renderer/Demo Scene Files/fwOF_FreeDemo_OldForest/ReflectionProbe-0.exr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Scenes/Built-in Renderer/Demo Scene Files/fwOF_FreeDemo_OldForest/ReflectionProbe-0.exr.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Scenes/Built-in Renderer/Demo Scene Files/fwOF_FreeDemo_OldForest/ReflectionProbe-1.exr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Scenes/Built-in Renderer/Demo Scene Files/fwOF_FreeDemo_OldForest/ReflectionProbe-1.exr.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Scenes/Built-in Renderer/fwOF_FreeDemo_Assets.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Scenes/Built-in Renderer/fwOF_FreeDemo_Assets.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/T_fwOF_ForestPlants_01_BC.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/T_fwOF_ForestPlants_01_BC.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/T_fwOF_ForestPlants_01_MAOS.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/T_fwOF_ForestPlants_01_MAOS.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/T_fwOF_ForestPlants_01_N.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/T_fwOF_ForestPlants_01_N.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/T_fwOF_Grass_BC.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/T_fwOF_Grass_BC.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/T_fwOF_Grass_MAOS.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/T_fwOF_Grass_MAOS.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/T_fwOF_Grass_N.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/T_fwOF_Grass_N.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/T_fwOF_Rocks_01_BC.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/T_fwOF_Rocks_01_BC.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/T_fwOF_Rocks_01_MAOS.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/T_fwOF_Rocks_01_MAOS.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/T_fwOF_Rocks_01_N.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/T_fwOF_Rocks_01_N.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/T_fwOF_Sky_01.HDR" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/T_fwOF_Sky_01.HDR.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/T_fwOF_Stones_01_BC.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/T_fwOF_Stones_01_BC.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/T_fwOF_Stones_01_MAOS.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/T_fwOF_Stones_01_MAOS.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/T_fwOF_Stones_01_N.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/T_fwOF_Stones_01_N.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Terrain.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Terrain/TL_fwOF_Grass_01 1.terrainlayer" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Terrain/TL_fwOF_Grass_01 1.terrainlayer.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Terrain/TL_fwOF_RockSurf_02.terrainlayer" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Terrain/TL_fwOF_RockSurf_02.terrainlayer.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Terrain/TL_fwOF_Soil_01.terrainlayer" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Terrain/TL_fwOF_Soil_01.terrainlayer.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Terrain/TL_fwOF_TerrainMoss_01.terrainlayer" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Terrain/TL_fwOF_TerrainMoss_01.terrainlayer.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Terrain/T_fwOF_GrassTerrain_01_BC.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Terrain/T_fwOF_GrassTerrain_01_BC.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Terrain/T_fwOF_GrassTerrain_01_Mask.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Terrain/T_fwOF_GrassTerrain_01_Mask.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Terrain/T_fwOF_GrassTerrain_01_N.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Terrain/T_fwOF_GrassTerrain_01_N.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Terrain/T_fwOF_Moss_02_BC.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Terrain/T_fwOF_Moss_02_BC.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Terrain/T_fwOF_Moss_02_Mask.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Terrain/T_fwOF_Moss_02_Mask.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Terrain/T_fwOF_Moss_02_N.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Terrain/T_fwOF_Moss_02_N.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Terrain/T_fwOF_RockSurf_02_BC.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Terrain/T_fwOF_RockSurf_02_BC.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Terrain/T_fwOF_RockSurf_02_Mask.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Terrain/T_fwOF_RockSurf_02_Mask.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Terrain/T_fwOF_RockSurf_02_N.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Terrain/T_fwOF_RockSurf_02_N.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Terrain/T_fwOF_Soil_01_BC.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Terrain/T_fwOF_Soil_01_BC.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Terrain/T_fwOF_Soil_01_Mask.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Terrain/T_fwOF_Soil_01_Mask.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Terrain/T_fwOF_Soil_01_N.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Terrain/T_fwOF_Soil_01_N.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Trees.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Trees/T_fwOF_Leaf_Branch_BC.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Trees/T_fwOF_Leaf_Branch_BC.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Trees/T_fwOF_Leaf_Branch_N.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Trees/T_fwOF_Leaf_Branch_N.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Trees/T_fwOF_SaplingBark_01_BC.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Trees/T_fwOF_SaplingBark_01_BC.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Trees/T_fwOF_SaplingBark_01_MAOS.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Trees/T_fwOF_SaplingBark_01_MAOS.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Trees/T_fwOF_SaplingBark_01_N.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Trees/T_fwOF_SaplingBark_01_N.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Trees/T_fwOF_TreeBillboard_BC.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Trees/T_fwOF_TreeBillboard_BC.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Trees/T_fwOF_TreeBillboard_N.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Trees/T_fwOF_TreeBillboard_N.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Trees/T_fwOF_TreeLOD_01_BC.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Trees/T_fwOF_TreeLOD_01_BC.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Trees/T_fwOF_TreeLOD_01_MAOS.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Trees/T_fwOF_TreeLOD_01_MAOS.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Trees/T_fwOF_TreeLOD_01_N.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Trees/T_fwOF_TreeLOD_01_N.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Trees/T_fwOF_Tree_Med_02_BC_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Trees/T_fwOF_Tree_Med_02_BC_1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Trees/T_fwOF_Tree_Med_02_BC_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Trees/T_fwOF_Tree_Med_02_BC_2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Trees/T_fwOF_Tree_Med_02_MAOS_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Trees/T_fwOF_Tree_Med_02_MAOS_1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Trees/T_fwOF_Tree_Med_02_MAOS_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Trees/T_fwOF_Tree_Med_02_MAOS_2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Trees/T_fwOF_Tree_Med_02_N_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Trees/T_fwOF_Tree_Med_02_N_1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Trees/T_fwOF_Tree_Med_02_N_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Textures/Trees/T_fwOF_Tree_Med_02_N_2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/fwOF_PostProcessing_01.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/Fantasy Worlds - DEMO Content/fwOF_PostProcessing_01.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/ReadMe.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/ReadMe.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/_BiRP Content - Fantasy Worlds - Old Forest DEMO.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/TriForge Assets/_URP Content - Fantasy Worlds - Old Forest DEMO.unitypackage.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,7 +771,7 @@
       <workItem from="1716709221253" duration="20983000" />
       <workItem from="1716816883270" duration="11005000" />
       <workItem from="1716914579721" duration="3426000" />
-      <workItem from="1717055940385" duration="7539000" />
+      <workItem from="1717055940385" duration="8364000" />
     </task>
     <task id="LOCAL-00001" summary="Attack With Buttons">
       <created>1716712058302</created>
@@ -212,7 +836,14 @@
       <option name="project" value="LOCAL" />
       <updated>1717072762111</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Added Rounds">
+      <created>1717074260001</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1717074260001</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -244,7 +875,8 @@
     <MESSAGE value="Added HP" />
     <MESSAGE value="Added DieCounters" />
     <MESSAGE value="Bug fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bug fix" />
+    <MESSAGE value="Added Rounds" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Rounds" />
   </component>
   <component name="WindowStateProjectService">
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1716822120262">
@@ -323,10 +955,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1716714690513" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1717072764980">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1717074264803">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1717072764980" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1717074264803" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1716741247203">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
