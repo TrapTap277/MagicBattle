@@ -20,34 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a27b7c11-43cf-491c-becf-76115ceca5b7" name="Default Changelist" comment="Added Rounds">
-      <change afterPath="$PROJECT_DIR$/Assets/_Prefabs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Prefabs/ItemCrate Variant.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Prefabs/ItemCrate Variant.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/BoxWithItems.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/BoxWithItems/BoxWithItems.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/BoxWithItems/BoxWithItems.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/BoxWithItems/CreateBox.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/BoxWithItems/CreateBox.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MagicBattle/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MagicBattle/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MagicBattle/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MagicBattle/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MagicBattle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MagicBattle/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Assets/Chest/Weapon Crate Animated/Animations/Close.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Assets/Chest/Weapon Crate Animated/Animations/Close.anim" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Assets/Chest/Weapon Crate Animated/Animations/Idle.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Assets/Chest/Weapon Crate Animated/Animations/Idle.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Assets/Chest/Weapon Crate Animated/Materials/Player.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Assets/Chest/Weapon Crate Animated/Materials/Player.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Assets/Chest/Weapon Crate Animated/Materials/WeaponCrate.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Assets/Chest/Weapon Crate Animated/Materials/WeaponCrate.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Assets/Chest/Weapon Crate Animated/Scripts/WeaponCrate.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Assets/Chest/Weapon Crate Animated/Scripts/WeaponCrate.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Assets/Chest/Weapon Crate Animated/Settings/URP-Balanced.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Assets/Chest/Weapon Crate Animated/Settings/URP-Balanced.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Assets/Chest/Weapon Crate Animated/Settings/URP-HighFidelity.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Assets/Chest/Weapon Crate Animated/Settings/URP-HighFidelity.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Assets/Chest/Weapon Crate Animated/Settings/URP-Performant.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Assets/Chest/Weapon Crate Animated/Settings/URP-Performant.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Assets/Chest/Weapon Crate Animated/VFX/WeaponCrate.vfx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Assets/Chest/Weapon Crate Animated/VFX/WeaponCrate.vfx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Materials/M_fwOF_Stones_01.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Assets/TriForge Assets/Fantasy Worlds - DEMO Content/Materials/M_fwOF_Stones_01.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Assets/Chest/Weapon Crate Animated/Animations/Open.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Assets/Chest/Weapon Crate Animated/Animations/Open.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Prefabs/ItemCrate Variant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Prefabs/ItemCrate Variant.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Scenes/MagicScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scenes/MagicScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/VFXManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/VFXManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/BoxWithItems/BoxWithItems.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/BoxWithItems/BoxWithItems.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/BoxWithItems/CreateBox.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/BoxWithItems/CreateBox.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,8 +84,8 @@
         <option value="$PROJECT_DIR$/Assets/_Scripts/Die/PlayerDeath.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Die/DieUI.cs" />
         <option value="$PROJECT_DIR$/Assets/_Assets/Chest/Weapon Crate Animated/Scripts/WeaponCrate.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/BoxWithItems/BoxWithItems.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/BoxWithItems/CreateBox.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/BoxWithItems/BoxWithItems.cs" />
       </list>
     </option>
   </component>
@@ -164,7 +144,8 @@
       <workItem from="1716709221253" duration="20983000" />
       <workItem from="1716816883270" duration="11005000" />
       <workItem from="1716914579721" duration="3426000" />
-      <workItem from="1717055940385" duration="17170000" />
+      <workItem from="1717055940385" duration="17244000" />
+      <workItem from="1717144857329" duration="1179000" />
     </task>
     <task id="LOCAL-00001" summary="Attack With Buttons">
       <created>1716712058302</created>

@@ -52,7 +52,7 @@ namespace _Scripts.BoxWithItems
         private void ChangeCameraRotation()
         {
             Quaternion lookRotation = Quaternion.LookRotation(_endPosition.position - _mainCameraTranform.position);
-            _mainCameraTranform.DORotateQuaternion(lookRotation, 3).SetEase(Ease.Linear).OnComplete(ChangeCameraRotationToDefault);
+            _mainCameraTranform.DORotateQuaternion(lookRotation, 3).SetEase(Ease.Linear);
         }
     }
 }

@@ -17,6 +17,8 @@ namespace _Scripts.BoxWithItems
         {
             _animator.SetBool("Open", true);
             
+            //todo action give items
+            
             await Task.Delay(6000);
             
             _animator.SetBool("Open", false);
