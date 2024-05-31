@@ -94,6 +94,15 @@
             <e p="GiveLive.cs" t="Include" />
             <e p="PlayerHealth.cs" t="Include" />
           </e>
+          <e p="Items" t="Include">
+            <e p="BaseItem.cs" t="Include" />
+            <e p="CreateItemsUI.cs" t="Include" />
+            <e p="CurrentItem.cs" t="Include" />
+            <e p="DamageGemItem.cs" t="Include" />
+            <e p="DoubleMoveGemItem.cs" t="Include" />
+            <e p="HealGemItem.cs" t="Include" />
+            <e p="ProtectionGemItem.cs" t="Include" />
+          </e>
           <e p="Shooting" t="Include">
             <e p="IShoot.cs" t="Include" />
             <e p="ShootButtons.cs" t="Include" />

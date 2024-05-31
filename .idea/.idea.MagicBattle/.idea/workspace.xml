@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -20,14 +23,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a27b7c11-43cf-491c-becf-76115ceca5b7" name="Default Changelist" comment="Added Rounds">
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Items.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Items/BaseItem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Items/BaseItem.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Items/CreateItemsUI.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Items/CreateItemsUI.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Items/CurrentItem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Items/CurrentItem.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Items/DamageGemItem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Items/DamageGemItem.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Items/DoubleMoveGemItem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Items/DoubleMoveGemItem.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Items/HealGemItem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Items/HealGemItem.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Items/ProtectionGemItem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Items/ProtectionGemItem.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.MagicBattle/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MagicBattle/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MagicBattle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MagicBattle/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Assets/Chest/Weapon Crate Animated/Animations/Close.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Assets/Chest/Weapon Crate Animated/Animations/Close.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Assets/Chest/Weapon Crate Animated/Animations/Idle.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Assets/Chest/Weapon Crate Animated/Animations/Idle.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Assets/Chest/Weapon Crate Animated/Animations/Open.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Assets/Chest/Weapon Crate Animated/Animations/Open.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Prefabs/ItemCrate Variant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Prefabs/ItemCrate Variant.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scenes/MagicScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scenes/MagicScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/BoxWithItems/BoxWithItems.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/BoxWithItems/BoxWithItems.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/BoxWithItems/CreateBox.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/BoxWithItems/CreateBox.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Health/EnemyHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Health/EnemyHealth.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Health/PlayerHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Health/PlayerHealth.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Shooting/ShootInEnemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Shooting/ShootInEnemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Shooting/ShootInPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Shooting/ShootInPlayer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Staff/Staff.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Staff/Staff.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +60,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/DC753A10-6128-4F8E-971E-E88EE4826EEE/88/922d4bb3/Void.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.9.1/Runtime/VisualScripting.Flow/Framework/Math/Sum.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6F7018B8-B8C1-49E6-8C4A-65A05AC289BE/51/6d727187/Transform.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6F7018B8-B8C1-49E6-8C4A-65A05AC289BE/53/c5767ffe/Object.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -55,7 +73,6 @@
         <option value="$PROJECT_DIR$/Assets/_Scripts/BarrierStorage.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/MagicAttackStorage.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/MagicAttackGenerator.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Staff/Staff.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/CurrentAttackMove/AttackMove.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/AttackMoveStateMachine/AttackMove.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/AttackMoveStateMachine/BaseAttackMove.cs" />
@@ -68,11 +85,7 @@
         <option value="$PROJECT_DIR$/Assets/_Scripts/Shooting/ShootButtons.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/AttackMoveStateMachine/MoveTransition.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Attacks/MagicAttackGenerator.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Shooting/ShootInEnemy.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Shooting/ShootInPlayer.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Health/DieCounter.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Health/EnemyHealth.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Health/PlayerHealth.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Die/DieCounter.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Health/RestoreHealth.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Health/GiveLive.cs" />
@@ -86,6 +99,20 @@
         <option value="$PROJECT_DIR$/Assets/_Assets/Chest/Weapon Crate Animated/Scripts/WeaponCrate.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/BoxWithItems/CreateBox.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/BoxWithItems/BoxWithItems.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Items/ProtectionGem.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Items/UseItem.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Items/CreateItemsUI.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Items/BaseItem.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Items/CurrentItem.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Items/HealGemItem.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Items/ProtectionGemItem.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Items/DamageGemItem.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Health/EnemyHealth.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Items/DoubleMoveGemItem.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Health/PlayerHealth.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Shooting/ShootInPlayer.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Shooting/ShootInEnemy.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Staff/Staff.cs" />
       </list>
     </option>
   </component>
@@ -145,7 +172,7 @@
       <workItem from="1716816883270" duration="11005000" />
       <workItem from="1716914579721" duration="3426000" />
       <workItem from="1717055940385" duration="17244000" />
-      <workItem from="1717144857329" duration="1179000" />
+      <workItem from="1717144857329" duration="12437000" />
     </task>
     <task id="LOCAL-00001" summary="Attack With Buttons">
       <created>1716712058302</created>
@@ -337,9 +364,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1716741247203" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1717096058608">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1717158428297">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1717096058608" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1717158428297" />
   </component>
 </project>

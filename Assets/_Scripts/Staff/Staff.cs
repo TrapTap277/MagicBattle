@@ -1,4 +1,4 @@
-﻿using System;
+﻿using _Scripts.Items;
 using _Scripts.Shooting;
 using UnityEngine;
 
@@ -8,45 +8,70 @@ namespace _Scripts.Staff
     {
         [SerializeField] private MeshRenderer _gemMeshRenderer;
         
-        [SerializeField] private Material _grey;
-        [SerializeField] private Material _red;
-        [SerializeField] private Material _blue;
+        [SerializeField] private Material _noneMaterial;
+        [SerializeField] private Material _falseAttackMaterial;
+        [SerializeField] private Material _trueAttackMaterial;
+        [SerializeField] private Material _healMaterial;
+        [SerializeField] private Material _doubleDamageMaterial;
+        [SerializeField] private Material _doubleMoveMaterial;
+        [SerializeField] private Material _protectionMaterial;
 
         public void ChangeGemMaterial(Gem gem)
         {
             switch (gem)
             {
-                case Gem.Grey:
-                    _gemMeshRenderer.material = _grey;
+                case Gem.None:
+                    _gemMeshRenderer.material = _noneMaterial;
                     break;
                 
-                case Gem.Red:
-                    _gemMeshRenderer.material = _red;
+                case Gem.FalseAttack:
+                    _gemMeshRenderer.material = _falseAttackMaterial;
                     break;
                 
-                case Gem.Blue:
-                    _gemMeshRenderer.material = _blue;
+                case Gem.TrueAttack:
+                    _gemMeshRenderer.material = _trueAttackMaterial;
+                    break;
+                
+                case Gem.Heal:
+                    _gemMeshRenderer.material = _healMaterial;
+                    break;
+                
+                case Gem.Damage:
+                    _gemMeshRenderer.material = _doubleDamageMaterial;
+                    break;
+                
+                case Gem.SecondMove:
+                    _gemMeshRenderer.material = _doubleMoveMaterial;
+                    break;
+                
+                case Gem.Protect:
+                    _gemMeshRenderer.material = _protectionMaterial;
                     break;
             }
-            
         }
 
         private void OnEnable()
         {
             ShootInEnemy.OnChangedGemOnStaff += ChangeGemMaterial;
             ShootInPlayer.OnChangedGemOnStaff += ChangeGemMaterial;
+            CurrentItem.OnChangedGemOnStaff += ChangeGemMaterial;
         }
 
         private void OnDisable()
         {
             ShootInEnemy.OnChangedGemOnStaff -= ChangeGemMaterial;
             ShootInPlayer.OnChangedGemOnStaff -= ChangeGemMaterial;
+            CurrentItem.OnChangedGemOnStaff -= ChangeGemMaterial;
         }
     }
     public enum Gem
     {
-        Grey,
-        Red,
-        Blue
+        None,
+        FalseAttack,
+        TrueAttack,
+        Heal,
+        Damage,
+        SecondMove,
+        Protect
     }
 }

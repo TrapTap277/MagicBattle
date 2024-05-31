@@ -1,5 +1,6 @@
 using System;
 using _Scripts.Health;
+using _Scripts.Items;
 using _Scripts.Shooting;
 using TMPro;
 using UnityEngine;
@@ -8,26 +9,28 @@ using UnityEngine.UI;
 public class PlayerHealth : MonoBehaviour
 {
     public static event Action OnPlayerDied;
-    public float _health { get; private set; }
-    private float _lerpTimer;
-    [SerializeField] private float _maxHealth = 100;
-    [SerializeField] private float _chipSpeed = 2f;
+    public float Health { get; private set; }
 
+    [SerializeField] private TextMeshProUGUI _healthInPercents;
     [SerializeField] private Image _frontHealthBar;
     [SerializeField] private Image _backHealthBar;
 
-    [SerializeField] private TextMeshProUGUI _healthInPercents;
+    [SerializeField] private float _maxHealth = 100;
+    [SerializeField] private float _chipSpeed = 2f;
 
     private DieCounter _dieCounter = new DieCounter();
+    private float _lerpTimer;
+    private float _damageСoefficient;
+    private bool _isHasProtection;
     
     void Start()
     {
-        _health = _maxHealth;
+        Health = _maxHealth;
     }  
 
     void Update()
     {
-        _health = Mathf.Clamp(_health, 0, _maxHealth);
+        Health = Mathf.Clamp(Health, 0, _maxHealth);
 
         UpdateHealthUI();
     }
@@ -36,7 +39,7 @@ public class PlayerHealth : MonoBehaviour
     {
         float fillF = _frontHealthBar.fillAmount;
         float fillB = _backHealthBar.fillAmount;
-        float hFraction = _health / _maxHealth;
+        float hFraction = Health / _maxHealth;
 
         if (fillB > hFraction)
         {
@@ -70,29 +73,51 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        _health -= damage;
-        _lerpTimer = 0;
+        if (_isHasProtection == false)
+        {
+            Health -= damage * _damageСoefficient;
+            _lerpTimer = 0;
+        }
 
-        if (_health <= 0)
+        if (Health <= 0)
         {
             _dieCounter.AddPlayerDies();
             OnPlayerDied?.Invoke();
         }
+
+        _isHasProtection = false;
+        _damageСoefficient = 1f;
     }
 
     public void RestoreHealth(float healthAmount)
     {
-        _health += healthAmount;
+        Health += healthAmount;
         _lerpTimer = 0;
+    }
+    
+    public void GetProtection()
+    {
+        _isHasProtection = true;
+    }
+
+    public void TakeMoreDamage()
+    {
+        _damageСoefficient = UnityEngine.Random.Range(1.1f, 2f);
     }
     
     private void OnEnable()
     {
         ShootInPlayer.OnTookDamage += TakeDamage;
+        HealGemItem.OnHealedPlayer += RestoreHealth;
+        ProtectionGemItem.OnGivenProtectionToPlayer += GetProtection;
+        DamageGemItem.OnTakeMoreDamageToPlayer += TakeMoreDamage;
     }
 
     private void OnDisable()
     {
         ShootInPlayer.OnTookDamage -= TakeDamage;
+        HealGemItem.OnHealedPlayer -= RestoreHealth;
+        ProtectionGemItem.OnGivenProtectionToPlayer -= GetProtection;
+        DamageGemItem.OnTakeMoreDamageToPlayer -= TakeMoreDamage;
     }
 }

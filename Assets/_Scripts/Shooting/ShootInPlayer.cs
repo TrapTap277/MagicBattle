@@ -1,7 +1,7 @@
 ﻿using System;
 using _Scripts.Enemy;
+using _Scripts.Items;
 using _Scripts.Staff;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace _Scripts.Shooting
@@ -16,6 +16,8 @@ namespace _Scripts.Shooting
         private EnemyStateMachine _stateMachine;
 
         private bool _isEnemy;
+        private bool _isHasSecondMoveForPlayer;
+        private bool _isHasSecondMoveForEnemy;
         
         public ShootInPlayer(Animator animator, MagicAttackStorage attackStorage, EnemyStateMachine stateMachine, bool isEnemy)
         {
@@ -34,19 +36,56 @@ namespace _Scripts.Shooting
                 Debug.Log("Attack in player");
                 //Create Spell
                 
-                OnChangedGemOnStaff?.Invoke(Gem.Blue);
+                OnChangedGemOnStaff?.Invoke(Gem.TrueAttack);
                 OnTookDamage?.Invoke(20);
                 
-                if(!_isEnemy)
+                if(!_isEnemy && _isHasSecondMoveForPlayer == false)
                     _stateMachine.SwitchState(_stateMachine.AttackState);
+                
+                if(_isHasSecondMoveForEnemy && _isEnemy) 
+                    _stateMachine.SwitchState(_stateMachine.AttackState);
+                
+                _isHasSecondMoveForPlayer = false;
+                _isHasSecondMoveForEnemy = false;
             }
 
             else
             {
-                OnChangedGemOnStaff?.Invoke(Gem.Red);
+                OnChangedGemOnStaff?.Invoke(Gem.FalseAttack);
+
+                if(_isHasSecondMoveForPlayer == false && _isEnemy) //Todo: возможно это нужно убрать
+                    _stateMachine.SwitchState(_stateMachine.IdleState);
+
+                if(_isHasSecondMoveForEnemy && _isEnemy) 
+                    _stateMachine.SwitchState(_stateMachine.AttackState);
                 
+                _isHasSecondMoveForPlayer = false;
+                _isHasSecondMoveForEnemy = false;
+
                 //Передать посох
             }
+        }
+        
+        public void GetSecondMoveForThePlayer()
+        {
+            _isHasSecondMoveForPlayer = true;
+        }
+        
+        public void GetSecondMoveForTheEnemy()
+        {
+            _isHasSecondMoveForEnemy = true;
+        }
+        
+        private void OnEnable()
+        {
+            DoubleMoveGemItem.OnGotSecondMoveToPlayer += GetSecondMoveForThePlayer;
+            DoubleMoveGemItem.OnGotSecondMoveToEnemy += GetSecondMoveForTheEnemy;
+        }
+
+        private void OnDisable()
+        {
+            DoubleMoveGemItem.OnGotSecondMoveToPlayer -= GetSecondMoveForThePlayer;
+            DoubleMoveGemItem.OnGotSecondMoveToEnemy -= GetSecondMoveForTheEnemy;
         }
     }
 }
