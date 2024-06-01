@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: DamageGem
   m_EditorClassIdentifier: 
   _gem: 4
-  _sprite: {fileID: 0}
-  _itemMaterial: {fileID: 0}
-  _maximumItemCount: 0
+  _sprite: {fileID: 21300000, guid: da8c363a606cffa4aa2c44bcb1e128e5, type: 3}
+  _itemMaterial: {fileID: 2100000, guid: f042c87aa20d12f418dcffaf12eb53fc, type: 2}
+  _maximumItemCount: 3

@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b600b253873e461d8947bd4fbf2151e6, type: 3}
   m_Name: ProtectionGem
   m_EditorClassIdentifier: 
-  _item: {fileID: 0}
-  _maximumItemCount: 0
+  _gem: 6
+  _sprite: {fileID: 21300000, guid: 8856cb2a4548ae34b934282bd4af5a0c, type: 3}
+  _itemMaterial: {fileID: 2100000, guid: a43a481b05d36d54eaa358d804be3b01, type: 2}
+  _maximumItemCount: 3

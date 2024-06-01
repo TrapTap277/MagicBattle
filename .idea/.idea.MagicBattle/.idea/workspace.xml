@@ -22,29 +22,68 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a27b7c11-43cf-491c-becf-76115ceca5b7" name="Default Changelist" comment="Added Rounds">
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Items.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Items/BaseItem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Items/BaseItem.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Items/CreateItemsUI.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Items/CreateItemsUI.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Items/CurrentItem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Items/CurrentItem.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Items/DamageGemItem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Items/DamageGemItem.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Items/DoubleMoveGemItem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Items/DoubleMoveGemItem.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Items/HealGemItem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Items/HealGemItem.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Items/ProtectionGemItem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Items/ProtectionGemItem.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MagicBattle/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MagicBattle/.idea/contentModel.xml" afterDir="false" />
+    <list default="true" id="a27b7c11-43cf-491c-becf-76115ceca5b7" name="Default Changelist" comment="Created Items">
+      <change afterPath="$PROJECT_DIR$/Assets/_Prefabs/Items/DamageGem/GemTexture.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Prefabs/Items/DamageGem/GemTexture/initialShadingGroup_AO.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Prefabs/Items/DamageGem/GemTexture/initialShadingGroup_AO.jpg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Prefabs/Items/DamageGem/GemTexture/initialShadingGroup_albedo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Prefabs/Items/DamageGem/GemTexture/initialShadingGroup_albedo.jpg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Prefabs/Items/DamageGem/GemTexture/initialShadingGroup_metallic.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Prefabs/Items/DamageGem/GemTexture/initialShadingGroup_metallic.jpg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Prefabs/Items/DamageGem/GemTexture/initialShadingGroup_normal.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Prefabs/Items/DamageGem/GemTexture/initialShadingGroup_normal.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Prefabs/Items/DamageGem/GemTexture/initialShadingGroup_roughness.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Prefabs/Items/DamageGem/GemTexture/initialShadingGroup_roughness.jpg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Prefabs/Items/HealGem/Heal.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Prefabs/Items/HealGem/Heal.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Prefabs/Items/Item.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Prefabs/Items/Item.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Prefabs/Items/MoveGem/Move.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Prefabs/Items/MoveGem/Move.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Prefabs/Items/ProtectionGem/Protection.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Prefabs/Items/ProtectionGem/Protection.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Sprites/HP.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Sprites/HP/BACK_HealthBar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Sprites/HP/BACK_HealthBar.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Sprites/HP/BACK_XpBar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Sprites/HP/BACK_XpBar.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Sprites/HP/FRONT_HealthBar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Sprites/HP/FRONT_HealthBar.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Sprites/HP/FRONT_XpBar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Sprites/HP/FRONT_XpBar.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Sprites/HP/Frame.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Sprites/HP/Frame.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Sprites/HP/HeartIcon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Sprites/HP/HeartIcon.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Sprites/Items.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Sprites/Items/Attack.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Sprites/Items/Attack.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Sprites/Items/Heal.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Sprites/Items/Heal.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Sprites/Items/SecondMove.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Sprites/Items/SecondMove.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Sprites/Items/Shield.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Sprites/Items/Shield.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MagicBattle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MagicBattle/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Health/EnemyHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Health/EnemyHealth.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Health/PlayerHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Health/PlayerHealth.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Shooting/ShootInEnemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Shooting/ShootInEnemy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Shooting/ShootInPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Shooting/ShootInPlayer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Staff/Staff.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Staff/Staff.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Prefabs/Items/DamageGem/DamageGem.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Prefabs/Items/DamageGem/DamageGem.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Prefabs/Items/DamageGem/DamageMaterial.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Prefabs/Items/DamageGem/DamageMaterial.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Prefabs/Items/HealGem/HealGem.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Prefabs/Items/HealGem/HealGem.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Prefabs/Items/MoveGem/MoveGem.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Prefabs/Items/MoveGem/MoveGem.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Prefabs/Items/ProtectionGem/ProtectionGem.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Prefabs/Items/ProtectionGem/ProtectionGem.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scenes/MagicScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scenes/MagicScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Items/CreateItemsUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Items/CreateItemsUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Sprites/BACK_HealthBar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Sprites/BACK_HealthBar.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Sprites/BACK_XpBar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Sprites/BACK_XpBar.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Sprites/FRONT_HealthBar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Sprites/FRONT_HealthBar.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Sprites/FRONT_XpBar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Sprites/FRONT_XpBar.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Sprites/Frame.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Sprites/Frame.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Sprites/HeartIcon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Sprites/HeartIcon.png.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +140,6 @@
         <option value="$PROJECT_DIR$/Assets/_Scripts/BoxWithItems/BoxWithItems.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Items/ProtectionGem.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Items/UseItem.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Items/CreateItemsUI.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Items/BaseItem.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Items/CurrentItem.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Items/HealGemItem.cs" />
@@ -113,6 +151,7 @@
         <option value="$PROJECT_DIR$/Assets/_Scripts/Shooting/ShootInPlayer.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Shooting/ShootInEnemy.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Staff/Staff.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Items/CreateItemsUI.cs" />
       </list>
     </option>
   </component>
@@ -172,7 +211,8 @@
       <workItem from="1716816883270" duration="11005000" />
       <workItem from="1716914579721" duration="3426000" />
       <workItem from="1717055940385" duration="17244000" />
-      <workItem from="1717144857329" duration="12437000" />
+      <workItem from="1717144857329" duration="13090000" />
+      <workItem from="1717233208040" duration="1717000" />
     </task>
     <task id="LOCAL-00001" summary="Attack With Buttons">
       <created>1716712058302</created>
@@ -244,7 +284,14 @@
       <option name="project" value="LOCAL" />
       <updated>1717074260001</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Created Items">
+      <created>1717164914042</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1717164914042</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -277,7 +324,8 @@
     <MESSAGE value="Added DieCounters" />
     <MESSAGE value="Bug fix" />
     <MESSAGE value="Added Rounds" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Rounds" />
+    <MESSAGE value="Created Items" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created Items" />
   </component>
   <component name="WindowStateProjectService">
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1716822120262">
@@ -356,10 +404,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1716714690513" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1717074264803">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1717164918929">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1717074264803" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1717164918929" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1716741247203">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

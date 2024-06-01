@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e2eae4224174e3eb50e38653d79090c, type: 3}
   m_Name: MoveGem
   m_EditorClassIdentifier: 
-  _item: {fileID: 0}
-  _maximumItemCount: 0
+  _gem: 5
+  _sprite: {fileID: 21300000, guid: a19bb05a7e1e5b04882b5e75cac0329e, type: 3}
+  _itemMaterial: {fileID: 2100000, guid: b72475f2485af1f48b11ccbd589f72d8, type: 2}
+  _maximumItemCount: 3
