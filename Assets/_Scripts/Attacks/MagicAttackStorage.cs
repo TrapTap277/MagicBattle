@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using _Scripts.Enemy;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace _Scripts
 {
@@ -31,11 +32,11 @@ namespace _Scripts
             ResetStats();
             EnemyEnterInIdleState();
 
-            int randomAttackCount = UnityEngine.Random.Range(2, 7);
+            var randomAttackCount = Random.Range(2, 7);
 
-            for (int i = 0; i < randomAttackCount; i++)
+            for (var i = 0; i < randomAttackCount; i++)
             {
-                int randomAttack = UnityEngine.Random.Range(0, 2);
+                var randomAttack = Random.Range(0, 2);
 
                 if (randomAttack == 0)
                 {
@@ -49,11 +50,9 @@ namespace _Scripts
                     RedAttack++;
                 }
 
-
                 AttackCount++;
                 Typies.Add(_attacksType);
             }
-
 
             if (BlueAttack == 0)
             {
@@ -72,6 +71,8 @@ namespace _Scripts
             }
 
             OnCreatedUI?.Invoke();
+
+            PrintAttacks();
         }
 
         private void ResetStats()
@@ -86,13 +87,11 @@ namespace _Scripts
         private void EnemyEnterInIdleState()
         {
             _stateMachine.SwitchState(_stateMachine.IdleState);
-
-            Debug.LogWarning("Enter in Idle State");
         }
 
         public AttacksType GetFirstType()
         {
-            AttacksType type = Typies[0];
+            var type = Typies[0];
 
             StartCoroutine(RemoveAttackWithTime(type));
 
@@ -102,13 +101,25 @@ namespace _Scripts
         private IEnumerator RemoveAttackWithTime(AttacksType type)
         {
             yield return new WaitForSeconds(0.5f);
-            
+
             UsedAttacks.Add(type);
             Typies.RemoveAt(0);
             AttackCount--;
 
-            if (Typies.Count <= 0)
-                GenerateMagicAttacks();
+            if (Typies.Count <= 0) GenerateMagicAttacks();
+        }
+
+        private void PrintAttacks()
+        {
+            var attacksToDebug = "";
+
+            foreach (var attacks in Typies)
+            {
+                var attack = attacks == AttacksType.Red ? "R" : "B";
+                attacksToDebug += attack;
+            }
+
+            Debug.Log(attacksToDebug);
         }
     }
 

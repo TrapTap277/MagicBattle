@@ -9,14 +9,6 @@
           <e p="AdventureForge" t="Include">
             <e p="FantasyStaffReadme.txt" t="Include" />
           </e>
-          <e p="Chest" t="Include">
-            <e p="Weapon Crate Animated" t="Include">
-              <e p="Scripts" t="Include">
-                <e p="FirstPersonLook.cs" t="Include" />
-                <e p="FirstPersonMovement.cs" t="Include" />
-              </e>
-            </e>
-          </e>
           <e p="TextMesh Pro" t="Include">
             <e p="Fonts" t="Include">
               <e p="LiberationSans - OFL.txt" t="Include" />
@@ -77,6 +69,7 @@
             <e p="CreateBox.cs" t="Include" />
           </e>
           <e p="Die" t="Include">
+            <e p="BaseDeath.cs" t="Include" />
             <e p="DieCounter.cs" t="Include" />
             <e p="DieUI.cs" t="Include" />
             <e p="EnemyDeath.cs" t="Include" />
@@ -92,6 +85,7 @@
           <e p="Health" t="Include">
             <e p="EnemyHealth.cs" t="Include" />
             <e p="GiveLive.cs" t="Include" />
+            <e p="HealthBase.cs" t="Include" />
             <e p="PlayerHealth.cs" t="Include" />
           </e>
           <e p="Items" t="Include">
@@ -99,15 +93,25 @@
             <e p="CreateItemsUI.cs" t="Include" />
             <e p="CurrentItem.cs" t="Include" />
             <e p="DamageGemItem.cs" t="Include" />
-            <e p="DoubleMoveGemItem.cs" t="Include" />
+            <e p="FramesActivator.cs" t="Include" />
             <e p="HealGemItem.cs" t="Include" />
+            <e p="IInit.cs" t="Include" />
+            <e p="ISetSecondMove.cs" t="Include" />
             <e p="ProtectionGemItem.cs" t="Include" />
+            <e p="SecondMoveGemItem.cs" t="Include" />
+            <e p="SecondMoveTurn.cs" t="Include" />
+            <e p="SquareFrame.cs" t="Include" />
+            <e p="UseItem.cs" t="Include" />
           </e>
           <e p="Shooting" t="Include">
+            <e p="BaseShoot.cs" t="Include" />
+            <e p="IEnemyStateSwitcher.cs" t="Include" />
             <e p="IShoot.cs" t="Include" />
-            <e p="ShootButtons.cs" t="Include" />
             <e p="ShootInEnemy.cs" t="Include" />
             <e p="ShootInPlayer.cs" t="Include" />
+            <e p="ShootInvoker.cs" t="Include" />
+            <e p="SwitchEnemyStateWithShootingInEnemy.cs" t="Include" />
+            <e p="SwitchEnemyStateWithShootingInPlayer.cs" t="Include" />
           </e>
           <e p="Staff" t="Include">
             <e p="Staff.cs" t="Include" />

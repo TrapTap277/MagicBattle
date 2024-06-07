@@ -1,18 +1,18 @@
-﻿namespace _Scripts.Health
+﻿namespace _Scripts.Die
 {
     public class DieCounter
     {
-        public static int _enemyDieCount {get; private set; }
-        public static int _playerDieCount {get; private set; }
+        private static int EnemyDieCount {get; set; }
+        private static int PlayerDieCount {get; set; }
         
-        public void AddEnemyDies()
+        public static void AddEnemyDies()
         {
-            _enemyDieCount++;
+            EnemyDieCount++;
         }
         
-        public void AddPlayerDies()
+        public static void AddPlayerDies()
         {
-            _playerDieCount++;
+            PlayerDieCount++;
         }
     }
 }

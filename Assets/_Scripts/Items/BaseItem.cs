@@ -13,12 +13,12 @@ namespace _Scripts.Items
         public Gem Gem => _gem;
         public Sprite Sprite => _sprite;
         public Material ItemMaterial => _itemMaterial;
-        public int MaximumItemCount
+        public int MaximumItemCount  
         {
             get => _maximumItemCount;
             set => _maximumItemCount = value;
         }
         
-        public abstract void Use(bool isUsedByPlayer);
+        public abstract void Use();
     }
 }

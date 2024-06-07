@@ -1,4 +1,5 @@
-﻿using _Scripts.Items;
+﻿using System.Collections.Generic;
+using _Scripts.Items;
 using _Scripts.Shooting;
 using UnityEngine;
 
@@ -15,63 +16,60 @@ namespace _Scripts.Staff
         [SerializeField] private Material _doubleDamageMaterial;
         [SerializeField] private Material _doubleMoveMaterial;
         [SerializeField] private Material _protectionMaterial;
+        
+        private Dictionary<Gem, Material> _items;
 
-        public void ChangeGemMaterial(Gem gem)
+        private void Start()
         {
-            switch (gem)
+            _items = new Dictionary<Gem, Material>
             {
-                case Gem.None:
-                    _gemMeshRenderer.material = _noneMaterial;
-                    break;
-                
-                case Gem.FalseAttack:
-                    _gemMeshRenderer.material = _falseAttackMaterial;
-                    break;
-                
-                case Gem.TrueAttack:
-                    _gemMeshRenderer.material = _trueAttackMaterial;
-                    break;
-                
-                case Gem.Heal:
-                    _gemMeshRenderer.material = _healMaterial;
-                    break;
-                
-                case Gem.Damage:
-                    _gemMeshRenderer.material = _doubleDamageMaterial;
-                    break;
-                
-                case Gem.SecondMove:
-                    _gemMeshRenderer.material = _doubleMoveMaterial;
-                    break;
-                
-                case Gem.Protect:
-                    _gemMeshRenderer.material = _protectionMaterial;
-                    break;
+                { Gem.None, _noneMaterial },
+                { Gem.TrueAttack, _trueAttackMaterial },
+                { Gem.FalseAttack, _falseAttackMaterial },
+                { Gem.Heal, _healMaterial },
+                { Gem.Damage, _doubleDamageMaterial },
+                { Gem.Protection, _protectionMaterial },
+                { Gem.SecondMove, _doubleMoveMaterial }
+            };
+
+            DeterminateGemAndChangeMaterial(Gem.SecondMove);
+        }
+
+        public void DeterminateGemAndChangeMaterial(Gem gem)
+        {
+            if (_items.TryGetValue(gem, out Material material))
+            {
+                ChangeMaterial(material);
             }
+            else
+            {
+                Debug.LogWarning($"No material found for gem type {gem}");
+            }
+        }
+
+        private void ChangeMaterial(Material material)
+        {
+            _gemMeshRenderer.material = material;
         }
 
         private void OnEnable()
         {
-            ShootInEnemy.OnChangedGemOnStaff += ChangeGemMaterial;
-            ShootInPlayer.OnChangedGemOnStaff += ChangeGemMaterial;
-            CurrentItem.OnChangedGemOnStaff += ChangeGemMaterial;
+            BaseShoot.OnChangedGemOnStaff += DeterminateGemAndChangeMaterial;
         }
 
         private void OnDisable()
         {
-            ShootInEnemy.OnChangedGemOnStaff -= ChangeGemMaterial;
-            ShootInPlayer.OnChangedGemOnStaff -= ChangeGemMaterial;
-            CurrentItem.OnChangedGemOnStaff -= ChangeGemMaterial;
+            BaseShoot.OnChangedGemOnStaff -= DeterminateGemAndChangeMaterial;
         }
     }
     public enum Gem
     {
-        None,
-        FalseAttack,
-        TrueAttack,
-        Heal,
-        Damage,
-        SecondMove,
-        Protect
+        None = 0,
+        FalseAttack = 1,
+        TrueAttack = 2,
+        Heal = 3,
+        Damage = 4,
+        SecondMove = 5,
+        Protection = 6
     }
 }

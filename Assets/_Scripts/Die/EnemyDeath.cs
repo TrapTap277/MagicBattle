@@ -4,32 +4,35 @@ using UnityEngine;
 
 namespace _Scripts.Die
 {
-    public class EnemyDeath : MonoBehaviour
+    public class EnemyDeath : BaseDeath
     {
         [SerializeField] private MagicAttackStorage _attackStorage;
         [SerializeField] private EnemyStateMachine _stateMachine;
         [SerializeField] private GiveLive _giveLive;
 
         [SerializeField] private CanvasGroup _roundsCounter;
-        
-        public void Death()
+
+        private void Awake()
         {
-            DieUI dieUI = new DieUI(_roundsCounter);
-            
-            _attackStorage.GenerateMagicAttacks();
-            _stateMachine.SwitchState(_stateMachine.IdleState);
-            _giveLive.RestoreHealth(200);
-            dieUI.GiveWinRoundToPlayer();
+            Init();
+        }
+
+        protected override void Init()
+        {
+            AttackStorage = _attackStorage;
+            StateMachine = _stateMachine;
+            GiveLive = _giveLive;
+            RoundsCounter = _roundsCounter;
         }
 
         private void OnEnable()
         {
-            EnemyHealth.OnEnemyDied += Death;
+            EnemyHealth.OnDied += Death;
         }
 
         private void OnDisable()
         {
-            EnemyHealth.OnEnemyDied -= Death;
+            EnemyHealth.OnDied -= Death;
         }
     }
 }

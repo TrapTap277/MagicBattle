@@ -19,7 +19,7 @@ namespace _Scripts.Enemy
         #endregion
 
         public MoveTransition MoveTransition;
-        public ShootButtons ShootButtons;
+        public ShootInvoker ShotInvoker;
         public MagicAttackStorage Storage;
         
         private void Awake()

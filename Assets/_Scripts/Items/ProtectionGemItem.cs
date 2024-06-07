@@ -4,14 +4,21 @@ using UnityEngine;
 namespace _Scripts.Items
 {
     [CreateAssetMenu(menuName = "Items/ProtectionGem", fileName = "ProtectionGem")]
-    public class ProtectionGemItem : BaseItem
+    public class ProtectionGemItem : BaseItem, IInit
     {
         public static event Action OnGivenProtectionToPlayer;
         public static event Action OnGivenProtectionToEnemy;
-        
-        public override void Use(bool isUsedByPlayer)
+
+        private bool _isUsedByEnemy;
+
+        public void Init(bool isUsedByEnemy)
         {
-            if(isUsedByPlayer)
+            _isUsedByEnemy = isUsedByEnemy;
+        }
+
+        public override void Use()
+        {
+            if(!_isUsedByEnemy)
                 OnGivenProtectionToPlayer?.Invoke();
             
             else 

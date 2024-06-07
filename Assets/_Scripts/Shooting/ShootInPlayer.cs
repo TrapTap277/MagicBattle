@@ -1,91 +1,21 @@
-﻿using System;
-using _Scripts.Enemy;
+﻿using _Scripts.Enemy;
 using _Scripts.Items;
-using _Scripts.Staff;
 using UnityEngine;
 
 namespace _Scripts.Shooting
 {
-    public class ShootInPlayer : IShoot
-    {       
-        public static event Action<Gem> OnChangedGemOnStaff;
-        public static event Action<float> OnTookDamage;
-        
-        private MagicAttackStorage _attackStorage;
-        private Animator _animator;
-        private EnemyStateMachine _stateMachine;
+    public class ShootInPlayer : BaseShoot
+    {
+        private readonly IEnemyStateSwitcher _enemyStateSwitcher;
 
-        private bool _isEnemy;
-        private bool _isHasSecondMoveForPlayer;
-        private bool _isHasSecondMoveForEnemy;
-        
-        public ShootInPlayer(Animator animator, MagicAttackStorage attackStorage, EnemyStateMachine stateMachine, bool isEnemy)
+        public ShootInPlayer(Animator animator, MagicAttackStorage attackStorage,EnemyStateMachine stateMachine, SecondMoveTurn secondMoveTurn, bool isEnemy) : base(animator, attackStorage)
         {
-            _attackStorage = attackStorage;
-            _animator = animator;
-            _stateMachine = stateMachine;
-            _isEnemy = isEnemy;
+            _enemyStateSwitcher = new SwitchEnemyStateWithShootingInPlayer(isEnemy, secondMoveTurn, stateMachine);
         }
 
-        public void Shoot()
+        public override void Shoot()
         {
-            _animator.CrossFade("Metalstaff01FastSpin", 2);
-            
-            if (_attackStorage.GetFirstType() == AttacksType.Blue)
-            {
-                Debug.Log("Attack in player");
-                //Create Spell
-                
-                OnChangedGemOnStaff?.Invoke(Gem.TrueAttack);
-                OnTookDamage?.Invoke(20);
-                
-                if(!_isEnemy && _isHasSecondMoveForPlayer == false)
-                    _stateMachine.SwitchState(_stateMachine.AttackState);
-                
-                if(_isHasSecondMoveForEnemy && _isEnemy) 
-                    _stateMachine.SwitchState(_stateMachine.AttackState);
-                
-                _isHasSecondMoveForPlayer = false;
-                _isHasSecondMoveForEnemy = false;
-            }
-
-            else
-            {
-                OnChangedGemOnStaff?.Invoke(Gem.FalseAttack);
-
-                if(_isHasSecondMoveForPlayer == false && _isEnemy) //Todo: возможно это нужно убрать
-                    _stateMachine.SwitchState(_stateMachine.IdleState);
-
-                if(_isHasSecondMoveForEnemy && _isEnemy) 
-                    _stateMachine.SwitchState(_stateMachine.AttackState);
-                
-                _isHasSecondMoveForPlayer = false;
-                _isHasSecondMoveForEnemy = false;
-
-                //Передать посох
-            }
-        }
-        
-        public void GetSecondMoveForThePlayer()
-        {
-            _isHasSecondMoveForPlayer = true;
-        }
-        
-        public void GetSecondMoveForTheEnemy()
-        {
-            _isHasSecondMoveForEnemy = true;
-        }
-        
-        private void OnEnable()
-        {
-            DoubleMoveGemItem.OnGotSecondMoveToPlayer += GetSecondMoveForThePlayer;
-            DoubleMoveGemItem.OnGotSecondMoveToEnemy += GetSecondMoveForTheEnemy;
-        }
-
-        private void OnDisable()
-        {
-            DoubleMoveGemItem.OnGotSecondMoveToPlayer -= GetSecondMoveForThePlayer;
-            DoubleMoveGemItem.OnGotSecondMoveToEnemy -= GetSecondMoveForTheEnemy;
+            ShootBase(ShootIn.Player, _enemyStateSwitcher);
         }
     }
 }

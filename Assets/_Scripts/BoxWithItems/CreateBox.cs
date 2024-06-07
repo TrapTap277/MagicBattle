@@ -46,13 +46,18 @@ namespace _Scripts.BoxWithItems
 
         private void ChangeCameraRotationToDefault()
         {
-            _mainCameraTranform.DORotate(_startCameraTransform.eulerAngles, 3).SetEase(Ease.Linear);
+            _mainCameraTranform.DORotate(_startCameraTransform.eulerAngles, 3).SetEase(Ease.Linear).OnComplete(DestroyBox);
         }
 
         private void ChangeCameraRotation()
         {
             Quaternion lookRotation = Quaternion.LookRotation(_endPosition.position - _mainCameraTranform.position);
             _mainCameraTranform.DORotateQuaternion(lookRotation, 3).SetEase(Ease.Linear);
+        }
+
+        private void DestroyBox()
+        {
+            Destroy(_boxPositions.gameObject);
         }
     }
 }

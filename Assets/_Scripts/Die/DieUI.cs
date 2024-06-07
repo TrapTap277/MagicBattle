@@ -5,7 +5,7 @@ namespace _Scripts.Die
 {
     public class DieUI
     {
-        private CanvasGroup _roundsCounter;
+        private readonly CanvasGroup _roundsCounter;
 
         public DieUI(CanvasGroup roundsCounter)
         {
