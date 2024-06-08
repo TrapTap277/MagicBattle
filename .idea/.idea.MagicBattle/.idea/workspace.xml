@@ -23,71 +23,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a27b7c11-43cf-491c-becf-76115ceca5b7" name="Default Changelist" comment="Created Items">
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Die/BaseDeath.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Die/BaseDeath.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Health/HealthBase.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Health/HealthBase.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Items/FramesActivator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Items/FramesActivator.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Items/IInit.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Items/IInit.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Items/ISetSecondMove.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Items/ISetSecondMove.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Items/SecondMoveTurn.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Items/SecondMoveTurn.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Items/SquareFrame.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Items/SquareFrame.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Items/UseItem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Items/UseItem.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Shooting/BaseShoot.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Shooting/BaseShoot.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Shooting/IEnemyStateSwitcher.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Shooting/IEnemyStateSwitcher.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Shooting/ShootInvoker.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Shooting/ShootInvoker.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Shooting/SwitchEnemyStateWithShootingInEnemy.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Shooting/SwitchEnemyStateWithShootingInEnemy.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Shooting/SwitchEnemyStateWithShootingInPlayer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Shooting/SwitchEnemyStateWithShootingInPlayer.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Sprites/HP/—Pngtree—golden shining square frame_6858923.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Sprites/HP/—Pngtree—golden shining square frame_6858923.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MagicBattle/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MagicBattle/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MagicBattle/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MagicBattle/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MagicBattle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MagicBattle/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Assets/Chest/Weapon Crate Animated/Scripts.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Prefabs/Items.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Assets/Chest/Weapon Crate Animated/Scripts/FirstPersonLook.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Assets/Chest/Weapon Crate Animated/Scripts/FirstPersonLook.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Assets/Chest/Weapon Crate Animated/Scripts/FirstPersonMovement.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Assets/Chest/Weapon Crate Animated/Scripts/FirstPersonMovement.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Prefabs/Items/Item.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Prefabs/Items/Item.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scenes/MagicScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scenes/MagicScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Attacks/MagicAttackStorage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Attacks/MagicAttackStorage.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Scripts/BoxWithItems/BoxWithItems.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/BoxWithItems/BoxWithItems.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Scripts/BoxWithItems/CreateBox.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/BoxWithItems/CreateBox.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Die/DieCounter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Die/DieCounter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Die/DieUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Die/DieUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Die/EnemyDeath.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Die/EnemyDeath.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Die/PlayerDeath.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Die/PlayerDeath.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Enemy/EnemyAttackState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Enemy/EnemyAttackState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Enemy/EnemyIdleState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Enemy/EnemyIdleState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Enemy/EnemyStateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Enemy/EnemyStateMachine.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Health/EnemyHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Health/EnemyHealth.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Health/PlayerHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Health/PlayerHealth.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Items/BaseItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Items/BaseItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Items/CreateItemsUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Items/CreateItemsUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Items/CurrentItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Items/CurrentItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Items/DamageGemItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Items/DamageGemItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Items/DoubleMoveGemItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Items/SecondMoveGemItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Items/DoubleMoveGemItem.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Items/SecondMoveGemItem.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Items/HealGemItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Items/HealGemItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Items/ProtectionGemItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Items/ProtectionGemItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Shooting/ShootButtons.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Shooting/ShootButtons.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Shooting/ShootInEnemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Shooting/ShootInEnemy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Shooting/ShootInPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Shooting/ShootInPlayer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Staff/Staff.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Staff/Staff.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,41 +39,23 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Shooting/IShoot.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Unity/MagicBattle/MagicBattle/Assets/_Scripts/Shooting/ShootInPlayer.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6F7018B8-B8C1-49E6-8C4A-65A05AC289BE/9a/cf50743b/Quaternion.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Shooting/ShootInEnemy.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Unity/MagicBattle/MagicBattle/Assets/_Scripts/Shooting/ShootInPlayer.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Unity/MagicBattle/MagicBattle/Assets/_Scripts/Shooting/ShootInPlayer.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Unity/MagicBattle/MagicBattle/Assets/_Scripts/Shooting/ShootInPlayer.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6F7018B8-B8C1-49E6-8C4A-65A05AC289BE/f0/c2eee94b/Component.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Unity/MagicBattle/MagicBattle/Assets/_Scripts/Shooting/ShootInPlayer.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Unity/MagicBattle/MagicBattle/Assets/_Scripts/Shooting/ShootInPlayer.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Unity/MagicBattle/MagicBattle/Assets/_Scripts/Items/CreateItemsUI.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6F7018B8-B8C1-49E6-8C4A-65A05AC289BE/51/6d727187/Transform.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F67DEBE1-EFD2-4294-8106-F1922BFAC1C7/e1/3d982bb7/EventDispatcher.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/40C80BC3-3A6A-48B7-BE6D-BDE4C72604B1/a2/1138c9f4/Debug.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Die/BaseDeath.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Unity/MagicBattle/MagicBattle/Assets/_Scripts/Shooting/ShootInPlayer.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Staff/Staff.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Unity/MagicBattle/MagicBattle/Assets/_Scripts/Shooting/ShootInPlayer.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/BoxWithItems/CreateBox.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Unity/MagicBattle/MagicBattle/Assets/_Scripts/Shooting/ShootInPlayer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Health/EnemyHealth.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/BoxWithItems/BoxWithItems.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Unity/MagicBattle/MagicBattle/Assets/_Scripts/Shooting/ShootInPlayer.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Unity/MagicBattle/MagicBattle/Assets/_Scripts/Shooting/ShootInPlayer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Shooting/IShoot.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6F7018B8-B8C1-49E6-8C4A-65A05AC289BE/9a/cf50743b/Quaternion.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Shooting/ShootInEnemy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6F7018B8-B8C1-49E6-8C4A-65A05AC289BE/f0/c2eee94b/Component.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6F7018B8-B8C1-49E6-8C4A-65A05AC289BE/51/6d727187/Transform.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F67DEBE1-EFD2-4294-8106-F1922BFAC1C7/e1/3d982bb7/EventDispatcher.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.9.1/Runtime/VisualScripting.Flow/Framework/Math/Sum.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Unity/MagicBattle/MagicBattle/Assets/_Scripts/Shooting/ShootInPlayer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6F7018B8-B8C1-49E6-8C4A-65A05AC289BE/53/c5767ffe/Object.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/40C80BC3-3A6A-48B7-BE6D-BDE4C72604B1/a2/1138c9f4/Debug.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Die/BaseDeath.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Health/GiveLive.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Unity/MagicBattle/MagicBattle/Assets/_Scripts/Items/CreateItemsUI.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Items/CreateItemsUI.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Unity/MagicBattle/MagicBattle/Assets/_Scripts/Shooting/ShootInPlayer.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Unity/MagicBattle/MagicBattle/Assets/_Scripts/Shooting/ShootInPlayer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Staff/Staff.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/BoxWithItems/CreateBox.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/DC753A10-6128-4F8E-971E-E88EE4826EEE/88/922d4bb3/Void.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Unity/MagicBattle/MagicBattle/Assets/_Scripts/Shooting/ShootInPlayer.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Unity/MagicBattle/MagicBattle/Assets/_Scripts/Shooting/ShootInPlayer.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -172,7 +95,6 @@
         <option value="$PROJECT_DIR$/Assets/_Scripts/Enemy/EnemyStateMachine.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Shooting/ShootInvoker.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Die/DieUI.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Die/DieCounter.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Die/BaseDeath.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Die/EnemyDeath.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Die/PlayerDeath.cs" />
@@ -180,14 +102,15 @@
         <option value="$PROJECT_DIR$/Assets/_Scripts/Staff/Staff.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Items/CreateItemsUI.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Items/SquareFrame.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Attacks/MagicAttackStorage.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Items/FramesActivator.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Items/CurrentItem.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Enemy/EnemyAttackState.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/BoxWithItems/BoxWithItems.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/BoxWithItems/CreateBox.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Shooting/BaseShoot.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Shooting/ShootInEnemy.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/BoxWithItems/CreateBox.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Die/DieCounter.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/BoxWithItems/BoxWithItems.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Attacks/MagicAttackStorage.cs" />
       </list>
     </option>
   </component>
@@ -254,7 +177,8 @@
       <workItem from="1717675369216" duration="2827000" />
       <workItem from="1717688130653" duration="1591000" />
       <workItem from="1717753565775" duration="1584000" />
-      <workItem from="1717769812086" duration="9688000" />
+      <workItem from="1717769812086" duration="10900000" />
+      <workItem from="1717829389538" duration="2028000" />
     </task>
     <task id="LOCAL-00001" summary="Attack With Buttons">
       <created>1716712058302</created>
@@ -442,10 +366,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1876" height="228" key="GridCell.Tab.3.right/0.0.1920.1040@0.0.1920.1040" timestamp="1717672980918" />
-    <state x="670" y="197" key="RiderGenerateDialog" timestamp="1717773051854">
+    <state x="670" y="197" key="RiderGenerateDialog" timestamp="1717829951181">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="670" y="197" key="RiderGenerateDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1717773051854" />
+    <state x="670" y="197" key="RiderGenerateDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1717829951181" />
     <state x="789" y="240" key="RollbackChangesDialog" timestamp="1717670917862">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

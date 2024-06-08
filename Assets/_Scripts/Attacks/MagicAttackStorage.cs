@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using _Scripts.BoxWithItems;
+using _Scripts.Die;
 using _Scripts.Enemy;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -11,15 +13,18 @@ namespace _Scripts
     {
         public static event Action OnCreatedUI;
 
-        public readonly List<AttacksType> Typies = new List<AttacksType>();
-        public readonly List<AttacksType> UsedAttacks = new List<AttacksType>();
+        private readonly List<AttacksType> _typies = new List<AttacksType>();
+        private readonly List<AttacksType> _usedAttacks = new List<AttacksType>();
 
         public int AttackCount { get; private set; }
         public int RedAttack { get; private set; }
         public int BlueAttack { get; private set; }
 
         [SerializeField] private EnemyStateMachine _stateMachine;
-
+        [SerializeField] private CreateBox _createBox;
+        private const int MINAttackCount = 2;
+        private const int MaXttackCount = 7;
+        
         private AttacksType _attacksType;
 
         private void Start()
@@ -32,8 +37,46 @@ namespace _Scripts
             ResetStats();
             EnemyEnterInIdleState();
 
-            var randomAttackCount = Random.Range(2, 7);
+            var randomAttackCount = SetAttackCount();
 
+            AddAttacks(randomAttackCount);
+
+            NoAttackOfType();
+
+            OnCreatedUI?.Invoke();
+
+            CreateBoxWithItems();
+            PrintAttacks();
+        }
+
+        private void NoAttackOfType()
+        {
+            if (BlueAttack == 0)
+            {
+                _attacksType = AttacksType.Blue;
+                AddAttacksCount();
+                TypiesAddAttack();
+            }
+
+            if (RedAttack != 0) return;
+            _attacksType = AttacksType.Red;
+            AddAttacksCount();
+            TypiesAddAttack();
+        }
+
+        private void TypiesAddAttack()
+        {
+            _typies.Add(_attacksType);
+        }
+
+        private void AddAttacksCount()
+        {
+            RedAttack++;
+            AttackCount++;
+        }
+
+        private void AddAttacks(int randomAttackCount)
+        {
             for (var i = 0; i < randomAttackCount; i++)
             {
                 var randomAttack = Random.Range(0, 2);
@@ -51,28 +94,14 @@ namespace _Scripts
                 }
 
                 AttackCount++;
-                Typies.Add(_attacksType);
+                TypiesAddAttack();
             }
+        }
 
-            if (BlueAttack == 0)
-            {
-                _attacksType = AttacksType.Blue;
-                BlueAttack++;
-                AttackCount++;
-                Typies.Add(_attacksType);
-            }
-
-            if (RedAttack == 0)
-            {
-                _attacksType = AttacksType.Red;
-                RedAttack++;
-                AttackCount++;
-                Typies.Add(_attacksType);
-            }
-
-            OnCreatedUI?.Invoke();
-
-            PrintAttacks();
+        private static int SetAttackCount()
+        {
+            var randomAttackCount = Random.Range(MINAttackCount, MaXttackCount);
+            return randomAttackCount;
         }
 
         private void ResetStats()
@@ -80,8 +109,16 @@ namespace _Scripts
             RedAttack = 0;
             BlueAttack = 0;
             AttackCount = 0;
-            Typies.Clear();
-            UsedAttacks.Clear();
+            _typies.Clear();
+            _usedAttacks.Clear();
+        }
+
+        private void CreateBoxWithItems()
+        {
+            if (DieCounter.IsSomeoneDied())
+            {
+                _createBox.CreateAndMove();
+            }
         }
 
         private void EnemyEnterInIdleState()
@@ -91,7 +128,7 @@ namespace _Scripts
 
         public AttacksType GetFirstType()
         {
-            var type = Typies[0];
+            var type = _typies[0];
 
             StartCoroutine(RemoveAttackWithTime(type));
 
@@ -102,18 +139,18 @@ namespace _Scripts
         {
             yield return new WaitForSeconds(0.5f);
 
-            UsedAttacks.Add(type);
-            Typies.RemoveAt(0);
+            _usedAttacks.Add(type);
+            _typies.RemoveAt(0);
             AttackCount--;
 
-            if (Typies.Count <= 0) GenerateMagicAttacks();
+            if (_typies.Count <= 0) GenerateMagicAttacks();
         }
 
         private void PrintAttacks()
         {
             var attacksToDebug = "";
 
-            foreach (var attacks in Typies)
+            foreach (var attacks in _typies)
             {
                 var attack = attacks == AttacksType.Red ? "R" : "B";
                 attacksToDebug += attack;

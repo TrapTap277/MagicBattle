@@ -2,17 +2,22 @@
 {
     public class DieCounter
     {
-        private static int EnemyDieCount {get; set; }
-        private static int PlayerDieCount {get; set; }
-        
+        private static int _enemyDieCount;
+        private static int _playerDieCount;
+
         public static void AddEnemyDies()
         {
-            EnemyDieCount++;
+            _enemyDieCount++;
         }
-        
+
         public static void AddPlayerDies()
         {
-            PlayerDieCount++;
+            _playerDieCount++;
+        }
+
+        public static bool IsSomeoneDied()
+        {
+            return _enemyDieCount > 0 || _playerDieCount > 0;
         }
     }
 }

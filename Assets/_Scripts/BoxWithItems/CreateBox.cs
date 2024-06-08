@@ -1,6 +1,5 @@
 ﻿using DG.Tweening;
 using UnityEngine;
-using Sequence = DG.Tweening.Sequence;
 
 namespace _Scripts.BoxWithItems
 {
@@ -13,16 +12,15 @@ namespace _Scripts.BoxWithItems
 
         private Quaternion _startCameraTransform;
         private Transform _boxPositions;
+
         private void Awake()
         {
             _startCameraTransform = _mainCameraTranform.rotation;
-            
-            CreateAndMove();
         }
 
         public void CreateAndMove()
         {
-            GameObject box = Instantiate(_boxPrefab, _spawnPosition.position, _spawnPosition.rotation);
+            var box = Instantiate(_boxPrefab, _spawnPosition.position, _spawnPosition.rotation);
             _boxPositions = box.transform;
             MoveUp(box.transform);
         }
@@ -34,24 +32,28 @@ namespace _Scripts.BoxWithItems
 
         private void MoveDown(Transform box)
         {
-            Sequence move = DOTween.Sequence();
-            move.Append(box.DOMoveY(_spawnPosition.position.y, 3).SetEase(Ease.Linear).OnComplete(ChangeCameraRotationToDefault));
+            var move = DOTween.Sequence();
+            move.Append(box.DOMoveY(_spawnPosition.position.y, 3)
+                .SetEase(Ease.Linear)
+                .OnComplete(ChangeCameraRotationToDefault));
         }
 
         private void MoveUp(Transform box)
         {
-            Sequence move = DOTween.Sequence();
+            var move = DOTween.Sequence();
             move.Append(box.DOMoveY(_endPosition.position.y, 3).SetEase(Ease.Linear).OnComplete(ChangeCameraRotation));
         }
 
         private void ChangeCameraRotationToDefault()
         {
-            _mainCameraTranform.DORotate(_startCameraTransform.eulerAngles, 3).SetEase(Ease.Linear).OnComplete(DestroyBox);
+            _mainCameraTranform.DORotate(_startCameraTransform.eulerAngles, 3)
+                .SetEase(Ease.Linear)
+                .OnComplete(DestroyBox);
         }
 
         private void ChangeCameraRotation()
         {
-            Quaternion lookRotation = Quaternion.LookRotation(_endPosition.position - _mainCameraTranform.position);
+            var lookRotation = Quaternion.LookRotation(_endPosition.position - _mainCameraTranform.position);
             _mainCameraTranform.DORotateQuaternion(lookRotation, 3).SetEase(Ease.Linear);
         }
 
