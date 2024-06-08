@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using _Scripts.BoxWithItems;
 using _Scripts.Die;
 using _Scripts.Enemy;
@@ -24,7 +25,7 @@ namespace _Scripts
         [SerializeField] private CreateBox _createBox;
         private const int MINAttackCount = 2;
         private const int MaXttackCount = 7;
-        
+
         private AttacksType _attacksType;
 
         private void Start()
@@ -115,10 +116,7 @@ namespace _Scripts
 
         private void CreateBoxWithItems()
         {
-            if (DieCounter.IsSomeoneDied())
-            {
-                _createBox.CreateAndMove();
-            }
+            if (DieCounter.IsSomeoneDied()) _createBox.CreateAndMove();
         }
 
         private void EnemyEnterInIdleState()
@@ -148,13 +146,7 @@ namespace _Scripts
 
         private void PrintAttacks()
         {
-            var attacksToDebug = "";
-
-            foreach (var attacks in _typies)
-            {
-                var attack = attacks == AttacksType.Red ? "R" : "B";
-                attacksToDebug += attack;
-            }
+            var attacksToDebug = _typies.Select(attacks => attacks == AttacksType.Red ? "R" : "B").Aggregate("", (current, attack) => current + attack);
 
             Debug.Log(attacksToDebug);
         }

@@ -7,14 +7,11 @@ namespace _Scripts.Enemy
     public class EnemyStateMachine : MonoBehaviour
     {
         #region States
-
+        
+        public readonly EnemyIdleState IdleState = new EnemyIdleState();
+        public readonly EnemyAttackState AttackState = new EnemyAttackState();
+        public readonly EnemyUseItemState UseItemState = new EnemyUseItemState();
         private EnemyBaseState _enemyCurrentState;
-
-        public EnemyIdleState IdleState = new EnemyIdleState();
-
-        public EnemyAttackState AttackState = new EnemyAttackState();
-
-        public EnemyUseItemState UseItemState = new EnemyUseItemState();
 
         #endregion
 

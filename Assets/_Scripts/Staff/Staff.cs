@@ -35,7 +35,7 @@ namespace _Scripts.Staff
             DeterminateGemAndChangeMaterial(Gem.SecondMove);
         }
 
-        public void DeterminateGemAndChangeMaterial(Gem gem)
+        private void DeterminateGemAndChangeMaterial(Gem gem)
         {
             if (_items.TryGetValue(gem, out Material material))
             {
