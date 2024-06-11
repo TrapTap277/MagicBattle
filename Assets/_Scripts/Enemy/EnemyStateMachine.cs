@@ -12,7 +12,7 @@ namespace _Scripts.Enemy
     public class EnemyStateMachine : MonoBehaviour
     {
         #region States
-        
+
         public readonly EnemyIdleState IdleState = new EnemyIdleState();
         public readonly EnemyAttackState AttackState = new EnemyAttackState();
         public readonly EnemyUseItemState UseItemState = new EnemyUseItemState();
@@ -29,6 +29,9 @@ namespace _Scripts.Enemy
 
         public readonly Dictionary<Gem, BaseItem> UsedItems = new Dictionary<Gem, BaseItem>();
 
+        public float PercentToAttackInPlayer;
+        public float RandomNumber;
+
         private void Awake()
         {
             _enemyCurrentState = IdleState;
@@ -36,9 +39,16 @@ namespace _Scripts.Enemy
             _enemyCurrentState.Enter(this);
         }
 
+        public void SwitchState(EnemyBaseState state)
+        {
+            _enemyCurrentState.Exit(this);
+            _enemyCurrentState = state;
+            _enemyCurrentState.Enter(this);
+        }
+
         public void AddUsedItems(Gem gem, BaseItem item)
         {
-            if(!UsedItems.ContainsKey(gem))
+            if (!UsedItems.ContainsKey(gem))
                 UsedItems.Add(gem, item);
         }
 
@@ -47,11 +57,11 @@ namespace _Scripts.Enemy
             MoveTurn = turn;
         }
 
-        public void SwitchState(EnemyBaseState state)
+        public void CalculatePercent()
         {
-            _enemyCurrentState.Exit(this);
-            _enemyCurrentState = state;
-            _enemyCurrentState.Enter(this);
+            PercentToAttackInPlayer = (float) Storage.BlueAttack / Storage.AttackCount *
+                                      100;
+            RandomNumber = Random.Range(0, 100);
         }
     }
 }

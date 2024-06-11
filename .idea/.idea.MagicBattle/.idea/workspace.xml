@@ -23,50 +23,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a27b7c11-43cf-491c-becf-76115ceca5b7" name="Default Changelist" comment="Created Items">
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Enemy/MoveTurn.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Enemy/MoveTurn.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Items/EnemyUseItem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Items/EnemyUseItem.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Items/GenerateRandomItem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Items/GenerateRandomItem.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Items/IInitAndDeinitUseItem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Items/IInitAndDeinitUseItem.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Items/PlayerUseItem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/Items/PlayerUseItem.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MagicBattle/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MagicBattle/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MagicBattle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MagicBattle/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Assets/Chest/Weapon Crate Animated/Prefabs/First Person Controller.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Assets/Chest/Weapon Crate Animated/Prefabs/First Person Controller.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scenes/MagicScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scenes/MagicScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/AttackMoveStateMachine/MoveTransition.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/AttackMoveStateMachine/MoveTransition.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Attacks/MagicAttackStorage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Attacks/MagicAttackStorage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Attacks/MagicAttackUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Attacks/MagicAttackUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/BoxWithItems/BoxWithItems.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/BoxWithItems/BoxWithItems.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Die/BaseDeath.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Die/BaseDeath.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Die/EnemyDeath.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Die/EnemyDeath.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Die/PlayerDeath.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Die/PlayerDeath.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Enemy/EnemyAttackState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Enemy/EnemyAttackState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Enemy/EnemyIdleState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Enemy/EnemyIdleState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Enemy/EnemyStateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Enemy/EnemyStateMachine.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Enemy/EnemyUseItemState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Enemy/EnemyUseItemState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Health/EnemyHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Health/EnemyHealth.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Health/HealthBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Health/HealthBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Health/PlayerHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Health/PlayerHealth.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Items/CreateItemsUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Items/CreateItemsUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Items/CurrentItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Items/CurrentItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Items/DamageGemItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Items/DamageGemItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Items/ISetSecondMove.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Items/ISetSecondMove.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Items/SecondMoveGemItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Items/SecondMoveGemItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Items/UseItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Items/BaseUseItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Items/UseItem.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Items/BaseUseItem.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Shooting/BaseShoot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Shooting/BaseShoot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Shooting/IEnemyStateSwitcher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Shooting/IEnemyStateSwitcher.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Shooting/ShootInEnemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Shooting/ShootInEnemy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Shooting/ShootInPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Shooting/ShootInPlayer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Shooting/ShootInvoker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Shooting/ShootInvoker.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Shooting/SwitchEnemyStateWithShootingInEnemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Shooting/SwitchEnemyStateWithShootingInEnemy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Shooting/SwitchEnemyStateWithShootingInPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Shooting/SwitchEnemyStateWithShootingInPlayer.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,18 +102,18 @@
         <option value="$PROJECT_DIR$/Assets/_Scripts/Shooting/ShootInEnemy.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Shooting/ShootInPlayer.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Shooting/BaseShoot.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Attacks/MagicAttackStorage.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Items/EnemyUseItem.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Items/PlayerUseItem.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Enemy/EnemyAttackState.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Shooting/SwitchEnemyStateWithShootingInPlayer.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Shooting/SwitchEnemyStateWithShootingInEnemy.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Shooting/ShootInvoker.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Items/BaseUseItem.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Enemy/EnemyStateMachine.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Enemy/EnemyIdleState.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Health/HealthBase.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Enemy/EnemyStateMachine.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Enemy/EnemyAttackState.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Enemy/EnemyUseItemState.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Enemy/EnemyIdleState.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Shooting/ShootInvoker.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Attacks/MagicAttackStorage.cs" />
       </list>
     </option>
   </component>
@@ -458,9 +421,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1717950173766" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1718049231663">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1718095003856">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1718049231663" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1718095003856" />
   </component>
 </project>

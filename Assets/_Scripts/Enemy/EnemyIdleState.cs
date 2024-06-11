@@ -12,12 +12,11 @@ namespace _Scripts.Enemy
                 enemyStateMachine.MoveTransition.TransitionToPlayer();
                 enemyStateMachine.UsedItems.Clear();
                 
-                Debug.LogError("Clear");
-                
                 return;
             }
 
             enemyStateMachine.MoveTransition.TransitionToEnemy();
+            enemyStateMachine.CalculatePercent();
             
             if (GenerateRandomItem.ItemsCount > 0)
                 enemyStateMachine.SwitchState(enemyStateMachine.UseItemState);

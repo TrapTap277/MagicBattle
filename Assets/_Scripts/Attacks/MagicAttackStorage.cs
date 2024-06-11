@@ -89,14 +89,12 @@ namespace _Scripts.Attacks
                 BlueAttack++;
                 AttackCount++;
                 AddAttackType();
-                Debug.Log(BlueAttack);
             }
 
             if (RedAttack != 0) return;
             _attacksType = AttacksType.Red;
             RedAttack++;
             AttackCount++;
-            Debug.Log(BlueAttack);
             AddAttackType();
         }
 

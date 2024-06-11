@@ -27,7 +27,7 @@ namespace _Scripts.Shooting
         private void Awake()
         {
             _buttonToShootInEnemy.onClick.AddListener(() => ShootInEnemy());
-            _buttonToShootInYou.onClick.AddListener(() => ShootInYou());
+            _buttonToShootInYou.onClick.AddListener(() => ShootInPlayer());
 
             _secondMoveTurn = SecondMoveTurn.None;
         }
@@ -41,7 +41,7 @@ namespace _Scripts.Shooting
             Debug.LogWarning("Shoot in Enemy");
         }
 
-        public void ShootInYou(bool isEnemy = false)
+        public void ShootInPlayer(bool isEnemy = false)
         {
             Debug.LogWarning("Shoot in Player");
             _baseShoot = new ShootInPlayer(_animator, _storage, _stateMachine, _secondMoveTurn, isEnemy);
