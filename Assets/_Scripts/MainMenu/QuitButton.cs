@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using UnityEditor;
+using UnityEngine;
 
 namespace _Scripts.MainMenu
 {
@@ -6,7 +7,11 @@ namespace _Scripts.MainMenu
     {
         public void QuitGame()
         {
-            Application.Quit();
+#if UNITY_EDITOR
+            EditorApplication.isPlaying = false;
+#else
+            Application.Quit(); // Todo Maybe it will not work
+#endif
         }
     }
 }

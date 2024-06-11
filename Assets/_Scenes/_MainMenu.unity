@@ -1058,7 +1058,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &589251284
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1099,7 +1099,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300022, guid: 34ecf51bcd3f4424eafda7dafd885bd0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0b8a08d27b7e2e9418c9fa14b897fdc6, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1432,7 +1432,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 737179963}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -1936,7 +1936,7 @@ MonoBehaviour:
       - m_Target: {fileID: 898568600}
         m_TargetAssemblyTypeName: _Scripts.Music.ChangeSlider, Assembly-CSharp
         m_MethodName: ChangeMusicVolume
-        m_Mode: 4
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2090,7 +2090,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1163e95add6147c4b66ae32dbeb0b514, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buttonsSprites: []
+  _buttonsSprites:
+  - {fileID: 21300000, guid: 4292237ca655d1249b7ebbba764a9a91, type: 3}
+  - {fileID: 21300000, guid: c2c6971fac7d404458c0d682d0ced17c, type: 3}
 --- !u!1 &1022526791
 GameObject:
   m_ObjectHideFlags: 0
@@ -2580,7 +2582,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1681711768}
-  - component: {fileID: 1681711767}
+  - component: {fileID: 1681711769}
   m_Layer: 0
   m_Name: ChangeMusicVolume
   m_TagString: Untagged
@@ -2588,18 +2590,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1681711767
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1681711766}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d1a41b4bb70472dade0d85514c32fcc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1681711768
 Transform:
   m_ObjectHideFlags: 0
@@ -2615,6 +2605,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1681711769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1681711766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8544d94bbb44de28be06bf9deca5df3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1889441142
 GameObject:
   m_ObjectHideFlags: 0
@@ -3195,7 +3197,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1559946441}
         m_TargetAssemblyTypeName: _Scripts.MainMenu.SettingsButton, Assembly-CSharp
-        m_MethodName: Exit
+        m_MethodName: CloseSettingsMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

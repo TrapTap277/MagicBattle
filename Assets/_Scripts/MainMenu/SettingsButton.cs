@@ -1,4 +1,5 @@
-﻿using DG.Tweening;
+﻿using System;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,27 +11,44 @@ namespace _Scripts.MainMenu
         [SerializeField] private CanvasGroup _settingsButtons;
         [SerializeField] private Button _settingsButton;
 
-        private const float TIME_TO_FADE = 2f;
+        private const float TimeToFade = 1f;
 
-        void Start()
+        private void Start()
         {
             _settingsButton.onClick.AddListener(OpenSettingsMenu);
         }
 
-        public void OpenSettingsMenu()
+        public void CloseSettingsMenu()
         {
-            Sequence fade = DOTween.Sequence();
-
-            fade.Append(_otherButtons.DOFade(0, TIME_TO_FADE));
-            fade.Append(_settingsButtons.DOFade(1, TIME_TO_FADE));
+            ShowAndFadeButtons(_settingsButtons, _otherButtons);
         }
 
-        public void Exit()
+        private static void ShowAndFadeButtons(CanvasGroup firstButtons, CanvasGroup secondButtons, int firstValue = 0, int secondValue = 1)
         {
-            Sequence fade = DOTween.Sequence();
+            var fade = DOTween.Sequence();
 
-            fade.Append(_settingsButtons.DOFade(0, TIME_TO_FADE));
-            fade.Append(_otherButtons.DOFade(1, TIME_TO_FADE));
+            fade.Append(firstButtons.DOFade(firstValue, TimeToFade));
+            fade.Append(secondButtons.DOFade(secondValue, TimeToFade));
+        }
+
+        private void OpenSettingsMenu()
+        {
+            ShowAndFadeButtons(_otherButtons, _settingsButtons);
+        }
+
+        private void FadeAllButtons()
+        {
+            ShowAndFadeButtons(_settingsButtons, _otherButtons, 0, 0);
+        }
+
+        private void OnEnable()
+        {
+            VignetteLerp.OnFadeButtons += FadeAllButtons;
+        }
+
+        private void OnDisable()
+        {
+            VignetteLerp.OnFadeButtons -= FadeAllButtons;
         }
     }
 }

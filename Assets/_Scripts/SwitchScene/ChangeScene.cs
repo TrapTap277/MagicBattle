@@ -1,4 +1,5 @@
-﻿using _Scripts.Move;
+﻿using _Scripts.MainMenu;
+using _Scripts.Move;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,26 +8,24 @@ namespace _Scripts.SwitchScene
 {
     public class ChangeScene : MonoBehaviour
     {
+        private const float TimeToDarkness = 3f;
+        private const int DarknessEndValue = 1;
+        
         private CanvasGroup _darkness;
-        private Animator _darknessAnimator;
-        private const float TIME_TO_DARKNESS = 3f;
 
         private void Start()
         {
             _darkness = GameObject.FindGameObjectWithTag("Darkness").GetComponent<CanvasGroup>();
-            _darknessAnimator = _darkness.GetComponent<Animator>();
         }
 
-        public void ChangeCurrentScene(int index)
+        private void ChangeCurrentScene(int index)
         {
-            if (_darknessAnimator != null)
-                _darknessAnimator.enabled = false;
-
-            Sequence darkness = DOTween.Sequence();
-            darkness.Append(_darkness.DOFade(1, TIME_TO_DARKNESS).SetEase(Ease.Linear)).OnComplete(() => ChangeCurrentSceneAfterDarkness(index));
+            var darkness = DOTween.Sequence();
+            darkness.Append(_darkness.DOFade(DarknessEndValue, TimeToDarkness).SetEase(Ease.Linear))
+                .OnComplete(() => ChangeCurrentSceneAfterDarkness(index));
         }
 
-        private void ChangeCurrentSceneAfterDarkness(int index)
+        private static void ChangeCurrentSceneAfterDarkness(int index)
         {
             SceneManager.LoadScene(index);
         }
@@ -35,14 +34,14 @@ namespace _Scripts.SwitchScene
         {
             // PlayerLost.OnChangedScene += ChangeCurrentScene; Todo When lost
             GoToPortal.OnChangedScene += ChangeCurrentScene;
-            //VignetteLerp.OnChengedScene += ChangeCurrentScene; Todo in pre scene
+            VignetteLerp.OnChangedScene += ChangeCurrentScene;
         }
 
         private void OnDisable()
         {
-            // PlayerLost.OnChangedScene -= ChangeCurrentScene; Todo
+            // PlayerLost.OnChangedScene -= ChangeCurrentScene; Todo When lost
             GoToPortal.OnChangedScene -= ChangeCurrentScene;
-            // VignetteLerp.OnChengedScene -= ChangeCurrentScene; Todo
+            VignetteLerp.OnChangedScene -= ChangeCurrentScene;
         }
     }
 }

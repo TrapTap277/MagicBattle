@@ -18,31 +18,29 @@ namespace _Scripts.MainMenu
 
         private void Start()
         {
-            _currentSprite = GetComponent<Image>(); 
-            _musicButton = GetComponent<Button>();
+            Init();
 
             _musicButton.onClick.AddListener(OnChangedSprite);
         }
 
-        public void OnChangedSprite()
+        private void Init()
         {
-            if(_spriteIndex == _buttonsSprites.Count)
-                _spriteIndex = 0;
+            _currentSprite = GetComponent<Image>();
+            _musicButton = GetComponent<Button>();
+        }
+
+        private void OnChangedSprite()
+        {
+            if (_spriteIndex == _buttonsSprites.Count) _spriteIndex = 0;
 
             _currentSprite.sprite = _buttonsSprites[_spriteIndex];
 
-            if (_spriteIndex == 0)
-                OnChangeMusicVolume(false);
-
-            else
-            {
-                OnChangeMusicVolume(true);
-            }
+            OnChangeMusicVolume(_spriteIndex != 0);
 
             _spriteIndex++;
         }
 
-        private void OnChangeMusicVolume(bool change)
+        private static void OnChangeMusicVolume(bool change)
         {
             OnDisableOrEnableMusic?.Invoke(change);
         }
