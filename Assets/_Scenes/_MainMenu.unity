@@ -1380,7 +1380,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68a8f36754eb4bb3a536c851ddca89f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lerpDuration: 5
 --- !u!1 &737179963
 GameObject:
   m_ObjectHideFlags: 0
@@ -2280,7 +2279,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1352314386}
-  - component: {fileID: 1352314385}
+  - component: {fileID: 1352314387}
   m_Layer: 0
   m_Name: ChangeScene
   m_TagString: Untagged
@@ -2288,18 +2287,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1352314385
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1352314384}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d1a41b4bb70472dade0d85514c32fcc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1352314386
 Transform:
   m_ObjectHideFlags: 0
@@ -2315,6 +2302,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1352314387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1352314384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eacf0143a91d4f46a80eb9a724dbf6e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1422741599
 GameObject:
   m_ObjectHideFlags: 0
