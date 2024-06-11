@@ -33,16 +33,16 @@ namespace _Scripts.SwitchScene
 
         private void OnEnable()
         {
-            PlayerLost.OnChangedScene += ChangeCurrentScene;
+            // PlayerLost.OnChangedScene += ChangeCurrentScene; Todo When lost
             GoToPortal.OnChangedScene += ChangeCurrentScene;
-            VignetteLerp.OnChengedScene += ChangeCurrentScene;
+            //VignetteLerp.OnChengedScene += ChangeCurrentScene; Todo in pre scene
         }
 
         private void OnDisable()
         {
-            PlayerLost.OnChangedScene -= ChangeCurrentScene;
+            // PlayerLost.OnChangedScene -= ChangeCurrentScene; Todo
             GoToPortal.OnChangedScene -= ChangeCurrentScene;
-            VignetteLerp.OnChengedScene -= ChangeCurrentScene;
+            // VignetteLerp.OnChengedScene -= ChangeCurrentScene; Todo
         }
     }
 }
