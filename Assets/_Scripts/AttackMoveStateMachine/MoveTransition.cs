@@ -5,11 +5,16 @@ namespace _Scripts.AttackMoveStateMachine
 {
     public class MoveTransition : MonoBehaviour
     {
-        public Transform Staff;
-        public CanvasGroup AttackButtons;
+        [SerializeField] private Transform Staff;
+        [SerializeField] private CanvasGroup AttackButtons;
 
-        public Transform EndStaffPosition;
-        public Transform StartStaffPosition;
+        [SerializeField] private Transform EndStaffPosition;
+        [SerializeField] private Transform StartStaffPosition;
+
+        private void Start()
+        {
+            EnablePanel();
+        }
 
         public void TransitionToEnemy()
         {
@@ -31,6 +36,12 @@ namespace _Scripts.AttackMoveStateMachine
         {
             move.Append(AttackButtons.DOFade(endValue, 2));
             AttackButtons.blocksRaycasts = isBlock;
+        }
+
+        private void EnablePanel()
+        {
+            AttackButtons.interactable = true;
+            AttackButtons.blocksRaycasts = true;
         }
     }
 }

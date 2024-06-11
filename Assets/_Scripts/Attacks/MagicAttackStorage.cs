@@ -1,24 +1,24 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using _Scripts.BoxWithItems;
 using _Scripts.Die;
 using _Scripts.Enemy;
+using _Scripts.Shooting;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace _Scripts
+namespace _Scripts.Attacks
 {
     public class MagicAttackStorage : MonoBehaviour
     {
         public static event Action OnCreatedUI;
 
-        private readonly List<AttacksType> _typies = new List<AttacksType>();
+        public List<AttacksType> _typies = new List<AttacksType>();
         private readonly List<AttacksType> _usedAttacks = new List<AttacksType>();
 
         public int AttackCount { get; private set; }
-        public int RedAttack { get; private set; }
+        private int RedAttack { get; set; }
         public int BlueAttack { get; private set; }
 
         [SerializeField] private EnemyStateMachine _stateMachine;
@@ -42,7 +42,8 @@ namespace _Scripts
 
             AddAttacks(randomAttackCount);
 
-            NoAttackOfType();
+            if(BlueAttack == 0 || RedAttack == 0)
+                NoAttackOfType();
 
             OnCreatedUI?.Invoke();
 
@@ -50,30 +51,11 @@ namespace _Scripts
             PrintAttacks();
         }
 
-        private void NoAttackOfType()
+        public AttacksType GetFirstType()
         {
-            if (BlueAttack == 0)
-            {
-                _attacksType = AttacksType.Blue;
-                AddAttacksCount();
-                TypiesAddAttack();
-            }
+            var type = _typies[0];
 
-            if (RedAttack != 0) return;
-            _attacksType = AttacksType.Red;
-            AddAttacksCount();
-            TypiesAddAttack();
-        }
-
-        private void TypiesAddAttack()
-        {
-            _typies.Add(_attacksType);
-        }
-
-        private void AddAttacksCount()
-        {
-            RedAttack++;
-            AttackCount++;
+            return type;
         }
 
         private void AddAttacks(int randomAttackCount)
@@ -94,9 +76,33 @@ namespace _Scripts
                     RedAttack++;
                 }
 
+                AddAttackType();
                 AttackCount++;
-                TypiesAddAttack();
             }
+        }
+
+        private void NoAttackOfType()
+        {
+            if (BlueAttack == 0)
+            {
+                _attacksType = AttacksType.Blue;
+                BlueAttack++;
+                AttackCount++;
+                AddAttackType();
+                Debug.Log(BlueAttack);
+            }
+
+            if (RedAttack != 0) return;
+            _attacksType = AttacksType.Red;
+            RedAttack++;
+            AttackCount++;
+            Debug.Log(BlueAttack);
+            AddAttackType();
+        }
+
+        private void AddAttackType()
+        {
+            _typies.Add(_attacksType);
         }
 
         private static int SetAttackCount()
@@ -121,32 +127,48 @@ namespace _Scripts
 
         private void EnemyEnterInIdleState()
         {
+            ResetSecondMove(_stateMachine);
+
+            _stateMachine.SetMoveTurn(MoveTurn.Player);
             _stateMachine.SwitchState(_stateMachine.IdleState);
         }
 
-        public AttacksType GetFirstType()
+        private static void ResetSecondMove(EnemyStateMachine stateMachine)
         {
-            var type = _typies[0];
+            IEnemyStateSwitcher[] resetSecondMove =
+            {
+                new SwitchEnemyStateWithShootingInEnemy(stateMachine),
+                new SwitchEnemyStateWithShootingInPlayer(stateMachine)
+            };
 
-            StartCoroutine(RemoveAttackWithTime(type));
-
-            return type;
+            foreach (var reset in resetSecondMove) reset.ResetSecondMove();
         }
 
-        private IEnumerator RemoveAttackWithTime(AttacksType type)
+        public void RemoveAttack(AttacksType type)
         {
-            yield return new WaitForSeconds(0.5f);
-
             _usedAttacks.Add(type);
             _typies.RemoveAt(0);
-            AttackCount--;
+
+            DecreaseAttackCount(type);
 
             if (_typies.Count <= 0) GenerateMagicAttacks();
         }
 
+        private void DecreaseAttackCount(AttacksType type)
+        {
+            AttackCount--;
+
+            if (type == AttacksType.Blue)
+                BlueAttack--;
+
+            else
+                RedAttack--;
+        }
+
         private void PrintAttacks()
         {
-            var attacksToDebug = _typies.Select(attacks => attacks == AttacksType.Red ? "R" : "B").Aggregate("", (current, attack) => current + attack);
+            var attacksToDebug = _typies.Select(attacks => attacks == AttacksType.Red ? "R" : "B")
+                .Aggregate("", (current, attack) => current + attack);
 
             Debug.Log(attacksToDebug);
         }

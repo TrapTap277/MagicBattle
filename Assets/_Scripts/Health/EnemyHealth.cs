@@ -15,15 +15,8 @@ namespace _Scripts.Health
         [SerializeField] private TextMeshProUGUI _healthInPercents;
         [SerializeField] private Image _frontHealthBar;
         [SerializeField] private Image _backHealthBar;
-
-        private readonly DieCounter _dieCounter = new DieCounter();
         
-        private void Awake()
-        {
-            Init();
-        }
-
-        public override void Init()
+        protected override void Init()
         {
             HealthInPercents = _healthInPercents;
             FrontHealthBar = _frontHealthBar;

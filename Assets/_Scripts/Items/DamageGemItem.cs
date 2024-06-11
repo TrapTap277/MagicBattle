@@ -7,7 +7,6 @@ namespace _Scripts.Items
     public class DamageGemItem : BaseItem
     {
         public static event Action OnTakeMoreDamage;
-        
         public override void Use()
         {
             OnTakeMoreDamage?.Invoke();

@@ -16,14 +16,7 @@ namespace _Scripts.Health
         [SerializeField] private Image _frontHealthBar;
         [SerializeField] private Image _backHealthBar;
 
-        private readonly DieCounter _dieCounter = new DieCounter();
-        
-        private void Awake()
-        {
-            Init();
-        }
-        
-        public override void Init()
+        protected override void Init()
         {
             HealthInPercents = _healthInPercents;
             FrontHealthBar = _frontHealthBar;
@@ -42,6 +35,7 @@ namespace _Scripts.Health
             HealGemItem.OnHealedPlayer += RestoreHealth;
             ProtectionGemItem.OnGivenProtectionToPlayer += GetProtection;
             DamageGemItem.OnTakeMoreDamage += TakeMoreDamage;
+
         }
 
         private void OnDisable()
@@ -50,6 +44,7 @@ namespace _Scripts.Health
             HealGemItem.OnHealedPlayer -= RestoreHealth;
             ProtectionGemItem.OnGivenProtectionToPlayer -= GetProtection;
             DamageGemItem.OnTakeMoreDamage -= TakeMoreDamage;
+
         }
     }
 }

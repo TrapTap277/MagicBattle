@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using _Scripts.Items;
+using UnityEngine;
 
 namespace _Scripts.Enemy
 {
@@ -6,11 +7,27 @@ namespace _Scripts.Enemy
     {
         public override void Enter(EnemyStateMachine enemyStateMachine)
         {
+            if (enemyStateMachine.MoveTurn != MoveTurn.Enemy)
+            {
+                enemyStateMachine.MoveTransition.TransitionToPlayer();
+                enemyStateMachine.UsedItems.Clear();
+                
+                Debug.LogError("Clear");
+                
+                return;
+            }
+
+            enemyStateMachine.MoveTransition.TransitionToEnemy();
+            
+            if (GenerateRandomItem.ItemsCount > 0)
+                enemyStateMachine.SwitchState(enemyStateMachine.UseItemState);
+
+            else
+                enemyStateMachine.SwitchState(enemyStateMachine.AttackState);
         }
 
         public override void Exit(EnemyStateMachine enemyStateMachine)
         {
-            
         }
     }
 }

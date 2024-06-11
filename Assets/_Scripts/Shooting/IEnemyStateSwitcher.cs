@@ -3,5 +3,6 @@
     public interface IEnemyStateSwitcher
     {
         void SwitchState(int index);
+        void ResetSecondMove();
     }
 }

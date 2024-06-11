@@ -18,11 +18,11 @@ namespace _Scripts.BoxWithItems
 
         private Dictionary<string, Transform> _positions;
 
+        private static readonly int Open = Animator.StringToHash("Open");
+        
         private const string SpawnPositionsPlayer = "SpawnPositionsForPlayer";
         private const string SpawnPositionsEnemy = "SpawnPositionsEnemy";
         private const string EndPositions = "EndPositions";
-
-        private static readonly int Open = Animator.StringToHash("Open");
 
         private CreateItemsUI _createItemsUI;
         private Animator _animator;
@@ -47,10 +47,7 @@ namespace _Scripts.BoxWithItems
             RemoveBoxCollider();
 
             SetAnimation(true);
-
-            //todo action give items
-
-            _createItemsUI.Create(10);
+            _createItemsUI.CreateWithItemsCount(10);
 
             await Task.Delay(2000);
 

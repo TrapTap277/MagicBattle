@@ -1,5 +1,5 @@
 ﻿using System;
-using _Scripts.Items;
+using _Scripts.Attacks;
 using _Scripts.Staff;
 using UnityEngine;
 
@@ -14,6 +14,7 @@ namespace _Scripts.Shooting
         private readonly Animator _animator;
         private Gem _gem;
         private int _attackIndex;
+        private AttacksType _currentAttack;
 
         protected BaseShoot(Animator animator, MagicAttackStorage attackStorage)
         {
@@ -28,17 +29,21 @@ namespace _Scripts.Shooting
             SetAnimation();
             DeterminateAttack(shootIn);
             SwitchEnemyState(enemyStateSwitcher);
+            RemoveAttackFromStorage();
         }
 
         private void DeterminateAttack(ShootIn shootIn)
         {
-            if (_attackStorage == null)
-            {
-                Debug.LogError("Attack storage is null");
-                return;
-            }
+            // if (_attackStorage == null)
+            // {
+            //     Debug.LogError("Attack storage is null");
+            //     return;
+            // }
 
-            if (_attackStorage.GetFirstType() == AttacksType.Blue)
+
+            _currentAttack = _attackStorage.GetFirstType();
+            
+            if (_currentAttack == AttacksType.Blue)
             {
                 SetParameters(Gem.TrueAttack, 0);
                 TakeDamage(shootIn);
@@ -47,9 +52,15 @@ namespace _Scripts.Shooting
             else
             {
                 SetParameters(Gem.FalseAttack, 1);
+
             }
 
             ChangeGemOnStaff();
+        }
+
+        private void RemoveAttackFromStorage()
+        {
+            _attackStorage.RemoveAttack(_currentAttack);
         }
 
         private void SwitchEnemyState(IEnemyStateSwitcher enemyStateSwitcher)

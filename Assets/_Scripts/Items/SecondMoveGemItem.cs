@@ -4,27 +4,21 @@ using UnityEngine;
 namespace _Scripts.Items
 {
     [CreateAssetMenu(menuName = "Items/MoveGem", fileName = "MoveGem")]
-    public class SecondMoveGemItem : BaseItem, IInit, ISetSecondMove
+    public class SecondMoveGemItem : BaseItem, IInit
     {
-        public static event Action OnGotSecondMove;
+        public static event Action<SecondMoveTurn> OnGotSecondMove;
         private bool _isUsedByEnemy;
+        private SecondMoveTurn _secondMoveTurn;
 
         public void Init(bool isUsedByEnemy)
         {
             _isUsedByEnemy = isUsedByEnemy;
-        }
-
-        public SecondMoveTurn Get()
-        {
-            if (!_isUsedByEnemy)
-                return SecondMoveTurn.Player;
-
-            return SecondMoveTurn.Enemy;
+            _secondMoveTurn = _isUsedByEnemy ? SecondMoveTurn.Enemy : SecondMoveTurn.Player;
         }
 
         public override void Use()
         {
-            OnGotSecondMove?.Invoke();
+            OnGotSecondMove?.Invoke(_secondMoveTurn);
         }
     }
 }

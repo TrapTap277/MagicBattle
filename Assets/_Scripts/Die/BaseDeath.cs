@@ -1,4 +1,5 @@
-﻿using _Scripts.Enemy;
+﻿using _Scripts.Attacks;
+using _Scripts.Enemy;
 using _Scripts.Health;
 using UnityEngine;
 
@@ -35,6 +36,7 @@ namespace _Scripts.Die
 
         private void SwitchEnemyState()
         {
+            StateMachine.SetMoveTurn(MoveTurn.Player);
             StateMachine.SwitchState(StateMachine.IdleState);
         }
 

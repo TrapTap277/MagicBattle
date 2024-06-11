@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,37 +9,41 @@ namespace _Scripts.Health
 {
     public abstract class HealthBase : MonoBehaviour
     {
+        public float Health { get; private set; }
         protected TextMeshProUGUI HealthInPercents;
         protected Image FrontHealthBar;
         protected Image BackHealthBar;
         private const float MAXHealth = 100;
         private const float ChipSpeed = 4f;
-        private float _health;
         private float _lerpTimer;
         private static float _damageСoefficient;
         private bool _isHasProtection;
 
-        private void Start()
+        private void Awake()
         {
-            _health = MAXHealth;
-            _damageСoefficient = 1f;
-            _health = Mathf.Clamp(_health, 0, MAXHealth);
+            Init();
         }
 
-        public abstract void Init();
+        private void Start()
+        {
+            Health = MAXHealth;
+            _damageСoefficient = 1f;
+            Health = Mathf.Clamp(Health, 0, MAXHealth);
+        }
 
-        public void TakeDamage(float damage)
+        protected abstract void Init();
+
+        protected void TakeDamage(float damage)
         {
             if (_isHasProtection == false)
             {
-                _health -= damage * _damageСoefficient;
-                //_lerpTimer = 0;
+                Health -= damage * _damageСoefficient;
+                Debug.LogWarning(_damageСoefficient);
             }
 
-            if (_health <= 0)
-            {
-                Died();
-            }
+            _lerpTimer = 0;
+
+            if (Health <= 0) Died();
 
             SetHealth();
             HealthBarLerp();
@@ -47,12 +52,10 @@ namespace _Scripts.Health
 
         public void RestoreHealth(float healthAmount)
         {
-            _health += healthAmount;
-            //_lerpTimer = 0;
+            Health += healthAmount;
+            _lerpTimer = 0;
             SetHealth();
             HealthBarLerp();
-
-            Debug.Log(_health);
         }
 
         public void ResetProperties()
@@ -69,22 +72,20 @@ namespace _Scripts.Health
         protected static void TakeMoreDamage()
         {
             _damageСoefficient = Random.Range(1.1f, 2f);
-            
-            Debug.Log(_damageСoefficient);
         }
 
         protected abstract void Died();
 
         private void SetHealth()
         {
-            _health = Mathf.Clamp(_health, 0, MAXHealth);
+            Health = Mathf.Clamp(Health, 0, MAXHealth);
         }
 
         private void HealthBarLerp()
         {
             var fillFront = FrontHealthBar.fillAmount;
             var fillBack = BackHealthBar.fillAmount;
-            var valueFraction = _health / MAXHealth;
+            var valueFraction = Health / MAXHealth;
 
             if (fillBack > valueFraction)
             {
@@ -118,7 +119,7 @@ namespace _Scripts.Health
             }
         }
 
-        private void ChangeFillAmount(float valueFraction, Image healthBar)
+        private static void ChangeFillAmount(float valueFraction, Image healthBar)
         {
             healthBar.fillAmount = valueFraction;
         }
@@ -128,4 +129,4 @@ namespace _Scripts.Health
             BackHealthBar.color = color;
         }
     }
-} 
+}

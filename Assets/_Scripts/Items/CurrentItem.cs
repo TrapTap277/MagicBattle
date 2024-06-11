@@ -10,15 +10,12 @@ namespace _Scripts.Items
         private static GameObject _useButtonGameObject;
         private static Button _useButton;
         private BaseItem _item;
-        private ShootInvoker _invoker;
-        private ISetSecondMove _secondMove;
         private GameObject _frame;
 
         private void Awake()
         {
             _useButtonGameObject = GameObject.FindGameObjectWithTag("UseButton");
             _useButton = _useButtonGameObject.GetComponent<Button>();
-            _invoker = FindObjectOfType<ShootInvoker>();
             gameObject.GetComponent<Button>().onClick.AddListener(() => InitAndShow(false));
             _frame = gameObject.GetComponentInChildren<SquareFrame>().gameObject;
         }
@@ -40,23 +37,19 @@ namespace _Scripts.Items
 
         private void InitAndShow(bool isUsedByEnemy)
         {
-            InitUseItem();            
+            InitUseItem();
             ShowFrame(true);
         }
 
         private void InitUseItem()
         {
-            UseItem.Init(_useButton, _item, this);
-            UseItem.DeInitButton();
-            UseItem.InitButton();
-
-            if (_item.Gem == Gem.SecondMove)
-            {
-                _secondMove = (SecondMoveGemItem) _item;
-                _invoker.SetSecondMove(_secondMove.Get());
-            }
+            BaseUseItem playerUseItemBase = new PlayerUseItem();
+            var playerInitAndDeinit = (IInitAndDeinitUseItem) playerUseItemBase;
+            playerUseItemBase.Init(_item, this, _useButton);
+            playerInitAndDeinit.Deinit();
+            playerInitAndDeinit.Init();
         }
-        
+
         private void ShowFrame(bool isShow)
         {
             var activator = new FramesActivator(_frame.gameObject);

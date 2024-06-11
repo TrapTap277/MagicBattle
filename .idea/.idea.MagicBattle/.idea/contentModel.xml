@@ -85,6 +85,7 @@
             <e p="EnemyIdleState.cs" t="Include" />
             <e p="EnemyStateMachine.cs" t="Include" />
             <e p="EnemyUseItemState.cs" t="Include" />
+            <e p="MoveTurn.cs" t="Include" />
           </e>
           <e p="Health" t="Include">
             <e p="EnemyHealth.cs" t="Include" />
@@ -94,18 +95,21 @@
           </e>
           <e p="Items" t="Include">
             <e p="BaseItem.cs" t="Include" />
+            <e p="BaseUseItem.cs" t="Include" />
             <e p="CreateItemsUI.cs" t="Include" />
             <e p="CurrentItem.cs" t="Include" />
             <e p="DamageGemItem.cs" t="Include" />
+            <e p="EnemyUseItem.cs" t="Include" />
             <e p="FramesActivator.cs" t="Include" />
+            <e p="GenerateRandomItem.cs" t="Include" />
             <e p="HealGemItem.cs" t="Include" />
             <e p="IInit.cs" t="Include" />
-            <e p="ISetSecondMove.cs" t="Include" />
+            <e p="IInitAndDeinitUseItem.cs" t="Include" />
+            <e p="PlayerUseItem.cs" t="Include" />
             <e p="ProtectionGemItem.cs" t="Include" />
             <e p="SecondMoveGemItem.cs" t="Include" />
             <e p="SecondMoveTurn.cs" t="Include" />
             <e p="SquareFrame.cs" t="Include" />
-            <e p="UseItem.cs" t="Include" />
           </e>
           <e p="Shooting" t="Include">
             <e p="BaseShoot.cs" t="Include" />
