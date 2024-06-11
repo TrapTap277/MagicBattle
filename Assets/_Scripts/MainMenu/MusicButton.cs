@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace _Scripts.Music
+namespace _Scripts.MainMenu
 {
     public class MusicButton : MonoBehaviour
     {
@@ -18,7 +18,7 @@ namespace _Scripts.Music
 
         private void Start()
         {
-            _currentSprite = GetComponent<Image>();
+            _currentSprite = GetComponent<Image>(); 
             _musicButton = GetComponent<Button>();
 
             _musicButton.onClick.AddListener(OnChangedSprite);
@@ -26,7 +26,7 @@ namespace _Scripts.Music
 
         public void OnChangedSprite()
         {
-            if (_spriteIndex == _buttonsSprites.Count)
+            if(_spriteIndex == _buttonsSprites.Count)
                 _spriteIndex = 0;
 
             _currentSprite.sprite = _buttonsSprites[_spriteIndex];
@@ -35,7 +35,9 @@ namespace _Scripts.Music
                 OnChangeMusicVolume(false);
 
             else
+            {
                 OnChangeMusicVolume(true);
+            }
 
             _spriteIndex++;
         }
