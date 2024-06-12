@@ -1,5 +1,6 @@
 ﻿using System;
-using System.Collections;
+using System.Threading.Tasks;
+using _Scripts.LostScene;
 using DG.Tweening;
 using UnityEngine;
 
@@ -8,72 +9,79 @@ namespace _Scripts.Move
     public class GoToPortal : MonoBehaviour
     {
         public static event Action<int> OnChangedScene;
-        public static event Action<int> OnOpenedDoor;
-        public static event Action OnOpenedPortal;
 
         [SerializeField] private Transform[] _path;
 
-        private const float TIME_TO_GO = 2f;
-        private int _moves;
-        private int _doorIndex;
+        private PassingLevelController _passingLevelController;
 
-        void Start()
+        private const float TimeToGo = 2f;
+        private int _move;
+
+        private void Start()
         {
-            _doorIndex = 999999;
+            _passingLevelController = FindObjectOfType<PassingLevelController>();
 
-            StartCoroutine(Go());
+            GoThroughLevel();
         }
 
-        public IEnumerator Go()
+        private async void GoThroughLevel()
         {
-            Sequence move = DOTween.Sequence();
-
-            Vector3[] pathPositions = new Vector3[_path.Length];
-            for (int i = 0; i < _path.Length; i++)
-            {
-                pathPositions[i] = _path[i].position;
-            }
-
             foreach (var point in _path)
             {
-                yield return new WaitForSeconds(1f);
-                _moves++;
+                await Task.Delay(1000);
+                _move++;
 
-                _doorIndex = ChangeDoorIndex();
+                await MoveAndRotateCamera(point);
+                await SetAnimation();
+                await OpenDoor();
 
-                move.Append(gameObject.transform.DOMove(point.position, TIME_TO_GO).SetEase(Ease.Linear));
-                yield return new WaitForSeconds(2f);
-                move.Append(gameObject.transform.DORotate(Vector3.zero, 1f).SetEase(Ease.Flash));
-
-                if(_doorIndex == 0 || _doorIndex == 1)
+                if (_move == 3)
                 {
-                    OnOpenedDoor?.Invoke(_doorIndex);
-
-                    yield return new WaitForSeconds(4.5f);
+                    _passingLevelController.OpenOrClosePortal(true);
+                    await Task.Delay(2000);
                 }
 
-                if(_moves == 3)
-                {
-                    OnOpenedPortal?.Invoke();
-                    yield return new WaitForSeconds(2);
-                }
-
-                if(_moves == 5)
-                {
-                    OnChangedScene?.Invoke(2);
-                }
+                if (_move != 5) continue;
+                OnChangedScene?.Invoke(2);
             }
         }
 
-        private int ChangeDoorIndex()
+        private async Task OpenDoor()
         {
-            if (_moves == 1)
-                return 0;
+            if (_move == 1 || _move == 2)
+            {
+                await Task.Delay(2000);
+                _passingLevelController.OpenDoor();
+            }
+        }
 
-            if (_moves == 2)
-                return 1;
+        private async Task MoveAndRotateCamera(Transform point)
+        {
+            var move = DOTween.Sequence();
+            move.Append(gameObject.transform.DOMove(point.position, TimeToGo).SetEase(Ease.Linear));
+            await Task.Delay(2000);
+            move.Append(gameObject.transform.DORotate(Vector3.zero, 1f).SetEase(Ease.Flash));
+            await Task.Delay(1000);
+        }
 
-            return -1;
+        private async Task SetAnimation()
+        {
+            if (_move > 4) return;
+            
+            if (_move == 4)
+            {
+                _passingLevelController.SetFadeAnimation();
+                await Task.Delay(1000);
+                return;
+            }
+
+            if (_move == 1)
+            {
+                _passingLevelController.SetShowAnimation();
+                await Task.Delay(2000);
+            }
+            _passingLevelController.SetAnimation();
+            await Task.Delay(3000);
         }
     }
 }
