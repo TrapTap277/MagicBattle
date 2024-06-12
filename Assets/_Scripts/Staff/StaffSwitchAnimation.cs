@@ -51,7 +51,6 @@ namespace _Scripts.Staff
 
         public void SetShowStaff()
         {
-            Debug.Log(_showState);
             CrossFade(_showState);
         }
 

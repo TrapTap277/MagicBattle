@@ -5,9 +5,8 @@ namespace _Scripts.AttackMoveStateMachine
 {
     public class MoveTransition : MonoBehaviour
     {
-        [SerializeField] private Transform Staff;
         [SerializeField] private CanvasGroup AttackButtons;
-
+        [SerializeField] private Transform Staff;
         [SerializeField] private Transform EndStaffPosition;
         [SerializeField] private Transform StartStaffPosition;
 
