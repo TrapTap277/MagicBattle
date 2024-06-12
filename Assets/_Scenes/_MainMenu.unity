@@ -1129,6 +1129,8 @@ GameObject:
   - component: {fileID: 598790669}
   - component: {fileID: 598790668}
   - component: {fileID: 598790667}
+  - component: {fileID: 598790671}
+  - component: {fileID: 598790670}
   m_Layer: 5
   m_Name: Darkness
   m_TagString: Darkness
@@ -1205,6 +1207,39 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 598790665}
   m_CullTransparentMesh: 1
+--- !u!95 &598790670
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 598790665}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 91fa527c11700f94986d6de7283b3209, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &598790671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 598790665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d99a861d3014b5a811acc82b7793268, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &704550889
 GameObject:
   m_ObjectHideFlags: 0
