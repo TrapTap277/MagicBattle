@@ -1,6 +1,7 @@
-﻿using _Scripts.MainMenu;
+﻿using System.Threading.Tasks;
+using _Scripts.LostScene;
+using _Scripts.MainMenu;
 using _Scripts.Move;
-using DG.Tweening;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,24 +9,21 @@ namespace _Scripts.SwitchScene
 {
     public class ChangeScene : MonoBehaviour
     {
-        private const float TimeToDarkness = 3f;
-        private const int DarknessEndValue = 1;
-        
-        private CanvasGroup _darkness;
+        private Darkness _darkness;
 
         private void Start()
         {
-            _darkness = GameObject.FindGameObjectWithTag("Darkness").GetComponent<CanvasGroup>();
+            _darkness = FindObjectOfType<Darkness>();
         }
 
-        private void ChangeCurrentScene(int index)
+        private async void ChangeCurrentScene(int index)
         {
-            var darkness = DOTween.Sequence();
-            darkness.Append(_darkness.DOFade(DarknessEndValue, TimeToDarkness).SetEase(Ease.Linear))
-                .OnComplete(() => ChangeCurrentSceneAfterDarkness(index));
+            _darkness.CrossFadeToDarknessShow();
+            await Task.Delay(2000);
+            SwitchScene(index);
         }
 
-        private static void ChangeCurrentSceneAfterDarkness(int index)
+        private static void SwitchScene(int index)
         {
             SceneManager.LoadScene(index);
         }
