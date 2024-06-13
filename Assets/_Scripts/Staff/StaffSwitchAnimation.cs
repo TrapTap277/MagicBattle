@@ -15,6 +15,7 @@ namespace _Scripts.Staff
         private const string Idle = "Idle";
         private const string FadeStaff = "FadeStaff";
         private const string ShowStaff = "ShowStaff";
+        private const string OpenPortal = "OpenPortal";
 
         private List<int> _attackStates = new List<int>();
 
@@ -24,6 +25,7 @@ namespace _Scripts.Staff
         private int _idleState;
         private int _fadeState;
         private int _showState;
+        private int _openPortalState;
 
         private void Awake()
         {
@@ -54,6 +56,11 @@ namespace _Scripts.Staff
             CrossFade(_showState);
         }
 
+        public void SetCallPortalAnimation()
+        {
+            CrossFade(_openPortalState);
+        }
+
         private void CrossFade(int randomNumber)
         {
             _staffAnimator.CrossFade(randomNumber <= _attackStates.Count && randomNumber >= 0 ? _attackStates[randomNumber] : randomNumber,
@@ -68,6 +75,7 @@ namespace _Scripts.Staff
             _idleState = Animator.StringToHash(Idle);
             _fadeState = Animator.StringToHash(FadeStaff);
             _showState = Animator.StringToHash(ShowStaff);
+            _openPortalState = Animator.StringToHash(OpenPortal);
         }
 
         private void InitList()
