@@ -6,10 +6,8 @@ namespace _Scripts.DisableGameObject
 {
     public class PortalManager : MonoBehaviour, IPortalManager
     {
-        public async void Open()
+        public void Open()
         {
-            await Task.Delay(2000);
-
             FadeOrShow(true);
         }
 

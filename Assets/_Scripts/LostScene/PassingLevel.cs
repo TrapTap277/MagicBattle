@@ -1,45 +1,46 @@
-﻿using UnityEngine;
+﻿using System.Threading.Tasks;
+using UnityEngine;
 
 namespace _Scripts.LostScene
 {
     public class PassingLevel : MonoBehaviour
     {
-        //public List<CurrentAbility> _allAbilities; // Todo Instantiate random ability
+        private const bool ClosePortal = false;
 
+        private IUseMagic _useMagic;
         private IPortalManager _portalManager;
         private IDoorManager _doorManager;
         private IStaffAnimationController _staffAnimationController;
 
+        private void Start()
+        {
+            FadeOrShowPortal(ClosePortal);
+        }
+
         public void SetDependencies(IPortalManager portalManager, IDoorManager doorManager,
-            IStaffAnimationController staffAnimationController)
+            IStaffAnimationController staffAnimationController, IUseMagic useMagic)
         {
             _portalManager = portalManager;
             _doorManager = doorManager;
             _staffAnimationController = staffAnimationController;
+            _useMagic = useMagic;
         }
 
         public void FadeOrShowPortal(bool isShow)
         {
             if (isShow)
             {
-                SetRandomAttackAnimation();
                 _portalManager?.Open();
             }
 
-            if (!isShow)
-                _portalManager?.Close();
+            if (!isShow) _portalManager?.Close();
         }
 
-        public void DestroyDoorAsync()
+        public async Task DestroyDoorAndUseMagicAsync()
         {
             DestroyDoor();
-            //yield return new WaitForSeconds(2f);
-
-            //StartCoroutine(UseMagic());
-
-            //yield return new WaitForSeconds(4f);
+            await Task.Delay(4000);
         }
-
 
         public void SetRandomAttackAnimation()
         {
@@ -48,35 +49,28 @@ namespace _Scripts.LostScene
 
         public void SetFadeAnimation()
         {
-            _staffAnimationController.SetFadeAnimation();
-        }  
-        
+            _staffAnimationController?.SetFadeAnimation();
+        }
+
         public void SetShowAnimation()
         {
-            _staffAnimationController.SetShowStaff();
+            _staffAnimationController?.SetShowStaff();
+        }
+
+        public async Task SetCallPortalAnimation()
+        {
+            _staffAnimationController?.SetCallPortalAnimation();
+            await Task.Delay(8500);
         }
 
         private void DestroyDoor()
         {
-            _doorManager?.DestroyDoor();
+            _doorManager?.PlayDissolvedAnimation();
         }
 
-        // private IEnumerator UseMagic()
-        // {
-        //     if (_allAbilities.Count > 0)
-        //     {
-        //         var getRandomAbility = Random.Range(0, _allAbilities.Count);
-        //         GameObject newAbility = Instantiate(_allAbilities[getRandomAbility].Effect, 
-        //             gameObject.transform.position, Quaternion.identity); // Todo Instantiate random ability
-        //
-        //         yield return new WaitForSeconds(4f);
-        //
-        //         var explosion = GameObject.FindGameObjectWithTag("Destroy");
-        //
-        //         if (newAbility != null) Destroy(newAbility);
-        //
-        //         if (explosion != null) Destroy(explosion);
-        //     }
-        // }
+        private void UseMagic()
+        {
+            _useMagic?.Use();
+        }
     }
 }

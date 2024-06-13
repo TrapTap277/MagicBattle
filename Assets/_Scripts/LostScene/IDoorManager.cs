@@ -2,6 +2,6 @@
 {
     public interface IDoorManager
     {
-        void DestroyDoor();
+        void PlayDissolvedAnimation();
     }
 }

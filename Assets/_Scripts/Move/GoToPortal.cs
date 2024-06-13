@@ -12,14 +12,14 @@ namespace _Scripts.Move
 
         [SerializeField] private Transform[] _path;
 
-        private PassingLevelController _passingLevelController;
+        private PassingLevel _passingLevel;
 
         private const float TimeToGo = 2f;
         private int _move;
 
         private void Start()
         {
-            _passingLevelController = FindObjectOfType<PassingLevelController>();
+            _passingLevel = FindObjectOfType<PassingLevel>();
 
             GoThroughLevel();
         }
@@ -37,7 +37,7 @@ namespace _Scripts.Move
 
                 if (_move == 3)
                 {
-                    _passingLevelController.OpenOrClosePortal(true);
+                    _passingLevel.FadeOrShowPortal(true);
                     await Task.Delay(2000);
                 }
 
@@ -51,7 +51,7 @@ namespace _Scripts.Move
             if (_move == 1 || _move == 2)
             {
                 await Task.Delay(2000);
-                _passingLevelController.OpenDoor();
+                await _passingLevel.DestroyDoorAndUseMagicAsync();
             }
         }
 
@@ -66,21 +66,28 @@ namespace _Scripts.Move
 
         private async Task SetAnimation()
         {
+            Debug.LogWarning(_move);
             if (_move > 4) return;
+
+            if (_move == 3)
+            {
+                await _passingLevel.SetCallPortalAnimation();
+                return;
+            }
             
             if (_move == 4)
             {
-                _passingLevelController.SetFadeAnimation();
+                _passingLevel.SetFadeAnimation();
                 await Task.Delay(1000);
                 return;
             }
 
             if (_move == 1)
             {
-                _passingLevelController.SetShowAnimation();
+                _passingLevel.SetShowAnimation();
                 await Task.Delay(2000);
             }
-            _passingLevelController.SetAnimation();
+            _passingLevel.SetRandomAttackAnimation();
             await Task.Delay(3000);
         }
     }

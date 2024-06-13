@@ -5,5 +5,6 @@
         void SwitchAnimation();
         void SetFadeAnimation();
         void SetShowStaff();
+        void SetCallPortalAnimation();
     }
 }

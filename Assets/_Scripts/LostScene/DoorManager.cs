@@ -7,9 +7,18 @@ namespace _Scripts.LostScene
     {
         [SerializeField] private List<GameObject> _doors = new List<GameObject>();
 
-        public void DestroyDoor()
+        private readonly int _dissolvedState = Animator.StringToHash("Dissolve");
+        
+        public void PlayDissolvedAnimation()  
         {
-            Destroy(_doors[0]);
+            _doors[0].GetComponent<Animator>().CrossFade(_dissolvedState, 0);
+            
+            Destroy();
+        }
+
+        private void Destroy()
+        {
+            Destroy(_doors[0], 1f);
             _doors.RemoveAt(0);
         }
     }
