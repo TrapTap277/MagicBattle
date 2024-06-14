@@ -64,7 +64,6 @@ namespace _Scripts.Enemy
 
         private static bool CheckForItem(EnemyStateMachine enemyStateMachine,Gem gem)
         {
-            Debug.Log(enemyStateMachine.UsedItems.ContainsKey(gem));
             return enemyStateMachine.UsedItems.ContainsKey(gem);
         }
 

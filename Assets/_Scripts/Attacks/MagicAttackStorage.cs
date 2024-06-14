@@ -14,7 +14,7 @@ namespace _Scripts.Attacks
     {
         public static event Action OnCreatedUI;
 
-        public List<AttacksType> _typies = new List<AttacksType>();
+        [HideInInspector] public List<AttacksType> _typies = new List<AttacksType>();
         private readonly List<AttacksType> _usedAttacks = new List<AttacksType>();
 
         public int AttackCount { get; private set; }

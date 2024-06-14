@@ -33,7 +33,6 @@ namespace _Scripts.Move
                 await MoveAndRotateCamera(point);
                 await SetAnimation();
                 await OpenDoor();
-                await ShowPortal();
 
                 if (_step != 5) continue;
                 OnChangedScene?.Invoke(2);
@@ -44,15 +43,6 @@ namespace _Scripts.Move
         {
             await Task.Delay(1000);
             _step++;
-        }
-
-        private async Task ShowPortal()
-        {
-            if (_step == 3)
-            {
-                _passingLevel.FadeOrShowPortal(true);
-                await Task.Delay(2000);
-            }
         }
 
         private async Task OpenDoor()
@@ -82,6 +72,7 @@ namespace _Scripts.Move
                 case 3:
                     _passingLevel.SetStaffAnimation(StaffAnimations.OpenPortal);
                     await Task.Delay(8500);
+                    _passingLevel.FadeOrShowPortal(true);
                     return;
                 case 4:
                     _passingLevel.SetStaffAnimation(StaffAnimations.FadeStaff);

@@ -1,5 +1,4 @@
-﻿using System.Threading.Tasks;
-using _Scripts.LostScene;
+﻿using _Scripts.LostScene;
 using UnityEngine;
 
 namespace _Scripts.DisableGameObject

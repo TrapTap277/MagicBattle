@@ -6,16 +6,13 @@ namespace _Scripts.LostScene
 {
     public class PassingLevel : MonoBehaviour
     {
-        private const bool ClosePortal = false;
-
-        private IUseMagic _useMagic;
         private IPortalManager _portalManager;
         private IDoorManager _doorManager;
         private IStaffAnimationController _staffAnimationController;
 
         private void Start()
         {
-            FadeOrShowPortal(ClosePortal);
+            FadeOrShowPortal(false);
         }
 
         public void SetDependencies(IPortalManager portalManager, IDoorManager doorManager,
@@ -24,17 +21,15 @@ namespace _Scripts.LostScene
             _portalManager = portalManager;
             _doorManager = doorManager;
             _staffAnimationController = staffAnimationController;
-            _useMagic = useMagic;
         }
 
         public void FadeOrShowPortal(bool isShow)
         {
-            if (isShow)
-            {
-                _portalManager?.Open();
-            }
+            if(!isShow)
+                _portalManager?.Close();
 
-            if (!isShow) _portalManager?.Close();
+            else
+                _portalManager?.Open();
         }
 
         public async Task DestroyDoorAndUseMagicAsync()
@@ -51,11 +46,6 @@ namespace _Scripts.LostScene
         private void DestroyDoor()
         {
             _doorManager?.PlayDissolvedAnimation();
-        }
-
-        private void UseMagic()
-        {
-            _useMagic?.Use();
         }
     }
 }

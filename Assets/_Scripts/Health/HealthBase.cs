@@ -38,7 +38,6 @@ namespace _Scripts.Health
             if (_isHasProtection == false)
             {
                 Health -= damage * _damageСoefficient;
-                Debug.LogWarning(_damageСoefficient);
             }
 
             _lerpTimer = 0;
