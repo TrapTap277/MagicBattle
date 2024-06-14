@@ -18,6 +18,7 @@ namespace _Scripts.Items
 
         public override void Use()
         {
+            ChangeGem(Gem);
             OnGotSecondMove?.Invoke(_secondMoveTurn);
         }
     }

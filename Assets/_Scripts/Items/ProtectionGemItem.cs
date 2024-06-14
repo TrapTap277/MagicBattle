@@ -18,10 +18,12 @@ namespace _Scripts.Items
 
         public override void Use()
         {
-            if(!_isUsedByEnemy)
+            ChangeGem(Gem);
+
+            if (!_isUsedByEnemy)
                 OnGivenProtectionToPlayer?.Invoke();
-            
-            else 
+
+            else
                 OnGivenProtectionToEnemy?.Invoke();
         }
     }

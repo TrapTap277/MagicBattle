@@ -9,6 +9,7 @@ namespace _Scripts.Items
         public static event Action OnTakeMoreDamage;
         public override void Use()
         {
+            ChangeGem(Gem);
             OnTakeMoreDamage?.Invoke();
         }
     }

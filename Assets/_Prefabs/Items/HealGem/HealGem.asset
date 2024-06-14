@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gem: 3
   _sprite: {fileID: 21300000, guid: 25061657af1131349ab0ba3f5ff6f061, type: 3}
-  _itemMaterial: {fileID: 2100000, guid: 746a37bab3e5cff419406fa988c73d0c, type: 2}
+  _itemMaterial: {fileID: 2100000, guid: 45217dc00c5eb4a48a889887afa83226, type: 2}
   _maximumItemCount: 3

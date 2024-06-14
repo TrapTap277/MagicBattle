@@ -1,10 +1,10 @@
-﻿namespace _Scripts.LostScene
+﻿using _Scripts.Staff;
+
+namespace _Scripts.LostScene
 {
     public interface IStaffAnimationController
     {
-        void SwitchAnimation();
-        void SetFadeAnimation();
-        void SetShowStaff();
-        void SetCallPortalAnimation();
+        void SwitchAnimation(StaffAnimations animations);
+
     }
 }
