@@ -16,7 +16,10 @@ namespace _Scripts.Staff
         private const string FadeStaff = "FadeStaff";
         private const string ShowStaff = "ShowStaff";
         private const string OpenPortal = "OpenPortal";
+        private const string DissolveStaff = "DissolveStaff";
+        private const string UnDissolveStaff = "UnDissolveStaff";
 
+        private Dictionary<StaffAnimations, int> _staffAnimations;
         private List<int> _attackStates = new List<int>();
 
         private int _firstAttackState;
@@ -26,44 +29,45 @@ namespace _Scripts.Staff
         private int _fadeState;
         private int _showState;
         private int _openPortalState;
+        private int _dissolveState;
+        private int _unDissolveState;
 
         private void Awake()
         {
             _staffAnimator = GetComponent<Animator>();
-            
+
             InitHashes();
+            InitDictionary();
             InitList();
         }
 
-        public async void SwitchAnimation()
+        public async void SwitchAnimation(StaffAnimations staffAnimations)
         {
+            if (staffAnimations != StaffAnimations.None)
+            {
+                var value = GetStaffAnimation(staffAnimations);
+                CrossFade(value);
+                return;
+            }
+
             if (_staffAnimator == null) return;
             var randomNumber = Random.Range(0, _attackStates.Count);
             CrossFade(randomNumber);
 
             await Task.Delay(3000);
-
             CrossFade(_idleState);
         }
 
-        public void SetFadeAnimation()
+        private int GetStaffAnimation(StaffAnimations staffAnimations)
         {
-            CrossFade(_fadeState);
-        }
-
-        public void SetShowStaff()
-        {
-            CrossFade(_showState);
-        }
-
-        public void SetCallPortalAnimation()
-        {
-            CrossFade(_openPortalState);
+            _staffAnimations.TryGetValue(staffAnimations, out var value);
+            return value;
         }
 
         private void CrossFade(int randomNumber)
         {
-            _staffAnimator.CrossFade(randomNumber <= _attackStates.Count && randomNumber >= 0 ? _attackStates[randomNumber] : randomNumber,
+            _staffAnimator.CrossFade(
+                randomNumber <= _attackStates.Count && randomNumber >= 0 ? _attackStates[randomNumber] : randomNumber,
                 0);
         }
 
@@ -76,6 +80,24 @@ namespace _Scripts.Staff
             _fadeState = Animator.StringToHash(FadeStaff);
             _showState = Animator.StringToHash(ShowStaff);
             _openPortalState = Animator.StringToHash(OpenPortal);
+            _dissolveState = Animator.StringToHash(DissolveStaff);
+            _unDissolveState = Animator.StringToHash(UnDissolveStaff);
+        }
+
+        private void InitDictionary()
+        {
+            _staffAnimations = new Dictionary<StaffAnimations, int>
+            {
+                {StaffAnimations.FirstAttack, _firstAttackState},
+                {StaffAnimations.SecondAttack, _secondAttackState},
+                {StaffAnimations.ThirdAttack, _thirdAttackState},
+                {StaffAnimations.Idle, _idleState},
+                {StaffAnimations.FadeStaff, _fadeState},
+                {StaffAnimations.ShowStaff, _showState},
+                {StaffAnimations.OpenPortal, _openPortalState},
+                {StaffAnimations.DissolveStaff, _dissolveState},
+                {StaffAnimations.UnDissolveStaff, _unDissolveState}
+            };
         }
 
         private void InitList()
