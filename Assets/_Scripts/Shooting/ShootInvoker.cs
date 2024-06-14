@@ -2,6 +2,8 @@
 using _Scripts.Enemy;
 using _Scripts.Health;
 using _Scripts.Items;
+using _Scripts.LostScene;
+using _Scripts.Staff;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,10 +20,8 @@ namespace _Scripts.Shooting
         private SecondMoveTurn _secondMoveTurn;
         private HealthBase[] _healthBase;
 
-        private void Start()
-        {
-            _healthBase = FindObjectsOfType<HealthBase>();
-        }
+        private IStaffAnimationController _staffAnimationController;
+        private ISetGem _setGem;
 
         private void Awake()
         {
@@ -31,19 +31,22 @@ namespace _Scripts.Shooting
             _secondMoveTurn = SecondMoveTurn.None;
         }
 
+        private void Start()
+        {
+            InitProperties();
+        }
+
         public void ShootInEnemy(bool isEnemy = false)
         {
-            _baseShoot = new ShootInEnemy(_storage, _stateMachine, _secondMoveTurn, isEnemy);
+            _baseShoot = new ShootInEnemy(_storage, _stateMachine, _secondMoveTurn, isEnemy, _staffAnimationController, _setGem);
             _baseShoot.Shoot();
             ResetSecondMove();
             ResetSkills();
-            Debug.LogWarning("Shoot in Enemy");
         }
 
         public void ShootInPlayer(bool isEnemy = false)
         {
-            Debug.LogWarning("Shoot in Player");
-            _baseShoot = new ShootInPlayer(_storage, _stateMachine, _secondMoveTurn, isEnemy);
+            _baseShoot = new ShootInPlayer(_storage, _stateMachine, _secondMoveTurn, isEnemy, _staffAnimationController, _setGem);
             _baseShoot.Shoot();
             ResetSecondMove();
             ResetSkills();
@@ -63,6 +66,13 @@ namespace _Scripts.Shooting
         private void ResetSecondMove()
         {
             _secondMoveTurn = SecondMoveTurn.None;
+        }
+
+        private void InitProperties()
+        {
+            _healthBase = FindObjectsOfType<HealthBase>();
+            _staffAnimationController = FindObjectOfType<StaffSwitchAnimation>();
+            _setGem = FindObjectOfType<UseMagic>();
         }
 
         private void OnEnable()
