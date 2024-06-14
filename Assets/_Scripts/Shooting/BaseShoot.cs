@@ -1,7 +1,6 @@
 ﻿using System;
 using _Scripts.Attacks;
 using _Scripts.Staff;
-using UnityEngine;
 
 namespace _Scripts.Shooting
 {
@@ -11,22 +10,19 @@ namespace _Scripts.Shooting
         public static event Action<float> OnTakenDamageToEnemy;
         public static event Action<Gem> OnChangedGemOnStaff;
         private readonly MagicAttackStorage _attackStorage;
-        private readonly Animator _animator;
         private Gem _gem;
         private int _attackIndex;
         private AttacksType _currentAttack;
 
-        protected BaseShoot(Animator animator, MagicAttackStorage attackStorage)
+        protected BaseShoot(MagicAttackStorage attackStorage)
         {
             _attackStorage = attackStorage;
-            _animator = animator;
         }
 
         public abstract void Shoot();
 
         protected void ShootBase(ShootIn shootIn, IEnemyStateSwitcher enemyStateSwitcher)
         {
-            SetAnimation();
             DeterminateAttack(shootIn);
             SwitchEnemyState(enemyStateSwitcher);
             RemoveAttackFromStorage();
@@ -34,15 +30,8 @@ namespace _Scripts.Shooting
 
         private void DeterminateAttack(ShootIn shootIn)
         {
-            // if (_attackStorage == null)
-            // {
-            //     Debug.LogError("Attack storage is null");
-            //     return;
-            // }
-
-
             _currentAttack = _attackStorage.GetFirstType();
-            
+
             if (_currentAttack == AttacksType.Blue)
             {
                 SetParameters(Gem.TrueAttack, 0);
@@ -52,7 +41,6 @@ namespace _Scripts.Shooting
             else
             {
                 SetParameters(Gem.FalseAttack, 1);
-
             }
 
             ChangeGemOnStaff();
@@ -66,11 +54,6 @@ namespace _Scripts.Shooting
         private void SwitchEnemyState(IEnemyStateSwitcher enemyStateSwitcher)
         {
             enemyStateSwitcher.SwitchState(_attackIndex);
-        }
-
-        private void SetAnimation()
-        {
-            _animator.CrossFade("Metalstaff01FastSpin", 2);
         }
 
         private void ChangeGemOnStaff()
@@ -98,4 +81,4 @@ namespace _Scripts.Shooting
         Player,
         Enemy
     }
-} 
+}

@@ -1,46 +1,76 @@
-﻿using DG.Tweening;
+﻿using System.Threading.Tasks;
+using _Scripts.Attacks;
+using _Scripts.LostScene;
+using _Scripts.Staff;
+using DG.Tweening;
 using UnityEngine;
 
 namespace _Scripts.AttackMoveStateMachine
 {
     public class MoveTransition : MonoBehaviour
     {
-        [SerializeField] private CanvasGroup AttackButtons;
-        [SerializeField] private Transform Staff;
-        [SerializeField] private Transform EndStaffPosition;
-        [SerializeField] private Transform StartStaffPosition;
+        [SerializeField] private MagicAttackStorage _attackStorage;
+        [SerializeField] private CanvasGroup _attackButtons;
+        [SerializeField] private Transform _staff;
+        [SerializeField] private Transform _endStaffPosition;
+        [SerializeField] private Transform _startStaffPosition;
+
+        private IStaffAnimationController _staffAnimationController;
+
+        private void Awake()
+        {
+            SetAnimationController();
+        }
 
         private void Start()
         {
-            EnablePanel();
+            EnablePanel(true);
         }
 
-        public void TransitionToEnemy()
+        public async void TransitionToEnemy()
+        {
+            await DissolveOrUnDissolveStaff(StaffAnimations.DissolveStaff);
+            SetStaffPositions(_endStaffPosition);
+            await DissolveOrUnDissolveStaff(StaffAnimations.UnDissolveStaff);
+            FadeOrShowAttackButtons(0, false);
+        }
+
+        public async void TransitionToPlayer()
+        {
+            if(_attackStorage.AttackCount == 0 && _staff.position == _startStaffPosition.position) return;
+            Debug.Log(_attackStorage.AttackCount);
+            await DissolveOrUnDissolveStaff(StaffAnimations.DissolveStaff);
+            SetStaffPositions(_startStaffPosition);
+            await DissolveOrUnDissolveStaff(StaffAnimations.UnDissolveStaff);
+            FadeOrShowAttackButtons(1, true);
+        }
+
+        private async Task DissolveOrUnDissolveStaff(StaffAnimations animations)
+        {
+            _staffAnimationController?.SwitchAnimation(animations);
+            await Task.Delay(1000);
+        }
+
+        private void SetStaffPositions(Transform endPositions)
+        {
+            _staff.position = endPositions.position;
+        }
+
+        private void FadeOrShowAttackButtons(float endValue, bool isBlock)
         {
             var move = DOTween.Sequence();
-
-            move.Append(Staff.DOMove(EndStaffPosition.position, 2f));
-            FadeOrShowAttackButtons(move, 0, false);
+            move.Append(_attackButtons.DOFade(endValue, 2));
+            EnablePanel(isBlock);
         }
 
-        public void TransitionToPlayer()
+        private void SetAnimationController()
         {
-            var move = DOTween.Sequence();
-
-            move.Append(Staff.DOMove(StartStaffPosition.position, 2f));
-            FadeOrShowAttackButtons(move, 1, true);
+            _staffAnimationController = FindObjectOfType<StaffSwitchAnimation>();
         }
 
-        private void FadeOrShowAttackButtons(Sequence move, float endValue, bool isBlock)
+        private void EnablePanel(bool isBlock)
         {
-            move.Append(AttackButtons.DOFade(endValue, 2));
-            AttackButtons.blocksRaycasts = isBlock;
-        }
-
-        private void EnablePanel()
-        {
-            AttackButtons.interactable = true;
-            AttackButtons.blocksRaycasts = true;
+            _attackButtons.blocksRaycasts = isBlock;
         }
     }
 }

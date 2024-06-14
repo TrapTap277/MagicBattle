@@ -9,8 +9,8 @@ namespace _Scripts.Shooting
     {
         private readonly IEnemyStateSwitcher _enemyStateSwitcher;
 
-        public ShootInPlayer(Animator animator, MagicAttackStorage attackStorage, EnemyStateMachine stateMachine,
-            SecondMoveTurn secondMoveTurn, bool isEnemy) : base(animator, attackStorage)
+        public ShootInPlayer(MagicAttackStorage attackStorage, EnemyStateMachine stateMachine,
+            SecondMoveTurn secondMoveTurn, bool isEnemy) : base(attackStorage)
         {
             _enemyStateSwitcher = new SwitchEnemyStateWithShootingInPlayer(isEnemy, secondMoveTurn, stateMachine, attackStorage);
         }

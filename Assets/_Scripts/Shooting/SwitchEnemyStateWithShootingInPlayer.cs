@@ -91,6 +91,7 @@ namespace _Scripts.Shooting
         {
             if (_storage.AttackCount <= 1)
             {
+                if(_stateMachine.MoveTurn == PlayerTurn) return;  // Todo Block staff appearance if ended round
                 _stateMachine.SetMoveTurn(MoveTurn.Player);
                 _stateMachine.SwitchState(_stateMachine.IdleState);
                 return;

@@ -20,13 +20,13 @@ namespace _Scripts.Items
         
         public override void Use()
         {
+            ChangeGem(Gem);
+
             if(!_isUsedByEnemy)
                 OnHealedPlayer?.Invoke(HealValue);
             
             else 
                 OnHealedEnemy?.Invoke(HealValue);
-            
-            Debug.Log("Heal");
         }
     }
 }

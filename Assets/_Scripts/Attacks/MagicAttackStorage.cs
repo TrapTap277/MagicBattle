@@ -126,9 +126,9 @@ namespace _Scripts.Attacks
         private void EnemyEnterInIdleState()
         {
             ResetSecondMove(_stateMachine);
-
+            
             _stateMachine.SetMoveTurn(MoveTurn.Player);
-            _stateMachine.SwitchState(_stateMachine.IdleState);
+            //_stateMachine.SwitchState(_stateMachine.IdleState);
         }
 
         private static void ResetSecondMove(EnemyStateMachine stateMachine)

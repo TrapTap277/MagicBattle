@@ -11,7 +11,6 @@ namespace _Scripts.Shooting
     {
         [SerializeField] private EnemyStateMachine _stateMachine;
         [SerializeField] private MagicAttackStorage _storage;
-        [SerializeField] private Animator _animator;
         [SerializeField] private Button _buttonToShootInEnemy;
         [SerializeField] private Button _buttonToShootInYou;
 
@@ -34,7 +33,7 @@ namespace _Scripts.Shooting
 
         public void ShootInEnemy(bool isEnemy = false)
         {
-            _baseShoot = new ShootInEnemy(_animator, _storage, _stateMachine, _secondMoveTurn, isEnemy);
+            _baseShoot = new ShootInEnemy(_storage, _stateMachine, _secondMoveTurn, isEnemy);
             _baseShoot.Shoot();
             ResetSecondMove();
             ResetSkills();
@@ -44,7 +43,7 @@ namespace _Scripts.Shooting
         public void ShootInPlayer(bool isEnemy = false)
         {
             Debug.LogWarning("Shoot in Player");
-            _baseShoot = new ShootInPlayer(_animator, _storage, _stateMachine, _secondMoveTurn, isEnemy);
+            _baseShoot = new ShootInPlayer(_storage, _stateMachine, _secondMoveTurn, isEnemy);
             _baseShoot.Shoot();
             ResetSecondMove();
             ResetSkills();
@@ -52,7 +51,7 @@ namespace _Scripts.Shooting
 
         private void SetSecondMove(SecondMoveTurn secondMoveTurn)
         {
-            if(_secondMoveTurn != secondMoveTurn)
+            if (_secondMoveTurn != secondMoveTurn)
                 _secondMoveTurn = secondMoveTurn;
         }
 

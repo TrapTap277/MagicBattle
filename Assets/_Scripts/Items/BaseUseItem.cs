@@ -21,7 +21,6 @@ namespace _Scripts.Items
             var init = _baseItem as IInit;
             init?.Init(isUsedByEnemy);
             _baseItem.Use();
-            Debug.Log(_baseItem.Gem);
         }
 
         protected virtual void InitItemBoolProperties()

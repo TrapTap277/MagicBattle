@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using _Scripts.Staff;
 using UnityEngine;
 
 namespace _Scripts.LostScene
@@ -42,25 +43,9 @@ namespace _Scripts.LostScene
             await Task.Delay(4000);
         }
 
-        public void SetRandomAttackAnimation()
+        public void SetStaffAnimation(StaffAnimations animations)
         {
-            _staffAnimationController?.SwitchAnimation();
-        }
-
-        public void SetFadeAnimation()
-        {
-            _staffAnimationController?.SetFadeAnimation();
-        }
-
-        public void SetShowAnimation()
-        {
-            _staffAnimationController?.SetShowStaff();
-        }
-
-        public async Task SetCallPortalAnimation()
-        {
-            _staffAnimationController?.SetCallPortalAnimation();
-            await Task.Delay(8500);
+            _staffAnimationController?.SwitchAnimation(animations);
         }
 
         private void DestroyDoor()
