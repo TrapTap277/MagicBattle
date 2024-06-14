@@ -12,7 +12,6 @@ namespace _Scripts.Staff
         private const string FirstAttack = "StaffAttack";
         private const string SecondAttack = "StaffAttack2";
         private const string ThirdAttack = "StaffAttack3";
-        private const string Idle = "Idle";
         private const string FadeStaff = "FadeStaff";
         private const string ShowStaff = "ShowStaff";
         private const string OpenPortal = "OpenPortal";
@@ -25,7 +24,6 @@ namespace _Scripts.Staff
         private int _firstAttackState;
         private int _secondAttackState;
         private int _thirdAttackState;
-        private int _idleState;
         private int _fadeState;
         private int _showState;
         private int _openPortalState;
@@ -41,7 +39,7 @@ namespace _Scripts.Staff
             InitList();
         }
 
-        public async void SwitchAnimation(StaffAnimations staffAnimations)
+        public void SwitchAnimation(StaffAnimations staffAnimations)
         {
             if (staffAnimations != StaffAnimations.None)
             {
@@ -53,9 +51,6 @@ namespace _Scripts.Staff
             if (_staffAnimator == null) return;
             var randomNumber = Random.Range(0, _attackStates.Count);
             CrossFade(randomNumber);
-
-            await Task.Delay(3000);
-            CrossFade(_idleState);
         }
 
         private int GetStaffAnimation(StaffAnimations staffAnimations)
@@ -76,7 +71,6 @@ namespace _Scripts.Staff
             _firstAttackState = Animator.StringToHash(FirstAttack);
             _secondAttackState = Animator.StringToHash(SecondAttack);
             _thirdAttackState = Animator.StringToHash(ThirdAttack);
-            _idleState = Animator.StringToHash(Idle);
             _fadeState = Animator.StringToHash(FadeStaff);
             _showState = Animator.StringToHash(ShowStaff);
             _openPortalState = Animator.StringToHash(OpenPortal);
@@ -91,7 +85,6 @@ namespace _Scripts.Staff
                 {StaffAnimations.FirstAttack, _firstAttackState},
                 {StaffAnimations.SecondAttack, _secondAttackState},
                 {StaffAnimations.ThirdAttack, _thirdAttackState},
-                {StaffAnimations.Idle, _idleState},
                 {StaffAnimations.FadeStaff, _fadeState},
                 {StaffAnimations.ShowStaff, _showState},
                 {StaffAnimations.OpenPortal, _openPortalState},

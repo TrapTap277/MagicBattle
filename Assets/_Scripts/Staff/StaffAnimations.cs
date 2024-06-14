@@ -6,7 +6,6 @@
         FirstAttack,
         SecondAttack,
         ThirdAttack,
-        Idle,
         FadeStaff,
         ShowStaff,
         OpenPortal,
