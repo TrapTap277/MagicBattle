@@ -30,7 +30,7 @@ namespace _Scripts.AttackMoveStateMachine
         public async void TransitionToEnemy()
         {
             await DissolveOrUnDissolveStaff(StaffAnimations.DissolveStaff);
-            SetStaffPositions(_endStaffPosition);
+            SetStaffPositionsAndRotation(_endStaffPosition);
             await DissolveOrUnDissolveStaff(StaffAnimations.UnDissolveStaff);
             FadeOrShowAttackButtons(0, false);
         }
@@ -40,7 +40,7 @@ namespace _Scripts.AttackMoveStateMachine
             if(_attackStorage.AttackCount == 0 && _staff.position == _startStaffPosition.position) return;
             Debug.Log(_attackStorage.AttackCount);
             await DissolveOrUnDissolveStaff(StaffAnimations.DissolveStaff);
-            SetStaffPositions(_startStaffPosition);
+            SetStaffPositionsAndRotation(_startStaffPosition);
             await DissolveOrUnDissolveStaff(StaffAnimations.UnDissolveStaff);
             FadeOrShowAttackButtons(1, true);
         }
@@ -51,9 +51,10 @@ namespace _Scripts.AttackMoveStateMachine
             await Task.Delay(1000);
         }
 
-        private void SetStaffPositions(Transform endPositions)
+        private void SetStaffPositionsAndRotation(Transform endPositions)
         {
             _staff.position = endPositions.position;
+            _staff.rotation = endPositions.rotation;
         }
 
         private void FadeOrShowAttackButtons(float endValue, bool isBlock)

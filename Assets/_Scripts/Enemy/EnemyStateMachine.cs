@@ -29,8 +29,8 @@ namespace _Scripts.Enemy
 
         public readonly Dictionary<Gem, BaseItem> UsedItems = new Dictionary<Gem, BaseItem>();
 
-        public float PercentToAttackInPlayer;
-        public float RandomNumber;
+        [HideInInspector] public float PercentToAttackInPlayer;
+        [HideInInspector] public float RandomNumber;
 
         private void Awake()
         {
