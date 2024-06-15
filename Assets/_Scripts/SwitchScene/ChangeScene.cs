@@ -2,6 +2,7 @@
 using _Scripts.LostScene;
 using _Scripts.MainMenu;
 using _Scripts.Move;
+using _Scripts.Stats;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,13 +12,18 @@ namespace _Scripts.SwitchScene
     {
         private Darkness _darkness;
 
+        private IEnableDisableManager _enableDisableManager;
+
         private void Start()
         {
             _darkness = FindObjectOfType<Darkness>();
+            _enableDisableManager = FindObjectOfType<ShowOrFadeEnableDisable>();
         }
 
-        private async void ChangeCurrentScene(int index)
+        public async void ChangeCurrentScene(int index)
         {
+            _enableDisableManager?.Fade();
+            await Task.Delay(2000);
             _darkness.CrossFadeToDarknessShow();
             await Task.Delay(2000);
             SwitchScene(index);
