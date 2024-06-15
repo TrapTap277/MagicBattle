@@ -7,7 +7,6 @@ namespace _Scripts.Die
 {
     public abstract class BaseDeath : MonoBehaviour
     {
-        protected MagicAttackStorage AttackStorage;
         protected EnemyStateMachine StateMachine;
         protected GiveLive GiveLive;
         protected CanvasGroup RoundsCounter;
@@ -17,7 +16,6 @@ namespace _Scripts.Die
         protected void Death()
         {
             GiveWin();
-            GenerateNewAttacks();
             SwitchEnemyState();
             RestoreHealth();
         }
@@ -38,11 +36,6 @@ namespace _Scripts.Die
         {
             StateMachine.SetMoveTurn(MoveTurn.Player);
             StateMachine.SwitchState(StateMachine.IdleState);
-        }
-
-        private void GenerateNewAttacks()
-        {
-            AttackStorage.GenerateMagicAttacks();
         }
     }
 }

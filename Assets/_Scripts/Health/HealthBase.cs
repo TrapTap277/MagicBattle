@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using _Scripts.Items;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,14 +10,17 @@ namespace _Scripts.Health
 {
     public abstract class HealthBase : MonoBehaviour
     {
+        public static event Action<float> OnChangedDamage;
+
         public float Health { get; private set; }
         protected TextMeshProUGUI HealthInPercents;
         protected Image FrontHealthBar;
         protected Image BackHealthBar;
+        private float _didDamage;
         private const float MAXHealth = 100;
         private const float ChipSpeed = 4f;
-        private float _lerpTimer;
         private static float _damageСoefficient;
+        private float _lerpTimer;
         private bool _isHasProtection;
 
         private void Awake()
@@ -38,6 +42,7 @@ namespace _Scripts.Health
             if (_isHasProtection == false)
             {
                 Health -= damage * _damageСoefficient;
+                _didDamage += damage;
             }
 
             _lerpTimer = 0;
@@ -46,7 +51,6 @@ namespace _Scripts.Health
 
             SetHealth();
             HealthBarLerp();
-            ResetProperties();
         }
 
         public void RestoreHealth(float healthAmount)
@@ -73,7 +77,10 @@ namespace _Scripts.Health
             _damageСoefficient = Random.Range(1.1f, 2f);
         }
 
-        protected abstract void Died();
+        protected virtual void Died()
+        {
+            OnChangedDamage?.Invoke(_didDamage);
+        }
 
         private void SetHealth()
         {
@@ -126,6 +133,16 @@ namespace _Scripts.Health
         private void ChangeColor(Color color)
         {
             BackHealthBar.color = color;
+        }
+
+        private void OnEnable()
+        {
+            DamageGemItem.OnTakeMoreDamage += TakeMoreDamage;
+        }
+
+        private void OnDisable()
+        {
+            DamageGemItem.OnTakeMoreDamage -= TakeMoreDamage;
         }
     }
 }

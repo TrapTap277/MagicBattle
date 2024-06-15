@@ -58,7 +58,7 @@ namespace _Scripts.Staff
         private IEnumerator EnableOrDisable(bool isEnabled)
         {
             if(!isEnabled)
-                yield return new WaitForSeconds(3f);
+                yield return new WaitForSeconds(0.5f);
             
             _effect.gameObject.SetActive(isEnabled);
         }

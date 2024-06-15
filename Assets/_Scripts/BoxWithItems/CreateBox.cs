@@ -9,11 +9,6 @@ namespace _Scripts.BoxWithItems
         [SerializeField] private Transform _spawnPositionForEnemy;
         [SerializeField] private Transform _endPositions;
 
-        private void Awake()
-        {
-            CreateAndMove();
-        }
-
         public void CreateAndMove()
         {
             var spawnPositionKeys = new[] {_spawnPositionForPlayer, _spawnPositionForEnemy};

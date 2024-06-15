@@ -7,7 +7,6 @@ namespace _Scripts.Die
 {
     public class EnemyDeath : BaseDeath
     {
-        [SerializeField] private MagicAttackStorage _attackStorage;
         [SerializeField] private EnemyStateMachine _stateMachine;
         [SerializeField] private GiveLive _giveLive;
 
@@ -20,7 +19,6 @@ namespace _Scripts.Die
 
         protected override void Init()
         {
-            AttackStorage = _attackStorage;
             StateMachine = _stateMachine;
             GiveLive = _giveLive;
             RoundsCounter = _roundsCounter;

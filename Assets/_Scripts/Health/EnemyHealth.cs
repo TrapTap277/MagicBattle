@@ -25,6 +25,7 @@ namespace _Scripts.Health
 
         protected override void Died()
         {
+            base.Died();
             DieCounter.AddEnemyDies();
             OnDied?.Invoke();
         }

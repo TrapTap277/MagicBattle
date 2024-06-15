@@ -1,23 +1,39 @@
-﻿namespace _Scripts.Die
+﻿using System;
+
+namespace _Scripts.Die
 {
-    public class DieCounter
+    public static class DieCounter
     {
+        public static event Action OnSetText;
+        public static event Action OnResetBarriers;
+
         private static int _enemyDieCount;
         private static int _playerDieCount;
 
         public static void AddEnemyDies()
         {
             _enemyDieCount++;
+
+            IsSomeoneDied();
+            if (IsGameEnded()) OnSetText?.Invoke();
         }
 
         public static void AddPlayerDies()
         {
             _playerDieCount++;
+
+            IsSomeoneDied();
+            if (IsGameEnded()) OnSetText?.Invoke();
         }
 
-        public static bool IsSomeoneDied()
+        private static void IsSomeoneDied()
         {
-            return _enemyDieCount > 0 || _playerDieCount > 0;
+            OnResetBarriers?.Invoke();
+        }
+
+        private static bool IsGameEnded()
+        {
+            return _enemyDieCount >= 3 || _playerDieCount >= 3;
         }
     }
 }

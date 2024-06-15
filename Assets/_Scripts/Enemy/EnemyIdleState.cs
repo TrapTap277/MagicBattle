@@ -8,7 +8,7 @@ namespace _Scripts.Enemy
 
         public override void Enter(EnemyStateMachine enemyStateMachine)
         {
-            if (enemyStateMachine.MoveTurn != MoveTurn.Enemy)
+            if (enemyStateMachine.MoveTurn != MoveTurn.Enemy || enemyStateMachine.IsStopped)
             {
                 enemyStateMachine.MoveTransition.TransitionToPlayer();
                 enemyStateMachine.UsedItems.Clear();

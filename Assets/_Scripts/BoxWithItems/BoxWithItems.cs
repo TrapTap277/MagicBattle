@@ -8,6 +8,7 @@ namespace _Scripts.BoxWithItems
 {
     public class BoxWithItems : MonoBehaviour
     {
+        public static event Action OnGeneratedBarriers;
         public static event Action<Transform> OnChangedCameraRotation;
         public static event Action OnChangedCameraRotationToDefault;
 
@@ -16,7 +17,7 @@ namespace _Scripts.BoxWithItems
         private Transform _endPositions;
         private Transform _boxPositions;
 
-        private Dictionary<string, Transform> _positions;
+        private Dictionary<string, Transform> _positions = new Dictionary<string, Transform>();
 
         private static readonly int Open = Animator.StringToHash("Open");
         
@@ -54,6 +55,8 @@ namespace _Scripts.BoxWithItems
             SetAnimation(false);
 
             await Task.Delay(2000);
+            
+            OnGeneratedBarriers?.Invoke();
 
             ExitFromBox();
         }

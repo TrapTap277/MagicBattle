@@ -1,11 +1,14 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using _Scripts.BoxWithItems;
 using _Scripts.Die;
 using _Scripts.Enemy;
 using _Scripts.Shooting;
 using UnityEngine;
+using UnityEngine.Rendering;
 using Random = UnityEngine.Random;
 
 namespace _Scripts.Attacks
@@ -15,7 +18,6 @@ namespace _Scripts.Attacks
         public static event Action OnCreatedUI;
 
         [HideInInspector] public List<AttacksType> _typies = new List<AttacksType>();
-        private readonly List<AttacksType> _usedAttacks = new List<AttacksType>();
 
         public int AttackCount { get; private set; }
         private int RedAttack { get; set; }
@@ -23,17 +25,26 @@ namespace _Scripts.Attacks
 
         [SerializeField] private EnemyStateMachine _stateMachine;
         [SerializeField] private CreateBox _createBox;
+        
         private const int MINAttackCount = 2;
-        private const int MaXttackCount = 7;
+        private const int MaXAttackCount = 7;
 
         private AttacksType _attacksType;
+
+        private bool _isSomeoneDied;
 
         private void Start()
         {
             GenerateMagicAttacks();
         }
 
-        public void GenerateMagicAttacks()
+        private void GenerateMagicAttacksAfterReset()
+        {
+            _isSomeoneDied = true;
+            GenerateMagicAttacks();
+        }
+
+        private void GenerateMagicAttacks()
         {
             ResetStats();
             EnemyEnterInIdleState();
@@ -42,12 +53,11 @@ namespace _Scripts.Attacks
 
             AddAttacks(randomAttackCount);
 
-            if(BlueAttack == 0 || RedAttack == 0)
+            if (BlueAttack == 0 || RedAttack == 0)
                 NoAttackOfType();
 
             OnCreatedUI?.Invoke();
 
-            CreateBoxWithItems();
             PrintAttacks();
         }
 
@@ -105,7 +115,7 @@ namespace _Scripts.Attacks
 
         private static int SetAttackCount()
         {
-            var randomAttackCount = Random.Range(MINAttackCount, MaXttackCount);
+            var randomAttackCount = Random.Range(MINAttackCount, MaXAttackCount);
             return randomAttackCount;
         }
 
@@ -115,20 +125,19 @@ namespace _Scripts.Attacks
             BlueAttack = 0;
             AttackCount = 0;
             _typies.Clear();
-            _usedAttacks.Clear();
         }
 
         private void CreateBoxWithItems()
         {
-            if (DieCounter.IsSomeoneDied()) _createBox.CreateAndMove();
+            _createBox.CreateAndMove();
         }
 
         private void EnemyEnterInIdleState()
         {
-            ResetSecondMove(_stateMachine);
-            
+            //ResetSecondMove(_stateMachine);
+
             _stateMachine.SetMoveTurn(MoveTurn.Player);
-            //_stateMachine.SwitchState(_stateMachine.IdleState);
+            _stateMachine.SwitchState(_stateMachine.IdleState);
         }
 
         private static void ResetSecondMove(EnemyStateMachine stateMachine)
@@ -142,14 +151,23 @@ namespace _Scripts.Attacks
             foreach (var reset in resetSecondMove) reset.ResetSecondMove();
         }
 
-        public void RemoveAttack(AttacksType type)
+        public async void RemoveAttack(AttacksType type)
         {
-            _usedAttacks.Add(type);
             _typies.RemoveAt(0);
 
             DecreaseAttackCount(type);
 
-            if (_typies.Count <= 0) GenerateMagicAttacks();
+            if (_typies.Count <= 0 && _isSomeoneDied == false)
+            {
+                await Task.Delay(2000);
+                GenerateMagicAttacks();
+            }            
+            
+            if (_typies.Count <= 0 && _isSomeoneDied == true)
+            {
+                await Task.Delay(2000);
+                CreateBoxWithItems();
+            }
         }
 
         private void DecreaseAttackCount(AttacksType type)
@@ -169,6 +187,18 @@ namespace _Scripts.Attacks
                 .Aggregate("", (current, attack) => current + attack);
 
             Debug.Log(attacksToDebug);
+        }
+
+        private void OnEnable()
+        {
+            DieCounter.OnResetBarriers += CreateBoxWithItems;
+            BoxWithItems.BoxWithItems.OnGeneratedBarriers += GenerateMagicAttacksAfterReset;
+        }
+
+        private void OnDisable()
+        {
+            DieCounter.OnResetBarriers -= CreateBoxWithItems;
+            BoxWithItems.BoxWithItems.OnGeneratedBarriers -= GenerateMagicAttacksAfterReset;
         }
     }
 

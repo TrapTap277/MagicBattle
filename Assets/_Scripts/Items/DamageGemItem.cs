@@ -10,6 +10,7 @@ namespace _Scripts.Items
         public override void Use()
         {
             ChangeGem(Gem);
+
             OnTakeMoreDamage?.Invoke();
         }
     }

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using _Scripts.AttackMoveStateMachine;
 using _Scripts.Attacks;
+using _Scripts.Die;
 using _Scripts.Health;
 using _Scripts.Items;
 using _Scripts.Shooting;
@@ -32,6 +33,8 @@ namespace _Scripts.Enemy
         [HideInInspector] public float PercentToAttackInPlayer;
         [HideInInspector] public float RandomNumber;
 
+        [HideInInspector] public bool IsStopped;
+
         private void Awake()
         {
             _enemyCurrentState = IdleState;
@@ -41,6 +44,7 @@ namespace _Scripts.Enemy
 
         public void SwitchState(EnemyBaseState state)
         {
+            if (IsStopped && state != IdleState && MoveTurn != MoveTurn.Player) return;
             _enemyCurrentState.Exit(this);
             _enemyCurrentState = state;
             _enemyCurrentState.Enter(this);
@@ -62,6 +66,28 @@ namespace _Scripts.Enemy
             PercentToAttackInPlayer = (float) Storage.BlueAttack / Storage.AttackCount *
                                       100;
             RandomNumber = Random.Range(0, 100);
+        }
+
+        private void Stop()
+        {
+            IsStopped = true;
+        }       
+        
+        private void StopIsStopped()
+        {
+            IsStopped = false;
+        }
+
+        private void OnEnable()
+        {
+            DieCounter.OnResetBarriers += Stop;
+            ShootInvoker.OnStoppedIsStopped += StopIsStopped;
+        }
+
+        private void OnDisable()
+        {
+            DieCounter.OnResetBarriers -= Stop;
+            ShootInvoker.OnStoppedIsStopped -= StopIsStopped;
         }
     }
 }

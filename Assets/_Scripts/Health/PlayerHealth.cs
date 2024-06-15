@@ -27,6 +27,8 @@ namespace _Scripts.Health
         {
             DieCounter.AddPlayerDies();
             OnDied?.Invoke();
+            
+            base.Died();
         }
 
         private void OnEnable()
@@ -34,8 +36,6 @@ namespace _Scripts.Health
             BaseShoot.OnTakenDamageToPlayer += TakeDamage; 
             HealGemItem.OnHealedPlayer += RestoreHealth;
             ProtectionGemItem.OnGivenProtectionToPlayer += GetProtection;
-            DamageGemItem.OnTakeMoreDamage += TakeMoreDamage;
-
         }
 
         private void OnDisable()
@@ -43,8 +43,6 @@ namespace _Scripts.Health
             BaseShoot.OnTakenDamageToPlayer -= TakeDamage;
             HealGemItem.OnHealedPlayer -= RestoreHealth;
             ProtectionGemItem.OnGivenProtectionToPlayer -= GetProtection;
-            DamageGemItem.OnTakeMoreDamage -= TakeMoreDamage;
-
         }
     }
 }

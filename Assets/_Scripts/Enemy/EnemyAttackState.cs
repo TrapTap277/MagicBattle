@@ -10,7 +10,8 @@ namespace _Scripts.Enemy
         {
             _isExit = false;
             await Task.Delay(2000);
-            if (_isExit) return;
+
+            if (_isExit || enemyStateMachine.IsStopped) return;
 
             if (enemyStateMachine.RandomNumber < enemyStateMachine.PercentToAttackInPlayer)
                 enemyStateMachine.ShotInvoker.ShootInPlayer(true);

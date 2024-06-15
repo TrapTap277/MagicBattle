@@ -3,7 +3,7 @@ using _Scripts.Attacks;
 using _Scripts.LostScene;
 using _Scripts.Shooting;
 using _Scripts.Staff;
-using DG.Tweening;
+using _Scripts.Stats;
 using UnityEngine;
 
 namespace _Scripts.AttackMoveStateMachine
@@ -21,32 +21,33 @@ namespace _Scripts.AttackMoveStateMachine
 
         private IStaffAnimationController _staffAnimationController;
         private ISetStaffPositions _setStaffPositions;
+        private IEnableDisableManager _enableDisableManager;
 
         private void Awake()
         {
-            SetStaff();
+            InitManagers();
         }
 
         private void Start()
         {
-            EnablePanel(true);
+            _enableDisableManager?.Show();
         }
 
         public async void TransitionToEnemy()
         {
+            _enableDisableManager?.Fade();
             await DissolveOrUnDissolveStaff(StaffAnimations.DissolveStaff);
             SetStaffPositionsAndRotation(_endStaffPosition);
             await DissolveOrUnDissolveStaff(StaffAnimations.UnDissolveStaff);
-            FadeOrShowAttackButtons(0, false);
         }
 
         public async void TransitionToPlayer()
         {
+            _enableDisableManager?.Show();
             if (_attackStorage.AttackCount == 0 && _staff.position == _startStaffPosition.position) return;
             await DissolveOrUnDissolveStaff(StaffAnimations.DissolveStaff);
             SetStaffPositionsAndRotation(_startStaffPosition);
             await DissolveOrUnDissolveStaff(StaffAnimations.UnDissolveStaff);
-            FadeOrShowAttackButtons(1, true);
         }
 
         private void SetStaffPositions(ShootIn shootIn)
@@ -66,23 +67,11 @@ namespace _Scripts.AttackMoveStateMachine
             _staff.rotation = endPositions.rotation;
         }
 
-        private void FadeOrShowAttackButtons(float endValue, bool isBlock)
-        {
-            var move = DOTween.Sequence();
-            move.Append(_attackButtons.DOFade(endValue, 2));
-            EnablePanel(isBlock);
-        }
-
-        private void SetStaff()
+        private void InitManagers()
         {
             _staffAnimationController = FindObjectOfType<StaffSwitchAnimation>();
             _setStaffPositions = FindObjectOfType<UseMagic>();
-        }
-
-        private void EnablePanel(bool isBlock)
-        {
-            if(_attackButtons != null)
-                _attackButtons.blocksRaycasts = isBlock;
+            _enableDisableManager = FindObjectOfType<AttackButtonsController>();
         }
 
         private void OnEnable()
