@@ -10,21 +10,20 @@ namespace _Scripts.SwitchScene
 {
     public class ChangeScene : MonoBehaviour
     {
-        private Darkness _darkness;
-
         private IEnableDisableManager _enableDisableManager;
+        private IChangeAnimation _changeAnimation;
 
         private void Start()
         {
-            _darkness = FindObjectOfType<Darkness>();
             _enableDisableManager = FindObjectOfType<ShowOrFadeEnableDisable>();
+            _changeAnimation = FindObjectOfType<Darkness>();
         }
 
         public async void ChangeCurrentScene(int index)
         {
             _enableDisableManager?.Fade();
             await Task.Delay(2000);
-            _darkness.CrossFadeToDarknessShow();
+            _changeAnimation?.CrossFade();
             await Task.Delay(2000);
             SwitchScene(index);
         }

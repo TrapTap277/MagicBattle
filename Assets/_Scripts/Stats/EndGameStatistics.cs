@@ -42,7 +42,7 @@ namespace _Scripts.Stats
             _damage += damage;
         }
 
-        private void SetText()
+        private void SetStats()
         {
             _didDamageTextMeshProUGUI.text = $"{_didDamage} {_damage.ToString(CultureInfo.InvariantCulture)}";
             _usedHealGemsTextMeshProUGUI.text = $"{_usedHealGems} {_newItemHeal.ToString()}";
@@ -64,8 +64,10 @@ namespace _Scripts.Stats
                     _newItemDamage++;
                     break;
                 case Gem.SecondMove:
+                {
                     _newItemSecondMove++;
                     break;
+                }
                 case Gem.Protection:
                     _newItemProtection++;
                     break;
@@ -92,14 +94,14 @@ namespace _Scripts.Stats
         {
             HealthBase.OnChangedDamage += SetDamage;
             BaseUseItem.OnAddedItem += AddItemCount;
-            DieCounter.OnSetText += SetText;
+            DieCounter.OnSetStats += SetStats;
         }
 
         private void OnDisable()
         {
             HealthBase.OnChangedDamage -= SetDamage;
             BaseUseItem.OnAddedItem -= AddItemCount;
-            DieCounter.OnSetText -= SetText;
+            DieCounter.OnSetStats -= SetStats;
         }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace _Scripts.LostScene
 {
-    public class Darkness : MonoBehaviour
+    public class Darkness : MonoBehaviour, IChangeAnimation
     {
         private Animator _animator;
 
@@ -10,8 +10,7 @@ namespace _Scripts.LostScene
         {
             _animator = GetComponent<Animator>();
         }
-
-        public void CrossFadeToDarknessShow()
+        public void CrossFade()
         {
             _animator.CrossFade("DarknessShow", 0);
         }
