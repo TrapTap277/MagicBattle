@@ -1,6 +1,6 @@
 ﻿namespace _Scripts.LostScene
 {
-    public interface IPortalManager
+    public interface IOpenCloseManager
     {
         void Open();
         void Close();

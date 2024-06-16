@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace _Scripts.DisableGameObject
 {
-    public class PortalManager : MonoBehaviour, IPortalManager
+    public class OpenCloseManager : MonoBehaviour, IOpenCloseManager
     {
         public void Open()
         {

@@ -11,9 +11,9 @@ namespace _Scripts.Camera
 
         private void Awake()
         {
-            var camera = gameObject;
-            _startCameraRotation = camera.transform.rotation;
-            _startCameraTransform = camera.transform;
+            var cameraPrefab = gameObject;
+            _startCameraRotation = cameraPrefab.transform.rotation;
+            _startCameraTransform = cameraPrefab.transform;
         }
 
         private void ChangeCameraRotation(Transform endPlayerPosition)
@@ -29,14 +29,14 @@ namespace _Scripts.Camera
 
         private void OnEnable()
         {
-            BoxWithItems.BoxWithItems.OnChangedCameraRotationToDefault += ChangeCameraRotationToDefault;
-            BoxWithItems.BoxWithItems.OnChangedCameraRotation += ChangeCameraRotation;
+            BoxWithItems.MoveBox.OnChangedCameraRotationToDefault += ChangeCameraRotationToDefault;
+            BoxWithItems.MoveBox.OnChangedCameraRotation += ChangeCameraRotation;
         }
 
         private void OnDisable()
         {
-            BoxWithItems.BoxWithItems.OnChangedCameraRotationToDefault -= ChangeCameraRotationToDefault;
-            BoxWithItems.BoxWithItems.OnChangedCameraRotation -= ChangeCameraRotation;
+            BoxWithItems.MoveBox.OnChangedCameraRotationToDefault -= ChangeCameraRotationToDefault;
+            BoxWithItems.MoveBox.OnChangedCameraRotation -= ChangeCameraRotation;
         }
     }
 }

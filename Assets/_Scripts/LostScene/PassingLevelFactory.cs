@@ -9,7 +9,7 @@ namespace _Scripts.LostScene
         public void CreatePassingLevel()
         {
             var useMagic = FindObjectOfType<UseMagic>();
-            var portalManager = FindObjectOfType<PortalManager>();
+            var portalManager = FindObjectOfType<OpenCloseManager>();
             var doorManager = FindObjectOfType<DoorManager>();
             var staffAnimationController = FindObjectOfType<StaffSwitchAnimation>();
 

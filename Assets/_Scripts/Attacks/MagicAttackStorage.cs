@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -8,7 +7,6 @@ using _Scripts.Die;
 using _Scripts.Enemy;
 using _Scripts.Shooting;
 using UnityEngine;
-using UnityEngine.Rendering;
 using Random = UnityEngine.Random;
 
 namespace _Scripts.Attacks
@@ -25,7 +23,7 @@ namespace _Scripts.Attacks
 
         [SerializeField] private EnemyStateMachine _stateMachine;
         [SerializeField] private CreateBox _createBox;
-        
+
         private const int MINAttackCount = 2;
         private const int MaXAttackCount = 7;
 
@@ -130,7 +128,7 @@ namespace _Scripts.Attacks
 
         private void CreateBoxWithItems()
         {
-            if (DieCounter.IsGameEnded()) return; 
+            if (DieCounter.IsGameEnded()) return;
             _createBox.CreateAndMove();
         }
 
@@ -163,9 +161,9 @@ namespace _Scripts.Attacks
             {
                 await Task.Delay(2000);
                 GenerateMagicAttacks();
-            }            
-            
-            if (_typies.Count <= 0 && _isSomeoneDied == true)
+            }
+
+            if (_typies.Count <= 0 && _isSomeoneDied)
             {
                 await Task.Delay(2000);
                 CreateBoxWithItems();
