@@ -24,6 +24,7 @@ namespace _Scripts.Items
         {
             if (!_isCurrentItemNotNull) return;
             base.Use(false);
+            AddUsedItem();
             DestroyItem();
         }
 

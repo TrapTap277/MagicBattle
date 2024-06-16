@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using _Scripts.Die;
 using _Scripts.Items;
 using UnityEngine;
 
@@ -12,6 +13,7 @@ namespace _Scripts.BoxWithItems
         public static event Action<Transform> OnChangedCameraRotation;
         public static event Action OnChangedCameraRotationToDefault;
 
+
         private Transform _spawnPositionForPlayer;
         private Transform _spawnPositionForEnemy;
         private Transform _endPositions;
@@ -20,10 +22,12 @@ namespace _Scripts.BoxWithItems
         private Dictionary<string, Transform> _positions = new Dictionary<string, Transform>();
 
         private static readonly int Open = Animator.StringToHash("Open");
-        
+
         private const string SpawnPositionsPlayer = "SpawnPositionsForPlayer";
         private const string SpawnPositionsEnemy = "SpawnPositionsEnemy";
         private const string EndPositions = "EndPositions";
+
+        private int _itemsCount;
 
         private CreateItemsUI _createItemsUI;
         private Animator _animator;
@@ -33,41 +37,58 @@ namespace _Scripts.BoxWithItems
             _animator = GetComponent<Animator>();
             _createItemsUI = FindObjectOfType<CreateItemsUI>();
 
+            InitDictionary();
+
+            MoveUp(EndPositions);
+            SetItemCount();
+        }
+
+        private void InitDictionary()
+        {
             _positions = new Dictionary<string, Transform>
             {
                 {SpawnPositionsPlayer, _spawnPositionForPlayer},
                 {SpawnPositionsEnemy, _spawnPositionForEnemy},
-                {EndPositions, _endPositions},
+                {EndPositions, _endPositions}
             };
-
-            MoveUp(EndPositions);
         }
 
         private async void OnMouseDown()
         {
+            SetItemCount();
+
             RemoveBoxCollider();
 
             SetAnimation(true);
-            _createItemsUI.CreateWithItemsCount(10);
+            _createItemsUI.CreateWithItemsCount(_itemsCount);
 
             await Task.Delay(2000);
 
             SetAnimation(false);
 
             await Task.Delay(2000);
-            
+
             OnGeneratedBarriers?.Invoke();
 
             ExitFromBox();
         }
 
-        public void InitPositions(Transform spawnPositionsForPlayer, Transform spawnPositionsForEnemy, Transform endPositions)
+        private void SetItemCount()
+        {
+            _itemsCount = 2;
+
+            if (DieCounter._enemyDieCount == 2 || DieCounter._playerDieCount == 2)
+                _itemsCount = 4;
+        }
+
+        public void InitPositions(Transform spawnPositionsForPlayer, Transform spawnPositionsForEnemy,
+            Transform endPositions)
         {
             _spawnPositionForPlayer = spawnPositionsForPlayer;
             _spawnPositionForEnemy = spawnPositionsForEnemy;
             _endPositions = endPositions;
         }
-        
+
         private void MoveUp(string key)
         {
             MoveBoxWithTween.MoveBox(gameObject.transform, GetTransform(key));

@@ -14,7 +14,7 @@ namespace _Scripts.EndGame
         private const float TimeToChangeColor = 2f;
 
         private WhoWon _who;
-        
+
         private void Awake()
         {
             EnableOrDisable(false);
@@ -23,7 +23,7 @@ namespace _Scripts.EndGame
         private void SetText(WhoWon won)
         {
             _who = won;
-            
+
             var dictionary = new Dictionary<WhoWon, string>
             {
                 {WhoWon.Player, "You Are Won"},
@@ -38,19 +38,26 @@ namespace _Scripts.EndGame
         private void ChangeColor()
         {
             if (_who == WhoWon.Enemy)
-                _text.DOColor(Color.red, TimeToChangeColor);
+                _text.DOColor(Color.red, TimeToChangeColor).OnComplete(FadeText);
 
             if (_who == WhoWon.Player)
-                _text.DOColor(Color.green, TimeToChangeColor);
+                _text.DOColor(Color.green, TimeToChangeColor).OnComplete(FadeText);
         }
 
         private IEnumerator EnableOrDisable(bool isEnabled)
         {
             _text.gameObject.SetActive(isEnabled);
-            
+
+            if (!isEnabled) yield return null;
+
             yield return new WaitForSeconds(3);
-            
+
             ChangeColor();
+        }
+
+        private void FadeText()
+        {
+            _text.DOFade(0, TimeToChangeColor);
         }
 
         private void OnEnable()

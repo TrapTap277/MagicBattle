@@ -46,6 +46,7 @@ namespace _Scripts.Attacks
 
         private void GenerateMagicAttacks()
         {
+            if (DieCounter.IsGameEnded()) return;
             ResetStats();
             EnemyEnterInIdleState();
 
@@ -129,6 +130,7 @@ namespace _Scripts.Attacks
 
         private void CreateBoxWithItems()
         {
+            if (DieCounter.IsGameEnded()) return; 
             _createBox.CreateAndMove();
         }
 

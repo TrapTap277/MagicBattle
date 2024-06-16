@@ -1,22 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using _Scripts.Die;
 using _Scripts.Staff;
-using UnityEngine;
 using UnityEngine.UI;
 
 namespace _Scripts.Items
 {
     public class BaseUseItem
     {
-        public static event Action OnSetItemUsedStatistics;
         public static event Action<Gem> OnAddedItem;
 
         private static bool _isBaseItemNotNull;
         private static BaseItem _baseItem;
         private static CurrentItem _currentItem;
-
-        private readonly List<Gem> _usedItems = new List<Gem>();
 
         private int _healItemsUsedCounter;
         private int _damageItemsUsedCounter;
@@ -35,7 +29,6 @@ namespace _Scripts.Items
             var init = _baseItem as IInit;
             init?.Init(isUsedByEnemy);
             _baseItem.Use();
-            AddUsedItem();
         }
 
         protected virtual void InitItemBoolProperties()
@@ -48,10 +41,9 @@ namespace _Scripts.Items
             GenerateRandomItem.RemoveItem(_baseItem);
         }
 
-        private static void AddUsedItem()
+        protected static void AddUsedItem()
         {
             OnAddedItem?.Invoke(_baseItem.Gem);
-            OnSetItemUsedStatistics?.Invoke();
         }
     }
 }

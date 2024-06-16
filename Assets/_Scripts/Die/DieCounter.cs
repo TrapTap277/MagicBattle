@@ -11,8 +11,8 @@ namespace _Scripts.Die
         public static event Action OnPlayedDemonicEffect;
         public static event Action OnResetBarriers;
 
-        private static int _enemyDieCount;
-        private static int _playerDieCount;
+        public static int _enemyDieCount { get; private set; }
+        public static int _playerDieCount { get; private set; }
 
         public static async void AddEnemyDies()
         {
@@ -44,14 +44,14 @@ namespace _Scripts.Die
             }
         }
 
+        public static bool IsGameEnded()
+        {
+            return _enemyDieCount >= 3 || _playerDieCount >= 3;
+        }
+
         private static void IsSomeoneDied()
         {
             OnResetBarriers?.Invoke();
-        }
-
-        private static bool IsGameEnded()
-        {
-            return _enemyDieCount >= 3 || _playerDieCount >= 3;
         }
     }
 }
