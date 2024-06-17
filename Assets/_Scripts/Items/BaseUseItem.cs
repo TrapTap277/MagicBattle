@@ -26,7 +26,7 @@ namespace _Scripts.Items
         {
             if (!_isBaseItemNotNull) return;
             RemoveItem();
-            var init = _baseItem as IInit;
+            var init = _baseItem as IInitItem;
             init?.Init(isUsedByEnemy);
             _baseItem.Use();
         }

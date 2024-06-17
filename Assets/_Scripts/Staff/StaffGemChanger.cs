@@ -6,8 +6,9 @@ using UnityEngine;
 
 namespace _Scripts.Staff
 {
-    public class StaffGemChanger : MonoBehaviour
+    public class StaffGemChanger : MonoBehaviour, IInit
     {
+        [SerializeField] private RFX4_EffectSettings _effect;
         [SerializeField] private MeshRenderer _gemMeshRenderer;
 
         [SerializeField] private Material _none;
@@ -21,11 +22,10 @@ namespace _Scripts.Staff
         private Dictionary<Gem, Material> _gemMaterial;
         private Dictionary<Gem, Color> _effectColor;
 
-        private RFX4_EffectSettings _effect;
 
-        private void Start()
+        public void Init()
         {
-            _effect = FindObjectOfType<RFX4_EffectSettings>();
+            _effect.gameObject.SetActive(true);
             InitDictionaries();
             DeterminateGemAndChangeMaterial(Gem.None);
         }

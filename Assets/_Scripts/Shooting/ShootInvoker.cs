@@ -7,15 +7,16 @@ using _Scripts.Items;
 using _Scripts.LostScene;
 using _Scripts.Staff;
 using _Scripts.Stats;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace _Scripts.Shooting
 {
-    public class ShootInvoker : MonoBehaviour
+    public class ShootInvoker : MonoBehaviour, IInit
     {
         public static event Action OnStoppedIsStopped;
-        
+
         [SerializeField] private EnemyStateMachine _stateMachine;
         [SerializeField] private MagicAttackStorage _storage;
         [SerializeField] private Button _buttonToShootInEnemy;
@@ -29,7 +30,7 @@ namespace _Scripts.Shooting
         private ISetGem _setGem;
         private IEnableDisableManager _enableDisableManager;
 
-        private void Awake()
+        public void Init()
         {
             _buttonToShootInEnemy.onClick.AddListener(() => ShootInEnemy());
             _buttonToShootInYou.onClick.AddListener(() => ShootInPlayer());
@@ -37,16 +38,15 @@ namespace _Scripts.Shooting
             _secondMoveTurn = SecondMoveTurn.None;
 
             _enableDisableManager = FindObjectOfType<AttackButtonsController>();
-        }
 
-        private void Start()
-        {
-            InitProperties();
+            _healthBase = FindObjectsOfType<HealthBase>();
+            _staffAnimationController = FindObjectOfType<StaffSwitchAnimation>();
+            _setGem = FindObjectOfType<UseMagic>();
         }
 
         public void ShootInEnemy(bool isEnemy = false)
         {
-            if(isEnemy == false) SetIsStoppedFalse();
+            if (isEnemy == false) SetIsStoppedFalse();
             _baseShoot = new ShootInEnemy(_storage, _stateMachine, _secondMoveTurn, isEnemy, _staffAnimationController,
                 _setGem, _enableDisableManager);
             _baseShoot.Shoot();
@@ -55,7 +55,7 @@ namespace _Scripts.Shooting
 
         public void ShootInPlayer(bool isEnemy = false)
         {
-            if(isEnemy == false) SetIsStoppedFalse();
+            if (isEnemy == false) SetIsStoppedFalse();
             _baseShoot = new ShootInPlayer(_storage, _stateMachine, _secondMoveTurn, isEnemy, _staffAnimationController,
                 _setGem, _enableDisableManager);
             _baseShoot.Shoot();
@@ -81,13 +81,6 @@ namespace _Scripts.Shooting
         private void ResetSecondMove()
         {
             _secondMoveTurn = SecondMoveTurn.None;
-        }
-
-        private void InitProperties()
-        {
-            _healthBase = FindObjectsOfType<HealthBase>();
-            _staffAnimationController = FindObjectOfType<StaffSwitchAnimation>();
-            _setGem = FindObjectOfType<UseMagic>();
         }
 
         private void OnEnable()

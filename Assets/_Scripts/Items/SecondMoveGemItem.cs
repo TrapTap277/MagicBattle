@@ -4,7 +4,7 @@ using UnityEngine;
 namespace _Scripts.Items
 {
     [CreateAssetMenu(menuName = "Items/MoveGem", fileName = "MoveGem")]
-    public class SecondMoveGemItem : BaseItem, IInit
+    public class SecondMoveGemItem : BaseItem, IInitItem
     {
         public static event Action<SecondMoveTurn> OnGotSecondMove;
         private bool _isUsedByEnemy;

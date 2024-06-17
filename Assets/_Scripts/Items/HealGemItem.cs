@@ -4,7 +4,7 @@ using UnityEngine;
 namespace _Scripts.Items
 {
     [CreateAssetMenu(menuName = "Items/HealGem", fileName = "HealGem")]
-    public class HealGemItem : BaseItem, IInit
+    public class HealGemItem : BaseItem, IInitItem
     {
         public static event Action<float> OnHealedPlayer;
         public static event Action<float> OnHealedEnemy;

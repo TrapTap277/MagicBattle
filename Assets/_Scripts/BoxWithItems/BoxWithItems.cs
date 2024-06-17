@@ -59,7 +59,7 @@ namespace _Scripts.BoxWithItems
         {
             _itemsCount = 2;
 
-            if (DieCounter._enemyDieCount == 2 || DieCounter._playerDieCount == 2)
+            if (DieCounter.EnemyDieCount == 2 || DieCounter.PlayerDieCount == 2)
                 _itemsCount = 4;
         }
     }

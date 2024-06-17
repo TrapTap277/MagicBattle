@@ -16,11 +16,12 @@ namespace _Scripts.Health
         [SerializeField] private Image _frontHealthBar;
         [SerializeField] private Image _backHealthBar;
         
-        protected override void Init()
+        protected override void InitProperties()
         {
             HealthInPercents = _healthInPercents;
             FrontHealthBar = _frontHealthBar;
             BackHealthBar = _backHealthBar;
+            CanvasGroup.Add(this.gameObject.GetComponent<CanvasGroup>());
         }
 
         protected override void Died()

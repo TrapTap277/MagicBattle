@@ -1,6 +1,6 @@
 ﻿namespace _Scripts.Items
 {
-    public interface IInit
+    public interface IInitItem
     {
         void Init(bool isUsedByEnemy);
     }
