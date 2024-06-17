@@ -41,6 +41,7 @@ public class RFX4_CameraShake : MonoBehaviour
 
     private IEnumerator Shake()
     {
+        if (Camera.main == null) yield break;
         var elapsed = 0.0f;
         var camT = Camera.main.transform;
         var originalCamRotation = camT.rotation.eulerAngles;

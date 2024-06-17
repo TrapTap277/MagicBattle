@@ -9,15 +9,14 @@ namespace _Scripts.Attacks
 {
     public class MagicAttackUI : MonoBehaviour
     {
-        [SerializeField] private MagicAttackStorage _attackStorage;
         [SerializeField] private GameObject _attack;
         [SerializeField] private CanvasGroup _attackPanel;
 
         private readonly List<Image> _attacks = new List<Image>();
 
-        private void CreateUI()
+        private void CreateUI(List<AttacksType> types)
         {
-            var isBlue = _attackStorage._typies.Select(attackType => attackType == AttacksType.Blue);
+            var isBlue = types.Select(attackType => attackType == AttacksType.Blue);
 
             ResetAttacks();
             ShowAttacks();

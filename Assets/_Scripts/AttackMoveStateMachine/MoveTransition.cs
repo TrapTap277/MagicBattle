@@ -28,11 +28,6 @@ namespace _Scripts.AttackMoveStateMachine
             InitManagers();
         }
 
-        private void Start()
-        {
-            _enableDisableManager?.Show();
-        }
-
         public async void TransitionToEnemy()
         {
             _enableDisableManager?.Fade();

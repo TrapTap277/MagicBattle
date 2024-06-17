@@ -11,11 +11,11 @@ using Random = UnityEngine.Random;
 
 namespace _Scripts.Attacks
 {
-    public class MagicAttackStorage : MonoBehaviour
+    public class MagicAttackStorage : MonoBehaviour, IGenerateMagicAttacks
     {
-        public static event Action OnCreatedUI;
+        public static event Action<List<AttacksType>> OnCreatedUI;
 
-        [HideInInspector] public List<AttacksType> _typies = new List<AttacksType>();
+        [HideInInspector] public List<AttacksType> Typies = new List<AttacksType>();
 
         public int AttackCount { get; private set; }
         private int RedAttack { get; set; }
@@ -31,18 +31,13 @@ namespace _Scripts.Attacks
 
         private bool _isSomeoneDied;
 
-        private void Start()
-        {
-            GenerateMagicAttacks();
-        }
-
         private void GenerateMagicAttacksAfterReset()
         {
             _isSomeoneDied = true;
             GenerateMagicAttacks();
         }
 
-        private void GenerateMagicAttacks()
+        public void GenerateMagicAttacks()
         {
             if (DieCounter.IsGameEnded()) return;
             ResetStats();
@@ -55,14 +50,31 @@ namespace _Scripts.Attacks
             if (BlueAttack == 0 || RedAttack == 0)
                 NoAttackOfType();
 
-            OnCreatedUI?.Invoke();
-
             PrintAttacks();
+            var attackList = ShuffleList();
+
+            OnCreatedUI?.Invoke(attackList);
+        }
+
+        private List<AttacksType> ShuffleList()
+        {
+            var shuffledList = new List<AttacksType>(Typies); 
+            var count = shuffledList.Count;
+            var last = count - 1;
+            for (var i = 0; i < last; ++i)
+            {
+                var random = Random.Range(i, count);
+                var temp = shuffledList[i];
+                shuffledList[i] = shuffledList[random];
+                shuffledList[random] = temp;
+            }
+
+            return shuffledList;
         }
 
         public AttacksType GetFirstType()
         {
-            var type = _typies[0];
+            var type = Typies[0];
 
             return type;
         }
@@ -109,7 +121,7 @@ namespace _Scripts.Attacks
 
         private void AddAttackType()
         {
-            _typies.Add(_attacksType);
+            Typies.Add(_attacksType);
         }
 
         private static int SetAttackCount()
@@ -123,7 +135,7 @@ namespace _Scripts.Attacks
             RedAttack = 0;
             BlueAttack = 0;
             AttackCount = 0;
-            _typies.Clear();
+            Typies.Clear();
         }
 
         private void CreateBoxWithItems()
@@ -153,17 +165,17 @@ namespace _Scripts.Attacks
 
         public async void RemoveAttack(AttacksType type)
         {
-            _typies.RemoveAt(0);
+            Typies.RemoveAt(0);
 
             DecreaseAttackCount(type);
 
-            if (_typies.Count <= 0 && _isSomeoneDied == false)
+            if (Typies.Count <= 0 && _isSomeoneDied == false)
             {
                 await Task.Delay(2000);
                 GenerateMagicAttacks();
             }
 
-            if (_typies.Count <= 0 && _isSomeoneDied)
+            if (Typies.Count <= 0 && _isSomeoneDied)
             {
                 await Task.Delay(2000);
                 CreateBoxWithItems();
@@ -183,7 +195,7 @@ namespace _Scripts.Attacks
 
         private void PrintAttacks()
         {
-            var attacksToDebug = _typies.Select(attacks => attacks == AttacksType.Red ? "R" : "B")
+            var attacksToDebug = Typies.Select(attacks => attacks == AttacksType.Red ? "R" : "B")
                 .Aggregate("", (current, attack) => current + attack);
 
             Debug.Log(attacksToDebug);
