@@ -1,6 +1,4 @@
-﻿using System;
-using _Scripts.Attacks;
-using _Scripts.Enemy;
+﻿using _Scripts.Enemy;
 using _Scripts.Health;
 using UnityEngine;
 
@@ -23,6 +21,13 @@ namespace _Scripts.Die
             StateMachine = _stateMachine;
             GiveLive = _giveLive;
             RoundsCounter = _roundsCounter;
+        }
+
+        protected override void GiveWin()
+        {
+            var dieUI = new DieUI(RoundsCounter);
+
+            dieUI.GiveWinRoundToEnemy();
         }
 
         private void OnEnable()

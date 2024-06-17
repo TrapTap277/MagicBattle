@@ -20,13 +20,8 @@ namespace _Scripts.Die
             RestoreHealth();
         }
 
-        private void GiveWin()
-        {
-            var dieUI = new DieUI(RoundsCounter);
-
-            dieUI.GiveWinRoundToPlayer();
-        }
-
+        protected abstract void GiveWin();
+        
         private void RestoreHealth()
         {
             GiveLive.RestoreHealth(200);
