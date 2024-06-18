@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using _Scripts.Items;
 using _Scripts.Shooting;
 using UnityEngine;
@@ -8,7 +7,7 @@ namespace _Scripts.Staff
 {
     public class StaffGemChanger : MonoBehaviour, IInit
     {
-        [SerializeField] private RFX4_EffectSettings _effect;
+        [SerializeField] private RFX4_EffectSettings _effectPrefab;
         [SerializeField] private MeshRenderer _gemMeshRenderer;
 
         [SerializeField] private Material _none;
@@ -25,7 +24,7 @@ namespace _Scripts.Staff
 
         public void Init()
         {
-            _effect.gameObject.SetActive(true);
+            _effectPrefab.gameObject.SetActive(true);
             InitDictionaries();
             DeterminateGemAndChangeMaterial(Gem.None);
         }
@@ -35,7 +34,7 @@ namespace _Scripts.Staff
             if (_gemMaterial.TryGetValue(gem, out var material) && _effectColor.TryGetValue(gem, out var color))
             {
                 ChangeMaterial(material);
-                ChangeEffectColor(color);
+                CreateGemEffectWithColor(color);
             }
             else
             {
@@ -43,24 +42,27 @@ namespace _Scripts.Staff
             }
         }
 
-        private void ChangeEffectColor(Color color)
+        private void CreateGemEffectWithColor(Color color)
         {
-            _effect.EffectColor = color;
-            StartCoroutine(EnableOrDisable(true));
-            StartCoroutine(EnableOrDisable(false));
+            var gemMeshTransform = _gemMeshRenderer.transform;
+            
+            var newEffect = CreateEffect(gemMeshTransform, color);
+
+            Destroy(newEffect.gameObject, 1f);
+        }
+
+        private RFX4_EffectSettings CreateEffect(Transform gemMeshTransform, Color color)
+        {
+            _effectPrefab.EffectColor = color;
+            
+            var newEffect =
+                Instantiate(_effectPrefab, gemMeshTransform.position, Quaternion.identity, gemMeshTransform);
+            return newEffect;
         }
 
         private void ChangeMaterial(Material material)
         {
             _gemMeshRenderer.material = material;
-        }
-
-        private IEnumerator EnableOrDisable(bool isEnabled)
-        {
-            if(!isEnabled)
-                yield return new WaitForSeconds(0.5f);
-            
-            _effect.gameObject.SetActive(isEnabled);
         }
 
         private void InitDictionaries()

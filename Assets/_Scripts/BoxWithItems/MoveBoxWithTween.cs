@@ -14,7 +14,7 @@ namespace _Scripts.BoxWithItems
             }
 
             var move = DOTween.Sequence();
-            move.Append(transform.DOMoveY(endPosition.position.y, 1).SetEase(Ease.Linear));
+            move.Append(transform.DOMoveY(endPosition.position.y, 2).SetEase(Ease.Linear));
         }
     }
 }

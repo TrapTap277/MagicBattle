@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using DG.Tweening;
+using _Scripts.Stats;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,20 +14,29 @@ namespace _Scripts.Attacks
 
         private readonly List<Image> _attacks = new List<Image>();
 
+        private IEnableDisableManager _attackShowAndFade;
+
+        private void Awake()
+        {
+            _attackShowAndFade = FindObjectOfType<AttackShowAndFade>();
+        }
+
         private void CreateUI(List<AttacksType> types)
         {
             var isBlue = types.Select(attackType => attackType == AttacksType.Blue);
 
             ResetAttacks();
+            ChangeAttacksColor(isBlue);
             ShowAttacks();
+        }
 
+        private void ChangeAttacksColor(IEnumerable<bool> isBlue)
+        {
             foreach (var isAttackBlue in isBlue)
             {
                 var newAttack = CreateAndAddToList();
                 ChangeColor(isAttackBlue, newAttack);
             }
-
-            FadeUI();
         }
 
         private static void ChangeColor(bool isBlue, GameObject newAttack)
@@ -43,10 +52,10 @@ namespace _Scripts.Attacks
             return newAttack;
         }
 
-        private void ShowAttacks()
+        private async void ShowAttacks()
         {
-            var fade = DOTween.Sequence();
-            fade.Append(_attackPanel.GetComponent<CanvasGroup>().DOFade(1, 2));
+            _attackShowAndFade?.Show();
+            await Task.Delay(1000);
         }
 
         private void ResetAttacks()
@@ -55,14 +64,6 @@ namespace _Scripts.Attacks
             foreach (var attack in _attacks) Destroy(attack.gameObject);
 
             _attacks.Clear();
-        }
-
-        private async void FadeUI()
-        {
-            await Task.Delay(6000);
-
-            var fade = DOTween.Sequence();
-            fade.Append(_attackPanel.GetComponent<CanvasGroup>().DOFade(0, 2));
         }
 
         private void OnEnable()

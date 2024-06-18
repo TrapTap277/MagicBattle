@@ -50,8 +50,6 @@ namespace _Scripts.BoxWithItems
             MoveBoxWithTween.MoveBox(gameObject.transform, moveBox.GetTransform(key));
 
             await Task.Delay(1000);
-            
-            moveBox.DestroyBox();
 
             if (whoWon == WhoWon.Player)
                 InvokeAction(OnChangedCameraRotationToDefault);
@@ -88,9 +86,5 @@ namespace _Scripts.BoxWithItems
             };
         }
 
-        private void DestroyBox()
-        {
-            Destroy(gameObject, 3f);
-        }
     }
 }

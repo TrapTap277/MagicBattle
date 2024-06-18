@@ -13,7 +13,7 @@ namespace _Scripts.Shooting
 
         public ShootInPlayer(MagicAttackStorage attackStorage, EnemyStateMachine stateMachine,
             SecondMoveTurn secondMoveTurn, bool isEnemy, IStaffAnimationController staffAnimationController,
-            ISetGem setGem, IEnableDisableManager enableDisableManager) : base(attackStorage, staffAnimationController, setGem, enableDisableManager, secondMoveTurn)
+            ISetGem setGem, IEnableDisableManager attacksButtons) : base(attackStorage, staffAnimationController, setGem, attacksButtons, secondMoveTurn)
         {
             _enemyStateSwitcher =
                 new SwitchEnemyStateWithShootingInPlayer(isEnemy, secondMoveTurn, stateMachine, attackStorage);

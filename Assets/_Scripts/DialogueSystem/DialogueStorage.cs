@@ -22,7 +22,7 @@ namespace _Scripts.DialogueSystem
 
         private void Awake()
         {
-            DieCounter.SetDialogueSwitcher(this);
+            DieManager.SetDialogueSwitcher(this);
 
             StopAllCoroutines();
         }
@@ -34,7 +34,7 @@ namespace _Scripts.DialogueSystem
 
         private IEnumerator Switch(WhoWon whoWon)
         {
-            if (GetDialogueIndex(whoWon) > GetDialogueList(whoWon).Count) yield break;
+            if (GetDialogueIndex(whoWon) > GetDialogueList(whoWon).Count && GetDialogueIndex(whoWon) < GetDialogueList(whoWon).Count) yield break;
 
             ResetText();
 

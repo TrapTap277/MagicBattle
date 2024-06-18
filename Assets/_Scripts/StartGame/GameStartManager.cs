@@ -38,21 +38,24 @@ namespace _Scripts.StartGame
             yield return new WaitForSeconds(4);
             _switchDialogue?.SwitchDialogue(WhoWon.NoOne);
             yield return new WaitForSeconds(6);
-            
-            foreach (var health in _initHealth)
-            {
-                health.Init();
-                health.Show();
-            }
-
+            ShowHealth();
             yield return new WaitForSeconds(3);
-            _generateMagicAttacks?.GenerateMagicAttacks();
+            _initStaffGemChanger?.Init();
             yield return new WaitForSeconds(4);
             _initShootInvoker?.Init();
             yield return new WaitForSeconds(0.1f);
             _enableDisableManager?.Show();
             yield return new WaitForSeconds(1);
-            _initStaffGemChanger?.Init();
+            _generateMagicAttacks?.GenerateMagicAttacks();
+        }
+
+        private void ShowHealth()
+        {
+            foreach (var health in _initHealth)
+            {
+                health.Init();
+                health.Show();
+            }
         }
 
         private void InitInterfaces()

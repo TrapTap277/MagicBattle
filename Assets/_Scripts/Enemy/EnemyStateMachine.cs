@@ -34,6 +34,7 @@ namespace _Scripts.Enemy
         [HideInInspector] public float RandomNumber;
 
         [HideInInspector] public bool IsStopped;
+        [HideInInspector] public bool IsDied;
 
         private void Awake()
         {
@@ -68,6 +69,11 @@ namespace _Scripts.Enemy
             RandomNumber = Random.Range(0, 100);
         }
 
+        private void ChangeIsDied(bool isDied)
+        {
+            IsDied = isDied;
+        } 
+
         private void Stop()
         {
             IsStopped = true;
@@ -80,14 +86,16 @@ namespace _Scripts.Enemy
 
         private void OnEnable()
         {
-            DieCounter.OnResetBarriers += Stop;
+            DieManager.OnBlockedTransition += Stop;
             ShootInvoker.OnStoppedIsStopped += StopIsStopped;
+            HealthBase.OnDied += ChangeIsDied;
         }
 
         private void OnDisable()
         {
-            DieCounter.OnResetBarriers -= Stop;
+            DieManager.OnBlockedTransition -= Stop;
             ShootInvoker.OnStoppedIsStopped -= StopIsStopped;
+            HealthBase.OnDied -= ChangeIsDied;
         }
     }
 }

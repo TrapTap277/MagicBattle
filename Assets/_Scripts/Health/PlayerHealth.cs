@@ -10,7 +10,7 @@ namespace _Scripts.Health
 {
     public class PlayerHealth : HealthBase
     {
-        public static event Action OnDied;
+        public new static event Action OnDied;
 
         [SerializeField] private TextMeshProUGUI _healthInPercents;
         [SerializeField] private Image _frontHealthBar;
@@ -21,12 +21,12 @@ namespace _Scripts.Health
             HealthInPercents = _healthInPercents;
             FrontHealthBar = _frontHealthBar;
             BackHealthBar = _backHealthBar;
-            CanvasGroup.Add(this.gameObject.GetComponent<CanvasGroup>());
+            CanvasGroup.Add(gameObject.GetComponent<CanvasGroup>());
         }
 
         protected override void Died()
         {
-            DieCounter.AddPlayerDies();
+            DieManager.AddPlayerDies();
             OnDied?.Invoke();
 
             base.Died();

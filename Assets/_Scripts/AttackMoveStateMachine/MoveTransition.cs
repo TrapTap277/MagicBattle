@@ -11,7 +11,6 @@ namespace _Scripts.AttackMoveStateMachine
     public class MoveTransition : MonoBehaviour
     {
         [SerializeField] private MagicAttackStorage _attackStorage;
-        [SerializeField] private CanvasGroup _attackButtons;
         [SerializeField] private Transform _staff;
         [SerializeField] private Transform _endStaffPosition;
         [SerializeField] private Transform _startStaffPosition;
