@@ -4,7 +4,7 @@ using UnityEngine;
 namespace _Scripts.Items
 {
     [CreateAssetMenu(menuName = "Items/ProtectionGem", fileName = "ProtectionGem")]
-    public class ProtectionGemItem : BaseItem, IInit
+    public class ProtectionGemItem : BaseItem, IInitItem
     {
         public static event Action OnGivenProtectionToPlayer;
         public static event Action OnGivenProtectionToEnemy;

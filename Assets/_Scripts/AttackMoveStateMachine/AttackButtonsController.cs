@@ -1,4 +1,5 @@
-﻿using _Scripts.Stats;
+﻿using _Scripts.Health;
+using _Scripts.Stats;
 using DG.Tweening;
 using UnityEngine;
 
@@ -8,6 +9,8 @@ namespace _Scripts.AttackMoveStateMachine
     {
         private CanvasGroup _attackPanel;
 
+        private bool _isBlocked;
+
         private void Awake()
         {
             _attackPanel = GetComponent<CanvasGroup>();
@@ -15,6 +18,7 @@ namespace _Scripts.AttackMoveStateMachine
 
         public void Show()
         {
+            if (_isBlocked) return;
             FadeOrShowAttackButtons(1, true);
         }
 
@@ -26,7 +30,7 @@ namespace _Scripts.AttackMoveStateMachine
         private void FadeOrShowAttackButtons(float endValue, bool isBlock)
         {
             var move = DOTween.Sequence();
-            move.Append(_attackPanel.DOFade(endValue, 2));
+            move.Append(_attackPanel.DOFade(endValue, 1));
             EnablePanel(isBlock);
         }
 
@@ -34,6 +38,29 @@ namespace _Scripts.AttackMoveStateMachine
         {
             if (_attackPanel != null)
                 _attackPanel.blocksRaycasts = isBlock;
+        }
+
+        private void Block(bool isBlocked)
+        {
+            _isBlocked = isBlocked;
+
+            if (_isBlocked)
+            {
+                DOTween.KillAll();
+                Fade();
+            }
+        }
+
+        private void OnEnable()
+        {
+            BoxWithItems.BoxWithItems.OnBlocked += Block;
+            HealthBase.OnDied += Block;
+        }
+
+        private void OnDisable()
+        {
+            BoxWithItems.BoxWithItems.OnBlocked -= Block;
+            HealthBase.OnDied -= Block;
         }
     }
 }

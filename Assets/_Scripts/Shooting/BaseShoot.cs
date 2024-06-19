@@ -11,17 +11,17 @@ namespace _Scripts.Shooting
 {
     public abstract class BaseShoot
     {
-        public static event Action OnResetedItems;
         public static event Action<ShootIn> OnChangedStaffAttackPosition;
+        public static event Action<Gem> OnChangedGemOnStaff;
         public static event Action<float> OnTakenDamageToPlayer;
         public static event Action<float> OnTakenDamageToEnemy;
-        public static event Action<Gem> OnChangedGemOnStaff;
+        public static event Action OnResetedItems;
 
         private readonly MagicAttackStorage _attackStorage;
         private readonly SecondMoveTurn _secondMoveTurn;
         private readonly IStaffAnimationController _staffAnimationController;
         private readonly ISetGem _setGem;
-        private readonly IEnableDisableManager _enableDisableManager;
+        private readonly IEnableDisableManager _attacksButtons;
 
         private const StaffAnimations AttackAnimations = StaffAnimations.None;
 
@@ -31,11 +31,11 @@ namespace _Scripts.Shooting
 
         protected BaseShoot(MagicAttackStorage attackStorage,
             IStaffAnimationController staffAnimationController, ISetGem setGem,
-            IEnableDisableManager enableDisableManager,
+            IEnableDisableManager attacksButtons,
             SecondMoveTurn secondMoveTurn)
         {
             _staffAnimationController = staffAnimationController;
-            _enableDisableManager = enableDisableManager;
+            _attacksButtons = attacksButtons;
             _secondMoveTurn = secondMoveTurn;
             _attackStorage = attackStorage;
             _setGem = setGem;
@@ -57,7 +57,7 @@ namespace _Scripts.Shooting
 
             if (_currentAttack == AttacksType.Blue)
             {
-                FadeAttackButtons();
+                //FadeAttackButtons();
                 SetParameters(Gem.TrueAttack, 0);
                 ChangeGemOnStaff();
                 OnChangedStaffAttackPosition?.Invoke(shootIn);
@@ -77,19 +77,14 @@ namespace _Scripts.Shooting
 
         private async void FadeAttackButtons()
         {
-            _enableDisableManager?.Fade();
-
-            
-            if (_secondMoveTurn == SecondMoveTurn.Player)
-            {
-                _enableDisableManager?.Fade();
-                await Task.Delay(5000);
-                _enableDisableManager?.Show();
-            }
+            if (_secondMoveTurn != SecondMoveTurn.Player) return;
+            _attacksButtons?.Fade();
+            await Task.Delay(5000);
+            _attacksButtons?.Show();
         }
 
         private void RemoveAttackFromStorage()
-        {
+        {        
             _attackStorage.RemoveAttack(_currentAttack);
         }
 

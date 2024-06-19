@@ -31,12 +31,12 @@ namespace _Scripts.EndGame
 
         private void OnEnable()
         {
-            DieCounter.OnPlayedDemonicEffect += Play;
+            DieManager.OnPlayedDemonicEffect += Play;
         }
 
         private void OnDisable()
         {
-            DieCounter.OnPlayedDemonicEffect -= Play;
+            DieManager.OnPlayedDemonicEffect -= Play;
         }
     }
 }

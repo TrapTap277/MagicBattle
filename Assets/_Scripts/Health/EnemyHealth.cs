@@ -10,29 +10,30 @@ namespace _Scripts.Health
 {
     public class EnemyHealth : HealthBase
     {
-        public static event Action OnDied;
-        
+        public new static event Action OnDied;
+
         [SerializeField] private TextMeshProUGUI _healthInPercents;
         [SerializeField] private Image _frontHealthBar;
         [SerializeField] private Image _backHealthBar;
-        
-        protected override void Init()
+
+        protected override void InitProperties()
         {
             HealthInPercents = _healthInPercents;
             FrontHealthBar = _frontHealthBar;
             BackHealthBar = _backHealthBar;
+            CanvasGroup.Add(gameObject.GetComponent<CanvasGroup>());
         }
 
         protected override void Died()
         {
             base.Died();
-            DieCounter.AddEnemyDies();
+            DieManager.AddEnemyDies();
             OnDied?.Invoke();
         }
 
         private void OnEnable()
         {
-            BaseShoot.OnTakenDamageToEnemy += TakeDamage; 
+            BaseShoot.OnTakenDamageToEnemy += TakeDamage;
             HealGemItem.OnHealedEnemy += RestoreHealth;
             ProtectionGemItem.OnGivenProtectionToEnemy += GetProtection;
             DamageGemItem.OnTakeMoreDamage += TakeMoreDamage;

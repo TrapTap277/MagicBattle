@@ -94,14 +94,14 @@ namespace _Scripts.Stats
         {
             HealthBase.OnChangedDamage += SetDamage;
             BaseUseItem.OnAddedItem += AddItemCount;
-            DieCounter.OnSetStats += SetStats;
+            DieManager.OnSetStats += SetStats;
         }
 
         private void OnDisable()
         {
             HealthBase.OnChangedDamage -= SetDamage;
             BaseUseItem.OnAddedItem -= AddItemCount;
-            DieCounter.OnSetStats -= SetStats;
+            DieManager.OnSetStats -= SetStats;
         }
     }
 }

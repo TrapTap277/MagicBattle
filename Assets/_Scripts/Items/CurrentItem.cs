@@ -1,6 +1,4 @@
-﻿using _Scripts.Shooting;
-using _Scripts.Staff;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 namespace _Scripts.Items

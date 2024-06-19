@@ -10,10 +10,11 @@ namespace _Scripts.Enemy
         {
             if (enemyStateMachine.MoveTurn != MoveTurn.Enemy || enemyStateMachine.IsStopped)
             {
-                enemyStateMachine.MoveTransition.TransitionToPlayer();
+                if (enemyStateMachine.IsDied == false)
+                    enemyStateMachine.MoveTransition.TransitionToPlayer();
+                
                 enemyStateMachine.UsedItems.Clear();
                 _isDone = false;
-
                 return;
             }
 

@@ -62,12 +62,12 @@ namespace _Scripts.EndGame
 
         private void OnEnable()
         {
-            DieCounter.OnSetText += SetText;
+            DieManager.OnSetText += SetText;
         }
 
         private void OnDisable()
         {
-            DieCounter.OnSetText -= SetText;
+            DieManager.OnSetText -= SetText;
         }
     }
 }

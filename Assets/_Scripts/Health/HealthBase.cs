@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using _Scripts.Items;
+using _Scripts.Shooting;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,11 +11,14 @@ using Random = UnityEngine.Random;
 
 namespace _Scripts.Health
 {
-    public abstract class HealthBase : MonoBehaviour
+    public abstract class HealthBase : MonoBehaviour, IShow, IInit
     {
         public static event Action<float> OnChangedDamage;
+        public static event Action<bool> OnDied;
+        public static event Action OnSetIsSomeoneDied;
 
         public float Health { get; private set; }
+        protected readonly List<CanvasGroup> CanvasGroup = new List<CanvasGroup>();
         protected TextMeshProUGUI HealthInPercents;
         protected Image FrontHealthBar;
         protected Image BackHealthBar;
@@ -23,9 +29,16 @@ namespace _Scripts.Health
         private float _lerpTimer;
         private bool _isHasProtection;
 
-        private void Awake()
+        private readonly object _lockObject = new object();
+
+        public void Init()
         {
-            Init();
+            InitProperties();
+        }
+
+        public void Show()
+        {
+            foreach (var canvasGroup in CanvasGroup) canvasGroup.DOFade(1, 2);
         }
 
         private void Start()
@@ -35,30 +48,39 @@ namespace _Scripts.Health
             Health = Mathf.Clamp(Health, 0, MAXHealth);
         }
 
-        protected abstract void Init();
+        protected abstract void InitProperties();
+
 
         protected void TakeDamage(float damage)
         {
-            if (_isHasProtection == false)
+            lock (_lockObject)
             {
-                Health -= damage * _damageСoefficient;
-                _didDamage += damage;
+                OnDied?.Invoke(false);
+                if (!_isHasProtection)
+                {
+                    var damageСoefficient = damage * _damageСoefficient;
+                    Health -= damageСoefficient;
+                    _didDamage += damageСoefficient;
+                }
+
+                _lerpTimer = 0;
+
+                if (Health <= 0) Died();
+
+                SetHealth();
+                HealthBarLerp();
             }
-
-            _lerpTimer = 0;
-
-            if (Health <= 0) Died();
-
-            SetHealth();
-            HealthBarLerp();
         }
 
         public void RestoreHealth(float healthAmount)
         {
-            Health += healthAmount;
-            _lerpTimer = 0;
-            SetHealth();
-            HealthBarLerp();
+            lock (_lockObject)
+            {
+                Health += healthAmount;
+                _lerpTimer = 0;
+                SetHealth();
+                HealthBarLerp();
+            }
         }
 
         public void ResetProperties()
@@ -79,7 +101,9 @@ namespace _Scripts.Health
 
         protected virtual void Died()
         {
+            OnDied?.Invoke(true);
             OnChangedDamage?.Invoke(_didDamage);
+            OnSetIsSomeoneDied?.Invoke();
         }
 
         private void SetHealth()
@@ -113,7 +137,6 @@ namespace _Scripts.Health
             _lerpTimer = 0f;
             while (_lerpTimer <= ChipSpeed)
             {
-                //yield return null;
                 yield return new WaitForEndOfFrame();
                 _lerpTimer += Time.deltaTime * ChipSpeed;
                 var percentComplete = _lerpTimer / ChipSpeed;
