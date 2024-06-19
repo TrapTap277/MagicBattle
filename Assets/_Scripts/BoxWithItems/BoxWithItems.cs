@@ -5,6 +5,7 @@ using _Scripts.Die;
 using _Scripts.EndGame;
 using _Scripts.Items;
 using _Scripts.LostScene;
+using _Scripts.Staff;
 using _Scripts.Stats;
 using _Scripts.UI;
 using UnityEngine;
@@ -21,17 +22,20 @@ namespace _Scripts.BoxWithItems
         private IMoveBox _moveBox;
         private IEnableDisableManager _magicAttacks;
         private IInstantiate _instantiateUseButton;
+        private IStaffAnimationController _staffAnimationController;
 
         public void InitBox(IMoveBox moveBox)
         {
             _instantiateUseButton = FindObjectOfType<AddUseButton>();
             _createItemsUI = FindObjectOfType<CreateItemsUI>();
             _magicAttacks = FindObjectOfType<AttackShowAndFade>();
-            
+            _staffAnimationController = FindObjectOfType<StaffSwitchAnimation>();
+
             SetItemCount();
-            
+
             _moveBox = moveBox;
             _magicAttacks?.Fade();
+            _staffAnimationController?.SwitchAnimation(StaffAnimations.DissolveStaff);
             OnBlocked?.Invoke(true);
         }
 
@@ -49,6 +53,7 @@ namespace _Scripts.BoxWithItems
             await Task.Delay(6000);
             OnBlocked?.Invoke(false);
             OnGeneratedAttacks?.Invoke();
+            _staffAnimationController?.SwitchAnimation(StaffAnimations.UnDissolveStaff);
             await Task.Delay(3000);
             DestroyBox();
         }

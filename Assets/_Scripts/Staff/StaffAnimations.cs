@@ -3,6 +3,7 @@
     public enum StaffAnimations
     {
         None,
+        DefaultState,
         FirstAttack,
         SecondAttack,
         ThirdAttack,
