@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Threading.Tasks;
 using _Scripts.LostScene;
 using UnityEngine;
 
@@ -9,6 +8,7 @@ namespace _Scripts.Staff
     {
         private Animator _staffAnimator;
 
+        private const string DefaultState = "StartStaffPositions";
         private const string FirstAttack = "StaffAttack";
         private const string SecondAttack = "StaffAttack2";
         private const string ThirdAttack = "StaffAttack3";
@@ -18,9 +18,10 @@ namespace _Scripts.Staff
         private const string DissolveStaff = "DissolveStaff";
         private const string UnDissolveStaff = "UnDissolveStaff";
 
-        private Dictionary<StaffAnimations, int> _staffAnimations;
+        private Dictionary<StaffAnimations, int> _staffAnimations = new Dictionary<StaffAnimations, int>();
         private List<int> _attackStates = new List<int>();
 
+        private int _defaultState;
         private int _firstAttackState;
         private int _secondAttackState;
         private int _thirdAttackState;
@@ -48,7 +49,6 @@ namespace _Scripts.Staff
                 return;
             }
 
-            if (_staffAnimator == null) return;
             var randomNumber = Random.Range(0, _attackStates.Count);
             CrossFade(randomNumber);
         }
@@ -68,6 +68,7 @@ namespace _Scripts.Staff
 
         private void InitHashes()
         {
+            _defaultState = Animator.StringToHash(DefaultState);
             _firstAttackState = Animator.StringToHash(FirstAttack);
             _secondAttackState = Animator.StringToHash(SecondAttack);
             _thirdAttackState = Animator.StringToHash(ThirdAttack);
@@ -82,6 +83,7 @@ namespace _Scripts.Staff
         {
             _staffAnimations = new Dictionary<StaffAnimations, int>
             {
+                {StaffAnimations.DefaultState, _defaultState},
                 {StaffAnimations.FirstAttack, _firstAttackState},
                 {StaffAnimations.SecondAttack, _secondAttackState},
                 {StaffAnimations.ThirdAttack, _thirdAttackState},
