@@ -1,4 +1,5 @@
-﻿using _Scripts.Attacks;
+﻿using System.Threading.Tasks;
+using _Scripts.Animations;
 using _Scripts.Enemy;
 using _Scripts.Health;
 using UnityEngine;
@@ -11,6 +12,11 @@ namespace _Scripts.Die
         protected GiveLive GiveLive;
         protected CanvasGroup RoundsCounter;
 
+        private void Awake()
+        {
+            Init();
+        }
+
         protected abstract void Init();
 
         protected void Death()
@@ -21,9 +27,10 @@ namespace _Scripts.Die
         }
 
         protected abstract void GiveWin();
-        
-        private void RestoreHealth()
+
+        private async void RestoreHealth()
         {
+            await Task.Delay(2000);
             GiveLive.RestoreHealth(200);
         }
 

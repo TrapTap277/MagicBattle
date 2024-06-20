@@ -1,4 +1,5 @@
-﻿using _Scripts.Attacks;
+﻿using _Scripts.Animations;
+using _Scripts.Attacks;
 using _Scripts.Enemy;
 using _Scripts.Items;
 using _Scripts.LostScene;
@@ -12,8 +13,8 @@ namespace _Scripts.Shooting
         private readonly IEnemyStateSwitcher _enemyStateSwitcher;
 
         public ShootInPlayer(MagicAttackStorage attackStorage, EnemyStateMachine stateMachine,
-            SecondMoveTurn secondMoveTurn, bool isEnemy, IStaffAnimationController staffAnimationController,
-            ISetGem setGem, IEnableDisableManager attacksButtons) : base(attackStorage, staffAnimationController, setGem, attacksButtons, secondMoveTurn)
+            SecondMoveTurn secondMoveTurn, bool isEnemy, ISwitchAnimation<StaffAnimations> switchAnimation,
+            ISetGem setGem, IEnableDisableManager attacksButtons) : base(attackStorage, switchAnimation, setGem, attacksButtons, secondMoveTurn)
         {
             _enemyStateSwitcher =
                 new SwitchEnemyStateWithShootingInPlayer(isEnemy, secondMoveTurn, stateMachine, attackStorage);

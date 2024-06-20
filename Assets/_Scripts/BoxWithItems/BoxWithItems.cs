@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using _Scripts.Animations;
 using _Scripts.Attacks;
 using _Scripts.Die;
 using _Scripts.EndGame;
@@ -22,20 +23,22 @@ namespace _Scripts.BoxWithItems
         private IMoveBox _moveBox;
         private IEnableDisableManager _magicAttacks;
         private IInstantiate _instantiateUseButton;
-        private IStaffAnimationController _staffAnimationController;
+        private ISwitchAnimation<StaffAnimations> _switchAnimation;
+        private ISwitchAnimation<EnemyAnimations> _enemyAnimation;
 
         public void InitBox(IMoveBox moveBox)
         {
             _instantiateUseButton = FindObjectOfType<AddUseButton>();
             _createItemsUI = FindObjectOfType<CreateItemsUI>();
             _magicAttacks = FindObjectOfType<AttackShowAndFade>();
-            _staffAnimationController = FindObjectOfType<StaffSwitchAnimation>();
+            _switchAnimation = FindObjectOfType<StaffAnimationSwitcher>();
+            _enemyAnimation = FindObjectOfType<EnemyAnimationSwitcher>();
 
             SetItemCount();
 
             _moveBox = moveBox;
             _magicAttacks?.Fade();
-            _staffAnimationController?.SwitchAnimation(StaffAnimations.DissolveStaff);
+            _switchAnimation?.SwitchAnimation(StaffAnimations.DissolveStaff);
             OnBlocked?.Invoke(true);
         }
 
@@ -53,7 +56,7 @@ namespace _Scripts.BoxWithItems
             await Task.Delay(6000);
             OnBlocked?.Invoke(false);
             OnGeneratedAttacks?.Invoke();
-            _staffAnimationController?.SwitchAnimation(StaffAnimations.UnDissolveStaff);
+            _switchAnimation?.SwitchAnimation(StaffAnimations.UnDissolveStaff);
             await Task.Delay(3000);
             DestroyBox();
         }

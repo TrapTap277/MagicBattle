@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using _Scripts.Animations;
 using _Scripts.Attacks;
 using _Scripts.Items;
 using _Scripts.LostScene;
@@ -19,22 +20,20 @@ namespace _Scripts.Shooting
 
         private readonly MagicAttackStorage _attackStorage;
         private readonly SecondMoveTurn _secondMoveTurn;
-        private readonly IStaffAnimationController _staffAnimationController;
+        private readonly ISwitchAnimation<StaffAnimations> _switchAnimation;
         private readonly ISetGem _setGem;
         private readonly IEnableDisableManager _attacksButtons;
-
-        private const StaffAnimations AttackAnimations = StaffAnimations.None;
 
         private Gem _gem;
         private AttacksType _currentAttack;
         private int _attackIndex;
 
         protected BaseShoot(MagicAttackStorage attackStorage,
-            IStaffAnimationController staffAnimationController, ISetGem setGem,
+            ISwitchAnimation<StaffAnimations> switchAnimation, ISetGem setGem,
             IEnableDisableManager attacksButtons,
             SecondMoveTurn secondMoveTurn)
         {
-            _staffAnimationController = staffAnimationController;
+            _switchAnimation = switchAnimation;
             _attacksButtons = attacksButtons;
             _secondMoveTurn = secondMoveTurn;
             _attackStorage = attackStorage;
@@ -61,7 +60,7 @@ namespace _Scripts.Shooting
                 SetParameters(Gem.TrueAttack, 0);
                 ChangeGemOnStaff();
                 OnChangedStaffAttackPosition?.Invoke(shootIn);
-                _staffAnimationController?.SwitchAnimation(AttackAnimations);
+                SetRandomAttackAnimation();
                 await TakeDamage(shootIn);
                 OnResetedItems?.Invoke();
                 // Todo: Play True attack particles 
@@ -73,6 +72,13 @@ namespace _Scripts.Shooting
                 ChangeGemOnStaff();
                 // Todo: Play False attack particles 
             }
+        }
+
+        private void SetRandomAttackAnimation()
+        {
+            var randomAttackAnimation = _switchAnimation.SetRandomAttackAnimation();
+
+            _switchAnimation?.SwitchAnimation(randomAttackAnimation);
         }
 
         private async void FadeAttackButtons()

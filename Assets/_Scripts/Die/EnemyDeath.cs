@@ -1,4 +1,5 @@
-﻿using _Scripts.Enemy;
+﻿using _Scripts.Animations;
+using _Scripts.Enemy;
 using _Scripts.Health;
 using UnityEngine;
 
@@ -10,12 +11,6 @@ namespace _Scripts.Die
         [SerializeField] private GiveLive _giveLive;
 
         [SerializeField] private CanvasGroup _roundsCounter;
-
-        private void Awake()
-        {
-            Init();
-        }
-
         protected override void Init()
         {
             StateMachine = _stateMachine;
@@ -28,6 +23,8 @@ namespace _Scripts.Die
             var dieUI = new DieUI(RoundsCounter);
 
             dieUI.GiveWinRoundToPlayer();
+            
+            _stateMachine.EnemySwitchAnimation?.SwitchAnimation(EnemyAnimations.Death);
         }
 
         private void OnEnable()

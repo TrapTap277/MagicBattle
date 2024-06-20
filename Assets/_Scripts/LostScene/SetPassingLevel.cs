@@ -17,4 +17,4 @@ namespace _Scripts.LostScene
             _passingLevelFactory.CreatePassingLevel();
         }
     }
-}
+}  

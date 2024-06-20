@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using _Scripts.Animations;
 using _Scripts.Attacks;
 using _Scripts.LostScene;
 using _Scripts.Shooting;
@@ -18,7 +19,7 @@ namespace _Scripts.AttackMoveStateMachine
         [SerializeField] private Transform _enemyPositions;
         [SerializeField] private Transform _playerPositions;
 
-        private IStaffAnimationController _staffAnimationController;
+        private ISwitchAnimation<StaffAnimations> _switchAnimation;
         private ISetStaffPositions _setStaffPositions;
         private IEnableDisableManager _enableDisableManager;
 
@@ -51,7 +52,7 @@ namespace _Scripts.AttackMoveStateMachine
 
         private async Task DissolveOrUnDissolveStaff(StaffAnimations animations)
         {
-            _staffAnimationController?.SwitchAnimation(animations);
+            _switchAnimation?.SwitchAnimation(animations);
             await Task.Delay(1500);
         }
 
@@ -63,7 +64,7 @@ namespace _Scripts.AttackMoveStateMachine
 
         private void InitManagers()
         {
-            _staffAnimationController = FindObjectOfType<StaffSwitchAnimation>();
+            _switchAnimation = FindObjectOfType<StaffAnimationSwitcher>();
             _setStaffPositions = FindObjectOfType<UseMagic>();
             _enableDisableManager = FindObjectOfType<AttackButtonsController>();
         }

@@ -1,5 +1,5 @@
 ﻿using System.Threading.Tasks;
-using _Scripts.Staff;
+using _Scripts.Animations;
 using UnityEngine;
 
 namespace _Scripts.LostScene
@@ -8,24 +8,25 @@ namespace _Scripts.LostScene
     {
         private IOpenCloseManager _openCloseManager;
         private IDoorManager _doorManager;
-        private IStaffAnimationController _staffAnimationController;
+        private ISwitchAnimation<StaffAnimations> _switchAnimation;
 
         private void Start()
         {
+            _switchAnimation = FindObjectOfType<StaffAnimationSwitcher>();
             FadeOrShowPortal(false);
         }
 
         public void SetDependencies(IOpenCloseManager openCloseManager, IDoorManager doorManager,
-            IStaffAnimationController staffAnimationController, IUseMagic useMagic)
+            ISwitchAnimation<StaffAnimations> switchAnimation)
         {
             _openCloseManager = openCloseManager;
             _doorManager = doorManager;
-            _staffAnimationController = staffAnimationController;
+            _switchAnimation = switchAnimation;
         }
 
         public void FadeOrShowPortal(bool isShow)
         {
-            if(!isShow)
+            if (!isShow)
                 _openCloseManager?.Close();
 
             else
@@ -40,7 +41,15 @@ namespace _Scripts.LostScene
 
         public void SetStaffAnimation(StaffAnimations animations)
         {
-            _staffAnimationController?.SwitchAnimation(animations);
+            if (animations == StaffAnimations.None)
+            {
+                var randomAttackAnimation = _switchAnimation.SetRandomAttackAnimation();
+
+                _switchAnimation?.SwitchAnimation(randomAttackAnimation);
+                return;
+            }
+            
+            _switchAnimation?.SwitchAnimation(animations);
         }
 
         private void DestroyDoor()

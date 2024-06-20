@@ -1,4 +1,5 @@
 ﻿using System;
+using _Scripts.Animations;
 using _Scripts.AttackMoveStateMachine;
 using _Scripts.Attacks;
 using _Scripts.Enemy;
@@ -26,7 +27,7 @@ namespace _Scripts.Shooting
         private SecondMoveTurn _secondMoveTurn;
         private HealthBase[] _healthBase;
 
-        private IStaffAnimationController _staffAnimationController;
+        private ISwitchAnimation<StaffAnimations> _switchAnimation;
         private ISetGem _setGem;
         private IEnableDisableManager _enableDisableManager;
 
@@ -40,14 +41,14 @@ namespace _Scripts.Shooting
             _enableDisableManager = FindObjectOfType<AttackButtonsController>();
 
             _healthBase = FindObjectsOfType<HealthBase>();
-            _staffAnimationController = FindObjectOfType<StaffSwitchAnimation>();
+            _switchAnimation = FindObjectOfType<StaffAnimationSwitcher>();
             _setGem = FindObjectOfType<UseMagic>();
         }
 
         public void ShootInEnemy(bool isEnemy = false)
         {
             if (isEnemy == false) SetIsStoppedFalse();
-            _baseShoot = new ShootInEnemy(_storage, _stateMachine, _secondMoveTurn, isEnemy, _staffAnimationController,
+            _baseShoot = new ShootInEnemy(_storage, _stateMachine, _secondMoveTurn, isEnemy, _switchAnimation,
                 _setGem, _enableDisableManager);
             _baseShoot.Shoot();
             ResetSecondMove();
@@ -56,7 +57,7 @@ namespace _Scripts.Shooting
         public void ShootInPlayer(bool isEnemy = false)
         {
             if (isEnemy == false) SetIsStoppedFalse();
-            _baseShoot = new ShootInPlayer(_storage, _stateMachine, _secondMoveTurn, isEnemy, _staffAnimationController,
+            _baseShoot = new ShootInPlayer(_storage, _stateMachine, _secondMoveTurn, isEnemy, _switchAnimation,
                 _setGem, _enableDisableManager);
             _baseShoot.Shoot();
             ResetSecondMove();

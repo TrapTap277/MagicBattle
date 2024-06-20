@@ -13,6 +13,9 @@ namespace _Scripts.Enemy
 
             if (_isExit || enemyStateMachine.IsStopped) return;
 
+            var randomAttack = enemyStateMachine.EnemySwitchAnimation.SetRandomAttackAnimation();
+            enemyStateMachine.EnemySwitchAnimation.SwitchAnimation(randomAttack);
+
             if (enemyStateMachine.RandomNumber < enemyStateMachine.PercentToAttackInPlayer)
                 enemyStateMachine.ShotInvoker.ShootInPlayer(true);
             else
