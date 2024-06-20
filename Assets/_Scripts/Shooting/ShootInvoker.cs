@@ -8,7 +8,6 @@ using _Scripts.Items;
 using _Scripts.LostScene;
 using _Scripts.Staff;
 using _Scripts.Stats;
-using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -31,47 +30,47 @@ namespace _Scripts.Shooting
         private ISetGem _setGem;
         private IEnableDisableManager _enableDisableManager;
 
-        public void Init()
+        private void Awake()
         {
-            _buttonToShootInEnemy.onClick.AddListener(() => ShootInEnemy());
-            _buttonToShootInYou.onClick.AddListener(() => ShootInPlayer());
+            RemoveButtonListeners();
+            AddButtonListeners();
 
             _secondMoveTurn = SecondMoveTurn.None;
-
-            _enableDisableManager = FindObjectOfType<AttackButtonsController>();
-
-            _healthBase = FindObjectsOfType<HealthBase>();
-            _switchAnimation = FindObjectOfType<StaffAnimationSwitcher>();
-            _setGem = FindObjectOfType<UseMagic>();
         }
 
-        public void ShootInEnemy(bool isEnemy = false)
+        public void Init()
         {
-            if (isEnemy == false) SetIsStoppedFalse();
-            _baseShoot = new ShootInEnemy(_storage, _stateMachine, _secondMoveTurn, isEnemy, _switchAnimation,
+            FindObjects();
+        }
+
+        public void ShootInEnemy(MoveTurn moveTurn = MoveTurn.Player)
+        {
+            if (moveTurn == MoveTurn.Player) SetIsStoppedFalse();
+            
+            _baseShoot = new ShootInEnemy(_storage, _stateMachine, _secondMoveTurn, moveTurn, _switchAnimation, _setGem,
+                _enableDisableManager);
+            _baseShoot.Shoot();
+            ResetSecondMove();
+        }
+
+        public void ShootInPlayer(MoveTurn moveTurn = MoveTurn.Player)
+        {
+            if (moveTurn == MoveTurn.Player) SetIsStoppedFalse();
+            
+            _baseShoot = new ShootInPlayer(_storage, _stateMachine, _secondMoveTurn, moveTurn, _switchAnimation,
                 _setGem, _enableDisableManager);
             _baseShoot.Shoot();
             ResetSecondMove();
         }
 
-        public void ShootInPlayer(bool isEnemy = false)
-        {
-            if (isEnemy == false) SetIsStoppedFalse();
-            _baseShoot = new ShootInPlayer(_storage, _stateMachine, _secondMoveTurn, isEnemy, _switchAnimation,
-                _setGem, _enableDisableManager);
-            _baseShoot.Shoot();
-            ResetSecondMove();
-        }
-
-        private void SetIsStoppedFalse()
+        private static void SetIsStoppedFalse()
         {
             OnStoppedIsStopped?.Invoke();
         }
 
         private void SetSecondMove(SecondMoveTurn secondMoveTurn)
         {
-            if (_secondMoveTurn != secondMoveTurn)
-                _secondMoveTurn = secondMoveTurn;
+            if (_secondMoveTurn != secondMoveTurn) _secondMoveTurn = secondMoveTurn;
         }
 
         private void ResetSkills()
@@ -82,6 +81,27 @@ namespace _Scripts.Shooting
         private void ResetSecondMove()
         {
             _secondMoveTurn = SecondMoveTurn.None;
+        }
+
+        private void AddButtonListeners()
+        {
+            _buttonToShootInEnemy.onClick.AddListener(() => ShootInEnemy());
+            _buttonToShootInYou.onClick.AddListener(() => ShootInPlayer());
+        }
+
+        private void RemoveButtonListeners()
+        {
+            _buttonToShootInEnemy.onClick.RemoveAllListeners();
+            _buttonToShootInYou.onClick.RemoveAllListeners();
+        }
+
+        private void FindObjects()
+        {
+            _enableDisableManager = FindObjectOfType<AttackButtonsController>();
+
+            _healthBase = FindObjectsOfType<HealthBase>();
+            _switchAnimation = FindObjectOfType<StaffAnimationSwitcher>();
+            _setGem = FindObjectOfType<UseMagic>();
         }
 
         private void OnEnable()

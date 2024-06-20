@@ -2,17 +2,16 @@
 using System.Threading.Tasks;
 using _Scripts.Animations;
 using _Scripts.Attacks;
+using _Scripts.Enemy;
 using _Scripts.Items;
 using _Scripts.LostScene;
 using _Scripts.Staff;
 using _Scripts.Stats;
-using UnityEngine;
 
 namespace _Scripts.Shooting
 {
     public abstract class BaseShoot
     {
-        public static event Action<ShootIn> OnChangedStaffAttackPosition;
         public static event Action<Gem> OnChangedGemOnStaff;
         public static event Action<float> OnTakenDamageToPlayer;
         public static event Action<float> OnTakenDamageToEnemy;
@@ -23,21 +22,24 @@ namespace _Scripts.Shooting
         private readonly ISwitchAnimation<StaffAnimations> _switchAnimation;
         private readonly ISetGem _setGem;
         private readonly IEnableDisableManager _attacksButtons;
+        private readonly MoveTurn _move;
 
-        private Gem _gem;
         private AttacksType _currentAttack;
+        private Gem _gem;
+
         private int _attackIndex;
 
         protected BaseShoot(MagicAttackStorage attackStorage,
             ISwitchAnimation<StaffAnimations> switchAnimation, ISetGem setGem,
             IEnableDisableManager attacksButtons,
-            SecondMoveTurn secondMoveTurn)
+            SecondMoveTurn secondMoveTurn, MoveTurn moveTurn)
         {
             _switchAnimation = switchAnimation;
             _attacksButtons = attacksButtons;
             _secondMoveTurn = secondMoveTurn;
             _attackStorage = attackStorage;
             _setGem = setGem;
+            _move = moveTurn;
         }
 
         public abstract void Shoot();
@@ -59,7 +61,6 @@ namespace _Scripts.Shooting
                 //FadeAttackButtons();
                 SetParameters(Gem.TrueAttack, 0);
                 ChangeGemOnStaff();
-                OnChangedStaffAttackPosition?.Invoke(shootIn);
                 SetRandomAttackAnimation();
                 await TakeDamage(shootIn);
                 OnResetedItems?.Invoke();
@@ -70,12 +71,14 @@ namespace _Scripts.Shooting
             {
                 SetParameters(Gem.FalseAttack, 1);
                 ChangeGemOnStaff();
+                //Todo Maybe there need to add  OnResetItems?.Invoke();
                 // Todo: Play False attack particles 
             }
         }
 
         private void SetRandomAttackAnimation()
         {
+            if (_move == MoveTurn.Enemy) return;
             var randomAttackAnimation = _switchAnimation.SetRandomAttackAnimation();
 
             _switchAnimation?.SwitchAnimation(randomAttackAnimation);
@@ -90,7 +93,7 @@ namespace _Scripts.Shooting
         }
 
         private void RemoveAttackFromStorage()
-        {        
+        {
             _attackStorage.RemoveAttack(_currentAttack);
         }
 

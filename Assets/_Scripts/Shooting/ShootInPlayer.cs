@@ -13,11 +13,11 @@ namespace _Scripts.Shooting
         private readonly IEnemyStateSwitcher _enemyStateSwitcher;
 
         public ShootInPlayer(MagicAttackStorage attackStorage, EnemyStateMachine stateMachine,
-            SecondMoveTurn secondMoveTurn, bool isEnemy, ISwitchAnimation<StaffAnimations> switchAnimation,
-            ISetGem setGem, IEnableDisableManager attacksButtons) : base(attackStorage, switchAnimation, setGem, attacksButtons, secondMoveTurn)
+            SecondMoveTurn secondMoveTurn, MoveTurn moveTurn, ISwitchAnimation<StaffAnimations> switchAnimation,
+            ISetGem setGem, IEnableDisableManager attacksButtons) : base(attackStorage, switchAnimation, setGem, attacksButtons, secondMoveTurn, moveTurn)
         {
             _enemyStateSwitcher =
-                new SwitchEnemyStateWithShootingInPlayer(isEnemy, secondMoveTurn, stateMachine, attackStorage);
+                new SwitchEnemyStateWithShootingInPlayer(moveTurn, secondMoveTurn, stateMachine, attackStorage);
         }
 
         public override void Shoot()

@@ -17,9 +17,9 @@ namespace _Scripts.Enemy
             enemyStateMachine.EnemySwitchAnimation.SwitchAnimation(randomAttack);
 
             if (enemyStateMachine.RandomNumber < enemyStateMachine.PercentToAttackInPlayer)
-                enemyStateMachine.ShotInvoker.ShootInPlayer(true);
+                enemyStateMachine.ShotInvoker.ShootInPlayer(MoveTurn.Enemy);
             else
-                enemyStateMachine.ShotInvoker.ShootInEnemy(true);
+                enemyStateMachine.ShotInvoker.ShootInEnemy(MoveTurn.Enemy);
         }
 
         public override void Exit(EnemyStateMachine enemyStateMachine)

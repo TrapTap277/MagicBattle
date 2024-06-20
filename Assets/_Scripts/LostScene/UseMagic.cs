@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace _Scripts.LostScene
 {
-    public class UseMagic : MonoBehaviour, IUseMagic, ISetStaffPositions, ISetGem
+    public class UseMagic : MonoBehaviour, IUseMagic, ISetGem
     {
         [SerializeField] private List<GameObject> _abilities = new List<GameObject>();
         [SerializeField] private GameObject _openPortalAbility;
@@ -31,11 +31,6 @@ namespace _Scripts.LostScene
         public void SetGem(Gem gem)
         {
             _attack = gem;
-        }
-
-        public void SetPositions(Transform positions)
-        {
-            _staffPositions = positions;
         }
 
         private GameObject InstantiateRandomAbility()
