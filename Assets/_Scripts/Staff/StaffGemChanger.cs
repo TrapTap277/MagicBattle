@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using _Scripts.Attacks;
 using _Scripts.Items;
 using _Scripts.Shooting;
 using UnityEngine;
@@ -24,9 +25,7 @@ namespace _Scripts.Staff
 
         public void Init()
         {
-            _effectPrefab.gameObject.SetActive(true);
             InitDictionaries();
-            DeterminateGemAndChangeMaterial(Gem.None);
         }
 
         private void DeterminateGemAndChangeMaterial(Gem gem)
@@ -45,7 +44,7 @@ namespace _Scripts.Staff
         private void CreateGemEffectWithColor(Color color)
         {
             var gemMeshTransform = _gemMeshRenderer.transform;
-            
+
             var newEffect = CreateEffect(gemMeshTransform, color);
 
             Destroy(newEffect.gameObject, 1f);
@@ -54,7 +53,7 @@ namespace _Scripts.Staff
         private RFX4_EffectSettings CreateEffect(Transform gemMeshTransform, Color color)
         {
             _effectPrefab.EffectColor = color;
-            
+
             var newEffect =
                 Instantiate(_effectPrefab, gemMeshTransform.position, Quaternion.identity, gemMeshTransform);
             return newEffect;
@@ -95,12 +94,14 @@ namespace _Scripts.Staff
         {
             BaseShoot.OnChangedGemOnStaff += DeterminateGemAndChangeMaterial;
             BaseItem.OnChangedGemOnStaff += DeterminateGemAndChangeMaterial;
+            MagicAttackStorage.OnResetedGem += DeterminateGemAndChangeMaterial;
         }
 
         private void OnDisable()
         {
             BaseShoot.OnChangedGemOnStaff -= DeterminateGemAndChangeMaterial;
             BaseItem.OnChangedGemOnStaff -= DeterminateGemAndChangeMaterial;
+            MagicAttackStorage.OnResetedGem -= DeterminateGemAndChangeMaterial;
         }
     }
 }

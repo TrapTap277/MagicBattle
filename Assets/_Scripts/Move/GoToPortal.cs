@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using _Scripts.Animations;
 using _Scripts.LostScene;
 using _Scripts.Staff;
 using DG.Tweening;
@@ -83,7 +84,7 @@ namespace _Scripts.Move
                     await Task.Delay(2000);
                     break;
             }
-
+            
             _passingLevel.SetStaffAnimation(StaffAnimations.None);
             await Task.Delay(3000);
         }

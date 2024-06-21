@@ -33,19 +33,18 @@ namespace _Scripts.StartGame
         private IEnumerator StartGame()
         {
             _switchDialogue?.SwitchDialogue(WhoWon.NoOne);
-            yield return new WaitForSeconds(4);
+            yield return new WaitForSeconds(2);
             _switchDialogue?.SwitchDialogue(WhoWon.NoOne);
-            yield return new WaitForSeconds(4);
+            yield return new WaitForSeconds(2);
             _switchDialogue?.SwitchDialogue(WhoWon.NoOne);
-            yield return new WaitForSeconds(6);
+            yield return new WaitForSeconds(2);
             ShowHealth();
-            yield return new WaitForSeconds(3);
+            yield return new WaitForSeconds(1.2f);
             _initStaffGemChanger?.Init();
-            yield return new WaitForSeconds(4);
-            _initShootInvoker?.Init();
-            yield return new WaitForSeconds(0.1f);
-            _enableDisableManager?.Show();
             yield return new WaitForSeconds(1);
+            _initShootInvoker?.Init();
+            _enableDisableManager?.Show();
+            yield return new WaitForSeconds(0.5f);
             _generateMagicAttacks?.GenerateMagicAttacks();
         }
 

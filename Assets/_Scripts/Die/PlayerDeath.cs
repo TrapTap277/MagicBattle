@@ -11,11 +11,6 @@ namespace _Scripts.Die
 
         [SerializeField] private CanvasGroup _roundsCounter;
 
-        private void Awake()
-        {
-            Init();
-        }
-
         protected override void Init()
         {
             StateMachine = _stateMachine;

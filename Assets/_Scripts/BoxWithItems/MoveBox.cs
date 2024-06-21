@@ -51,8 +51,11 @@ namespace _Scripts.BoxWithItems
 
             await Task.Delay(1000);
 
-            if (whoWon == WhoWon.Player)
-                InvokeAction(OnChangedCameraRotationToDefault);
+            if (whoWon == WhoWon.Player) InvokeAction(OnChangedCameraRotationToDefault);
+
+            await Task.Delay(1000);
+
+            if (gameObject != null) Destroy(gameObject);
         }
 
         private void MoveUp()
@@ -85,6 +88,5 @@ namespace _Scripts.BoxWithItems
                 {EndPositions, _endPositions}
             };
         }
-
     }
 }

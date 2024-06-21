@@ -13,10 +13,13 @@ namespace _Scripts.Enemy
 
             if (_isExit || enemyStateMachine.IsStopped) return;
 
+            // var randomAttack = enemyStateMachine.EnemySwitchAnimation.SetRandomAttackAnimation();
+            // enemyStateMachine.EnemySwitchAnimation.SwitchAnimation(randomAttack);
+
             if (enemyStateMachine.RandomNumber < enemyStateMachine.PercentToAttackInPlayer)
-                enemyStateMachine.ShotInvoker.ShootInPlayer(true);
+                enemyStateMachine.ShotInvoker.ShootInPlayer(MoveTurn.Enemy);
             else
-                enemyStateMachine.ShotInvoker.ShootInEnemy(true);
+                enemyStateMachine.ShotInvoker.ShootInEnemy(MoveTurn.Enemy);
         }
 
         public override void Exit(EnemyStateMachine enemyStateMachine)

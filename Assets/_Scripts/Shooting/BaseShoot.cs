@@ -1,17 +1,19 @@
 ﻿using System;
 using System.Threading.Tasks;
+using _Scripts.Animations;
 using _Scripts.Attacks;
+using _Scripts.Enemy;
 using _Scripts.Items;
 using _Scripts.LostScene;
 using _Scripts.Staff;
 using _Scripts.Stats;
-using UnityEngine;
 
 namespace _Scripts.Shooting
 {
     public abstract class BaseShoot
     {
-        public static event Action<ShootIn> OnChangedStaffAttackPosition;
+        public static event Action<ShootIn> OnSetShootIn;
+
         public static event Action<Gem> OnChangedGemOnStaff;
         public static event Action<float> OnTakenDamageToPlayer;
         public static event Action<float> OnTakenDamageToEnemy;
@@ -19,26 +21,28 @@ namespace _Scripts.Shooting
 
         private readonly MagicAttackStorage _attackStorage;
         private readonly SecondMoveTurn _secondMoveTurn;
-        private readonly IStaffAnimationController _staffAnimationController;
+        private readonly EnemyAnimationSwitcher _enemyAnimationSwitcher;
+        private readonly StaffAnimationSwitcher _staffAnimationSwitcher;
         private readonly ISetGem _setGem;
         private readonly IEnableDisableManager _attacksButtons;
+        private readonly MoveTurn _move;
 
-        private const StaffAnimations AttackAnimations = StaffAnimations.None;
-
-        private Gem _gem;
         private AttacksType _currentAttack;
+        private Gem _gem;
+
         private int _attackIndex;
 
-        protected BaseShoot(MagicAttackStorage attackStorage,
-            IStaffAnimationController staffAnimationController, ISetGem setGem,
-            IEnableDisableManager attacksButtons,
-            SecondMoveTurn secondMoveTurn)
+        protected BaseShoot(MagicAttackStorage attackStorage, SecondMoveTurn secondMoveTurn,
+            EnemyAnimationSwitcher enemyAnimationSwitcher, StaffAnimationSwitcher staffAnimationSwitcher,
+            ISetGem setGem, IEnableDisableManager attacksButtons, MoveTurn move)
         {
-            _staffAnimationController = staffAnimationController;
-            _attacksButtons = attacksButtons;
-            _secondMoveTurn = secondMoveTurn;
             _attackStorage = attackStorage;
+            _secondMoveTurn = secondMoveTurn;
+            _enemyAnimationSwitcher = enemyAnimationSwitcher;
+            _staffAnimationSwitcher = staffAnimationSwitcher;
             _setGem = setGem;
+            _attacksButtons = attacksButtons;
+            _move = move;
         }
 
         public abstract void Shoot();
@@ -58,10 +62,10 @@ namespace _Scripts.Shooting
             if (_currentAttack == AttacksType.Blue)
             {
                 //FadeAttackButtons();
+                OnSetShootIn?.Invoke(shootIn);
                 SetParameters(Gem.TrueAttack, 0);
                 ChangeGemOnStaff();
-                OnChangedStaffAttackPosition?.Invoke(shootIn);
-                _staffAnimationController?.SwitchAnimation(AttackAnimations);
+                SetRandomAttackAnimation();
                 await TakeDamage(shootIn);
                 OnResetedItems?.Invoke();
                 // Todo: Play True attack particles 
@@ -71,8 +75,20 @@ namespace _Scripts.Shooting
             {
                 SetParameters(Gem.FalseAttack, 1);
                 ChangeGemOnStaff();
+                //Todo Maybe there need to add  OnResetItems?.Invoke();
                 // Todo: Play False attack particles 
             }
+        }
+
+        private void SetRandomAttackAnimation()
+        {
+            if (_move == MoveTurn.Enemy)
+                AnimationSwitcher<EnemyAnimations, ISwitchAnimation<EnemyAnimations>>
+                    .SetRandomAnimation(_enemyAnimationSwitcher);
+
+            else
+                AnimationSwitcher<StaffAnimations, ISwitchAnimation<StaffAnimations>>
+                    .SetRandomAnimation(_staffAnimationSwitcher);
         }
 
         private async void FadeAttackButtons()
@@ -84,7 +100,7 @@ namespace _Scripts.Shooting
         }
 
         private void RemoveAttackFromStorage()
-        {        
+        {
             _attackStorage.RemoveAttack(_currentAttack);
         }
 

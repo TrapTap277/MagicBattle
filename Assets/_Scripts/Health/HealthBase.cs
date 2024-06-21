@@ -38,7 +38,7 @@ namespace _Scripts.Health
 
         public void Show()
         {
-            foreach (var canvasGroup in CanvasGroup) canvasGroup.DOFade(1, 2);
+            foreach (var canvasGroup in CanvasGroup) canvasGroup.DOFade(1, 1);
         }
 
         private void Start()

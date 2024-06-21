@@ -7,7 +7,7 @@ namespace _Scripts.Shooting
 {
     public class SwitchEnemyStateWithShootingInEnemy : IEnemyStateSwitcher
     {
-        private readonly bool _isEnemy;
+        private readonly MoveTurn _moveTurn;
         private SecondMoveTurn _secondMoveTurn;
         private readonly MagicAttackStorage _storage;
         private readonly EnemyStateMachine _stateMachine;
@@ -17,15 +17,10 @@ namespace _Scripts.Shooting
         private const SecondMoveTurn NoneSecondMove = SecondMoveTurn.None;
         private const SecondMoveTurn EnemySecondMove = SecondMoveTurn.Enemy;
 
-        public SwitchEnemyStateWithShootingInEnemy(EnemyStateMachine stateMachine)
-        {
-            _stateMachine = stateMachine;
-        }
-
-        public SwitchEnemyStateWithShootingInEnemy(bool isEnemy, SecondMoveTurn secondMoveTurn,
+        public SwitchEnemyStateWithShootingInEnemy(MoveTurn moveTurn, SecondMoveTurn secondMoveTurn,
             EnemyStateMachine stateMachine, MagicAttackStorage storage)
         {
-            _isEnemy = isEnemy;
+            _moveTurn = moveTurn;
             _secondMoveTurn = secondMoveTurn;
             _stateMachine = stateMachine;
             _storage = storage;
@@ -35,19 +30,19 @@ namespace _Scripts.Shooting
         {
             if (attackIndex == 0)
             {
-                if (_secondMoveTurn == NoneSecondMove && !_isEnemy)
+                if (_secondMoveTurn == NoneSecondMove && _moveTurn == PlayerTurn)
                 {
                     GiveMoveToEnemy(EnemyTurn);
                     return;
                 }
 
-                if (_secondMoveTurn == NoneSecondMove && _isEnemy)
+                if (_secondMoveTurn == NoneSecondMove && _moveTurn == EnemyTurn)
                 {
                     GiveMoveToEnemy(PlayerTurn);
                     return;
                 }
 
-                if (_secondMoveTurn == EnemySecondMove && _isEnemy)
+                if (_secondMoveTurn == EnemySecondMove && _moveTurn == EnemyTurn)
                 {
                     GiveMoveToEnemy(EnemyTurn);
                     return;
@@ -62,7 +57,7 @@ namespace _Scripts.Shooting
                     return;
                 }
 
-                if (_secondMoveTurn != EnemySecondMove || !_isEnemy) return;
+                if (_secondMoveTurn != EnemySecondMove || _moveTurn == PlayerTurn) return;
                 GiveMoveToEnemy(EnemyTurn);
             }
         }

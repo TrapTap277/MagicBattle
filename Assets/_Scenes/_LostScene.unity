@@ -17446,6 +17446,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 628210fdfb0a8ca47b99030eaf6272e8, type: 2}
+    - target: {fileID: 9543288, guid: 9a763c773ef7fff45b44fbb1a796b309, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17507,6 +17511,7 @@ MonoBehaviour:
   - {fileID: 119242, guid: 4bc451a9c5656db4794e16cdecbabbac, type: 3}
   _openPortalAbility: {fileID: 1520786051656894, guid: 60f067005042016479e156d2700edf0c, type: 3}
   _staffPositions: {fileID: 882339541}
+  _scythePositions: {fileID: 882339541}
 --- !u!114 &1108977465
 MonoBehaviour:
   m_ObjectHideFlags: 0
