@@ -17511,6 +17511,7 @@ MonoBehaviour:
   - {fileID: 119242, guid: 4bc451a9c5656db4794e16cdecbabbac, type: 3}
   _openPortalAbility: {fileID: 1520786051656894, guid: 60f067005042016479e156d2700edf0c, type: 3}
   _staffPositions: {fileID: 882339541}
+  _scythePositions: {fileID: 882339541}
 --- !u!114 &1108977465
 MonoBehaviour:
   m_ObjectHideFlags: 0

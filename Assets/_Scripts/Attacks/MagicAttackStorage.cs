@@ -7,6 +7,7 @@ using _Scripts.BoxWithItems;
 using _Scripts.Die;
 using _Scripts.Enemy;
 using _Scripts.Health;
+using _Scripts.Staff;
 using _Scripts.Stats;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -16,6 +17,7 @@ namespace _Scripts.Attacks
     public class MagicAttackStorage : MonoBehaviour, IGenerateMagicAttacks
     {
         public static event Action<List<AttacksType>> OnCreatedUI;
+        public static event Action<Gem> OnResetedGem;
 
         [HideInInspector] public List<AttacksType> Typies = new List<AttacksType>();
 
@@ -43,7 +45,7 @@ namespace _Scripts.Attacks
 
         private void SetIsSomeoneDied()
         {
-            _isSomeoneDied = true; // Todo there
+            _isSomeoneDied = true;
         }
 
         public void GenerateMagicAttacks()
@@ -144,6 +146,8 @@ namespace _Scripts.Attacks
             BlueAttack = 0;
             AttackCount = 0;
             Typies.Clear();
+
+            OnResetedGem?.Invoke(Gem.None);
         }
 
         private void SetIsBlocked()
@@ -178,14 +182,14 @@ namespace _Scripts.Attacks
 
         private async void ChooseAction() // Todo Problem is there
         {
-            if (Typies.Count <= 0 && _isSomeoneDied == false)// Todo Problem is there
+            if (Typies.Count <= 0 && _isSomeoneDied == false) // Todo Problem is there
             {
                 _enableDisableManager?.Fade();
                 await Task.Delay(2000);
                 GenerateMagicAttacks();
             }
 
-            if (Typies.Count <= 0 && _isSomeoneDied && _isBlocked == false)// Todo Problem is there
+            if (Typies.Count <= 0 && _isSomeoneDied && _isBlocked == false) // Todo Problem is there
             {
                 CreateBoxWithItems();
                 _enableDisableManager?.Fade();

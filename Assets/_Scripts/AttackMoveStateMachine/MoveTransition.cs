@@ -1,5 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using _Scripts.Animations;
 using _Scripts.Attacks;
 using _Scripts.Enemy;
@@ -14,9 +13,9 @@ namespace _Scripts.AttackMoveStateMachine
     {
         [SerializeField] private MagicAttackStorage _attackStorage;
 
-        private ISwitchAnimation<StaffAnimations> _switchAnimation;
+        private StaffAnimationSwitcher _staffAnimationSwitcher;
         private IEnableDisableManager _enableDisableManager;
-        private ISetGemPositions _setGemPositions;
+        private ISetPositions _setPositions;
 
         private void Awake()
         {
@@ -25,14 +24,14 @@ namespace _Scripts.AttackMoveStateMachine
 
         public async void TransitionToEnemy()
         {
-            _setGemPositions?.SetPositions(MoveTurn.Enemy);
+            _setPositions?.SetPositions(MoveTurn.Enemy);
             _enableDisableManager?.Fade();
             await DissolveOrUnDissolveStaff(StaffAnimations.DissolveStaff);
         }
 
         public async void TransitionToPlayer()
         {
-            _setGemPositions?.SetPositions(MoveTurn.Player);
+            _setPositions?.SetPositions(MoveTurn.Player);
             _enableDisableManager?.Show();
             if (_attackStorage.AttackCount == 0) return;
             await DissolveOrUnDissolveStaff(StaffAnimations.UnDissolveStaff);
@@ -40,14 +39,15 @@ namespace _Scripts.AttackMoveStateMachine
 
         private async Task DissolveOrUnDissolveStaff(StaffAnimations animations)
         {
-            _switchAnimation?.SwitchAnimation(animations);
+            AnimationSwitcher<StaffAnimations, ISwitchAnimation<StaffAnimations>>
+                .SwitchAnimation(_staffAnimationSwitcher, animations);
             await Task.Delay(1500);
         }
 
         private void InitManagers()
         {
-            _setGemPositions = FindObjectOfType<ChangeGemPositions>();
-            _switchAnimation = FindObjectOfType<StaffAnimationSwitcher>();
+            _setPositions = FindObjectOfType<ChangePositions>();
+            _staffAnimationSwitcher = FindObjectOfType<StaffAnimationSwitcher>();
             _enableDisableManager = FindObjectOfType<AttackButtonsController>();
         }
     }

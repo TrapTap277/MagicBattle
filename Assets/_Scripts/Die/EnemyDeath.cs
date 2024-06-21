@@ -24,7 +24,7 @@ namespace _Scripts.Die
 
             dieUI.GiveWinRoundToPlayer();
             
-            _stateMachine.EnemySwitchAnimation?.SwitchAnimation(EnemyAnimations.Death);
+                // _stateMachine.EnemySwitchAnimation?.SwitchAnimation(EnemyAnimations.Death);
         }
 
         private void OnEnable()

@@ -6,7 +6,6 @@ using _Scripts.Die;
 using _Scripts.EndGame;
 using _Scripts.Items;
 using _Scripts.LostScene;
-using _Scripts.Staff;
 using _Scripts.Stats;
 using _Scripts.UI;
 using UnityEngine;
@@ -23,22 +22,17 @@ namespace _Scripts.BoxWithItems
         private IMoveBox _moveBox;
         private IEnableDisableManager _magicAttacks;
         private IInstantiate _instantiateUseButton;
-        private ISwitchAnimation<StaffAnimations> _switchAnimation;
-        private ISwitchAnimation<EnemyAnimations> _enemyAnimation;
+        private StaffAnimationSwitcher _switchAnimation;
 
         public void InitBox(IMoveBox moveBox)
         {
-            _instantiateUseButton = FindObjectOfType<AddUseButton>();
-            _createItemsUI = FindObjectOfType<CreateItemsUI>();
-            _magicAttacks = FindObjectOfType<AttackShowAndFade>();
-            _switchAnimation = FindObjectOfType<StaffAnimationSwitcher>();
-            _enemyAnimation = FindObjectOfType<EnemyAnimationSwitcher>();
+            InitInterfaces();
 
             SetItemCount();
 
             _moveBox = moveBox;
             _magicAttacks?.Fade();
-            _switchAnimation?.SwitchAnimation(StaffAnimations.DissolveStaff);
+            SwitchStaffAnimations(StaffAnimations.DissolveStaff);
             OnBlocked?.Invoke(true);
         }
 
@@ -53,18 +47,24 @@ namespace _Scripts.BoxWithItems
             _boxManager?.Close();
             await Task.Delay(2000);
             _moveBox?.ExitFromBox(WhoWon.Player);
-            await Task.Delay(6000);
+            await Task.Delay(4000);
             OnBlocked?.Invoke(false);
             OnGeneratedAttacks?.Invoke();
-            _switchAnimation?.SwitchAnimation(StaffAnimations.UnDissolveStaff);
+            SwitchStaffAnimations(StaffAnimations.UnDissolveStaff);
             await Task.Delay(3000);
             DestroyBox();
+        }
+
+        private void SwitchStaffAnimations(StaffAnimations animations)
+        {
+            AnimationSwitcher<StaffAnimations, ISwitchAnimation<StaffAnimations>>
+                .SwitchAnimation(_switchAnimation, animations);
         }
 
         private void DestroyBox()
         {
             if (gameObject != null)
-                Destroy(gameObject);
+                Destroy(this.gameObject);
         }
 
         private void InitBoxManager()
@@ -77,6 +77,14 @@ namespace _Scripts.BoxWithItems
             _itemsCount = 2;
             if (DieManager.EnemyDieCount == 2 || DieManager.PlayerDieCount == 2)
                 _itemsCount = 4;
+        }
+
+        private void InitInterfaces()
+        {
+            _instantiateUseButton = FindObjectOfType<AddUseButton>();
+            _createItemsUI = FindObjectOfType<CreateItemsUI>();
+            _magicAttacks = FindObjectOfType<AttackShowAndFade>();
+            _switchAnimation = FindObjectOfType<StaffAnimationSwitcher>();
         }
     }
 }

@@ -26,15 +26,15 @@ namespace _Scripts.Shooting
         private SecondMoveTurn _secondMoveTurn;
         private HealthBase[] _healthBase;
 
-        private ISwitchAnimation<StaffAnimations> _switchAnimation;
         private ISetGem _setGem;
         private IEnableDisableManager _enableDisableManager;
+        private StaffAnimationSwitcher _staffAnimationSwitcher;
+        private EnemyAnimationSwitcher _enemyAnimationSwitcher;
 
         private void Awake()
         {
             RemoveButtonListeners();
             AddButtonListeners();
-
             _secondMoveTurn = SecondMoveTurn.None;
         }
 
@@ -46,9 +46,9 @@ namespace _Scripts.Shooting
         public void ShootInEnemy(MoveTurn moveTurn = MoveTurn.Player)
         {
             if (moveTurn == MoveTurn.Player) SetIsStoppedFalse();
-            
-            _baseShoot = new ShootInEnemy(_storage, _stateMachine, _secondMoveTurn, moveTurn, _switchAnimation, _setGem,
-                _enableDisableManager);
+
+            _baseShoot = new ShootInEnemy(_storage, _stateMachine, _secondMoveTurn, moveTurn, _setGem,
+                _enableDisableManager, _enemyAnimationSwitcher, _staffAnimationSwitcher);
             _baseShoot.Shoot();
             ResetSecondMove();
         }
@@ -56,9 +56,9 @@ namespace _Scripts.Shooting
         public void ShootInPlayer(MoveTurn moveTurn = MoveTurn.Player)
         {
             if (moveTurn == MoveTurn.Player) SetIsStoppedFalse();
-            
-            _baseShoot = new ShootInPlayer(_storage, _stateMachine, _secondMoveTurn, moveTurn, _switchAnimation,
-                _setGem, _enableDisableManager);
+
+            _baseShoot = new ShootInPlayer(_storage, _stateMachine, _secondMoveTurn, moveTurn, _setGem,
+                _enableDisableManager, _enemyAnimationSwitcher, _staffAnimationSwitcher);
             _baseShoot.Shoot();
             ResetSecondMove();
         }
@@ -98,10 +98,10 @@ namespace _Scripts.Shooting
         private void FindObjects()
         {
             _enableDisableManager = FindObjectOfType<AttackButtonsController>();
-
+            _staffAnimationSwitcher = FindObjectOfType<StaffAnimationSwitcher>();
+            _enemyAnimationSwitcher = FindObjectOfType<EnemyAnimationSwitcher>();
             _healthBase = FindObjectsOfType<HealthBase>();
-            _switchAnimation = FindObjectOfType<StaffAnimationSwitcher>();
-            _setGem = FindObjectOfType<UseMagic>();
+            _setGem = FindObjectOfType<PlayerUseMagic>();
         }
 
         private void OnEnable()

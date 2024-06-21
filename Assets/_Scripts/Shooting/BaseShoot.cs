@@ -12,6 +12,8 @@ namespace _Scripts.Shooting
 {
     public abstract class BaseShoot
     {
+        public static event Action<ShootIn> OnSetShootIn;
+
         public static event Action<Gem> OnChangedGemOnStaff;
         public static event Action<float> OnTakenDamageToPlayer;
         public static event Action<float> OnTakenDamageToEnemy;
@@ -19,7 +21,8 @@ namespace _Scripts.Shooting
 
         private readonly MagicAttackStorage _attackStorage;
         private readonly SecondMoveTurn _secondMoveTurn;
-        private readonly ISwitchAnimation<StaffAnimations> _switchAnimation;
+        private readonly EnemyAnimationSwitcher _enemyAnimationSwitcher;
+        private readonly StaffAnimationSwitcher _staffAnimationSwitcher;
         private readonly ISetGem _setGem;
         private readonly IEnableDisableManager _attacksButtons;
         private readonly MoveTurn _move;
@@ -29,17 +32,17 @@ namespace _Scripts.Shooting
 
         private int _attackIndex;
 
-        protected BaseShoot(MagicAttackStorage attackStorage,
-            ISwitchAnimation<StaffAnimations> switchAnimation, ISetGem setGem,
-            IEnableDisableManager attacksButtons,
-            SecondMoveTurn secondMoveTurn, MoveTurn moveTurn)
+        protected BaseShoot(MagicAttackStorage attackStorage, SecondMoveTurn secondMoveTurn,
+            EnemyAnimationSwitcher enemyAnimationSwitcher, StaffAnimationSwitcher staffAnimationSwitcher,
+            ISetGem setGem, IEnableDisableManager attacksButtons, MoveTurn move)
         {
-            _switchAnimation = switchAnimation;
-            _attacksButtons = attacksButtons;
-            _secondMoveTurn = secondMoveTurn;
             _attackStorage = attackStorage;
+            _secondMoveTurn = secondMoveTurn;
+            _enemyAnimationSwitcher = enemyAnimationSwitcher;
+            _staffAnimationSwitcher = staffAnimationSwitcher;
             _setGem = setGem;
-            _move = moveTurn;
+            _attacksButtons = attacksButtons;
+            _move = move;
         }
 
         public abstract void Shoot();
@@ -59,6 +62,7 @@ namespace _Scripts.Shooting
             if (_currentAttack == AttacksType.Blue)
             {
                 //FadeAttackButtons();
+                OnSetShootIn?.Invoke(shootIn);
                 SetParameters(Gem.TrueAttack, 0);
                 ChangeGemOnStaff();
                 SetRandomAttackAnimation();
@@ -78,10 +82,13 @@ namespace _Scripts.Shooting
 
         private void SetRandomAttackAnimation()
         {
-            if (_move == MoveTurn.Enemy) return;
-            var randomAttackAnimation = _switchAnimation.SetRandomAttackAnimation();
+            if (_move == MoveTurn.Enemy)
+                AnimationSwitcher<EnemyAnimations, ISwitchAnimation<EnemyAnimations>>
+                    .SetRandomAnimation(_enemyAnimationSwitcher);
 
-            _switchAnimation?.SwitchAnimation(randomAttackAnimation);
+            else
+                AnimationSwitcher<StaffAnimations, ISwitchAnimation<StaffAnimations>>
+                    .SetRandomAnimation(_staffAnimationSwitcher);
         }
 
         private async void FadeAttackButtons()

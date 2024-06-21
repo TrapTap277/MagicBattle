@@ -8,7 +8,7 @@ namespace _Scripts.LostScene
     {
         private IOpenCloseManager _openCloseManager;
         private IDoorManager _doorManager;
-        private ISwitchAnimation<StaffAnimations> _switchAnimation;
+        private StaffAnimationSwitcher _switchAnimation;
 
         private void Start()
         {
@@ -17,7 +17,7 @@ namespace _Scripts.LostScene
         }
 
         public void SetDependencies(IOpenCloseManager openCloseManager, IDoorManager doorManager,
-            ISwitchAnimation<StaffAnimations> switchAnimation)
+            StaffAnimationSwitcher switchAnimation)
         {
             _openCloseManager = openCloseManager;
             _doorManager = doorManager;
@@ -43,13 +43,13 @@ namespace _Scripts.LostScene
         {
             if (animations == StaffAnimations.None)
             {
-                var randomAttackAnimation = _switchAnimation.SetRandomAttackAnimation();
-
-                _switchAnimation?.SwitchAnimation(randomAttackAnimation);
+                AnimationSwitcher<StaffAnimations, ISwitchAnimation<StaffAnimations>>
+                    .SetRandomAnimation(_switchAnimation);
                 return;
             }
             
-            _switchAnimation?.SwitchAnimation(animations);
+            AnimationSwitcher<StaffAnimations, ISwitchAnimation<StaffAnimations>>
+                .SwitchAnimation(_switchAnimation, animations);
         }
 
         private void DestroyDoor()

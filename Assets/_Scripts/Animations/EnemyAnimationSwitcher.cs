@@ -7,7 +7,7 @@ namespace _Scripts.Animations
     public class EnemyAnimationSwitcher : BaseAnimationSwitcher, ISwitchAnimation<EnemyAnimations>
     {
         private readonly List<EnemyAnimations> _randomAttack = new List<EnemyAnimations>();
-       
+
         private const string Idle = "Idle";
         private const string Attack = "Attack";
         private const string Attack2 = "Attack2";
@@ -30,7 +30,7 @@ namespace _Scripts.Animations
             Init(_staffAnimator);
         }
 
-        public void SwitchAnimation(EnemyAnimations staffAnimations) 
+        public void SwitchAnimation(EnemyAnimations staffAnimations)
         {
             var value = GetStaffAnimation(staffAnimations);
             CrossFade(value);
