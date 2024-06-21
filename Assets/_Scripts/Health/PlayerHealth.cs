@@ -12,6 +12,7 @@ namespace _Scripts.Health
     {
         public new static event Action OnDied;
 
+        [SerializeField] private CanvasGroup _healthBar;
         [SerializeField] private TextMeshProUGUI _healthInPercents;
         [SerializeField] private Image _frontHealthBar;
         [SerializeField] private Image _backHealthBar;
@@ -21,7 +22,7 @@ namespace _Scripts.Health
             HealthInPercents = _healthInPercents;
             FrontHealthBar = _frontHealthBar;
             BackHealthBar = _backHealthBar;
-            CanvasGroup.Add(gameObject.GetComponent<CanvasGroup>());
+            CanvasGroup.Add(_healthBar);
         }
 
         protected override void Died()
@@ -34,14 +35,12 @@ namespace _Scripts.Health
 
         private void OnEnable()
         {
-            BaseShoot.OnTakenDamageToPlayer += TakeDamage;
             HealGemItem.OnHealedPlayer += RestoreHealth;
             ProtectionGemItem.OnGivenProtectionToPlayer += GetProtection;
         }
 
         private void OnDisable()
         {
-            BaseShoot.OnTakenDamageToPlayer -= TakeDamage;
             HealGemItem.OnHealedPlayer -= RestoreHealth;
             ProtectionGemItem.OnGivenProtectionToPlayer -= GetProtection;
         }
