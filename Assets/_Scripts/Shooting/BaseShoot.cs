@@ -15,8 +15,6 @@ namespace _Scripts.Shooting
         public static event Action<ShootIn> OnSetShootIn;
 
         public static event Action<Gem> OnChangedGemOnStaff;
-        public static event Action<float> OnTakenDamageToPlayer;
-        public static event Action<float> OnTakenDamageToEnemy;
         public static event Action OnResetedItems;
 
         private readonly MagicAttackStorage _attackStorage;
@@ -66,7 +64,7 @@ namespace _Scripts.Shooting
                 SetParameters(Gem.TrueAttack, 0);
                 ChangeGemOnStaff();
                 SetRandomAttackAnimation();
-                await TakeDamage(shootIn);
+                await Task.Delay(2000);
                 OnResetedItems?.Invoke();
                 // Todo: Play True attack particles 
             }
@@ -112,14 +110,6 @@ namespace _Scripts.Shooting
         private void ChangeGemOnStaff()
         {
             OnChangedGemOnStaff?.Invoke(_gem);
-        }
-
-        private static async Task TakeDamage(ShootIn shootIn)
-        {
-            await Task.Delay(2000);
-
-            if (shootIn == ShootIn.Player) OnTakenDamageToPlayer?.Invoke(20);
-            if (shootIn == ShootIn.Enemy) OnTakenDamageToEnemy?.Invoke(20);
         }
 
         private static void ResetItems()

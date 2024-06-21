@@ -29,6 +29,8 @@ namespace _Scripts.Health
         private float _lerpTimer;
         private bool _isHasProtection;
 
+        private const string AttackTag = "Attack";
+
         private readonly object _lockObject = new object();
 
         public void Init()
@@ -51,7 +53,7 @@ namespace _Scripts.Health
         protected abstract void InitProperties();
 
 
-        protected void TakeDamage(float damage)
+        public void TakeDamage(float damage)
         {
             lock (_lockObject)
             {

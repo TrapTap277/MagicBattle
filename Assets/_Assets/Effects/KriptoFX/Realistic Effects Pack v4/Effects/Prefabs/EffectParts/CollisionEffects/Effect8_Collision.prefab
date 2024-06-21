@@ -5125,6 +5125,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4887435869845586}
   - component: {fileID: 114923380478825616}
+  - component: {fileID: 3289488762869519913}
   m_Layer: 0
   m_Name: Effect8_Collision
   m_TagString: Untagged
@@ -5177,6 +5178,18 @@ MonoBehaviour:
   Speed: 10
   AirDrag: 0.1
   UseGravity: 1
+--- !u!114 &3289488762869519913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1769391663779456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d11a242cb1ee49dfa1c2a5745e12a5c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1815342755594268
 GameObject:
   m_ObjectHideFlags: 0
