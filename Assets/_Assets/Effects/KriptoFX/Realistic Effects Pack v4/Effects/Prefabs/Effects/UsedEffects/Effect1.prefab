@@ -9286,7 +9286,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4805788057881982}
   - component: {fileID: 114503623341167234}
-  - component: {fileID: 2892499119900089976}
+  - component: {fileID: 1056397670226456697}
   m_Layer: 0
   m_Name: Collision
   m_TagString: Untagged
@@ -9341,7 +9341,7 @@ MonoBehaviour:
   CollisionEffectDestroyAfter: 5
   DeactivateObjectsAfterCollision: []
   HUE: -1
---- !u!114 &2892499119900089976
+--- !u!114 &1056397670226456697
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9353,6 +9353,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d11a242cb1ee49dfa1c2a5745e12a5c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _timeToDissolve: 3500
 --- !u!1 &1748139164946814
 GameObject:
   m_ObjectHideFlags: 0
