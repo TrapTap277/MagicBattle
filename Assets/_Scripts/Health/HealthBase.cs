@@ -22,16 +22,14 @@ namespace _Scripts.Health
         protected TextMeshProUGUI HealthInPercents;
         protected Image FrontHealthBar;
         protected Image BackHealthBar;
-        private float _didDamage;
+        private readonly object _lockObject = new object();
+        private static float _damageСoefficient;
         private const float MAXHealth = 100;
         private const float ChipSpeed = 4f;
-        private static float _damageСoefficient;
+        private float _didDamage;
         private float _lerpTimer;
         private bool _isHasProtection;
 
-        private const string AttackTag = "Attack";
-
-        private readonly object _lockObject = new object();
 
         public void Init()
         {
@@ -96,7 +94,7 @@ namespace _Scripts.Health
             _isHasProtection = true;
         }
 
-        protected static void TakeMoreDamage()
+        private static void TakeMoreDamage()
         {
             _damageСoefficient = Random.Range(1.1f, 2f);
         }
