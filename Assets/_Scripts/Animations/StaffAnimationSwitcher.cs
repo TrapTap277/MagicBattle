@@ -24,8 +24,8 @@ namespace _Scripts.Animations
         private int _dissolveState;
         private int _unDissolveState;
 
-        private Dictionary<StaffAnimations, int> _staffAnimations = new Dictionary<StaffAnimations, int>();
         private readonly List<StaffAnimations> _randomAttack = new List<StaffAnimations>();
+        private Dictionary<StaffAnimations, int> _staffAnimations = new Dictionary<StaffAnimations, int>();
         private Animator _staffAnimator;
 
         private void Awake()
@@ -35,10 +35,10 @@ namespace _Scripts.Animations
             Init(_staffAnimator);
         }
 
-        public void SwitchAnimation(StaffAnimations staffAnimations)
+        public void SwitchAnimation(StaffAnimations staffAnimations, float timeToTransition = 0)
         {
             var value = GetStaffAnimation(staffAnimations);
-            CrossFade(value);
+            CrossFade(value, timeToTransition);
         }
 
         public StaffAnimations SetRandomAttackAnimation()

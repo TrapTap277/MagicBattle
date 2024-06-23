@@ -30,10 +30,10 @@ namespace _Scripts.Animations
             Init(_staffAnimator);
         }
 
-        public void SwitchAnimation(EnemyAnimations staffAnimations)
+        public void SwitchAnimation(EnemyAnimations staffAnimations, float timeToTransition = 0)
         {
             var value = GetStaffAnimation(staffAnimations);
-            CrossFade(value);
+            CrossFade(value, timeToTransition);
         }
 
         public EnemyAnimations SetRandomAttackAnimation()
