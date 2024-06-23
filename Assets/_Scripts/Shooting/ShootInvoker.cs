@@ -3,7 +3,6 @@ using _Scripts.Animations;
 using _Scripts.AttackMoveStateMachine;
 using _Scripts.Attacks;
 using _Scripts.Enemy;
-using _Scripts.Health;
 using _Scripts.Items;
 using _Scripts.LostScene;
 using _Scripts.Staff;
@@ -24,7 +23,6 @@ namespace _Scripts.Shooting
 
         private BaseShoot _baseShoot;
         private SecondMoveTurn _secondMoveTurn;
-        private HealthBase[] _healthBase;
 
         private ISetGem _setGem;
         private IEnableDisableManager _enableDisableManager;
@@ -73,11 +71,6 @@ namespace _Scripts.Shooting
             if (_secondMoveTurn != secondMoveTurn) _secondMoveTurn = secondMoveTurn;
         }
 
-        private void ResetSkills()
-        {
-            foreach (var health in _healthBase) health.ResetProperties();
-        }
-
         private void ResetSecondMove()
         {
             _secondMoveTurn = SecondMoveTurn.None;
@@ -100,20 +93,17 @@ namespace _Scripts.Shooting
             _enableDisableManager = FindObjectOfType<AttackButtonsController>();
             _staffAnimationSwitcher = FindObjectOfType<StaffAnimationSwitcher>();
             _enemyAnimationSwitcher = FindObjectOfType<EnemyAnimationSwitcher>();
-            _healthBase = FindObjectsOfType<HealthBase>();
             _setGem = FindObjectOfType<PlayerUseMagic>();
         }
 
         private void OnEnable()
         {
             SecondMoveGemItem.OnGotSecondMove += SetSecondMove;
-            BaseShoot.OnResetedItems += ResetSkills;
         }
 
         private void OnDisable()
         {
             SecondMoveGemItem.OnGotSecondMove -= SetSecondMove;
-            BaseShoot.OnResetedItems -= ResetSkills;
         }
     }
 }

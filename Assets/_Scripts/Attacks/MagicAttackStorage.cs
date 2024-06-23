@@ -158,8 +158,8 @@ namespace _Scripts.Attacks
         private void CreateBoxWithItems()
         {
             if (DieManager.IsGameEnded()) return;
-            _createBox.CreateAndMove();
             _isBlocked = false;
+            _createBox.CreateAndMove();
         }
 
         private void EnemyEnterInIdleState()
@@ -223,6 +223,7 @@ namespace _Scripts.Attacks
             DieManager.OnEnteredEnemyInIdle += SetIsBlocked;
             BoxWithItems.BoxWithItems.OnGeneratedAttacks += GenerateMagicAttacks;
             HealthBase.OnSetIsSomeoneDied += SetIsSomeoneDied;
+            BaseDeath.OnReseted += EnemyEnterInIdleState;
         }
 
         private void OnDisable()
@@ -232,6 +233,7 @@ namespace _Scripts.Attacks
             DieManager.OnEnteredEnemyInIdle -= SetIsBlocked;
             BoxWithItems.BoxWithItems.OnGeneratedAttacks -= GenerateMagicAttacks;
             HealthBase.OnSetIsSomeoneDied -= SetIsSomeoneDied;
+            BaseDeath.OnReseted -= EnemyEnterInIdleState;
         }
     }
 

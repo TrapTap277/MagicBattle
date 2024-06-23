@@ -1,14 +1,14 @@
-﻿using System.Collections.Generic;
-using _Scripts.Animations;
+﻿using System;
+using System.Collections.Generic;
 using _Scripts.AttackMoveStateMachine;
 using _Scripts.Attacks;
 using _Scripts.Die;
 using _Scripts.Health;
 using _Scripts.Items;
-using _Scripts.LostScene;
 using _Scripts.Shooting;
 using _Scripts.Staff;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace _Scripts.Enemy
 {
@@ -24,7 +24,6 @@ namespace _Scripts.Enemy
         #endregion
 
         public readonly BaseUseItem UseItem = new EnemyUseItem();
-        public ISwitchAnimation<EnemyAnimations> EnemySwitchAnimation;
         public MoveTurn MoveTurn { get; private set; }
         public EnemyHealth EnemyHealth;
         public MoveTransition MoveTransition;
@@ -39,13 +38,11 @@ namespace _Scripts.Enemy
         [HideInInspector] public bool IsStopped;
         [HideInInspector] public bool IsDied;
 
-        private void Awake()
+        private void Start()
         {
-            EnemySwitchAnimation = FindObjectOfType<EnemyAnimationSwitcher>();
-            
+            EnemyHealth = FindObjectOfType<EnemyHealth>();
             _enemyCurrentState = IdleState;
             MoveTurn = MoveTurn.Player;
-            _enemyCurrentState.Enter(this);
         }
 
         public void SwitchState(EnemyBaseState state)
@@ -77,13 +74,13 @@ namespace _Scripts.Enemy
         private void ChangeIsDied(bool isDied)
         {
             IsDied = isDied;
-        } 
+        }
 
         private void Stop()
         {
             IsStopped = true;
-        }       
-        
+        }
+
         private void StopIsStopped()
         {
             IsStopped = false;
