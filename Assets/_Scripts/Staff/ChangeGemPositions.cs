@@ -4,10 +4,10 @@ using UnityEngine;
 
 namespace _Scripts.Staff
 {
-    public class ChangePositions : MonoBehaviour, ISetPositions
+    public class ChangeGemPositions : MonoBehaviour, ISetPositions
     {
-        [SerializeField] private Transform _staffGemPositions;
-        [SerializeField] private Transform _scytheGemPositions;
+        [SerializeField] private Transform staffGemPositions;
+        [SerializeField] private Transform scytheGemPositions;
 
         private void Start()
         {
@@ -17,10 +17,10 @@ namespace _Scripts.Staff
         public void SetPositions(MoveTurn positions)
         {
             SetParent(positions);
-            ResetSetTransform();
+            ResetTransform();
         }
 
-        private void ResetSetTransform()
+        private void ResetTransform()
         {
             gameObject.transform.localPosition = Vector3.zero;
         }
@@ -30,10 +30,10 @@ namespace _Scripts.Staff
             switch (positions)
             {
                 case MoveTurn.Player:
-                    gameObject.transform.SetParent(_staffGemPositions);
+                    gameObject.transform.SetParent(staffGemPositions);
                     break;
                 case MoveTurn.Enemy:
-                    gameObject.transform.SetParent(_scytheGemPositions);
+                    gameObject.transform.SetParent(scytheGemPositions);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(positions), positions, null);
