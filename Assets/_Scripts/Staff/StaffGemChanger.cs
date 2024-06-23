@@ -59,7 +59,12 @@ namespace _Scripts.Staff
             return newEffect;
         }
 
-        private void ChangeMaterial(Material material)
+        private void SetGemWithoutCreatingEffect(Gem gem)
+        {
+            ChangeMaterial(_gemMaterial[gem]);
+        } 
+
+        private void ChangeMaterial(Material material = null)
         {
             _gemMeshRenderer.material = material;
         }
@@ -94,14 +99,14 @@ namespace _Scripts.Staff
         {
             BaseShoot.OnChangedGemOnStaff += DeterminateGemAndChangeMaterial;
             BaseItem.OnChangedGemOnStaff += DeterminateGemAndChangeMaterial;
-            MagicAttackStorage.OnResetedGem += DeterminateGemAndChangeMaterial;
+            MagicAttackStorage.OnResetedGem += SetGemWithoutCreatingEffect;
         }
 
         private void OnDisable()
         {
             BaseShoot.OnChangedGemOnStaff -= DeterminateGemAndChangeMaterial;
             BaseItem.OnChangedGemOnStaff -= DeterminateGemAndChangeMaterial;
-            MagicAttackStorage.OnResetedGem -= DeterminateGemAndChangeMaterial;
+            MagicAttackStorage.OnResetedGem -= SetGemWithoutCreatingEffect;
         }
     }
 }

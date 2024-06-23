@@ -55,7 +55,7 @@ Material:
     - _R: 0
     - _Size: 0.627
     - _SpeedY: 0.01
-    - _Weight: 0
+    - _Weight: 1
     - _ptlRadius: 0.02
     m_Colors:
     - _AmbientColor: {r: 0.4, g: 0.4, b: 0.4, a: 1}
