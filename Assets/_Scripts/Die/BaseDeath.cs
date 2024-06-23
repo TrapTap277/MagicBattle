@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Threading.Tasks;
 using _Scripts.Health;
 using UnityEngine;
 
@@ -22,7 +21,6 @@ namespace _Scripts.Die
         protected void Death()
         {
             GiveWin();
-
         }
 
         protected abstract void GiveWin();

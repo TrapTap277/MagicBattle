@@ -7,7 +7,7 @@ namespace _Scripts.Die
 {
     public static class DieManager
     {
-        public static event Action<WhoWon> OnSetText;
+        public static event Action<DialogueAnswerType> OnSetText;
 
         public static event Action OnCreatedBoxWithItems;
         public static event Action OnEnteredEnemyInIdle;
@@ -21,15 +21,15 @@ namespace _Scripts.Die
         public static async void AddEnemyDies()
         {
             EnemyDieCount++;
-            await IsSomeoneDied(WhoWon.Player);
-            if (IsGameEnded()) await IfGameEnded(WhoWon.Player);
+            await IsSomeoneDied(DialogueAnswerType.Lose);
+            if (IsGameEnded()) await IfGameEnded(DialogueAnswerType.Lose);
         }
 
         public static async void AddPlayerDies()
         {
             PlayerDieCount++;
-            await IsSomeoneDied(WhoWon.Enemy);
-            if (IsGameEnded()) await IfGameEnded(WhoWon.Enemy);
+            await IsSomeoneDied(DialogueAnswerType.Win);
+            if (IsGameEnded()) await IfGameEnded(DialogueAnswerType.Win);
         }
 
         public static void SetDialogueSwitcher(ISwitchDialogue switchDialogue)
@@ -42,24 +42,24 @@ namespace _Scripts.Die
             return EnemyDieCount >= 3 || PlayerDieCount >= 3;
         }
 
-        private static async Task IfGameEnded(WhoWon whoWon)
+        private static async Task IfGameEnded(DialogueAnswerType dialogueAnswerType)
         {
+            await _switch?.SwitchDialogue(dialogueAnswerType, 1);
             OnPlayedDemonicEffect?.Invoke();
             await Task.Delay(6000);
-            OnSetText?.Invoke(whoWon);
+            OnSetText?.Invoke(dialogueAnswerType);
             await Task.Delay(7000);
             OnSetStats?.Invoke();
         }
 
-        private static async Task IsSomeoneDied(WhoWon whoWon)
+        private static async Task IsSomeoneDied(DialogueAnswerType dialogueAnswerType)
         {
             OnEnteredEnemyInIdle?.Invoke();
             await Task.Delay(3000);
-            _switch?.SwitchDialogue(WhoWon.NoOne);
             await Task.Delay(2000);
-            _switch?.SwitchDialogue(whoWon);
-            await Task.Delay(3000);
+            await _switch?.SwitchDialogue(dialogueAnswerType, 1);
             OnBlockedTransition?.Invoke();
+            await _switch?.SwitchDialogue(DialogueAnswerType.General, 1);
             OnCreatedBoxWithItems?.Invoke();
         }
     }

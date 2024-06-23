@@ -1,9 +1,9 @@
-﻿using _Scripts.EndGame;
+﻿using System.Threading.Tasks;
 
 namespace _Scripts.DialogueSystem
 {
     public interface ISwitchDialogue
     {
-        void SwitchDialogue(WhoWon whoWon);
+        Task SwitchDialogue(DialogueAnswerType whoWon, int count);
     }
 }

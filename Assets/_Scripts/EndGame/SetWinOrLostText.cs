@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using _Scripts.DialogueSystem;
 using _Scripts.Die;
 using DG.Tweening;
 using TMPro;
@@ -13,34 +14,34 @@ namespace _Scripts.EndGame
 
         private const float TimeToChangeColor = 2f;
 
-        private WhoWon _who;
+        private DialogueAnswerType _who;
 
         private void Awake()
         {
             EnableOrDisable(false);
         }
 
-        private void SetText(WhoWon won)
+        private void SetText(DialogueAnswerType dialogueAnswerType)
         {
-            _who = won;
+            _who = dialogueAnswerType;
 
-            var dictionary = new Dictionary<WhoWon, string>
+            var dictionary = new Dictionary<DialogueAnswerType, string>
             {
-                {WhoWon.Player, "You Are Won"},
-                {WhoWon.Enemy, "You Are Lost"}
+                {DialogueAnswerType.Lose, "You Are Won"},
+                {DialogueAnswerType.Win, "You Are Lost"}
             };
 
-            _text.text = dictionary[won];
+            _text.text = dictionary[dialogueAnswerType];
 
             StartCoroutine(EnableOrDisable(true));
         }
 
         private void ChangeColor()
         {
-            if (_who == WhoWon.Enemy)
+            if (_who == DialogueAnswerType.Win)
                 _text.DOColor(Color.red, TimeToChangeColor).OnComplete(FadeText);
 
-            if (_who == WhoWon.Player)
+            if (_who == DialogueAnswerType.Lose)
                 _text.DOColor(Color.green, TimeToChangeColor).OnComplete(FadeText);
         }
 
