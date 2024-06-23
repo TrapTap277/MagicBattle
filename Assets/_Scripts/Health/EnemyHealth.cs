@@ -1,7 +1,6 @@
 using System;
 using _Scripts.Die;
 using _Scripts.Items;
-using _Scripts.Shooting;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -27,21 +26,23 @@ namespace _Scripts.Health
 
         protected override void Died()
         {
-            base.Died();
             DieManager.AddEnemyDies();
             OnDied?.Invoke();
+            base.Died();
         }
 
-        private void OnEnable()
+        protected override void OnEnable()
         {
             HealGemItem.OnHealedEnemy += RestoreHealth;
             ProtectionGemItem.OnGivenProtectionToEnemy += GetProtection;
+            base.OnEnable();
         }
 
-        private void OnDisable()
+        protected override void OnDisable()
         {
             HealGemItem.OnHealedEnemy -= RestoreHealth;
             ProtectionGemItem.OnGivenProtectionToEnemy -= GetProtection;
+            base.OnDisable();
         }
     }
 }

@@ -1,7 +1,6 @@
 using System;
 using _Scripts.Die;
 using _Scripts.Items;
-using _Scripts.Shooting;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -33,16 +32,18 @@ namespace _Scripts.Health
             base.Died();
         }
 
-        private void OnEnable()
+        protected override void OnEnable()
         {
             HealGemItem.OnHealedPlayer += RestoreHealth;
             ProtectionGemItem.OnGivenProtectionToPlayer += GetProtection;
+            base.OnEnable();
         }
 
-        private void OnDisable()
+        protected override void OnDisable()
         {
             HealGemItem.OnHealedPlayer -= RestoreHealth;
             ProtectionGemItem.OnGivenProtectionToPlayer -= GetProtection;
+            base.OnDisable();
         }
     }
 }

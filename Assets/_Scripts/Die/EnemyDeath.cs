@@ -1,4 +1,5 @@
-﻿using _Scripts.Animations;
+﻿using System.Threading.Tasks;
+using _Scripts.Animations;
 using _Scripts.Health;
 using _Scripts.LostScene;
 using UnityEngine;
@@ -20,7 +21,7 @@ namespace _Scripts.Die
             RoundsCounter = _roundsCounter;
         }
 
-        protected override void GiveWin()
+        protected override async void GiveWin()
         {
             var dieUI = new DieUI(RoundsCounter);
 
@@ -28,10 +29,27 @@ namespace _Scripts.Die
 
             AnimationSwitcher<EnemyAnimations, ISwitchAnimation<EnemyAnimations>>.SwitchAnimation(
                 _staffAnimationSwitcher, EnemyAnimations.Death);
+
+            if (DieManager.IsGameEnded()) return;
+
+            await Task.Delay(2000);
+            RestoreHealth();
+            // SwitchEnemyState();
+
+            await Task.Delay(2000);
+
+            AnimationSwitcher<EnemyAnimations, ISwitchAnimation<EnemyAnimations>>.SwitchAnimation(
+                _staffAnimationSwitcher, EnemyAnimations.Idle, 1);
         }
 
-        private void OnEnable() => EnemyHealth.OnDied += Death;
+        private void OnEnable()
+        {
+            EnemyHealth.OnDied += Death;
+        }
 
-        private void OnDisable() => EnemyHealth.OnDied -= Death;
+        private void OnDisable()
+        {
+            EnemyHealth.OnDied -= Death;
+        }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using _Scripts.Items;
+using _Scripts.Particles;
 using _Scripts.Shooting;
 using DG.Tweening;
 using TMPro;
@@ -22,7 +23,6 @@ namespace _Scripts.Health
         protected TextMeshProUGUI HealthInPercents;
         protected Image FrontHealthBar;
         protected Image BackHealthBar;
-        private readonly object _lockObject = new object();
         private static float _damageСoefficient;
         private const float MAXHealth = 100;
         private const float ChipSpeed = 4f;
@@ -53,37 +53,31 @@ namespace _Scripts.Health
 
         public void TakeDamage(float damage)
         {
-            lock (_lockObject)
+            OnDied?.Invoke(false);
+            if (!_isHasProtection)
             {
-                OnDied?.Invoke(false);
-                if (!_isHasProtection)
-                {
-                    var damageСoefficient = damage * _damageСoefficient;
-                    Health -= damageСoefficient;
-                    _didDamage += damageСoefficient;
-                }
-
-                _lerpTimer = 0;
-
-                if (Health <= 0) Died();
-
-                SetHealth();
-                HealthBarLerp();
+                var damageСoefficient = damage * _damageСoefficient;
+                Health -= damageСoefficient;
+                _didDamage += damageСoefficient;
             }
+
+            _lerpTimer = 0;
+
+            if (Health <= 0) Died();
+
+            SetHealth();
+            HealthBarLerp();
         }
 
         public void RestoreHealth(float healthAmount)
         {
-            lock (_lockObject)
-            {
-                Health += healthAmount;
-                _lerpTimer = 0;
-                SetHealth();
-                HealthBarLerp();
-            }
+            Health += healthAmount;
+            _lerpTimer = 0;
+            SetHealth();
+            HealthBarLerp();
         }
 
-        public void ResetProperties()
+        private void ResetProperties()
         {
             _isHasProtection = false;
             _damageСoefficient = 1f;
@@ -101,9 +95,9 @@ namespace _Scripts.Health
 
         protected virtual void Died()
         {
+            OnSetIsSomeoneDied?.Invoke();
             OnDied?.Invoke(true);
             OnChangedDamage?.Invoke(_didDamage);
-            OnSetIsSomeoneDied?.Invoke();
         }
 
         private void SetHealth()
@@ -158,14 +152,18 @@ namespace _Scripts.Health
             BackHealthBar.color = color;
         }
 
-        private void OnEnable()
+        protected virtual void OnEnable()
         {
             DamageGemItem.OnTakeMoreDamage += TakeMoreDamage;
+            ParticleCollision.OnResetedProperties += ResetProperties;
+            BaseShoot.OnResetedItems += ResetProperties;
         }
 
-        private void OnDisable()
+        protected virtual void OnDisable()
         {
             DamageGemItem.OnTakeMoreDamage -= TakeMoreDamage;
+            ParticleCollision.OnResetedProperties -= ResetProperties;
+            BaseShoot.OnResetedItems -= ResetProperties;
         }
     }
 }
