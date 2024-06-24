@@ -2,12 +2,122 @@
 <project version="4">
   <component name="ContentModelStore">
     <e p="C:\Unity\MagicBattle\MagicBattle" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="_Assets" t="Include">
           <e p="AdventureForge" t="Include">
             <e p="FantasyStaffReadme.txt" t="Include" />
+          </e>
+          <e p="Effects" t="Include">
+            <e p="KriptoFX" t="Include">
+              <e p="Realistic Effects Pack v4" t="Include">
+                <e p="Effects" t="Include">
+                  <e p="Scripts" t="Include">
+                    <e p="Curves" t="Include">
+                      <e p="RFX4_AudioCurves.cs" t="Include" />
+                      <e p="RFX4_LightCurves.cs" t="Include" />
+                      <e p="RFX4_PhysicsForceCurves.cs" t="Include" />
+                      <e p="RFX4_ScaleCurves.cs" t="Include" />
+                      <e p="RFX4_ShaderColorGradient.cs" t="Include" />
+                      <e p="RFX4_ShaderFloatCurve.cs" t="Include" />
+                      <e p="RFX4_ShaderProperties.cs" t="Include" />
+                      <e p="RFX4_WindCurves.cs" t="Include" />
+                    </e>
+                    <e p="Editor" t="Include">
+                      <e p="RFX4_CustomMaterialInspectorParticle.cs" t="Include" />
+                      <e p="RFX4_ReplaceDistortionForMobile.cs" t="Include" />
+                      <e p="RFX4_Unity_Pain.cs" t="Include" />
+                    </e>
+                    <e p="EffectSettings" t="Include">
+                      <e p="RFX4_EffectSettings.cs" t="Include" />
+                      <e p="RFX4_EffectSettingsInspector.cs" t="Include" />
+                    </e>
+                    <e p="ParticleSysem" t="Include">
+                      <e p="RFX4_CollisionPropertyDeactiavtion.cs" t="Include" />
+                      <e p="RFX4_ParticleGravityDelay.cs" t="Include" />
+                      <e p="RFX4_ParticleLight.cs" t="Include" />
+                      <e p="RFX4_ParticleTrail.cs" t="Include" />
+                      <e p="RFX4_Turbulence.cs" t="Include" />
+                    </e>
+                    <e p="Rendering" t="Include">
+                      <e p="RFX4_MobileDistortion.cs" t="Include" />
+                      <e p="RFX4_PerPlatformSettings.cs" t="Include" />
+                      <e p="RFX4_RenderTransparentDistortion.cs" t="Include" />
+                    </e>
+                    <e p="RFX4_CameraShake.cs" t="Include" />
+                    <e p="RFX4_ColorHelper.cs" t="Include" />
+                    <e p="RFX4_CopyPosition.cs" t="Include" />
+                    <e p="RFX4_CustomLight.cs" t="Include" />
+                    <e p="RFX4_DeactivateByTime.cs" t="Include" />
+                    <e p="RFX4_DeactivateRigidbodyByTime.cs" t="Include" />
+                    <e p="RFX4_Decal.cs" t="Include" />
+                    <e p="RFX4_DemoReactivation.cs" t="Include" />
+                    <e p="RFX4_EffectEvent.cs" t="Include" />
+                    <e p="RFX4_MaterialQueue.cs" t="Include" />
+                    <e p="RFX4_OnEnableResetTransform.cs" t="Include" />
+                    <e p="RFX4_ParticleCollisionGameObject.cs" t="Include" />
+                    <e p="RFX4_ParticleGravityPoint.cs" t="Include" />
+                    <e p="RFX4_PhysicsMotion.cs" t="Include" />
+                    <e p="RFX4_PhysXSetImpulse.cs" t="Include" />
+                    <e p="RFX4_RaycastCollision.cs" t="Include" />
+                    <e p="RFX4_ReplaceModelOnCollision.cs" t="Include" />
+                    <e p="RFX4_RotateAround.cs" t="Include" />
+                    <e p="RFX4_StartDelay.cs" t="Include" />
+                    <e p="RFX4_TextureShaderProperties.cs" t="Include" />
+                    <e p="RFX4_TornadoParticles.cs" t="Include" />
+                    <e p="RFX4_TrailRenderer.cs" t="Include" />
+                    <e p="RFX4_UVAnimation.cs" t="Include" />
+                    <e p="RFX4_UVScroll.cs" t="Include" />
+                  </e>
+                  <e p="Shaders" t="Include">
+                    <e p="DemoMobileDiffuse.shader" t="Include" />
+                    <e p="Editor" t="Include">
+                      <e p="RFX4_UberDecalGUI.cs" t="Include" />
+                      <e p="RFX4_UberDistortionGUI.cs" t="Include" />
+                      <e p="RFX4_UberParticleGUI.cs" t="Include" />
+                    </e>
+                    <e p="Portal" t="Include">
+                      <e p="NoStencilTransperentDiffuse.shader" t="Include" />
+                      <e p="RFX4_PortalMask.shader" t="Include" />
+                      <e p="RFX4_PortalRock.shader" t="Include" />
+                      <e p="RFX4_PortalRockStencil.shader" t="Include" />
+                      <e p="RFX4_PortalSky.shader" t="Include" />
+                      <e p="RFX4_TranperentDiffuse.shader" t="Include" />
+                    </e>
+                    <e p="RFX4_CutoutBorder.shader" t="Include" />
+                    <e p="RFX4_DepthMask.shader" t="Include" />
+                    <e p="RFX4_Lightning.shader" t="Include" />
+                    <e p="RFX4_Tornado.shader" t="Include" />
+                    <e p="RFX4_UberDecal.shader" t="Include" />
+                    <e p="RFX4_UberDistortion.shader" t="Include" />
+                    <e p="RFX4_UberParticleShader.shader" t="Include" />
+                  </e>
+                </e>
+                <e p="ImagePostEffects" t="Include">
+                  <e p="Mobile" t="Include">
+                    <e p="Resources" t="Include">
+                      <e p="RFX4_Bloom.shader" t="Include" />
+                      <e p="RFX4_Bloom_Inc.cginc" t="Include" />
+                    </e>
+                    <e p="RFX4_MobileBloom.cs" t="Include" />
+                  </e>
+                </e>
+                <e p="ReadMe.txt" t="Include" />
+                <e p="SceneResources" t="Include">
+                  <e p="Other" t="Include">
+                    <e p="CullOffMobileDiffuse.shader" t="Include" />
+                    <e p="FPS.cs" t="Include" />
+                    <e p="RFX4_Debug.cs" t="Include" />
+                    <e p="RFX4_DemoGUI.cs" t="Include" />
+                    <e p="RFX4_FPS.cs" t="Include" />
+                    <e p="RFX4_MouseOrbit.cs" t="Include" />
+                    <e p="RFX4_RealtimeReflection.cs" t="Include" />
+                  </e>
+                </e>
+              </e>
+            </e>
           </e>
           <e p="TextMesh Pro" t="Include">
             <e p="Fonts" t="Include">
@@ -57,27 +167,58 @@
           </e>
         </e>
         <e p="_Scripts" t="Include">
+          <e p="Animations" t="Include">
+            <e p="AnimationSwitcher.cs" t="Include" />
+            <e p="BaseAnimationSwitcher.cs" t="Include" />
+            <e p="Enemy.cs" t="Include" />
+            <e p="EnemyAnimations.cs" t="Include" />
+            <e p="EnemyAnimationSwitcher.cs" t="Include" />
+            <e p="GemAnimations.cs" t="Include" />
+            <e p="GemAnimationSwitcher.cs" t="Include" />
+            <e p="StaffAnimations.cs" t="Include" />
+            <e p="StaffAnimationSwitcher.cs" t="Include" />
+          </e>
           <e p="AttackMoveStateMachine" t="Include">
+            <e p="AttackButtonsController.cs" t="Include" />
             <e p="MoveTransition.cs" t="Include" />
           </e>
           <e p="Attacks" t="Include">
+            <e p="AttackShowAndFade.cs" t="Include" />
+            <e p="IChangeColor.cs" t="Include" />
+            <e p="IGenerateMagicAttacks.cs" t="Include" />
             <e p="MagicAttackStorage.cs" t="Include" />
             <e p="MagicAttackUI.cs" t="Include" />
           </e>
           <e p="BoxWithItems" t="Include">
+            <e p="BoxAnimationController.cs" t="Include" />
             <e p="BoxWithItems.cs" t="Include" />
             <e p="CreateBox.cs" t="Include" />
+            <e p="IMoveBox.cs" t="Include" />
+            <e p="MoveBox.cs" t="Include" />
             <e p="MoveBoxWithTween.cs" t="Include" />
           </e>
           <e p="Camera" t="Include">
             <e p="CameraChangeRotation.cs" t="Include" />
           </e>
+          <e p="DialogueSystem" t="Include">
+            <e p="DialogueAnswerType.cs" t="Include" />
+            <e p="DialogueStorage.cs" t="Include" />
+            <e p="ISwitchDialogue.cs" t="Include" />
+          </e>
           <e p="Die" t="Include">
             <e p="BaseDeath.cs" t="Include" />
-            <e p="DieCounter.cs" t="Include" />
+            <e p="DieManager.cs" t="Include" />
             <e p="DieUI.cs" t="Include" />
             <e p="EnemyDeath.cs" t="Include" />
             <e p="PlayerDeath.cs" t="Include" />
+          </e>
+          <e p="DisableGameobject" t="Include">
+            <e p="OpenCloseManager.cs" t="Include" />
+          </e>
+          <e p="EndGame" t="Include">
+            <e p="PlayDemonicEffect.cs" t="Include" />
+            <e p="SetWinOrLostText.cs" t="Include" />
+            <e p="WhoWon.cs" t="Include" />
           </e>
           <e p="Enemy" t="Include">
             <e p="EnemyAttackState.cs" t="Include" />
@@ -91,6 +232,7 @@
             <e p="EnemyHealth.cs" t="Include" />
             <e p="GiveLive.cs" t="Include" />
             <e p="HealthBase.cs" t="Include" />
+            <e p="IShow.cs" t="Include" />
             <e p="PlayerHealth.cs" t="Include" />
           </e>
           <e p="Items" t="Include">
@@ -103,17 +245,49 @@
             <e p="FramesActivator.cs" t="Include" />
             <e p="GenerateRandomItem.cs" t="Include" />
             <e p="HealGemItem.cs" t="Include" />
-            <e p="IInit.cs" t="Include" />
             <e p="IInitAndDeinitUseItem.cs" t="Include" />
+            <e p="IInitItem.cs" t="Include" />
             <e p="PlayerUseItem.cs" t="Include" />
             <e p="ProtectionGemItem.cs" t="Include" />
             <e p="SecondMoveGemItem.cs" t="Include" />
             <e p="SecondMoveTurn.cs" t="Include" />
             <e p="SquareFrame.cs" t="Include" />
           </e>
+          <e p="LostScene" t="Include">
+            <e p="BaseUseMagic.cs" t="Include" />
+            <e p="Darkness.cs" t="Include" />
+            <e p="DissolveDOor.cs" t="Include" />
+            <e p="EffectExplosion.cs" t="Include" />
+            <e p="EnemyUseMagic.cs" t="Include" />
+            <e p="IChangeAnimation.cs" t="Include" />
+            <e p="IOpenCloseManager.cs" t="Include" />
+            <e p="ISwitchAnimation.cs" t="Include" />
+            <e p="IUseMagic.cs" t="Include" />
+            <e p="PassingLevel.cs" t="Include" />
+            <e p="PassingLevelFactory.cs" t="Include" />
+            <e p="PlayerUseMagic.cs" t="Include" />
+            <e p="SetPassingLevel.cs" t="Include" />
+          </e>
+          <e p="MainMenu" t="Include">
+            <e p="MusicButton.cs" t="Include" />
+            <e p="QuitButton.cs" t="Include" />
+            <e p="SettingsButton.cs" t="Include" />
+            <e p="VignetteLerp.cs" t="Include" />
+          </e>
+          <e p="Move" t="Include">
+            <e p="GoToPortal.cs" t="Include" />
+          </e>
+          <e p="Music" t="Include">
+            <e p="ChangeMusicVolume.cs" t="Include" />
+            <e p="ChangeSlider.cs" t="Include" />
+          </e>
+          <e p="Particles" t="Include">
+            <e p="ParticleCollision.cs" t="Include" />
+          </e>
           <e p="Shooting" t="Include">
             <e p="BaseShoot.cs" t="Include" />
             <e p="IEnemyStateSwitcher.cs" t="Include" />
+            <e p="IInit.cs" t="Include" />
             <e p="IShoot.cs" t="Include" />
             <e p="ShootInEnemy.cs" t="Include" />
             <e p="ShootInPlayer.cs" t="Include" />
@@ -122,7 +296,34 @@
             <e p="SwitchEnemyStateWithShootingInPlayer.cs" t="Include" />
           </e>
           <e p="Staff" t="Include">
-            <e p="Staff.cs" t="Include" />
+            <e p="ChangeGemPositions.cs" t="Include" />
+            <e p="Gem.cs" t="Include" />
+            <e p="ISetGem.cs" t="Include" />
+            <e p="ISetPositions.cs" t="Include" />
+            <e p="StaffChangePositions.cs" t="Include" />
+            <e p="StaffGemChanger.cs" t="Include" />
+          </e>
+          <e p="StartGame" t="Include">
+            <e p="GameStartManager.cs" t="Include" />
+          </e>
+          <e p="Stats" t="Include">
+            <e p="EndGameStatistics.cs" t="Include" />
+            <e p="IEnableDisableManager.cs" t="Include" />
+            <e p="ShowOrFadeEnableDisable.cs" t="Include" />
+          </e>
+          <e p="SwitchScene" t="Include">
+            <e p="ChangeScene.cs" t="Include" />
+          </e>
+          <e p="UI" t="Include">
+            <e p="AddUseButton.cs" t="Include" />
+            <e p="IInstantiate.cs" t="Include" />
+          </e>
+        </e>
+        <e p="DisolveEffect" t="Include">
+          <e p="Elements" t="Include">
+            <e p="Shaders" t="Include">
+              <e p="Disintegration.shader" t="Include" />
+            </e>
           </e>
         </e>
         <e p="Plugins" t="Include">
