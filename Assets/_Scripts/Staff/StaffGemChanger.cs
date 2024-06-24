@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using _Scripts.Attacks;
 using _Scripts.Items;
 using _Scripts.Shooting;
@@ -9,30 +10,30 @@ namespace _Scripts.Staff
     public class StaffGemChanger : MonoBehaviour, IInit
     {
         [SerializeField] private RFX4_EffectSettings _effectPrefab;
-        [SerializeField] private MeshRenderer _gemMeshRenderer;
 
-        [SerializeField] private Material _none;
-        [SerializeField] private Material _falseAttack;
-        [SerializeField] private Material _trueAttack;
-        [SerializeField] private Material _healItem;
-        [SerializeField] private Material _damageItem;
-        [SerializeField] private Material _secondMoveItem;
-        [SerializeField] private Material _protectionItem;
-
-        private Dictionary<Gem, Material> _gemMaterial;
         private Dictionary<Gem, Color> _effectColor;
+        private MeshRenderer _gemMeshRenderer;
 
+        private Color _startColor;
+        private static readonly int EmissionColor = Shader.PropertyToID("_EmissionColor");
+
+        private void Awake()
+        {
+            Init();
+        }
 
         public void Init()
         {
+            _gemMeshRenderer = GetComponent<MeshRenderer>();
             InitDictionaries();
+            ChangeColorMaterial(_effectColor[Gem.None]);
         }
 
         private void DeterminateGemAndChangeMaterial(Gem gem)
         {
-            if (_gemMaterial.TryGetValue(gem, out var material) && _effectColor.TryGetValue(gem, out var color))
+            if (_effectColor.TryGetValue(gem, out var color))
             {
-                ChangeMaterial(material);
+                ChangeColorMaterial(color);
                 CreateGemEffectWithColor(color);
             }
             else
@@ -54,35 +55,24 @@ namespace _Scripts.Staff
         {
             _effectPrefab.EffectColor = color;
 
-            var newEffect =
-                Instantiate(_effectPrefab, gemMeshTransform.position, Quaternion.identity, gemMeshTransform);
+            var newEffect = Instantiate(_effectPrefab, gemMeshTransform.position, Quaternion.identity,
+                gemMeshTransform);
             return newEffect;
         }
 
         private void SetGemWithoutCreatingEffect(Gem gem)
         {
-            ChangeMaterial(_gemMaterial[gem]);
-        } 
+            ChangeColorMaterial(_effectColor[gem]);
+        }
 
-        private void ChangeMaterial(Material material = null)
+        private void ChangeColorMaterial(Color color)
         {
-            _gemMeshRenderer.material = material;
+            _startColor = _gemMeshRenderer.material.GetColor(EmissionColor);
+            _gemMeshRenderer.material.SetColor(EmissionColor, color);
         }
 
         private void InitDictionaries()
         {
-            _gemMaterial = new Dictionary<Gem, Material>
-            {
-                {Gem.None, _none},
-                {Gem.TrueAttack, _trueAttack},
-                {Gem.FalseAttack, _falseAttack},
-                {Gem.Heal, _healItem},
-                {Gem.Damage, _damageItem},
-                {Gem.Protection, _protectionItem},
-                {Gem.SecondMove, _secondMoveItem}
-            };
-
-
             _effectColor = new Dictionary<Gem, Color>
             {
                 {Gem.None, Color.gray},
@@ -107,6 +97,11 @@ namespace _Scripts.Staff
             BaseShoot.OnChangedGemOnStaff -= DeterminateGemAndChangeMaterial;
             BaseItem.OnChangedGemOnStaff -= DeterminateGemAndChangeMaterial;
             MagicAttackStorage.OnResetedGem -= SetGemWithoutCreatingEffect;
+        }
+
+        private void OnApplicationQuit()
+        {
+            _gemMeshRenderer.material.SetColor("_Emission", _startColor);
         }
     }
 }

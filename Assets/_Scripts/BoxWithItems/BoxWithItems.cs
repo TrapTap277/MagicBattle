@@ -52,7 +52,6 @@ namespace _Scripts.BoxWithItems
             OnBlocked?.Invoke(false);
             OnGeneratedAttacks?.Invoke();
             await Task.Delay(3000);
-            //DestroyBox();
         }
 
         private void SwitchStaffAnimations(StaffAnimations staffAnimation, GemAnimations gemAnimation)
@@ -63,12 +62,6 @@ namespace _Scripts.BoxWithItems
             AnimationSwitcher<GemAnimations, ISwitchAnimation<GemAnimations>>
                 .SwitchAnimation(_gemAnimationSwitcher, gemAnimation);
         }
-
-        // private void DestroyBox()
-        // {
-        //     if (gameObject != null)
-        //         Destroy(gameObject);
-        // }
 
         private void InitBoxManager()
         {

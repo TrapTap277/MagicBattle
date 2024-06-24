@@ -46,16 +46,21 @@ namespace _Scripts.BoxWithItems
 
         private async void MoveDown(string key, WhoWon whoWon)
         {
-            if (gameObject == null || key == null || !gameObject.TryGetComponent(out MoveBox moveBox)) return;
+            if (this == null || gameObject == null) return;
+            if (!gameObject.TryGetComponent(out MoveBox moveBox)) return;
+    
             MoveBoxWithTween.MoveBox(gameObject.transform, moveBox.GetTransform(key));
 
             await Task.Delay(1000);
+
+            if (this == null || gameObject == null) return;
 
             if (whoWon == WhoWon.Player) InvokeAction(OnChangedCameraRotationToDefault);
 
             await Task.Delay(1000);
 
-            if (gameObject != null) Destroy(gameObject);
+            if (this == null || gameObject == null) return;
+            Destroy(gameObject);
         }
 
         private void MoveUp()

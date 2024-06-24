@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using _Scripts.Animations;
 using _Scripts.Enemy;
@@ -21,7 +22,10 @@ namespace _Scripts.AttackMoveStateMachine
         private void Awake()
         {
             InitManagers();
-            
+        }
+
+        private void Start()
+        {
             SetPositions(MoveTurn.Player);
         }
 
