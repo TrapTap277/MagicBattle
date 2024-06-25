@@ -1,5 +1,4 @@
-﻿using System;
-using DG.Tweening;
+﻿using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,8 +6,8 @@ namespace _Scripts.MainMenu
 {
     public class SettingsButton : MonoBehaviour
     {
-        [SerializeField] private CanvasGroup _otherButtons;
-        [SerializeField] private CanvasGroup _settingsButtons;
+        [SerializeField] private CanvasGroup _otherButtonsCanvasGroup;
+        [SerializeField] private CanvasGroup _settingsCanvasGroup;
         [SerializeField] private Button _settingsButton;
 
         private const float TimeToFade = 1f;
@@ -20,10 +19,12 @@ namespace _Scripts.MainMenu
 
         public void CloseSettingsMenu()
         {
-            ShowAndFadeButtons(_settingsButtons, _otherButtons);
+            ShowAndFadeButtons(_settingsCanvasGroup, _otherButtonsCanvasGroup);
+            _otherButtonsCanvasGroup.blocksRaycasts = true;
         }
 
-        private static void ShowAndFadeButtons(CanvasGroup firstButtons, CanvasGroup secondButtons, int firstValue = 0, int secondValue = 1)
+        private static void ShowAndFadeButtons(CanvasGroup firstButtons, CanvasGroup secondButtons, int firstValue = 0,
+            int secondValue = 1)
         {
             var fade = DOTween.Sequence();
 
@@ -33,12 +34,13 @@ namespace _Scripts.MainMenu
 
         private void OpenSettingsMenu()
         {
-            ShowAndFadeButtons(_otherButtons, _settingsButtons);
+            ShowAndFadeButtons(_otherButtonsCanvasGroup, _settingsCanvasGroup);
+            _otherButtonsCanvasGroup.blocksRaycasts = false;
         }
 
         private void FadeAllButtons()
         {
-            ShowAndFadeButtons(_settingsButtons, _otherButtons, 0, 0);
+            ShowAndFadeButtons(_settingsCanvasGroup, _otherButtonsCanvasGroup, 0, 0);
         }
 
         private void OnEnable()
