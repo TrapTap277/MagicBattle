@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using _Scripts.Die;
+using _Scripts.Stats;
 using TMPro;
 using UnityEngine;
 
@@ -15,12 +16,15 @@ namespace _Scripts.DialogueSystem
         [SerializeField] private TextMeshProUGUI _text;
         [SerializeField] private int _textShowingSpeed;
 
+        private IEnableDisableManager _backGround;
+
         private int _generalIndex;
         private int _enemyWinIndex;
         private int _enemyLoseIndex;
 
         private void Awake()
         {
+            _backGround = FindObjectOfType<FadeOrShowDialogueBackGround>();
             DieManager.SetDialogueSwitcher(this);
 
             StopAllCoroutines();
@@ -28,11 +32,17 @@ namespace _Scripts.DialogueSystem
 
         public async Task SwitchDialogue(DialogueAnswerType answerType, int count)
         {
+            _backGround?.Show();
+            await Task.Delay(2500);
+
             for (var i = 0; i < count; i++)
             {
                 await Switch(answerType);
                 await Task.Delay(1000);
             }
+
+            await Task.Delay(500);
+            _backGround?.Fade();
         }
 
         private async Task Switch(DialogueAnswerType answerType)
