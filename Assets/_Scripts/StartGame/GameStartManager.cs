@@ -13,7 +13,7 @@ namespace _Scripts.StartGame
     public class GameStartManager : MonoBehaviour
     {
         [SerializeField] private int _countDialogues;
-        
+
         private IGenerateMagicAttacks _generateMagicAttacks;
         private IEnableDisableManager _enableDisableManager;
         private ISwitchDialogue _switchDialogue;
@@ -34,8 +34,8 @@ namespace _Scripts.StartGame
         private async void StartGame()
         {
             await _switchDialogue?.SwitchDialogue(DialogueAnswerType.General, _countDialogues);
-            await Task.Delay(5000);
-
+            _switchDialogue?.Fade();
+            await Task.Delay(1000);
             ShowHealth();
             await Task.Delay(1200);
             _initStaffGemChanger?.Init();

@@ -27,7 +27,7 @@ namespace _Scripts.DialogueSystem
             _backGround = FindObjectOfType<FadeOrShowDialogueBackGround>();
             DieManager.SetDialogueSwitcher(this);
 
-            StopAllCoroutines();
+            //StopAllCoroutines();
         }
 
         public async Task SwitchDialogue(DialogueAnswerType answerType, int count)
@@ -42,6 +42,10 @@ namespace _Scripts.DialogueSystem
             }
 
             await Task.Delay(500);
+        }
+
+        public void Fade()
+        {
             _backGround?.Fade();
         }
 
