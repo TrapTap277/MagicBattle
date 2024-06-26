@@ -46,6 +46,8 @@ namespace _Scripts.Die
         private static async Task IfGameEnded(DialogueAnswerType dialogueAnswerType)
         {
             await _switch?.SwitchDialogue(dialogueAnswerType, 1);
+            await Task.Delay(1000);
+            _switch?.Fade();
             OnPlayedDemonicEffect?.Invoke();
             await Task.Delay(6000);
             OnSetText?.Invoke(dialogueAnswerType);
