@@ -15,7 +15,7 @@ namespace _Scripts.SwitchScene
 
         private void Start()
         {
-            _enableDisableManager = FindObjectOfType<ShowOrFadeEnableDisable>();
+            _enableDisableManager = FindObjectOfType<StatsShowAndFade>();
             _changeAnimation = FindObjectOfType<Darkness>();
         }
 
