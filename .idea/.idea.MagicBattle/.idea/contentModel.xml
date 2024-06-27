@@ -166,6 +166,22 @@
             <e p="ReadMe.txt" t="Include" />
           </e>
         </e>
+        <e p="_CrackedRocks" t="Include">
+          <e p="__CubemapsShaders" t="Include">
+            <e p="ASE_Standart.shader" t="Include" />
+            <e p="ASE_Standart2Sided.shader" t="Include" />
+            <e p="ASE_Standart2SidedSimple.shader" t="Include" />
+            <e p="ASE_StandartArray.shader" t="Include" />
+            <e p="ASE_StandartCutoutMoss.shader" t="Include" />
+            <e p="ASE_StandartInnerGlow.shader" t="Include" />
+            <e p="ASE_StandartLava.shader" t="Include" />
+            <e p="ASE_StandartMaskedDetails.shader" t="Include" />
+            <e p="ASE_StandartMaskedDetailsRim.shader" t="Include" />
+            <e p="ASE_StandartTransparent.shader" t="Include" />
+            <e p="ASE_StandartTransparentAdditive.shader" t="Include" />
+            <e p="ASE_StandartVertexCDetails.shader" t="Include" />
+          </e>
+        </e>
         <e p="_Scripts" t="Include">
           <e p="Animations" t="Include">
             <e p="AnimationSwitcher.cs" t="Include" />
@@ -203,6 +219,7 @@
           <e p="DialogueSystem" t="Include">
             <e p="DialogueAnswerType.cs" t="Include" />
             <e p="DialogueStorage.cs" t="Include" />
+            <e p="FadeOrShowDialogueBackGround.cs" t="Include" />
             <e p="ISwitchDialogue.cs" t="Include" />
           </e>
           <e p="Die" t="Include">
@@ -272,6 +289,7 @@
             <e p="MusicButton.cs" t="Include" />
             <e p="QuitButton.cs" t="Include" />
             <e p="SettingsButton.cs" t="Include" />
+            <e p="ShowVignette.cs" t="Include" />
             <e p="VignetteLerp.cs" t="Include" />
           </e>
           <e p="Move" t="Include">
@@ -309,7 +327,7 @@
           <e p="Stats" t="Include">
             <e p="EndGameStatistics.cs" t="Include" />
             <e p="IEnableDisableManager.cs" t="Include" />
-            <e p="ShowOrFadeEnableDisable.cs" t="Include" />
+            <e p="StatsShowAndFade.cs" t="Include" />
           </e>
           <e p="SwitchScene" t="Include">
             <e p="ChangeScene.cs" t="Include" />

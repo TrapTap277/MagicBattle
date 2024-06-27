@@ -1,4 +1,5 @@
-﻿using _Scripts.Enemy;
+﻿using System;
+using _Scripts.Enemy;
 using UnityEngine;
 
 namespace _Scripts.Items
@@ -8,12 +9,18 @@ namespace _Scripts.Items
         [SerializeField] private GameObject _itemParent;
         [SerializeField] private CurrentItem _currentItem;
 
+        private const int MaximumItemsCount = 8;
+
         public void CreateWithItemsCount(int itemsCount)
         {
-            for (var i = 0; i < itemsCount; i++)
+            var currentCount = _itemParent.transform.childCount;
+
+            var itemsToAdd = Mathf.Clamp(itemsCount, 0, MaximumItemsCount - currentCount);
+
+            for (var i = 0; i < itemsToAdd; i++)
             {
                 var currentItem = GenerateRandomItem.Generate();
-                EnemyUseItemState.AddItems(GenerateRandomItem.Generate());
+                EnemyUseItemState.AddItems(currentItem);
                 InstantiateItem(currentItem);
             }
         }

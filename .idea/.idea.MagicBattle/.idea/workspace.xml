@@ -24,26 +24,11 @@
   <component name="ChangeListManager">
     <list default="true" id="a27b7c11-43cf-491c-becf-76115ceca5b7" name="Default Changelist" comment="Created Items">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MagicBattle/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MagicBattle/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.MagicBattle/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MagicBattle/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MagicBattle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MagicBattle/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DisolveEffect/Staff/DisintegrationDBody 2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DisolveEffect/Staff/DisintegrationDBody 2.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Animations/Gem/Dissolve.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Animations/Gem/Dissolve.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Animations/Gem/Dissolved.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Animations/Gem/Dissolved.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Animations/Gem/UnDissolve.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Animations/Gem/UnDissolve.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Animations/Gem/UnDissolved.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Animations/Gem/UnDissolved.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Animations/Staff/DIssolvedStaff.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Animations/Staff/DIssolvedStaff.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Animations/Staff/Disolve.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Animations/Staff/Disolve.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Animations/Staff/UnDissolveStaff.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Animations/Staff/UnDissolveStaff.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Animations/Staff/UnDissolvedStaff.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Animations/Staff/UnDissolvedStaff.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Assets/AdventureForge/Geometry/Metalstaff01/Materials/512/MetalstaffCasing512MA.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Assets/AdventureForge/Geometry/Metalstaff01/Materials/512/MetalstaffCasing512MA.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Assets/AdventureForge/Geometry/Metalstaff01/Materials/512/MetalstaffInnerGem512MA.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Assets/AdventureForge/Geometry/Metalstaff01/Materials/512/MetalstaffInnerGem512MA.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Assets/AdventureForge/Geometry/Metalstaff01/Materials/512/MetalstaffRing512MA.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Assets/AdventureForge/Geometry/Metalstaff01/Materials/512/MetalstaffRing512MA.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Assets/AdventureForge/Geometry/Metalstaff01/Materials/512/MetalstaffRod512MA.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Assets/AdventureForge/Geometry/Metalstaff01/Materials/512/MetalstaffRod512MA.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Scenes/_MagicScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scenes/_MagicScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/AttackMoveStateMachine/MoveTransition.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/AttackMoveStateMachine/MoveTransition.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/BoxWithItems/BoxWithItems.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/BoxWithItems/BoxWithItems.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/BoxWithItems/MoveBox.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/BoxWithItems/MoveBox.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Staff/StaffChangePositions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Staff/StaffChangePositions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Staff/StaffGemChanger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Staff/StaffGemChanger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Items/CreateItemsUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Items/CreateItemsUI.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +77,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/_Scripts/LostScene/EnemyUseMagic.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/LostScene/DissolveDOor.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Particles/ParticleDealDamage.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/LostScene/PassingLevel.cs" />
@@ -143,6 +127,7 @@
         <option value="$PROJECT_DIR$/Assets/_Scripts/BoxWithItems/BoxWithItems.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/BoxWithItems/MoveBox.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Staff/StaffChangePositions.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Items/CreateItemsUI.cs" />
       </list>
     </option>
   </component>
@@ -174,6 +159,14 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor &amp; Play">
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/Build\MagicBattle.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="C:\Unity\MagicBattle\MagicBattle\Build" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
@@ -232,6 +225,7 @@
       <workItem from="1719039823402" duration="35759000" />
       <workItem from="1719122933039" duration="34101000" />
       <workItem from="1719216330884" duration="2451000" />
+      <workItem from="1719483469654" duration="4100000" />
     </task>
     <task id="LOCAL-00001" summary="Attack With Buttons">
       <created>1716712058302</created>
