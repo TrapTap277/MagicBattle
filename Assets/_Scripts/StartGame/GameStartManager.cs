@@ -1,8 +1,7 @@
-﻿using System.Collections;
+﻿using System.Threading.Tasks;
 using _Scripts.AttackMoveStateMachine;
 using _Scripts.Attacks;
 using _Scripts.DialogueSystem;
-using _Scripts.EndGame;
 using _Scripts.Health;
 using _Scripts.Shooting;
 using _Scripts.Staff;
@@ -13,6 +12,8 @@ namespace _Scripts.StartGame
 {
     public class GameStartManager : MonoBehaviour
     {
+        [SerializeField] private int _countDialogues;
+
         private IGenerateMagicAttacks _generateMagicAttacks;
         private IEnableDisableManager _enableDisableManager;
         private ISwitchDialogue _switchDialogue;
@@ -27,24 +28,21 @@ namespace _Scripts.StartGame
 
         private void Start()
         {
-            StartCoroutine(StartGame());
+            StartGame();
         }
 
-        private IEnumerator StartGame()
+        private async void StartGame()
         {
-            _switchDialogue?.SwitchDialogue(WhoWon.NoOne);
-            yield return new WaitForSeconds(2);
-            _switchDialogue?.SwitchDialogue(WhoWon.NoOne);
-            yield return new WaitForSeconds(2);
-            _switchDialogue?.SwitchDialogue(WhoWon.NoOne);
-            yield return new WaitForSeconds(2);
+            await _switchDialogue?.SwitchDialogue(DialogueAnswerType.General, _countDialogues);
+            _switchDialogue?.Fade();
+            await Task.Delay(1000);
             ShowHealth();
-            yield return new WaitForSeconds(1.2f);
+            await Task.Delay(1200);
             _initStaffGemChanger?.Init();
-            yield return new WaitForSeconds(1);
+            await Task.Delay(1000);
             _initShootInvoker?.Init();
             _enableDisableManager?.Show();
-            yield return new WaitForSeconds(0.5f);
+            await Task.Delay(500);
             _generateMagicAttacks?.GenerateMagicAttacks();
         }
 

@@ -8,9 +8,9 @@ namespace _Scripts.Attacks
     {
         private const int ShowEndValue = 1;
         private const int FadeEndValue = 0;
-        private const int TimeToShow = 2;
+        private const int TimeToShow = 1;
         private const int TimeToFade = 2;
-        
+
         public void Show()
         {
             FadeOrShowAttackButtons(ShowEndValue);

@@ -30,8 +30,8 @@ namespace _Scripts.AttackMoveStateMachine
         private void FadeOrShowAttackButtons(float endValue, bool isBlock)
         {
             var move = DOTween.Sequence();
-            move.Append(_attackPanel.DOFade(endValue, 1));
             EnablePanel(isBlock);
+            move.Append(_attackPanel.DOFade(endValue, 1));
         }
 
         private void EnablePanel(bool isBlock)

@@ -1,6 +1,4 @@
-﻿using System.Threading.Tasks;
-using _Scripts.Animations;
-using _Scripts.Enemy;
+﻿using System;
 using _Scripts.Health;
 using UnityEngine;
 
@@ -8,7 +6,8 @@ namespace _Scripts.Die
 {
     public abstract class BaseDeath : MonoBehaviour
     {
-        protected EnemyStateMachine StateMachine;
+        public static event Action OnReseted;
+
         protected GiveLive GiveLive;
         protected CanvasGroup RoundsCounter;
 
@@ -22,22 +21,18 @@ namespace _Scripts.Die
         protected void Death()
         {
             GiveWin();
-            SwitchEnemyState();
-            RestoreHealth();
         }
 
         protected abstract void GiveWin();
 
-        private async void RestoreHealth()
+        protected void RestoreHealth()
         {
-            await Task.Delay(2000);
             GiveLive.RestoreHealth(200);
         }
 
-        private void SwitchEnemyState()
+        protected static void SwitchEnemyState()
         {
-            StateMachine.SetMoveTurn(MoveTurn.Player);
-            StateMachine.SwitchState(StateMachine.IdleState);
+            OnReseted?.Invoke();
         }
     }
 }

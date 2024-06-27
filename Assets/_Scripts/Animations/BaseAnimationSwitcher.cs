@@ -11,9 +11,9 @@ namespace _Scripts.Animations
 
         protected abstract void InitList();
 
-        protected void CrossFade(int randomNumber)
+        protected void CrossFade(int randomNumber, float timeToTransition = 0)
         {
-            _animator.CrossFade(randomNumber, 0);
+            _animator.CrossFade(randomNumber, timeToTransition);
         }
 
         protected void Init(Animator animator)

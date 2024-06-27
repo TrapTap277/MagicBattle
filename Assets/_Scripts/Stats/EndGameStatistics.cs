@@ -87,7 +87,7 @@ namespace _Scripts.Stats
 
         private void InitStatsManager()
         {
-            _enableDisableManager = FindObjectOfType<ShowOrFadeEnableDisable>();
+            _enableDisableManager = FindObjectOfType<StatsShowAndFade>();
         }
 
         private void OnEnable()

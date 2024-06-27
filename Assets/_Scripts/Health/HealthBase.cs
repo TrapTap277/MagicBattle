@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using _Scripts.Items;
+using _Scripts.Particles;
 using _Scripts.Shooting;
 using DG.Tweening;
 using TMPro;
@@ -22,16 +23,13 @@ namespace _Scripts.Health
         protected TextMeshProUGUI HealthInPercents;
         protected Image FrontHealthBar;
         protected Image BackHealthBar;
-        private float _didDamage;
+        private static float _damageСoefficient;
         private const float MAXHealth = 100;
         private const float ChipSpeed = 4f;
-        private static float _damageСoefficient;
+        private float _didDamage;
         private float _lerpTimer;
         private bool _isHasProtection;
 
-        private const string AttackTag = "Attack";
-
-        private readonly object _lockObject = new object();
 
         public void Init()
         {
@@ -55,37 +53,31 @@ namespace _Scripts.Health
 
         public void TakeDamage(float damage)
         {
-            lock (_lockObject)
+            OnDied?.Invoke(false);
+            if (!_isHasProtection)
             {
-                OnDied?.Invoke(false);
-                if (!_isHasProtection)
-                {
-                    var damageСoefficient = damage * _damageСoefficient;
-                    Health -= damageСoefficient;
-                    _didDamage += damageСoefficient;
-                }
-
-                _lerpTimer = 0;
-
-                if (Health <= 0) Died();
-
-                SetHealth();
-                HealthBarLerp();
+                var damageСoefficient = damage * _damageСoefficient;
+                Health -= damageСoefficient;
+                _didDamage += damageСoefficient;
             }
+
+            _lerpTimer = 0;
+
+            if (Health <= 0) Died();
+
+            SetHealth();
+            HealthBarLerp();
         }
 
         public void RestoreHealth(float healthAmount)
         {
-            lock (_lockObject)
-            {
-                Health += healthAmount;
-                _lerpTimer = 0;
-                SetHealth();
-                HealthBarLerp();
-            }
+            Health += healthAmount;
+            _lerpTimer = 0;
+            SetHealth();
+            HealthBarLerp();
         }
 
-        public void ResetProperties()
+        private void ResetProperties()
         {
             _isHasProtection = false;
             _damageСoefficient = 1f;
@@ -96,16 +88,16 @@ namespace _Scripts.Health
             _isHasProtection = true;
         }
 
-        protected static void TakeMoreDamage()
+        private static void TakeMoreDamage()
         {
             _damageСoefficient = Random.Range(1.1f, 2f);
         }
 
         protected virtual void Died()
         {
+            OnSetIsSomeoneDied?.Invoke();
             OnDied?.Invoke(true);
             OnChangedDamage?.Invoke(_didDamage);
-            OnSetIsSomeoneDied?.Invoke();
         }
 
         private void SetHealth()
@@ -160,14 +152,18 @@ namespace _Scripts.Health
             BackHealthBar.color = color;
         }
 
-        private void OnEnable()
+        protected virtual void OnEnable()
         {
             DamageGemItem.OnTakeMoreDamage += TakeMoreDamage;
+            ParticleCollision.OnResetedProperties += ResetProperties;
+            BaseShoot.OnResetedItems += ResetProperties;
         }
 
-        private void OnDisable()
+        protected virtual void OnDisable()
         {
             DamageGemItem.OnTakeMoreDamage -= TakeMoreDamage;
+            ParticleCollision.OnResetedProperties -= ResetProperties;
+            BaseShoot.OnResetedItems -= ResetProperties;
         }
     }
 }

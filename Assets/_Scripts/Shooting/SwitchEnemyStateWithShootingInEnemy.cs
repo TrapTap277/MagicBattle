@@ -30,22 +30,17 @@ namespace _Scripts.Shooting
         {
             if (attackIndex == 0)
             {
-                if (_secondMoveTurn == NoneSecondMove && _moveTurn == PlayerTurn)
+                switch (_secondMoveTurn)
                 {
-                    GiveMoveToEnemy(EnemyTurn);
-                    return;
-                }
-
-                if (_secondMoveTurn == NoneSecondMove && _moveTurn == EnemyTurn)
-                {
-                    GiveMoveToEnemy(PlayerTurn);
-                    return;
-                }
-
-                if (_secondMoveTurn == EnemySecondMove && _moveTurn == EnemyTurn)
-                {
-                    GiveMoveToEnemy(EnemyTurn);
-                    return;
+                    case NoneSecondMove when _moveTurn == PlayerTurn:
+                        GiveMoveToEnemy(EnemyTurn);
+                        return;
+                    case NoneSecondMove when _moveTurn == EnemyTurn:
+                        GiveMoveToEnemy(PlayerTurn);
+                        return;
+                    case EnemySecondMove when _moveTurn == EnemyTurn:
+                        GiveMoveToEnemy(EnemyTurn);
+                        return;
                 }
             }
 

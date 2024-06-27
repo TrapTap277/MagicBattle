@@ -44,11 +44,6 @@ namespace _Scripts.Items
             ItemsCount--;
         }
 
-        // public static BaseItem GetItem(Gem gem)
-        // {
-        //     return _itemsList.FirstOrDefault(item => item.Gem == gem);
-        // }
-
         private static BaseItem CreateRandomItem(Gem gem)
         {
             _itemsDictionary.TryGetValue(gem, out var item);

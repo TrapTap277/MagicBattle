@@ -7,7 +7,7 @@ namespace _Scripts.Shooting
     public class SwitchEnemyStateWithShootingInPlayer : IEnemyStateSwitcher
     {
         private readonly MoveTurn _moveTurn;
-        private SecondMoveTurn _secondMoveTurn;
+        private SecondMoveTurn _currentSecondMoveTurn;
         private readonly MagicAttackStorage _storage;
         private readonly EnemyStateMachine _stateMachine;
 
@@ -17,11 +17,11 @@ namespace _Scripts.Shooting
         private const SecondMoveTurn PlayerSecondMove = SecondMoveTurn.Player;
         private const SecondMoveTurn EnemySecondMove = SecondMoveTurn.Enemy;
 
-        public SwitchEnemyStateWithShootingInPlayer(MoveTurn moveTurn, SecondMoveTurn secondMoveTurn,
+        public SwitchEnemyStateWithShootingInPlayer(MoveTurn moveTurn, SecondMoveTurn currentSecondMoveTurn,
             EnemyStateMachine stateMachine, MagicAttackStorage storage)
         {
             _moveTurn = moveTurn;
-            _secondMoveTurn = secondMoveTurn;
+            _currentSecondMoveTurn = currentSecondMoveTurn;
             _stateMachine = stateMachine;
             _storage = storage;
         }
@@ -30,56 +30,44 @@ namespace _Scripts.Shooting
         {
             if (attackIndex == 0)
             {
-                if (_secondMoveTurn == NoneSecondMove && _moveTurn == PlayerTurn)
+                switch (_currentSecondMoveTurn)
                 {
-                    GiveMoveToEnemy(EnemyTurn);
+                    case NoneSecondMove when _moveTurn == PlayerTurn:
+                        GiveMoveToEnemy(EnemyTurn);
 
-                    return;
-                }
+                        return;
+                    case NoneSecondMove when _moveTurn == EnemyTurn:
+                        GiveMoveToEnemy(PlayerTurn);
 
-                if (_secondMoveTurn == NoneSecondMove && _moveTurn == EnemyTurn)
-                {
-                    GiveMoveToEnemy(PlayerTurn);
+                        return;
+                    case PlayerSecondMove:
+                        GiveMoveToEnemy(PlayerTurn);
 
-                    return;
-                }
-
-                if (_secondMoveTurn == PlayerSecondMove)
-                {
-                    GiveMoveToEnemy(PlayerTurn);
-
-                    return;
-                }
-
-                if (_secondMoveTurn == EnemySecondMove && _moveTurn == EnemyTurn)
-                {
-                    GiveMoveToEnemy(EnemyTurn);
-                    return;
+                        return;
+                    case EnemySecondMove when _moveTurn == EnemyTurn:
+                        GiveMoveToEnemy(EnemyTurn);
+                        return;
                 }
             }
 
-            if (attackIndex >= 1)
+            if (attackIndex < 1) return;
+            switch (_currentSecondMoveTurn)
             {
-                if (_secondMoveTurn == EnemySecondMove && _moveTurn == EnemyTurn)
-                {
+                case EnemySecondMove when _moveTurn == EnemyTurn:
                     GiveMoveToEnemy(EnemyTurn);
                     return;
-                }
-
-                if (_secondMoveTurn == PlayerSecondMove)
-                {
+                case PlayerSecondMove:
                     GiveMoveToEnemy(PlayerTurn);
                     return;
-                }
-
-                if (_moveTurn == PlayerTurn) return;
-                GiveMoveToEnemy(PlayerTurn);
             }
+
+            if (_moveTurn == PlayerTurn) return;
+            GiveMoveToEnemy(PlayerTurn);
         }
 
         public void ResetSecondMove()
         {
-            _secondMoveTurn = SecondMoveTurn.None;
+            _currentSecondMoveTurn = SecondMoveTurn.None;
         }
 
         private void GiveMoveToEnemy(MoveTurn moveTurn)

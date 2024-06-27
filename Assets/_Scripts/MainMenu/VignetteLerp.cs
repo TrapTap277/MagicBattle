@@ -10,7 +10,7 @@ namespace _Scripts.MainMenu
         public static event Action<int> OnChangedScene;
         public static event Action OnFadeButtons;
 
-        private const float LerpDuration = 5f;
+        private const float LerpDuration = 1000f;
         private static float _startIntensity = 0.4f;
         private static float _endIntensity = 0.6f;
         private float _lerpTimer;
@@ -18,7 +18,7 @@ namespace _Scripts.MainMenu
 
         private bool _isStartedGame;
 
-        private void Start()
+        public void ShowVignette()
         {
             SetVignette();
 
@@ -34,8 +34,29 @@ namespace _Scripts.MainMenu
             StartCoroutine(ChangeScene());
         }
 
+        public IEnumerator FadeVignette()
+        {
+            while (true)
+            {
+                if (!_isStartedGame)
+                {
+                    _lerpTimer += Time.deltaTime;
+                    LerpVignette(_vignette.intensity.value, 0, _lerpTimer / LerpDuration);
+
+                    if (_lerpTimer >= LerpDuration)
+                    {
+                        _lerpTimer = 0f;
+                        (_startIntensity, _endIntensity) = (_endIntensity, _startIntensity);
+                    }
+                }
+
+                yield return null;
+            }
+        }
+
         private IEnumerator LerpVignetteRoutine()
         {
+            _lerpTimer = 0;
             while (true)
             {
                 if (!_isStartedGame)

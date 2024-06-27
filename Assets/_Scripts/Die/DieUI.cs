@@ -11,19 +11,22 @@ namespace _Scripts.Die
         {
             _roundsCounter = roundsCounter;
         }
-        
+
         public void GiveWinRoundToPlayer()
         {
-            GameObject newRound = Resources.Load<GameObject>("AttackUI");
-            GameObject newRoundPrefab = GameObject.Instantiate(newRound, _roundsCounter.transform);
-            newRoundPrefab.GetComponent<Image>().color = Color.yellow;
+            CreateWinUI("PlayerWin", "WinGem");
         }
 
         public void GiveWinRoundToEnemy()
         {
-            GameObject newRound = Resources.Load<GameObject>("AttackUI");
-            GameObject newRoundPrefab = GameObject.Instantiate(newRound, _roundsCounter.transform);
-            newRoundPrefab.GetComponent<Image>().color = Color.magenta;
+            CreateWinUI("EnemyWin", "LoseGem");
+        }
+
+        private void CreateWinUI(string name, string spriteName)
+        {
+            var newRound = new GameObject(name);
+            newRound.AddComponent<Image>().sprite = Resources.Load<Sprite>(spriteName);
+            newRound.transform.SetParent(_roundsCounter.transform);
         }
     }
 }

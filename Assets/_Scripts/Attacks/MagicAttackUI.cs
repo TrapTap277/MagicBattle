@@ -9,7 +9,8 @@ namespace _Scripts.Attacks
 {
     public class MagicAttackUI : MonoBehaviour
     {
-        [SerializeField] private GameObject _attack;
+        [SerializeField] private Sprite _gemBlue;
+        [SerializeField] private Sprite _gemRed;
         [SerializeField] private CanvasGroup _attackPanel;
 
         private readonly List<Image> _attacks = new List<Image>();
@@ -35,21 +36,23 @@ namespace _Scripts.Attacks
             foreach (var isAttackBlue in isBlue)
             {
                 var newAttack = CreateAndAddToList();
-                ChangeColor(isAttackBlue, newAttack);
+                ChangeSprite(isAttackBlue, newAttack);
             }
         }
 
-        private static void ChangeColor(bool isBlue, GameObject newAttack)
+        private void ChangeSprite(bool isBlue, Image newAttack)
         {
-            var attackColor = isBlue ? Color.blue : Color.red;
-            newAttack.GetComponent<Image>().color = attackColor;
+            var attackSprite = isBlue ? _gemBlue : _gemRed;
+            newAttack.GetComponent<Image>().sprite = attackSprite;
         }
 
-        private GameObject CreateAndAddToList()
+        private Image CreateAndAddToList()
         {
-            var newAttack = Instantiate(_attack, _attackPanel.transform);
-            _attacks.Add(newAttack.GetComponent<Image>());
-            return newAttack;
+            var attack = new GameObject("Attack");
+            attack.transform.SetParent(_attackPanel.transform);
+            var attackImage = attack.AddComponent<Image>();
+            _attacks.Add(attackImage);
+            return attackImage;
         }
 
         private async void ShowAttacks()

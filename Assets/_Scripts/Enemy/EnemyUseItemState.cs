@@ -3,7 +3,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using _Scripts.Items;
 using _Scripts.Staff;
-using UnityEngine;
 
 namespace _Scripts.Enemy
 {
@@ -15,11 +14,11 @@ namespace _Scripts.Enemy
         {
             //Animation 
             //await Task.Delay(2000);
-            
+
             await Task.Delay(1000);
 
             if (enemyStateMachine.IsStopped) return;
-            
+
             ChooseItem(enemyStateMachine);
             await Task.Delay(1000);
 
@@ -33,14 +32,16 @@ namespace _Scripts.Enemy
 
         private static void ChooseItem(EnemyStateMachine enemyStateMachine)
         {
-            if (enemyStateMachine.EnemyHealth.Health <= 60 && GetItem(Gem.Heal) != null && !CheckForItem(enemyStateMachine, Gem.Heal))
+            if (enemyStateMachine.EnemyHealth.Health <= 60 && GetItem(Gem.Heal) != null &&
+                !CheckForItem(enemyStateMachine, Gem.Heal))
             {
                 InitAndRemove(enemyStateMachine, Gem.Heal);
                 AddUsedItem(enemyStateMachine, Gem.Heal);
                 // Animation 
             }
 
-            if (enemyStateMachine.RandomNumber < enemyStateMachine.PercentToAttackInPlayer && GetItem(Gem.Damage) != null && !CheckForItem(enemyStateMachine, Gem.Damage))
+            if (enemyStateMachine.RandomNumber < enemyStateMachine.PercentToAttackInPlayer &&
+                GetItem(Gem.Damage) != null && !CheckForItem(enemyStateMachine, Gem.Damage))
             {
                 InitAndRemove(enemyStateMachine, Gem.Damage);
                 AddUsedItem(enemyStateMachine, Gem.Damage);
@@ -48,7 +49,8 @@ namespace _Scripts.Enemy
                 // Animation 
             }
 
-            if (enemyStateMachine.RandomNumber > enemyStateMachine.PercentToAttackInPlayer && GetItem(Gem.Protection) != null && !CheckForItem(enemyStateMachine, Gem.Protection))
+            if (enemyStateMachine.RandomNumber > enemyStateMachine.PercentToAttackInPlayer &&
+                GetItem(Gem.Protection) != null && !CheckForItem(enemyStateMachine, Gem.Protection))
             {
                 InitAndRemove(enemyStateMachine, Gem.Protection);
                 AddUsedItem(enemyStateMachine, Gem.Protection);
@@ -56,7 +58,9 @@ namespace _Scripts.Enemy
                 // Animation 
             }
 
-            if (enemyStateMachine.RandomNumber < enemyStateMachine.PercentToAttackInPlayer && enemyStateMachine.Storage.AttackCount >= 2 && GetItem(Gem.SecondMove) != null && !CheckForItem(enemyStateMachine, Gem.SecondMove))
+            if (enemyStateMachine.RandomNumber < enemyStateMachine.PercentToAttackInPlayer &&
+                enemyStateMachine.Storage.AttackCount >= 2 && GetItem(Gem.SecondMove) != null &&
+                !CheckForItem(enemyStateMachine, Gem.SecondMove))
             {
                 InitAndRemove(enemyStateMachine, Gem.SecondMove);
                 AddUsedItem(enemyStateMachine, Gem.SecondMove);
@@ -65,7 +69,7 @@ namespace _Scripts.Enemy
             }
         }
 
-        private static bool CheckForItem(EnemyStateMachine enemyStateMachine,Gem gem)
+        private static bool CheckForItem(EnemyStateMachine enemyStateMachine, Gem gem)
         {
             return enemyStateMachine.UsedItems.ContainsKey(gem);
         }

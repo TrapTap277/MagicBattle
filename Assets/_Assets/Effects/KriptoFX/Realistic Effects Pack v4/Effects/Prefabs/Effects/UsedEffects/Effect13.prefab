@@ -4888,7 +4888,6 @@ GameObject:
   m_Component:
   - component: {fileID: 404350}
   - component: {fileID: 114794629964021254}
-  - component: {fileID: 5818184394654389101}
   m_Layer: 0
   m_Name: Effect13
   m_TagString: Untagged
@@ -4938,18 +4937,6 @@ MonoBehaviour:
   Speed: 20
   AirDrag: 0.01
   UseGravity: 0
---- !u!114 &5818184394654389101
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 153592}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d11a242cb1ee49dfa1c2a5745e12a5c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &173436
 GameObject:
   m_ObjectHideFlags: 0
@@ -9470,7 +9457,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: db11e7ccfdac33f4ba22e05ec357c3d7, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -19360,6 +19346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d11a242cb1ee49dfa1c2a5745e12a5c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _timeToDissolve: 3500
 --- !u!1 &1942564122312874
 GameObject:
   m_ObjectHideFlags: 0

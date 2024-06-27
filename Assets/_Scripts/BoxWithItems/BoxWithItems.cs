@@ -22,7 +22,8 @@ namespace _Scripts.BoxWithItems
         private IMoveBox _moveBox;
         private IEnableDisableManager _magicAttacks;
         private IInstantiate _instantiateUseButton;
-        private StaffAnimationSwitcher _switchAnimation;
+        private StaffAnimationSwitcher _staffAnimationSwitcher;
+        private GemAnimationSwitcher _gemAnimationSwitcher;
 
         public void InitBox(IMoveBox moveBox)
         {
@@ -32,7 +33,7 @@ namespace _Scripts.BoxWithItems
 
             _moveBox = moveBox;
             _magicAttacks?.Fade();
-            SwitchStaffAnimations(StaffAnimations.DissolveStaff);
+            SwitchStaffAnimations(StaffAnimations.DissolveStaff, GemAnimations.Dissolved);
             OnBlocked?.Invoke(true);
         }
 
@@ -50,21 +51,16 @@ namespace _Scripts.BoxWithItems
             await Task.Delay(4000);
             OnBlocked?.Invoke(false);
             OnGeneratedAttacks?.Invoke();
-            SwitchStaffAnimations(StaffAnimations.UnDissolveStaff);
             await Task.Delay(3000);
-            DestroyBox();
         }
 
-        private void SwitchStaffAnimations(StaffAnimations animations)
+        private void SwitchStaffAnimations(StaffAnimations staffAnimation, GemAnimations gemAnimation)
         {
             AnimationSwitcher<StaffAnimations, ISwitchAnimation<StaffAnimations>>
-                .SwitchAnimation(_switchAnimation, animations);
-        }
-
-        private void DestroyBox()
-        {
-            if (gameObject != null)
-                Destroy(this.gameObject);
+                .SwitchAnimation(_staffAnimationSwitcher, staffAnimation);
+            
+            AnimationSwitcher<GemAnimations, ISwitchAnimation<GemAnimations>>
+                .SwitchAnimation(_gemAnimationSwitcher, gemAnimation);
         }
 
         private void InitBoxManager()
@@ -84,7 +80,8 @@ namespace _Scripts.BoxWithItems
             _instantiateUseButton = FindObjectOfType<AddUseButton>();
             _createItemsUI = FindObjectOfType<CreateItemsUI>();
             _magicAttacks = FindObjectOfType<AttackShowAndFade>();
-            _switchAnimation = FindObjectOfType<StaffAnimationSwitcher>();
+            _staffAnimationSwitcher = FindObjectOfType<StaffAnimationSwitcher>();
+            _gemAnimationSwitcher = FindObjectOfType<GemAnimationSwitcher>();
         }
     }
 }

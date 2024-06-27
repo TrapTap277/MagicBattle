@@ -1,8 +1,8 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using _Scripts.Die;
-using _Scripts.EndGame;
+using _Scripts.Stats;
 using TMPro;
 using UnityEngine;
 
@@ -14,7 +14,9 @@ namespace _Scripts.DialogueSystem
         [SerializeField] private List<string> _enemyWinAnswers = new List<string>();
         [SerializeField] private List<string> _enemyLoseAnswers = new List<string>();
         [SerializeField] private TextMeshProUGUI _text;
-        [SerializeField] private float _textShowingSpeed = 0.02f;
+        [SerializeField] private int _textShowingSpeed;
+
+        private IEnableDisableManager _backGround;
 
         private int _generalIndex;
         private int _enemyWinIndex;
@@ -22,31 +24,48 @@ namespace _Scripts.DialogueSystem
 
         private void Awake()
         {
+            _backGround = FindObjectOfType<FadeOrShowDialogueBackGround>();
             DieManager.SetDialogueSwitcher(this);
 
-            StopAllCoroutines();
+            //StopAllCoroutines();
         }
 
-        public void SwitchDialogue(WhoWon whoWon)
+        public async Task SwitchDialogue(DialogueAnswerType answerType, int count)
         {
-            StartCoroutine(Switch(whoWon));
+            _backGround?.Show();
+            await Task.Delay(2500);
+
+            for (var i = 0; i < count; i++)
+            {
+                await Switch(answerType);
+                await Task.Delay(1000);
+            }
+
+            await Task.Delay(500);
         }
 
-        private IEnumerator Switch(WhoWon whoWon)
+        public void Fade()
         {
-            if (GetDialogueIndex(whoWon) > GetDialogueList(whoWon).Count && GetDialogueIndex(whoWon) < GetDialogueList(whoWon).Count) yield break;
+            _backGround?.Fade();
+        }
+
+        private async Task Switch(DialogueAnswerType answerType)
+        {
+            if (GetDialogueIndex(answerType) > GetDialogueList(answerType).Count &&
+                GetDialogueIndex(answerType) < GetDialogueList(answerType).Count) return;
 
             ResetText();
 
-            foreach (var phrase in GetDialogueList(whoWon)[GetDialogueIndex(whoWon)])
+            foreach (var phrase in GetDialogueList(answerType)[GetDialogueIndex(answerType)])
             {
-                yield return new WaitForSeconds(_textShowingSpeed);
+                await Task.Delay(_textShowingSpeed);
                 _text.text += phrase;
-            }            
-            
-            UpdateDialogueIndex(whoWon);
-            
-            yield return new WaitForSeconds(2);
+            }
+
+            UpdateDialogueIndex(answerType);
+
+            await Task.Delay(1000);
+
             ResetText();
         }
 
@@ -55,43 +74,43 @@ namespace _Scripts.DialogueSystem
             _text.text = "";
         }
 
-        private List<string> GetDialogueList(WhoWon whoWon)
+        private List<string> GetDialogueList(DialogueAnswerType answerType)
         {
-            return whoWon switch
+            return answerType switch
             {
-                WhoWon.NoOne => _enemyGeneralAnswers,
-                WhoWon.Enemy => _enemyWinAnswers,
-                WhoWon.Player => _enemyLoseAnswers,
+                DialogueAnswerType.General => _enemyGeneralAnswers,
+                DialogueAnswerType.Win => _enemyWinAnswers,
+                DialogueAnswerType.Lose => _enemyLoseAnswers,
                 _ => null
             };
         }
 
-        private int GetDialogueIndex(WhoWon whoWon)
+        private int GetDialogueIndex(DialogueAnswerType answerType)
         {
-            return whoWon switch
+            return answerType switch
             {
-                WhoWon.NoOne => _generalIndex,
-                WhoWon.Enemy => _enemyWinIndex,
-                WhoWon.Player => _enemyLoseIndex,
+                DialogueAnswerType.General => _generalIndex,
+                DialogueAnswerType.Win => _enemyWinIndex,
+                DialogueAnswerType.Lose => _enemyLoseIndex,
                 _ => 0
             };
         }
 
-        private void UpdateDialogueIndex(WhoWon whoWon)
+        private void UpdateDialogueIndex(DialogueAnswerType answerType)
         {
-            switch (whoWon)
+            switch (answerType)
             {
-                case WhoWon.NoOne:
+                case DialogueAnswerType.General:
                     _generalIndex++;
                     break;
-                case WhoWon.Enemy:
+                case DialogueAnswerType.Win:
                     _enemyWinIndex++;
                     break;
-                case WhoWon.Player:
+                case DialogueAnswerType.Lose:
                     _enemyLoseIndex++;
                     break;
                 default:
-                    throw new ArgumentOutOfRangeException(nameof(whoWon), whoWon, null);
+                    throw new ArgumentOutOfRangeException(nameof(answerType), answerType, null);
             }
         }
     }

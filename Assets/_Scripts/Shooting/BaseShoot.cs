@@ -29,6 +29,7 @@ namespace _Scripts.Shooting
         private Gem _gem;
 
         private int _attackIndex;
+        private Task _taskChangeGemOnStaff;
 
         protected BaseShoot(MagicAttackStorage attackStorage, SecondMoveTurn secondMoveTurn,
             EnemyAnimationSwitcher enemyAnimationSwitcher, StaffAnimationSwitcher staffAnimationSwitcher,
@@ -50,7 +51,6 @@ namespace _Scripts.Shooting
             await DeterminateAttack(shootIn);
             SwitchEnemyState(enemyStateSwitcher);
             RemoveAttackFromStorage();
-            ResetItems();
         }
 
         private async Task DeterminateAttack(ShootIn shootIn)
@@ -59,22 +59,20 @@ namespace _Scripts.Shooting
 
             if (_currentAttack == AttacksType.Blue)
             {
-                //FadeAttackButtons();
+                _attacksButtons?.Fade();
                 OnSetShootIn?.Invoke(shootIn);
                 SetParameters(Gem.TrueAttack, 0);
                 ChangeGemOnStaff();
                 SetRandomAttackAnimation();
-                await Task.Delay(2000);
-                OnResetedItems?.Invoke();
-                // Todo: Play True attack particles 
+                FadeAttackButtons();
+                await Task.Delay(3000);
             }
 
             else
             {
                 SetParameters(Gem.FalseAttack, 1);
                 ChangeGemOnStaff();
-                //Todo Maybe there need to add  OnResetItems?.Invoke();
-                // Todo: Play False attack particles 
+                ResetItems();
             }
         }
 

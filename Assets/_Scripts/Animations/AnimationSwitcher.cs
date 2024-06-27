@@ -13,9 +13,9 @@ namespace _Scripts.Animations
             switcher.SwitchAnimation(random);
         }
 
-        public static void SwitchAnimation(TSwitcher switcher, TEnum animation)
+        public static void SwitchAnimation(TSwitcher switcher, TEnum animation, float timeToTransition = 0)
         {
-            switcher.SwitchAnimation(animation);
+            switcher.SwitchAnimation(animation, timeToTransition);
         }
     }
 }

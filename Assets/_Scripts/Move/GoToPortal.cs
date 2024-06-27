@@ -2,7 +2,6 @@
 using System.Threading.Tasks;
 using _Scripts.Animations;
 using _Scripts.LostScene;
-using _Scripts.Staff;
 using DG.Tweening;
 using UnityEngine;
 
@@ -14,13 +13,16 @@ namespace _Scripts.Move
 
         [SerializeField] private Transform[] _path;
 
+        private const float TimeToGo = 2f;
+        
+        private StaffAnimationSwitcher _switchAnimation;
         private PassingLevel _passingLevel;
 
-        private const float TimeToGo = 2f;
         private int _step;
 
         private void Start()
         {
+            _switchAnimation = FindObjectOfType<StaffAnimationSwitcher>();
             _passingLevel = FindObjectOfType<PassingLevel>();
 
             GoThroughLevel();
@@ -33,7 +35,6 @@ namespace _Scripts.Move
                 await AddStep();
                 await MoveAndRotateCamera(point);
                 await SetAnimation();
-                await OpenDoor();
 
                 if (_step != 5) continue;
                 OnChangedScene?.Invoke(2);
@@ -44,15 +45,6 @@ namespace _Scripts.Move
         {
             await Task.Delay(1000);
             _step++;
-        }
-
-        private async Task OpenDoor()
-        {
-            if (_step == 1 || _step == 2)
-            {
-                await Task.Delay(2000);
-                await _passingLevel.DestroyDoorAndUseMagicAsync();
-            }
         }
 
         private async Task MoveAndRotateCamera(Transform point)
@@ -71,22 +63,34 @@ namespace _Scripts.Move
             switch (_step)
             {
                 case 3:
-                    _passingLevel.SetStaffAnimation(StaffAnimations.OpenPortal);
+                    SetStaffAnimation(StaffAnimations.OpenPortal);
                     await Task.Delay(8500);
                     _passingLevel.FadeOrShowPortal(true);
                     return;
                 case 4:
-                    _passingLevel.SetStaffAnimation(StaffAnimations.FadeStaff);
+                    SetStaffAnimation(StaffAnimations.FadeStaff);
                     await Task.Delay(1000);
                     return;
                 case 1:
-                    _passingLevel.SetStaffAnimation(StaffAnimations.ShowStaff);
+                    SetStaffAnimation(StaffAnimations.ShowStaff);
                     await Task.Delay(2000);
                     break;
             }
-            
-            _passingLevel.SetStaffAnimation(StaffAnimations.None);
-            await Task.Delay(3000);
+
+            SetRandomStaffAnimation();
+            await Task.Delay(4000);
+        }
+
+        private void SetStaffAnimation(StaffAnimations animations)
+        {
+            AnimationSwitcher<StaffAnimations, ISwitchAnimation<StaffAnimations>>
+                .SwitchAnimation(_switchAnimation, animations);
+        }
+
+        private void SetRandomStaffAnimation()
+        {
+            AnimationSwitcher<StaffAnimations, ISwitchAnimation<StaffAnimations>>
+                .SetRandomAnimation(_switchAnimation);
         }
     }
 }
