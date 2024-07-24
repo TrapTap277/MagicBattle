@@ -12,6 +12,5 @@ Youtube Video Link:
 
 ![CutScene](https://github.com/TrapTap277/MagicBattle/assets/145903439/31490e64-1d89-4086-9376-39ccec0bb25e)
 ![CutScene1](https://github.com/TrapTap277/MagicBattle/assets/145903439/a07755f7-42fd-451b-9991-cb4425c5a233)
-![Progress](https://github.com/TrapTap277/MagicBattle/assets/145903439/ed3d2d87-a276-4fbe-9c98-a081a7b6dddb)
 ![Start](https://github.com/TrapTap277/MagicBattle/assets/145903439/3748cfae-7109-4445-af65-5983e357ea13)
 ![Stats](https://github.com/TrapTap277/MagicBattle/assets/145903439/68ff4eb4-843f-453e-a5f0-b84ad969ce68)
